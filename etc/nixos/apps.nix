@@ -71,7 +71,7 @@
 
     #system
     home-manager
-	  alacritty
+    alacritty
     ranger
     fastfetch
     brightnessctl
@@ -87,15 +87,14 @@
 	  libsForQt5.qt5ct 
     nautilus
 	  gnome-software
-    
+   nwg-look 
     # Media
-	  telegram-desktop
-    firefox
+    telegram-desktop
     vesktop
     ani-cli
     mpv 
     cmus
-	  
+    youtube-music  
     #Others  
     krita	
     ueberzugpp
@@ -109,7 +108,7 @@
     spicetify-cli
 	  
     #Environment
-    jq
+    	  jq
 	  swappy
 	  gtk2
 	  gtk3
