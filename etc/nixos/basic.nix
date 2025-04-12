@@ -35,7 +35,7 @@
     services.qemuGuest.enable = true;
     services.spice-vdagentd.enable = true;  # enable copy and paste between host and guest
     virtualisation.spiceUSBRedirection.enable = true; 
-    virtualisation.waydroid.enable = true;
+    #virtualisation.waydroid.enable = true;
     #Tablet
     hardware.opentabletdriver.enable = true;
     #GPU

@@ -54,7 +54,6 @@
     python3            # The Python interpreter
     python3Packages.pip # Optional: Package installer
     python3Packages.virtualenv
-    nur.repos.ataraxiasjel.waydroid-script 
     home-manager
     scrcpy
     glib
