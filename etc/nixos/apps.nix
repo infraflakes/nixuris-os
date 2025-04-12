@@ -21,26 +21,27 @@
 	font-awesome
     jetbrains-mono
 ];
-
-      programs.nix-ld.enable = true;
+  
   programs.adb.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-
-    # Add any missing dynamic libraries for unpackaged programs
-
-    # here, NOT in environment.systemPackages
-	glibc
-	cmake
-	gdb
-	libgcc
-	libclang
-	clang-tools
-	libstdcxx5
-];
-
+  
+  programs.nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+          # Add any missing dynamic libraries for unpackaged programs
+          # here, NOT in environment.systemPackages
+	        glibc
+	        cmake
+	        gdb
+	        libgcc
+	        libclang
+	        clang-tools
+	        libstdcxx5
+      ];
+  };
+    
     nixpkgs.config.qt5 = {
-  enable = true;
-  platformTheme = "qt5ct"; 
+    enable = true;
+    platformTheme = "qt5ct"; 
     style = {
       package = pkgs.utterly-nord-plasma;
       name = "Utterly Nord Plasma";
@@ -50,86 +51,82 @@
       # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    #Virtual 
     bottles
+    
+    #dev
     python3            # The Python interpreter
     python3Packages.pip # Optional: Package installer
-    python3Packages.virtualenv
-    home-manager
-    scrcpy
+    python3Packages.virtualenv 
     glib
     clang-tools
     vscode 
     vim
     wget
-    nitch
     git
-    ranger
     gdb
     gcc
+    obsidian
+    gitui
+
+    #system
+    home-manager
+	  alacritty
+    ranger
     fastfetch
     brightnessctl
-    firefox
-    vesktop
-    qtscrcpy
-    ani-cli
-    mpv 
-    cmus
     htop
     networkmanagerapplet
-    obsidian
+    pavucontrol
+    atool
     zip
     unzip
     p7zip
+    usbutils
+	  libsForQt5.qtstyleplugin-kvantum
+	  libsForQt5.qt5ct 
+    nautilus
+	  gnome-software
+    
+    # Media
+	  telegram-desktop
+    firefox
+    vesktop
+    ani-cli
+    mpv 
+    cmus
+	  
+    #Others  
+    krita	
     ueberzugpp
-    gitui
     zoom-us
     obs-studio
-    microsoft-edge
     obs-studio-plugins.wlrobs
     cava
     cbonsai
-    usbutils
     cmatrix
     eog
-    atool
-    pavucontrol
     spicetify-cli
-	jq
-	libsForQt5.qtstyleplugin-kvantum
-	libsForQt5.qt5ct 
-	swappy
-	gtk2
-	gtk3
-	gtk4
-	waybar
-	dunst
-	libnotify
-	swww
-	alacritty
-    	kitty
-	rofi-wayland
-	cliphist
-	swaylock
-	imagemagick
-	grim
-	slurp
-	wl-clipboard
-	wlroots
-	krita	
-	gnome-software
-	telegram-desktop
+	  
+    #Environment
+    jq
+	  swappy
+	  gtk2
+	  gtk3
+	  gtk4
+	  waybar
+	  dunst
+	  libnotify
+	  swww
+	  rofi-wayland
+	  cliphist
+	  swaylock
+	  imagemagick
+	  grim
+	  slurp
+	  wl-clipboard
+	  wlroots
 ];
-    #Thunar
-    programs = {
-        file-roller.enable = true;
-        thunar.enable = true;
-        xfconf.enable = true;
-        thunar.plugins = with pkgs.xfce; [
-        thunar-archive-plugin
-        thunar-volman
-    ];
-};
-    services.tumbler.enable = true; # Thumbnail support for images
-
+services.gvfs.enable = true;
 services.flatpak.enable = true;
 }
