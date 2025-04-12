@@ -1,11 +1,13 @@
 if status is-interactive
     fastfetch
+    export EDITOR="nvim"
+    export VISUAL="nvim"
     fish_add_path .local/bin
     fish_add_path .cargo/bin
 
-    alias xs="sudo nixos-rebuild switch"
-    alias xr="sudo nix-collect-garbage -d"
-    alias xu="sudo nixos-rebuild switch --upgrade"
+    alias xs="sudo pacman -S"
+    alias xr="sudo pacman -Rns"
+    alias xu="sudo pacman -Syu"
 
 
     alias e="nvim"

@@ -31,18 +31,7 @@ dofile(vim.g.base46_cache .. "statusline")
 
 require "options"
 require "nvchad.autocmds"
-vim.diagnostic.config({
-  virtual_text = true, -- Show inline error messages
-  signs = true,        -- Show signs in the gutter
-  underline = true,    -- Underline issues
-  update_in_insert = false, -- Update diagnostics while typing
-})
-vim.cmd [[
-  highlight DiagnosticError guifg=#FF0000
-  highlight DiagnosticWarn guifg=#FFA500
-  highlight DiagnosticInfo guifg=#00FFFF
-  highlight DiagnosticHint guifg=#00FF00
-]]
+
 vim.schedule(function()
   require "mappings"
 end)

@@ -68,56 +68,9 @@
     "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB"
 },
 
-"custom/cpuinfo": {
-    "exec": " /home/irisu/.config/hypr/Scripts/cpuinfo.sh",
-    "return-type": "json",
-    "format": "{}",
-    "rotate": 0,
-    "interval": 5, // once every 5 seconds
-    "tooltip": true,
-    "max-length": 1000
-},
 
-"custom/gpuinfo": {
-    "exec": " /home/irisu/.config/hypr/Scripts/gpuinfo.sh",
-    "return-type": "json",
-    "format": "{}",
-    "rotate": 0,
-    "interval": 5, // once every 5 seconds
-    "tooltip": true,
-    "max-length": 1000,
-    "on-click": "/home/irisu/.config/hypr/Scripts/cpuinfo.sh --toggle",
-},
 
-"custom/gpuinfo#nvidia": {
-    "exec": " /home/irisu/.config/hypr/Scripts/gpuinfo.sh --use nvidia ",
-    "return-type": "json",
-    "format": "{}",
-    "rotate": 0,
-    "interval": 5, // once every 5 seconds
-    "tooltip": true,
-    "max-length": 1000,
-},
 
-"custom/gpuinfo#amd": {
-    "exec": " /home/irisu/.config/hypr/Scripts/gpuinfo.sh --use amd ",
-    "return-type": "json",
-    "format": "{}",
-    "rotate": 0,
-    "interval": 5, // once every 5 seconds
-    "tooltip": true,
-    "max-length": 1000,
-},
-
-"custom/gpuinfo#intel": {
-    "exec": " /home/irisu/.config/hypr/Scripts/gpuinfo.sh --use intel ",
-    "return-type": "json",
-    "format": "{}",
-    "rotate": 0,
-    "interval": 5, // once every 5 seconds
-    "tooltip": true,
-    "max-length": 1000,
-},
 
 "hyprland/workspaces": {
     "format" : "{icon}",
@@ -137,11 +90,11 @@
 },
 
 "custom/updates": {
-    "exec": "/home/irisu/.config/hypr/Scripts/systemupdate.sh",
+    "exec": "~/.config/hypr/Scripts/systemupdate.sh",
     "return-type": "json",
     "format": "󰆦 {}",
     "rotate": 0,
-    "on-click": "/home/irisu/.config/hypr/Scripts/systemupdate.sh up",
+    "on-click": "~/.config/hypr/Scripts/systemupdate.sh up",
     "interval": 86400, // once every day
     "tooltip": true,
 },
@@ -185,9 +138,9 @@
     "rotate": 0,
     "format-muted": "婢",
     "on-click": "pavucontrol -t 3",
-    "on-click-middle": "/home/irisu/.config/hypr/Scripts/volumecontrol.sh -o m",
-    "on-scroll-up": "/home/irisu/.config/hypr/Scripts/volumecontrol.sh -o i",
-    "on-scroll-down": "/home/irisu/.config/hypr/Scripts/volumecontrol.sh -o d",
+    "on-click-middle": "~/.config/hypr/Scripts/volumecontrol.sh -o m",
+    "on-scroll-up": "~/.config/hypr/Scripts/volumecontrol.sh -o i",
+    "on-scroll-down": "~/.config/hypr/Scripts/volumecontrol.sh -o d",
     "tooltip-format": "{icon} {desc} // {volume}%",
     "scroll-step": 5,
     "format-icons": {
@@ -207,9 +160,9 @@
     "format-source": "",
     "format-source-muted": "",
     "on-click": "pavucontrol -t 4",
-    "on-click-middle": "/home/irisu/.config/hypr/Scripts/volumecontrol.sh -i m",
-    "on-scroll-up": "/home/irisu/.config/hypr/Scripts/volumecontrol.sh -i i",
-    "on-scroll-down": "/home/irisu/.config/hypr/Scripts/volumecontrol.sh -i d",
+    "on-click-middle": "~/.config/hypr/Scripts/volumecontrol.sh -i m",
+    "on-scroll-up": "~/.config/hypr/Scripts/volumecontrol.sh -i i",
+    "on-scroll-down": "~/.config/hypr/Scripts/volumecontrol.sh -i d",
     "tooltip-format": "{format_source} {source_desc} // {source_volume}%",
     "scroll-step": 5
 },
@@ -277,8 +230,8 @@
     "format": "{}",
     "rotate": 0,
     "exec": "echo ; echo  logout",
-    "on-click": "/home/irisu/.config/hypr/Scripts/logoutlaunch.sh 2",
-    "on-click-right": "/home/irisu/.config/hypr/Scripts/logoutlaunch.sh 1",
+    "on-click": "~/.config/hypr/Scripts/logoutlaunch.sh 2",
+    "on-click-right": "~/.config/hypr/Scripts/logoutlaunch.sh 1",
     "interval" : 86400, // once every day
     "tooltip": true
 },

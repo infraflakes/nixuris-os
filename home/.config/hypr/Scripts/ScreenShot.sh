@@ -1,5 +1,4 @@
-# #!/usr/bin/env bash
-# /* ---- 💫 https://github.com/JaKooLit 💫 ---- */  ##
+#!/usr/bin/env bash
 # Screenshots scripts
 
 iDIR="$HOME/.config/hypr/swaync/icons"
@@ -7,7 +6,7 @@ sDIR="$HOME/.config/hypr/Scripts"
 notify_cmd_shot="notify-send -h string:x-canonical-private-synchronous:shot-notify -u low -i ${iDIR}/picture.png"
 
 time=$(date "+%d-%b_%H-%M-%S")
-dir="/home/irisu/Pictures/Screenshots"
+dir="$HOME/Pictures/Screenshots"
 file="Screenshot_${time}_${RANDOM}.png"
 
 active_window_class=$(hyprctl -j activewindow | jq -r '(.class)')
@@ -94,7 +93,7 @@ shotactive() {
 
 shotswappy() {
 	tmpfile=$(mktemp)
-	grim -g "$(slurp)" - >"$tmpfile" && "${sDIR}/Sounds.sh" --screenshot && notify_view "swappy"
+	grim -g "$(slurp)" - >"$tmpfile" && notify_view "swappy"
 	swappy -f - <"$tmpfile"
 	rm "$tmpfile"
 }

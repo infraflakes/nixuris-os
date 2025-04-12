@@ -1,6 +1,7 @@
 daemonize
 #color=6176cf
-color=6272A4
+#color=6272A4
+color=040405
 bs-hl-color=f5e0dc
 caps-lock-bs-hl-color=f5e0dc
 caps-lock-key-hl-color=a6e3a1
@@ -18,7 +19,7 @@ line-clear-color=00000000
 line-caps-lock-color=00000000
 line-ver-color=00000000
 line-wrong-color=00000000
-ring-color=040405
+ring-color=6272A4
 ring-clear-color=f5e0dc
 ring-caps-lock-color=fab387
 ring-ver-color=89b4fa

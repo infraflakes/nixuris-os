@@ -1,13 +1,8 @@
 #!/usr/bin/env bash
-#for app in imagemagick; do
-#  if ! pacman -Q $app >/dev/null 2>&1; then
-#    dunstify "Missing package" "Please install the $app package to continue" -u critical
-#    exit 1
-#  fi
-#done
+#This script requires imagemagick, please add it via systempkgs
 
 # Set some variables
-WALL_DIR="${HOME}/Pictures/Colourful/"
+WALL_DIR="${HOME}/.config/hypr/pics/"
 CACHE_DIR="${HOME}/.cache/rofi_icons/"
 ROFI_EXECUTE="rofi -dmenu -theme ${HOME}/.config/rofi//wallselect.rasi -theme-str ${ROFI_OVERRIDE}"
 TRACKING_FILE="$HOME/Pictures/Screenshots/Variables/wallpaper_tracking.txt"

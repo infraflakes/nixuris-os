@@ -15,12 +15,6 @@ for _, lsp in ipairs(servers) do
     capabilities = nvlsp.capabilities,
   }
 end
-lspconfig.clangd.setup {
-  on_attach = function(client, bufnr)
-    -- You can customize on_attach if you want
-  end,
-  capabilities = require("cmp_nvim_lsp").default_capabilities()
-}
 
 -- configuring single server, example: typescript
 -- lspconfig.ts_ls.setup {
