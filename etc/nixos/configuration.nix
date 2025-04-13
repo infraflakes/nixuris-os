@@ -12,6 +12,7 @@
       ./apps.nix
       ./hyprland.nix
       ./user.nix
+      ./kde.nix
     ];
 
   # Some programs need SUID wrappers, can be configured further or are
