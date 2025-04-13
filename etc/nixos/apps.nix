@@ -19,7 +19,7 @@
 	fira-code
 	fira-code-symbols
 	font-awesome
-    jetbrains-mono
+    	jetbrains-mono
 ];
   
   programs.adb.enable = true;
@@ -94,7 +94,8 @@
     ani-cli
     mpv 
     cmus
-    youtube-music  
+    youtube-music
+
     #Others  
     krita	
     ueberzugpp
@@ -106,7 +107,8 @@
     cmatrix
     eog
     spicetify-cli
-	  
+    scrcpy
+    qtscrcpy
     #Environment
     	  jq
 	  swappy
@@ -128,4 +130,5 @@
 ];
 services.gvfs.enable = true;
 services.flatpak.enable = true;
+virtualisation.waydroid.enable = true;
 }

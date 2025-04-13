@@ -13,10 +13,12 @@
 	};
     };
     #Display Manager
-    services= {
-       #displayManager.sddm.enable = true;
-       xserver.enable = true; 
+    
+    services.xserver = {
+       enable = true;
+       displayManager.gdm.enable = true;
     };
+    
     #Network
     hardware.bluetooth.enable =true;
     networking = {
