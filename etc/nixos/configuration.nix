@@ -9,9 +9,10 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./basic.nix
+      ./nvidia.nix
+      ./user.nix
       ./apps.nix
       ./hyprland.nix
-      ./user.nix
       ./kde.nix
     ];
 
