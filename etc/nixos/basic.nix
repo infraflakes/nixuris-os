@@ -30,7 +30,7 @@
 
     #Time zone
     time.timeZone = "Asia/Ho_Chi_Minh";
-
+    services.timesyncd.enable = true;
 
     #Virtualization
     virtualisation.libvirtd.enable = true;
