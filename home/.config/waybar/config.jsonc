@@ -25,6 +25,7 @@
 // sourced from modules based on config.ctl //
 "custom/nixos": {
     "format": " ",
+    /*"format": " ",*/
     "tooltip": false
 },
 
