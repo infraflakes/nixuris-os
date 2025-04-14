@@ -199,7 +199,7 @@
         "format": {
             "months": "<span color='#86afef'><b>{}</b></span>",
             "weekdays": "<span color='#86afef'><b>{}</b></span>",
-            "today": "<span color='#86afef'><b>{}</b></span>"
+            "today": "<span color='#ffffff'><b>{}</b></span>"
         }
     },
     "actions": {

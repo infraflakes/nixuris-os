@@ -16,11 +16,13 @@ window#waybar {
 
 tooltip {
     background: @bar-bg;
-    color: @main-fg;
     border-radius: 8px;
     border-width: 0px;
 }
-
+tooltip label {
+    font-size: 13px;
+    color: #86afef;
+}
 #workspaces button {
     box-shadow: none;
 	text-shadow: none;
@@ -83,7 +85,7 @@ tooltip {
 
 #taskbar button.active {
     background: @wb-act-bg;
-    color: @wb-act-color;
+    color: #86afef;
     margin-left: 2px;
     padding-left: 11px;
     padding-right: 11px;
@@ -94,7 +96,7 @@ tooltip {
 
 #taskbar button:hover {
     background: @wb-hvr-bg;
-    color: @wb-hvr-color;
+    color: #86afef;
     animation: tb_hover 20s ease-in-out 1;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
