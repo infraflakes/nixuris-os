@@ -15,7 +15,7 @@
 	noto-fonts
 	noto-fonts-cjk-sans
 	noto-fonts-emoji
-	nerdfonts
+	nerd-fonts.jetbrains-mono
 	fira-code
 	fira-code-symbols
 	font-awesome
@@ -35,7 +35,6 @@
 	        libgcc
 	        libclang
 	        clang-tools
-	        libstdcxx5
       ];
   };
     
