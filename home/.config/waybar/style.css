@@ -107,9 +107,7 @@ tooltip label {
 #bluetooth,
 #custom-cliphist,
 #clock,
-#custom-cpuinfo,
 #cpu,
-#custom-gpuinfo,
 #idle_inhibitor,
 #custom-keybindhint,
 #language,
@@ -134,12 +132,24 @@ tooltip label {
 #custom-rl_end,
 #custom-rr_end {
     color: #86afef;
+    font-size: 14;
     background: @main-bg;
     opacity: 1;
     margin: 6px 0px 6px 0px;
     padding-left: 4px;
     padding-right: 4px;
     
+}
+
+#custom-nixos {
+    color: #86afef;
+    background: @main-bg;
+    font-size: 20;
+    opacity: 1;
+    margin: 6px 0px 6px 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+
 }
 
 #tray menu *{

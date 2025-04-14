@@ -6,7 +6,7 @@
     "layer": "top",
     "position": "top",
     "mod": "dock",
-    "height": 41,
+    "height": 43,
     "exclusive": true,
     "passthrough": false,
     "gtk-layer-shell": true,
@@ -16,13 +16,18 @@
 
 // positions generated based on config.ctl //
 
-	"modules-left": ["custom/padd",
+	"modules-left": ["custom/padd","custom/l_end","custom/nixos","custom/r_end",
     "custom/l_end","hyprland/workspaces","custom/r_end","custom/l_end","cpu","memory","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","hyprland/window","custom/r_end","custom/padd"],
 	"modules-right": ["custom/padd","custom/l_end","tray","custom/r_end","custom/l_end","network","bluetooth","pulseaudio","custom/r_end","custom/l_end","battery","backlight","custom/r_end","custom/l_end","idle_inhibitor","clock","custom/r_end","custom/padd","custom/launcher","custom/padd","custom/padd"],
 
 
 // sourced from modules based on config.ctl //
+"custom/nixos": {
+    "format": " ",
+    "tooltip": false
+},
+
 "idle_inhibitor": {
     "format": "{icon}",
     "rotate": 0,
