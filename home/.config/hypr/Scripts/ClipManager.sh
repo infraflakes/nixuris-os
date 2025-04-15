@@ -10,7 +10,7 @@ while true; do
         rofi -i -dmenu \
             -kb-custom-1 "Control-Delete" \
             -kb-custom-2 "Alt-Delete" \
-            -config ~/.config/rofi/config.rasi < <(cliphist list)
+            -config ~/.config/rofi/clip.rasi < <(cliphist list)
     )
 
     case "$?" in
