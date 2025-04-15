@@ -74,7 +74,7 @@
     pnpm
     obsidian
     gitui
-    
+
     #system
     pciutils
     home-manager
@@ -93,8 +93,8 @@
     libsForQt5.qt5ct
     nautilus
     sushi
-   nwg-look
-   
+    nwg-look
+
     # Media
     telegram-desktop
     vesktop
@@ -117,42 +117,43 @@
     scrcpy
     qtscrcpy
     #Environment
-    	  jq
-	  swappy
-	  gtk2
-	  gtk3
-	  gtk4
-	  waybar
-	  dunst
-	  libnotify
-	  swww
-	  rofi-wayland
-	  cliphist
-	  swaylock
-	  imagemagick
-	  grim
-	  slurp
-	  wl-clipboard
-	  wlroots
-	  wlogout
-];
-services.gvfs.enable = true;
-services.flatpak.enable = true;
-#Gaming
-virtualisation.waydroid.enable = true;
-
-programs.steam = {
-  enable = true;
-  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-};
-nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "steam"
-    "steam-original"
-    "steam-unwrapped"
-    "steam-run"
+    jq
+    swappy
+    gtk2
+    gtk3
+    gtk4
+    waybar
+    dunst
+    libnotify
+    swww
+    rofi-wayland
+    cliphist
+    swaylock
+    imagemagick
+    grim
+    slurp
+    wl-clipboard
+    wlroots
+    wlogout
   ];
+  services.gvfs.enable = true;
+  services.flatpak.enable = true;
+  #Gaming
+  virtualisation.waydroid.enable = true;
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (lib.getName pkg) [
+      "steam"
+      "steam-original"
+      "steam-unwrapped"
+      "steam-run"
+    ];
   services.gvfs.enable = true;
   services.flatpak.enable = true;
   #Gaming
