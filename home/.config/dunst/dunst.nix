@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   services.dunst = {
     enable = true;
 
@@ -26,7 +29,7 @@
         line_height = 4;
         icon_position = "left";
         max_icon_size = 64;
-        icon_path = [ "${pkgs.gnome.adwaita-icon-theme}/share/icons/Adwaita" ];
+        icon_path = ["${pkgs.gnome.adwaita-icon-theme}/share/icons/Adwaita"];
       };
 
       urgency_low = {
