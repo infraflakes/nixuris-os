@@ -65,10 +65,13 @@
     git
     gdb
     gcc
+    nodejs_23
+    pnpm
     obsidian
     gitui
-
+    
     #system
+    pciutils
     home-manager
     alacritty
     ranger
@@ -86,7 +89,8 @@
 	  libsForQt5.qt5ct 
     nautilus
     sushi
-   nwg-look 
+   nwg-look
+   
     # Media
     telegram-desktop
     vesktop
@@ -126,6 +130,7 @@
 	  slurp
 	  wl-clipboard
 	  wlroots
+	  wlogout
 ];
 services.gvfs.enable = true;
 services.flatpak.enable = true;
