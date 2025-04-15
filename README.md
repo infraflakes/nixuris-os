@@ -13,7 +13,7 @@ sudo nixos-rebuild switch --upgrade
 
 Then add channel for home manager for nvim and gtk theme management:
 
-``````
+```
 nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz home-manager
 nix-channel --update
 home-manager switch
@@ -21,6 +21,6 @@ home-manager switch
 
 If the shell shows weird characters like '5u' then execute this command:
 
-'''
+```
 set -Ux fish_features no-keyboard-protocols
-'''
+```
