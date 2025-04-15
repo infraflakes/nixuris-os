@@ -78,6 +78,8 @@
     #system
     pciutils
     home-manager
+    alacritty
+    cool-retro-term
     ranger
     fastfetch
     brightnessctl
@@ -112,6 +114,7 @@
     cava
     cbonsai
     cmatrix
+    pipes
     eog
     spicetify-cli
     scrcpy

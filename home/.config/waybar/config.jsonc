@@ -19,7 +19,7 @@
 	"modules-left": ["custom/padd","custom/l_end","custom/logo","custom/r_end",
     "custom/l_end","hyprland/workspaces","custom/r_end","custom/l_end","cpu","memory","custom/r_end","custom/padd"],
 	"modules-center": ["custom/padd","custom/l_end","hyprland/window","custom/r_end","custom/padd"],
-	"modules-right": ["custom/padd","custom/l_end","tray","custom/r_end","custom/l_end","network","bluetooth","pulseaudio","custom/r_end","custom/l_end","battery","backlight","custom/r_end","custom/l_end","idle_inhibitor","clock","custom/r_end","custom/padd","custom/launcher","custom/padd","custom/padd"],
+	"modules-right": ["custom/padd","custom/l_end","tray","custom/r_end","custom/l_end","network","bluetooth","pulseaudio","pulseaudio#microphone","custom/r_end","custom/l_end","backlight","battery","custom/r_end","custom/l_end","idle_inhibitor","clock","custom/r_end","custom/padd","custom/launcher","custom/padd","custom/padd"],
 
 
 // sourced from modules based on config.ctl //
@@ -133,9 +133,9 @@
 },
 
 "pulseaudio": {
-    "format": "{icon} {volume}",
+    "format": "{icon} {volume}%",
     "rotate": 0,
-    "format-muted": "婢",
+    "format-muted": "󰖁",
     "on-click": "pavucontrol -t 3",
     "on-click-middle": "~/.config/hypr/Scripts/volumecontrol.sh -o m",
     "on-scroll-up": "~/.config/hypr/Scripts/volumecontrol.sh -o i",
@@ -156,7 +156,7 @@
 "pulseaudio#microphone": {
     "format": "{format_source}",
     "rotate": 0,
-    "format-source": "",
+    "format-source": " {volume}%",
     "format-source-muted": "",
     "on-click": "pavucontrol -t 4",
     "on-click-middle": "~/.config/hypr/Scripts/volumecontrol.sh -i m",
