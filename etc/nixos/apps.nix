@@ -53,6 +53,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
+  # program.<name>.enable in home manager auto install pkgs
   environment.systemPackages = with pkgs; [
     #Virtual
     bottles
@@ -74,7 +75,6 @@
 
     #system
     home-manager
-    alacritty
     ranger
     fastfetch
     brightnessctl
@@ -119,7 +119,6 @@
     gtk3
     gtk4
     waybar
-    dunst
     libnotify
     swww
     rofi-wayland

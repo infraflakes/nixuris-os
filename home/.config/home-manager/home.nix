@@ -8,6 +8,12 @@
   home.username = "irisu";
   home.homeDirectory = "/home/irisu";
 
+  imports = [
+    ../alacritty/alacritty.nix
+    ../dunst/dunst.nix
+    ../fish/aliases.nix
+  ];
+
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
   # introduces backwards incompatible changes.
