@@ -6,11 +6,11 @@
 /* ---- Entry ---- */
 entry {
   width: 30%;
-  placeholder: "                        💫 Search Emojis";
+  placeholder: "                          Search Messages";
 }
 
 /* ---- Listview ---- */
 listview {
-  columns: 1;
+  columns: 2;
   lines: 8;
 }

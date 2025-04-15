@@ -116,7 +116,7 @@ button selected {
 /*****----- Listview -----*****/
 listview {
     enabled:                     true;
-    columns:                     3;
+    columns:                     2;
     lines:                       7;
     cycle:                       true;
     dynamic:                     true;
@@ -198,4 +198,4 @@ error-message {
     background-color:            @background;
     text-color:                  @foreground;
 }
-@theme "~/.config/rofi/themes/menu"
+@theme "~/.config/rofi/themes/menu.rasi"
