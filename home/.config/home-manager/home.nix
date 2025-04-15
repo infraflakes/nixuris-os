@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "irisu";
@@ -20,7 +22,7 @@
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
-     pkgs.hello
+    pkgs.hello
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -70,27 +72,27 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
-programs.neovim = {
-  enable = true;
-  viAlias = true;
-  vimAlias = true;
-};
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+  };
 
   gtk = {
-	cursorTheme = {
-		package = pkgs.bibata-cursors;
-		name = "Bibata-Modern-Ice";
-};
-	theme = {
-		package = pkgs.gnome-themes-extra;
-		name = "Adwaita-dark";
-};
-	iconTheme = {
-		package = pkgs.papirus-icon-theme;
-		name = "Papirus-Dark";
-};
-	enable = true;
-};
+    cursorTheme = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+    };
+    theme = {
+      package = pkgs.gnome-themes-extra;
+      name = "Adwaita-dark";
+    };
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
+    };
+    enable = true;
+  };
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
