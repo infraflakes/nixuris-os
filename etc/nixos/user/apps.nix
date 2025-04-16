@@ -1,13 +1,5 @@
 { config, lib, pkgs, ... }:
 { 
-    nixpkgs.config = {
-	    packageOverrides = pkgs: {
-	    unstable = import <unstable> {};
-	    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-      				inherit pkgs;
-			};
-		};
-	};
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;
 
@@ -50,10 +42,8 @@
       # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    #Virtual 
-    bottles
-    
-    #dev
+   
+   #dev
     python3            # The Python interpreter
     python3Packages.pip # Optional: Package installer
     python3Packages.virtualenv 
@@ -69,7 +59,9 @@
     pnpm
     obsidian
     gitui
-    
+    code-cursor 
+    tree
+
     #system
     pciutils
     home-manager
@@ -111,44 +103,7 @@
     cmatrix
     pipes
     eog
-    spicetify-cli
-    scrcpy
-    qtscrcpy
-    #Environment
-    	  jq
-	  swappy
-	  gtk2
-	  gtk3
-	  gtk4
-	  waybar
-	  dunst
-	  libnotify
-	  swww
-	  rofi-wayland
-	  cliphist
-	  swaylock
-	  imagemagick
-	  grim
-	  slurp
-	  wl-clipboard
-	  wlroots
-	  wlogout
 ];
-services.gvfs.enable = true;
 services.flatpak.enable = true;
-#Gaming
-virtualisation.waydroid.enable = true;
-
-programs.steam = {
-  enable = true;
-  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
-  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-  localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
-};
-nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "steam"
-    "steam-original"
-    "steam-unwrapped"
-    "steam-run"
-  ];
+services.gvfs.enable = true; # Mount, trash, and other functionalities
 }

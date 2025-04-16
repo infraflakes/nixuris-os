@@ -7,13 +7,20 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      #essentials
       ./hardware-configuration.nix
-      ./basic.nix
-      ./nvidia.nix
-      ./user.nix
-      ./apps.nix
-      ./hyprland.nix
-      ./kde.nix
+      ./sys/basic.nix
+      ./sys/nvidia.nix
+      
+      #user
+      ./user/user.nix
+      ./user/apps.nix
+      ./user/others/gaming.nix
+      #./user/others/virt.nix
+      
+      #environment
+      ./user/env/hyprland.nix
+      #./user/env/kde.nix
     ];
 
   # Some programs need SUID wrappers, can be configured further or are

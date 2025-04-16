@@ -31,14 +31,6 @@
     #Time zone
     time.timeZone = "Asia/Ho_Chi_Minh";
     services.timesyncd.enable = true;
-
-    #Virtualization
-    virtualisation.libvirtd.enable = true;
-    programs.virt-manager.enable = true;
-    services.qemuGuest.enable = true;
-    services.spice-vdagentd.enable = true;  # enable copy and paste between host and guest
-    virtualisation.spiceUSBRedirection.enable = true; 
-    #virtualisation.waydroid.enable = true;
     #Tablet
     hardware.opentabletdriver.enable = true;
     #GPU
@@ -94,38 +86,8 @@
 	CPU_SCALING_MAX_FREQ_ON_BAT=100000;
       };
 };
-
-    #Input
-    
-    i18n.defaultLocale = "en_US.UTF-8";
-    i18n.inputMethod = {
-    enable = true;
-    fcitx5.waylandFrontend = true;
-    type = "fcitx5";
-    fcitx5.addons = with pkgs; [ fcitx5-unikey ];
-  };
-    i18n.extraLocaleSettings = {
-    LC_ADDRESS = "vi_VN";
-    LC_IDENTIFICATION = "vi_VN";
-    LC_MEASUREMENT = "vi_VN";
-    LC_MONETARY = "vi_VN";
-    LC_NAME = "vi_VN";
-    LC_NUMERIC = "vi_VN";
-    LC_PAPER = "vi_VN";
-    LC_TELEPHONE = "vi_VN";
-    LC_TIME = "vi_VN";
-  };
-
-    # Configure keymap in X11
-    services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
-
     #Shell
     programs.fish.enable = true;    
-
 
     #Sound 
     security.rtkit.enable = true;
@@ -148,6 +110,4 @@
     };
 };
 
-    #Services
-    services.gvfs.enable = true; # Mount, trash, and other functionalities
 }

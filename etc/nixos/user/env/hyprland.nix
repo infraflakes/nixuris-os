@@ -1,5 +1,22 @@
 { config, lib, pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
+	jq
+	swappy
+	waybar
+	dunst
+	libnotify
+	swww
+	rofi-wayland
+	cliphist
+	swaylock
+	imagemagick
+	grim
+	slurp
+	wl-clipboard
+	wlroots
+	wlogout
+];
     xdg.portal.enable = true;
     xdg.portal.extraPortals  = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr];
     programs.hyprland = {
