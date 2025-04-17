@@ -19,6 +19,7 @@
       #./user/others/virt.nix
       
       #environment
+      ./user/env/gnome.nix
       ./user/env/hyprland.nix
       #./user/env/kde.nix
     ];
