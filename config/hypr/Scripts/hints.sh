@@ -33,6 +33,13 @@ GDK_BACKEND=$BACKEND yad \
 " Q" "close window" "(not kill)" \
 " F" "Fullscreen" "Toggles to full screen" \
 " W" "Toggle float" "single window" \
+" 1-10" "Switch Between Workspaces" "" \
+" Shift 1-10" "Move Windows to Workspaces" "" \
+" ↑↓→←" "Focus Windows" "single window" \
+" CTRL ↑↓→←" "Move Windows To Directions" "single window" \
+" LMB" "Grab Windows" "single window" \
+" RMB" "Resize Windows" "single window" \
+"" "" "" \
 " Shift Q " "kills an active window" "(kill)" \
 " SHIFT R" "Reload Hyprland" "" \
 "F11" "show notifications" "(dunst)" \
