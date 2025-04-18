@@ -29,7 +29,7 @@ set -Ux fish_features no-keyboard-protocols
 ### Changelogs:
 
 
-## Ver. 3.6.2:
+## Ver. 3.6.3:
 
 - Added extra infos for keybinds (workspaces, and windows management).
 
