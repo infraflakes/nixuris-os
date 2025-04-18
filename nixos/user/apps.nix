@@ -92,7 +92,7 @@
     cmus
     youtube-music
     yt-dlp
-
+    libreoffice-fresh
     #Others  
     krita	
     ueberzugpp
