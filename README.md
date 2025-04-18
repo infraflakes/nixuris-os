@@ -1,5 +1,9 @@
 ### Hyprland configuration for NixOS with additional personal use case.
 
+> [!CAUTION] 
+> I suggest looking into nixos/user/env/hyprland.nix to see what needs to be installed if you want to implement it yourself!
+> Since this is a personal configuration, if you want to use my gtk settings in home-manager, remember to change to your name and the version to your system version!
+
 Remember to add channel for home-manager and the nixos channel by choice (ex. unstable):
 
 ```
