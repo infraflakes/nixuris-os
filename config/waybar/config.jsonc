@@ -65,7 +65,9 @@
 
 "custom/logo": {
     "format": " ",
-    	"on-click": "$HOME/.config/hypr/Scripts/hints.sh",
+    "on-click":"exec ~/.config/hypr/Scripts/swww.sh",
+
+    	/*"on-click": "$HOME/.config/hypr/Scripts/hints.sh",*/
 
     /*"format": " ",*/
 },

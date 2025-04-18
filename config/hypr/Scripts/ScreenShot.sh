@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Screenshots scripts
 
-iDIR="$HOME/.config/hypr/swaync/icons"
+iDIR="$HOME/.config/hypr/Scripts/"
 sDIR="$HOME/.config/hypr/Scripts"
 notify_cmd_shot="notify-send -h string:x-canonical-private-synchronous:shot-notify -u low -i ${iDIR}/picture.png"
 

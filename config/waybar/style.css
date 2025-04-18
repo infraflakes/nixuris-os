@@ -7,15 +7,13 @@
     min-height: 21px;
 }
 
-@import "themes/Wall-Dcol.css";
-
 window#waybar {
-    background: @bar-bg;
+    background: #1b1e25;
     border-radius: 7px;
 }
 
 tooltip {
-    background: @bar-bg;
+    background: #1b1e25;
     border-radius: 8px;
     border-width: 0px;
 }
@@ -62,7 +60,7 @@ tooltip label {
 }
 
 #workspaces button:hover {
-    /* background: @wb-hvr-bg; */
+    background: #86afef;
     color: #86afef;
     animation: ws_hover 20s ease-in-out 1;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
@@ -79,12 +77,11 @@ tooltip label {
     padding-left: 4px;
     padding-right: 4px;
     margin-right: 0px;
-    color: @wb-color;
     animation: tb_normal 20s ease-in-out 1;
 }
 
 #taskbar button.active {
-    background: @wb-act-bg;
+    background: #86afef;
     color: #86afef;
     margin-left: 2px;
     padding-left: 11px;
@@ -95,7 +92,7 @@ tooltip label {
 }
 
 #taskbar button:hover {
-    background: @wb-hvr-bg;
+    background: #86afef;
     color: #86afef;
     animation: tb_hover 20s ease-in-out 1;
     transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
@@ -133,7 +130,7 @@ tooltip label {
 #custom-rr_end {
     color: #86afef;
     font-size: 14;
-    background: @main-bg;
+    background: #242830;
     opacity: 1;
     margin: 6px 0px 6px 0px;
     padding-left: 4px;
@@ -143,7 +140,7 @@ tooltip label {
 
 /*#custom-logo {
     color: #86afef;
-    background: @main-bg;
+    background: #242830;
     font-size: 20;
     opacity: 1;
     margin: 6px 0px 6px 0px;
@@ -182,7 +179,7 @@ tooltip label {
 }
 
 #custom-logo{
-    color:@bar-bg;
+    color:#1b1e25;
     background: #86afef;
     padding-right: 15px;
     font-size: 20px;
