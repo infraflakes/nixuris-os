@@ -29,6 +29,12 @@ set -Ux fish_features no-keyboard-protocols
 ### Changelogs:
 
 
+## Ver. 3.6.4:
+
+- Added K Desktop Enviroment
+
+- Added Libre Office Fresh
+
 ## Ver. 3.6.3:
 
 - Added extra infos for keybinds (workspaces, and windows management).
