@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
+	bc
 	jq
 	yad
 	swappy
