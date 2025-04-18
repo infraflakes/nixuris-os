@@ -1,23 +1,22 @@
 { config, lib, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-	bc
-	jq
-	yad
-	swappy
-	waybar
-	dunst
-	libnotify
-	swww
-	rofi-wayland
-	cliphist
-	swaylock
-	imagemagick
-	grim
-	slurp
-	wl-clipboard
+	home-manager #handling gtk and nvim
+	cool-retro-term #terminal
+	ranger #file-manager
+	fastfetch #fetch
+	brightnessctl #brightness changing
+	bc jq #lib for scripts
+	pavucontrol #volume control 
+	yad #display keybinding
+	waybar #panel
+	dunst libnotify #notification
+	swww imagemagick #wallpaper
+	rofi-wayland #instances launcher
+	wl-clipboard cliphist #clipboard
+	swaylock #lockscreen
+	grim slurp swappy #screenshot
 	wlroots
-	wlogout
 ];
     xdg.portal.enable = true;
     xdg.portal.extraPortals  = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr];

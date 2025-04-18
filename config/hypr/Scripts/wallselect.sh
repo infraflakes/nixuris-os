@@ -5,7 +5,7 @@ set -euo pipefail  # Exit on error, undefined vars, and pipe failures
 # Set some variables
 WALL_DIR="${HOME}/.config/hypr/pics/"
 CACHE_DIR="${HOME}/.cache/rofi_icons/"
-TRACKING_FILE="$HOME/Pictures/Screenshots/Variables/wallpaper_tracking.txt"
+TRACKING_FILE="$HOME/.config/hypr/pics/wallpaper_tracking.txt"
 
 # Cleanup function to handle script interruption
 cleanup() {

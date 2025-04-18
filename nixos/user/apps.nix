@@ -20,7 +20,6 @@
       enable = true;
       libraries = with pkgs; [
           # Add any missing dynamic libraries for unpackaged programs
-          # here, NOT in environment.systemPackages
 	        glibc
 	        cmake
 	        gdb
@@ -64,25 +63,19 @@
 
     #system
     pciutils
-    home-manager
     alacritty
-    cool-retro-term
-    ranger
     fastfetch
-    brightnessctl
     htop
     networkmanagerapplet
-    pavucontrol
     atool
     zip
     unzip
     p7zip
     usbutils
-	  libsForQt5.qtstyleplugin-kvantum
-	  libsForQt5.qt5ct 
+    libsForQt5.qtstyleplugin-kvantum
+    libsForQt5.qt5ct 
     nautilus
     sushi
-   nwg-look
    
     # Media
     telegram-desktop
@@ -93,6 +86,7 @@
     youtube-music
     yt-dlp
     libreoffice-fresh
+    
     #Others  
     krita	
     ueberzugpp
@@ -103,6 +97,7 @@
     cbonsai
     cmatrix
     pipes
+    tty-clock
     eog
 ];
 services.flatpak.enable = true;

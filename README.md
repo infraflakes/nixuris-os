@@ -40,6 +40,11 @@ set -Ux fish_features no-keyboard-protocols
 ---
 ### Changelogs:
 
+## Ver. 3.6.5:
+
+- Change wallpaper tracking path to a more logical directory.
+
+- Extra infos of packages in hyprland.nix!
 
 ## Ver. 3.6.4:
 
