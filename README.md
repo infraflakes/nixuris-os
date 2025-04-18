@@ -28,6 +28,11 @@ set -Ux fish_features no-keyboard-protocols
 ---
 ### Changelogs:
 
+
+## Ver. 3.6.2:
+
+- Added extra infos for keybinds (workspaces, and windows management).
+
 ## Ver. 3.6.2:
 
 - Removed 175MB of legacy configs, duplicate modules, and redundant scripts from original dotfiles.
@@ -39,3 +44,5 @@ set -Ux fish_features no-keyboard-protocols
 - NixOS icon on waybar now changes wallpaper randomly on click (SUPER + H still shows keybind hints).
 
 - Added "bc" package for wallpaper script.
+
+- Hyprland config file now has headers for easier navigation.
