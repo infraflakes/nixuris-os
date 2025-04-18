@@ -1,4 +1,4 @@
-Hyprland configuration for NixOS with additional personal use case.
+### Hyprland configuration for NixOS with additional personal use case.
 
 Remember to add channel for home-manager and the nixos channel by choice (ex. unstable):
 
