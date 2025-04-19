@@ -40,6 +40,10 @@ set -Ux fish_features no-keyboard-protocols
 ---
 ### Changelogs:
 
+## Ver. 3.6.7:
+
+- Removed some wallpapers.
+
 ## Ver. 3.6.6:
 
 - Using NVIDIA Open Source Kernel Module instead of the proprietary one.
