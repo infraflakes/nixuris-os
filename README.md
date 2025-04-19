@@ -66,7 +66,7 @@ set -Ux fish_features no-keyboard-protocols
 
 ## Ver. 3.6.2:
 
-- Removed 175MB of legacy configs, duplicate modules, and redundant scripts from original dotfiles.
+- Removed 412MB of legacy configs, duplicate modules, obsolete binary files, and redundant scripts from original dotfiles.
 
 - Rewrote  shell scripts to follow better logic flow, reduced LOC by 30–50% each.
 
