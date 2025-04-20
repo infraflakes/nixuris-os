@@ -40,6 +40,12 @@ set -Ux fish_features no-keyboard-protocols
 ---
 ### Changelogs:
 
+## Ver. 3.8.3:
+
+- Added Java for development.
+
+- Added Bottles to run windows apps.
+
 ## Ver. 3.8.2:
 
 - SUPER + A to show window switcher!

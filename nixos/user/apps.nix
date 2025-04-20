@@ -41,8 +41,10 @@
       # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   
+   bottles
+
    #dev
+    jdk
     python3            # The Python interpreter
     python3Packages.pip # Optional: Package installer
     python3Packages.virtualenv 
