@@ -26,7 +26,7 @@ monitor_res=$(hyprctl monitors | grep -A2 Monitor | head -n 2 | awk '{print $1}'
 icon_size=$(echo "scale=0; $monitor_res * 24 / $(echo "scale=2; $monitor_res / 24" | bc | xargs printf "%.0f") / 2" | bc)
 
 # Set rofi command with x11 flag
-ROFI_EXECUTE="rofi -x11 -dmenu -theme ${HOME}/.config/rofi//wallselect.rasi -theme-str 'element-icon{size:${icon_size}px;border-radius:0px;} window{width:80%;height:75%;} listview{lines:4;columns:4;}'"
+ROFI_EXECUTE="rofi -x11 -dmenu -theme ${HOME}/.config/rofi/wallselect.rasi -theme-str 'element-icon{size:${icon_size}px;border-radius:0px;} window{width:80%;height:75%;} listview{lines:4;columns:4;}'"
 
 # Create cache dir if not exists
 mkdir -p "${CACHE_DIR}"
@@ -71,6 +71,6 @@ echo "$BASENAME" > "$TRACKING_FILE"
 
 # Update config files with the new wallpaper
 sed -i "s#background-image:.*#background-image: url(\"${WALL_DIR}${BASENAME}\",width);#" "$HOME/.config/rofi/themes/menu.rasi"
-sed -i "s#^image=.*#image=${WALL_DIR}${BASENAME}#" "$HOME/.config/hypr/swaylock/config"
+sed -i "s#^image=.*#image=${WALL_DIR}${BASENAME}#" "$HOME/.config/hypr/Scripts/config"
 
 echo "Wallpaper set successfully!"

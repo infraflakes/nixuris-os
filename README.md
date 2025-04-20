@@ -40,6 +40,16 @@ set -Ux fish_features no-keyboard-protocols
 ---
 ### Changelogs:
 
+## Ver. 3.8.2:
+
+- SUPER + A to show window switcher!
+
+- Changing brightness now show its state in notification!
+
+- Fixed some deprecated paths on scripts.
+
+- Removed some unnecessary config lines in rofi config.
+
 ## Ver. 3.6.7:
 
 - Removed some wallpapers.
