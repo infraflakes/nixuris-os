@@ -11,7 +11,7 @@ configuration {
 /* ---- Entry ---- */
 entry {
   width: 30%;
-  placeholder: "                         Search Emojis";
+  placeholder: "                         Search Windows";
 }
 
 /* ---- Listview ---- */
