@@ -2,7 +2,7 @@
 # Define the directories for colorful and black-and-white wallpapers
 COLOR_DIR="$HOME/.config/hypr/pics/"
 # Define the path to the file storing the last wallpaper name
-TRACKING_FILE="$HOME/Pictures/Screenshots/Variables/wallpaper_tracking.txt"
+TRACKING_FILE="$HOME/.config/hypr/pics/wallpaper_tracking.txt"
 
 # Determine the current wallpaper displayed by swww
 CURRENT_WALLPAPER=$(swww query | grep "currently displaying:" | awk -F 'image: ' '{print $2}')
