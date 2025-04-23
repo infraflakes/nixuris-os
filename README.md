@@ -18,7 +18,7 @@ sudo nixos-rebuild switch --upgrade
 Then add channel for home manager for nvim and gtk theme management:
 
 ```
-nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.11.tar.gz home-manager
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
 nix-channel --update
 home-manager switch
 ```
@@ -39,6 +39,30 @@ set -Ux fish_features no-keyboard-protocols
 
 ---
 ### Changelogs:
+
+## Ver. 3.12.8:
+
+- Now using swaync for notification management instead of dunst!
+
+- New Cava module using custom cava script for waybar!
+
+- Added Gnome with custom extensions, debloated package list and dconf-editor!
+
+- Amoury Crate button now initiates rog-control-center.
+
+- Home manager now follows same version as nixpkgs, replace Adwaita-dark with Catppuccin Frappe Blue as gtk theme!
+
+- Change Alt + Delete to Super + Delete to delete one entry in clipboard manager.
+
+- Brightness and volume script now uses ubuntu plug in to eliminate duplications on notification.
+
+- Removed GameScope and other gaming peripherals.
+
+- Better clarity in apps.nix.
+
+- Removed KDE.
+
+- Fixing wrong home manager channel for nixos unstable in README.
 
 ## Ver. 3.8.3:
 

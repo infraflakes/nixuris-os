@@ -6,7 +6,7 @@ function get_volume {
 function send_notification {
     volume=$(get_volume)
     volume=${volume:-0}  # Default to 0 if empty
-    $(dirname "$0")/notify-send.sh "Volume $volume%" -t 2000 -h int:value:"$volume" --replace=555
+    $(dirname "$0")/notify-send.sh "Volume $volume%" -t 2000 -h int:value:"$volume" -h string:x-canonical-private-synchronous:volume_notif --replace=555
 }
 
 case $1 in
@@ -25,7 +25,7 @@ case $1 in
     mute)
         wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
         if wpctl get-volume @DEFAULT_AUDIO_SINK@ | grep -q MUTED; then
-            $(dirname "$0")/notify-send.sh "Muted" -t 2000 --replace=555
+            $(dirname "$0")/notify-send.sh "Muted" -t 2000 -h string:x-canonical-private-synchronous:volume_notif --replace=555
         else
             send_notification
         fi
