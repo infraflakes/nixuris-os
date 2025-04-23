@@ -6,7 +6,7 @@ function get_brightness {
 function send_notification {
     brightness=$(get_brightness)
     brightness=${brightness:-0}  # Default to 0 if empty
-    $(dirname "$0")/notify-send.sh "Brightness $brightness%" -t 2000 -h int:value:"$brightness" --replace=666
+    $(dirname "$0")/notify-send.sh "Brightness $brightness%" -t 2000 -h int:value:"$brightness" -h string:x-canonical-private-synchronous:brightness_notif --replace=666
 }
 
 case $1 in

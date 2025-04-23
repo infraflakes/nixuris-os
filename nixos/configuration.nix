@@ -19,9 +19,9 @@
       #./user/others/virt.nix
       
       #environment
-      #./user/env/gnome.nix
+      ./user/env/gnome.nix
       ./user/env/hyprland.nix
-      ./user/env/kde.nix
+      #./user/env/kde.nix
     ];
 
   # Some programs need SUID wrappers, can be configured further or are

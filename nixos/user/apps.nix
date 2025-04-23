@@ -21,50 +21,47 @@
       libraries = with pkgs; [
           # Add any missing dynamic libraries for unpackaged programs
 	        glibc
-	        cmake
-	        gdb
 	        libgcc
 	        libclang
-	        clang-tools
+		xorg.libxcb
       ];
   };
     
-    nixpkgs.config.qt5 = {
-    enable = true;
-    platformTheme = "qt5ct"; 
-    style = {
-      package = pkgs.utterly-nord-plasma;
-      name = "Utterly Nord Plasma";
-    };
-};
 
       # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
    bottles
 
-   #dev
+    #dev
+    
+    #C/C++ 
+    gcc
+    gdb
+    clang-tools
+    cmake
+    #Java
     jdk
+    
+    #JS
+    nodejs_23
+    pnpm
+    
+    #Python
     python3            # The Python interpreter
     python3Packages.pip # Optional: Package installer
     python3Packages.virtualenv 
-    glib
-    clang-tools
-    vscode 
+    
+    vscode code-cursor #code-editor 
     vim
     wget
-    git
-    gdb
-    gcc
-    nodejs_23
-    pnpm
-    obsidian
-    gitui
-    code-cursor 
-    tree
+    obsidian #documentation
+    git gitui #github
 
     #system
+		glib
     pciutils
+    tree
     alacritty
     fastfetch
     htop
@@ -74,8 +71,6 @@
     unzip
     p7zip
     usbutils
-    libsForQt5.qtstyleplugin-kvantum
-    libsForQt5.qt5ct 
     nautilus
     sushi
    
@@ -84,8 +79,7 @@
     vesktop
     ani-cli
     mpv 
-    cmus
-    youtube-music
+    cmus youtube-music #music player
     yt-dlp
     libreoffice-fresh
     
@@ -93,13 +87,8 @@
     krita	
     ueberzugpp
     zoom-us
-    obs-studio
-    obs-studio-plugins.wlrobs
-    cava
-    cbonsai
-    cmatrix
-    pipes
-    tty-clock
+    obs-studio obs-studio-plugins.wlrobs #obs wayland
+    cava cbonsai cmatrix pipes tty-clock #cli aesthetics
     eog
 ];
 services.flatpak.enable = true;

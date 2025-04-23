@@ -9,7 +9,7 @@ while true; do
     result=$(
         rofi -i -dmenu \
             -kb-custom-1 "Control-Delete" \
-            -kb-custom-2 "Alt-Delete" \
+            -kb-custom-2 "Super-Delete" \
             -config ~/.config/rofi/clip.rasi < <(cliphist list)
     )
 

@@ -13,10 +13,12 @@
 	dunst libnotify #notification
 	swww imagemagick #wallpaper
 	rofi-wayland #instances launcher
+	swaynotificationcenter #gui for notification center
 	wl-clipboard cliphist #clipboard
 	swaylock #lockscreen
 	grim slurp swappy #screenshot
 	wlroots
+	wlogout
 ];
     xdg.portal.enable = true;
     xdg.portal.extraPortals  = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr];
