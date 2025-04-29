@@ -69,6 +69,7 @@
   #
   home.sessionVariables = {
     EDITOR = "nvim";
+    GTK_THEME = "frappeBlue";
   };
 programs.neovim = {
   enable = true;

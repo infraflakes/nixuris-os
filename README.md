@@ -32,6 +32,38 @@ set -Ux fish_features no-keyboard-protocols
 ---
 ### Changelogs:
 
+## Ver. 4.3.12:
+
+- Alacritty is now the default terminal.
+
+- Rofi is now interactive with mouse.
+
+- New session management menu using rofi and bash.
+
+- Removed deprecated keybinds, adding borders for windows and adding new keybinding for notification center.
+
+- Added new power option for waybar.
+
+- Added new spicetify theme inspired by spotify-tui with system color palette.
+
+- Modify alacritty and rofi color palette to match system.
+
+- Update dunst config.
+
+- Change fastfetch OS icon.
+
+- Modify fish shell aliases to manage system.
+
+- Added GTK user env.
+
+- Removed display manager, black listed kvm modules, remove xserver, bluetooth, open tablet driver, power management tools, supergfxctl.
+
+- Disabled avahi, some network manager services, firewall and accounts daemon.
+
+- Removed flatpak, gnome.
+
+- Removed gaming utilities.
+
 ## Ver. 3.12.8:
 
 - Now using swaync for notification management instead of dunst!

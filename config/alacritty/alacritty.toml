@@ -1,6 +1,6 @@
 [colors]
   [colors.primary]
-    background = '#21252e'
+    background = '#1b1e25'
     foreground = '#eeedee'
   
   [colors.cursor]
@@ -40,7 +40,7 @@ family = "JetBrains Mono Nerd Font"
 style = "SemiBold"
 
 [window]
-decorations = "none"
+decorations = "Full"
 
 [window.padding]
 x = 15 

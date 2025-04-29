@@ -53,7 +53,6 @@
     python3Packages.virtualenv 
     
     vscode code-cursor #code-editor 
-    vim
     wget
     obsidian #documentation
     git gitui #github
@@ -65,7 +64,6 @@
     alacritty
     fastfetch
     htop
-    networkmanagerapplet
     atool
     zip
     unzip
@@ -75,6 +73,7 @@
     sushi
    
     # Media
+    ffmpeg
     telegram-desktop
     vesktop
     ani-cli
@@ -82,7 +81,9 @@
     cmus youtube-music #music player
     yt-dlp
     libreoffice-fresh
-    
+    beatprints
+    imv
+    firefox
     #Others  
     krita	
     ueberzugpp
@@ -91,6 +92,6 @@
     cava cbonsai cmatrix pipes tty-clock #cli aesthetics
     eog
 ];
-services.flatpak.enable = true;
+#services.flatpak.enable = true;
 services.gvfs.enable = true; # Mount, trash, and other functionalities
 }

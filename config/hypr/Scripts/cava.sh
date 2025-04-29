@@ -20,7 +20,7 @@ cat >"$config_file" <<EOF
 # Setting maximum framerate to 30  
 # You can increase the value if you wish
 framerate = 144
-bars = 30
+bars = 20
 
 [input]
 method = pipewire

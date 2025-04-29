@@ -5,11 +5,13 @@ if status is-interactive
     fish_add_path .local/bin
     fish_add_path .cargo/bin
 
-    alias xs="sudo pacman -S"
-    alias xr="sudo pacman -Rns"
-    alias xu="sudo pacman -Syu"
+    alias xs="sudo nixos-rebuild switch"
+    alias xr="sudo nix-collect-garbage"
+    alias xrg="sudo nix-collect-garbage -d"
+    alias xu="sudo nixos-rebuild switch --upgrade"
 
 
     alias e="nvim"
     alias se="sudo -E -s nvim"
 end
+

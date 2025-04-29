@@ -1,18 +1,26 @@
-
 /*****----- Configuration -----*****/
 configuration {
     modi:                        "drun";
     show-icons:                  true;
     drun-display-format:         "{name}";
-    //hover-select:				 true;
-	//me-select-entry:			 "";
-	//me-accept-entry:			 "MousePrimary";
+    
+  hover-select: true;
+
+  /* Disable MousePrimary as an entry selector */
+  /* Without this setting you won't be able to set MousePrimary as an entry
+     acceptor. */
+  me-select-entry: "";
+
+  /* Use either LMB single click or RMB single click or LMB double click
+     to accept an entry */
+  me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
+
 }
 
 /*****----- Global Properties -----*****/
 * {
     font:                        "JetBrains Mono Nerd Font 10";
-    background:                  #030506;
+    background:                  #1b1e25;
     foreground:                  #edeeff;
     selected:                    #86afef;
     active:                      #6db2f7;
