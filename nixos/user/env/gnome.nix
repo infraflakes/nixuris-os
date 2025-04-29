@@ -52,7 +52,6 @@
         gnome-tweaks
 	gnome-extension-manager
   	dconf-editor
-	evolve-core
      gnomeExtensions.blur-my-shell
      gnomeExtensions.vitals
      gnomeExtensions.dash-to-dock
@@ -67,5 +66,6 @@
     # ...
   ];
   services.udev.packages = [ pkgs.gnome-settings-daemon ];
+  services.gnome.rygel.enable = false;
 }
 

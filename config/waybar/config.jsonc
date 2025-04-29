@@ -12,6 +12,7 @@
     "gtk-layer-shell": true,
     "width": 1900,
     "margin-top": 10,
+    "output": "eDP-1",
 
 
 // positions generated based on config.ctl //
@@ -64,11 +65,20 @@
     "backlight",
     "battery",
     "custom/r_end",
-        "custom/padd"
+    "custom/l_end",
+    "custom/power",
+    "custom/r_end",
+    "custom/padd"
   ],
 
 
 // sourced from modules based on config.ctl //
+"custom/power": {
+	"format": " ⏻ ",
+	"on-click": "$HOME/.config/hypr/Scripts/session.sh",
+	"tooltip": true,
+},
+
 "custom/cava": {
 	"exec": "~/.config/hypr/Scripts/cava.sh",
   "format": "{}"
@@ -125,7 +135,7 @@
 },
 
 "hyprland/window": {
-  "max-length": 25,
+  "max-length": 23,
   "format": "{}",
   "icon":true,
   "icon-size" : 18,

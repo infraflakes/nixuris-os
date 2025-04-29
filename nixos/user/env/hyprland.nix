@@ -2,7 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
 	home-manager #handling gtk and nvim
-	cool-retro-term #terminal
+	#cool-retro-term #terminal
 	ranger #file-manager
 	fastfetch #fetch
 	brightnessctl #brightness changing
@@ -18,8 +18,12 @@
 	swaylock #lockscreen
 	grim slurp swappy #screenshot
 	wlroots
+	hypridle
 	wlogout
+	eww
+	#networkmanagerapplet
 ];
+    services.blueman.enable = true;
     xdg.portal.enable = true;
     xdg.portal.extraPortals  = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr];
     programs.hyprland = {
