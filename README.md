@@ -32,6 +32,14 @@ set -Ux fish_features no-keyboard-protocols
 ---
 ### Changelogs:
 
+## Ver. 4.6.3:
+
+- Added shell.nix with zsh config!
+
+- Debloated configuration.nix!
+
+- Restructured directory!
+
 ## Ver. 4.3.12:
 
 - Alacritty is now the default terminal.
