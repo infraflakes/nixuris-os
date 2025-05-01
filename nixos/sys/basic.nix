@@ -118,6 +118,29 @@
             enableUserService = true;
     };
 };
+
+services.usbmuxd = {
+  enable = true;
+  package = pkgs.usbmuxd2;
+};
+environment.systemPackages = with pkgs; [
+    glib
+    pciutils
+    tree
+    alacritty
+    fastfetch
+    htop
+    atool
+    zip
+    unzip
+    p7zip
+    usbutils
+    nautilus
+    sushi
+    libimobiledevice
+    ifuse
+];
+
 systemd.services.avahi-daemon.enable = false;
 systemd.services.NetworkManager-wait-online.enable = false;
 systemd.services.NetworkManager-dispatcher.enable = false;

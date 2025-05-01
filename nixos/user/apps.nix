@@ -15,63 +15,17 @@
 ];
   
   programs.adb.enable = true;
-  
-  programs.nix-ld = {
-      enable = true;
-      libraries = with pkgs; [
-          # Add any missing dynamic libraries for unpackaged programs
-	        glibc
-	        libgcc
-	        libclang
-		xorg.libxcb
-      ];
-  };
-    
+     
 
       # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   bottles
-
-    #dev
-    
-    #C/C++ 
-    gcc
-    gdb
-    clang-tools
-    cmake
-    #Java
-    jdk
-    
-    #JS
-    nodejs_23
-    pnpm
-    
-    #Python
-    python3            # The Python interpreter
-    python3Packages.pip # Optional: Package installer
-    python3Packages.virtualenv 
-    
+    bottles
+    git 
     vscode code-cursor #code-editor 
     wget
     obsidian #documentation
-    git gitui #github
-
-    #system
-		glib
-    pciutils
-    tree
-    alacritty
-    fastfetch
-    htop
-    atool
-    zip
-    unzip
-    p7zip
-    usbutils
-    nautilus
-    sushi
-   
+    zsh
     # Media
     ffmpeg
     telegram-desktop
