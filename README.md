@@ -32,6 +32,12 @@ set -Ux fish_features no-keyboard-protocols
 ---
 ### Changelogs:
 
+## Ver. 4.6.5:
+
+- Fixing keybind hint list! (SUPER + H to open)
+
+- Removed obsolete keybinds!
+
 ## Ver. 4.6.3:
 
 - Added shell.nix with zsh config!
