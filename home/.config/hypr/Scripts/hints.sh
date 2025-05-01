@@ -24,31 +24,28 @@ GDK_BACKEND=$BACKEND yad \
     --timeout-indicator=bottom \
 "ESC" "close this app" "" " = " \
 "SUPER KEY (Windows Key Button)" "(SUPER KEY)" \
-" BACKSPACE" "Log Out" "Exit Immediately" \
-"Power Button" "Shutdown" "Shutdown Immediately" \
-"Home Button" "Restart" "Restart Immediately" \
+" L" "Launches Session Manager" "Rofi" \
 "" "" "" \
 " H" "Launch this keybind list" "" \
-" Enter" "Terminal" "(cool retro terminal)" \
+" Enter" "Terminal" "(alacritty)" \
 " Q" "close window" "(not kill)" \
 " F" "Fullscreen" "Toggles to full screen" \
 " W" "Toggle float" "single window" \
-" 1-10" "Switch Between Workspaces" "" \
+" 1-10" "Switch Between Workspaces" "single window" \
 " Shift 1-10" "Move Windows to Workspaces" "" \
 " ↑↓→←" "Focus Windows" "single window" \
 " CTRL ↑↓→←" "Move Windows To Directions" "single window" \
 " LMB" "Grab Windows" "single window" \
 " RMB" "Resize Windows" "single window" \
 "" "" "" \
-" Shift Q " "kills an active window" "(kill)" \
-" SHIFT R" "Reload Hyprland" "" \
-"F11" "show notifications" "(dunst)" \
-"F12" "hide all notifications" "(dunst)" \
+" Shift Q " "kills an active window" "(single window)" \
+" N" "show notifications" "(swaync)" \
+" A" "show all opening windows" "(rofi)" \
 " S" "Hidden Workspace" "Separate from original workspaces" \
-" V" "Move To Hidden Workspace" "Move window from original workspace to special workspace" \
+" ALT S" "Move To Hidden Workspace" "Move window from original workspace to special workspace" \
 "" "" "" \
 " SPACE" "Application Launcher" "(rofi-wayland)" \
-" V" "Clipboard Manager" "(cliphist + rofi)" \
+" V" "Clipboard Manager" "CTRL + DEL to delete one entry || SUPER + DEL to wipe all history" \
 " Period" "Emoji to clipboard" "(cliphist + rofi)" \
 " Shift S" "screenshot region" "(swappy)" \
 " Shift W" "Choose wallpaper" "(imagemagick + swww)" \
