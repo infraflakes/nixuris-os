@@ -1,5 +1,5 @@
 # Path to your Oh My Zsh installation.
-export ZSH="$HOME/.zsh"
+export ZSH="$HOME/.config/zsh"
 
 ZSH_THEME="mira"
 

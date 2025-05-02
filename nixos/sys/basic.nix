@@ -135,16 +135,36 @@ environment.systemPackages = with pkgs; [
     unzip
     p7zip
     usbutils
-    nautilus
-    sushi
+    #nautilus
+    #sushi
     libimobiledevice
     ifuse
 ];
 
+#Thunar
+
+programs = {
+	thunar = {
+		enable = true;
+		plugins = with pkgs.xfce; [
+  			thunar-volman
+  			thunar-archive-plugin
+		];
+	};
+	xfconf.enable = true;
+	file-roller.enable = true;
+};
+
+services = {
+	gvfs.enable = true; # Mount, trash, and other functionalities
+	tumbler.enable = true; # Thumbnail support for images
+};
+
+#Disabled systemd services
 systemd.services.avahi-daemon.enable = false;
 systemd.services.NetworkManager-wait-online.enable = false;
 systemd.services.NetworkManager-dispatcher.enable = false;
 systemd.services.firewall.enable = false;
-#systemd.services.accounts-daemon.enable = false;
+systemd.services.accounts-daemon.enable = false;
 
 }
