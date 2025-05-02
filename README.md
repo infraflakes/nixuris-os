@@ -32,6 +32,18 @@ set -Ux fish_features no-keyboard-protocols
 ---
 ### Changelogs:
 
+## Ver. 4.7.1:
+
+- Changing default File Manager to Thunar. 
+
+- Changing zsh's config location.
+
+- Optimized theming with Home manager.
+
+- Optimized configuration.nix for less redunancy.
+
+- IMV now is the default image viewer.
+
 ## Ver. 4.6.5:
 
 - Fixing keybind hint list! (SUPER + H to open)

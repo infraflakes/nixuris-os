@@ -22,10 +22,10 @@
   environment.systemPackages = with pkgs; [
     bottles
     git 
-    vscode code-cursor #code-editor 
+    vscode #code-cursor #code-editor 
     wget
     obsidian #documentation
-    zsh
+    #zsh
     # Media
     ffmpeg
     telegram-desktop
@@ -35,17 +35,16 @@
     cmus youtube-music #music player
     yt-dlp
     libreoffice-fresh
-    beatprints
+    #beatprints
     imv
     firefox
     #Others  
-    krita	
+    #krita	
     ueberzugpp
     zoom-us
     obs-studio obs-studio-plugins.wlrobs #obs wayland
-    cava cbonsai cmatrix pipes tty-clock #cli aesthetics
-    eog
+    cava #cbonsai cmatrix pipes tty-clock #cli aesthetics
+    #eog
 ];
 #services.flatpak.enable = true;
-services.gvfs.enable = true; # Mount, trash, and other functionalities
 }

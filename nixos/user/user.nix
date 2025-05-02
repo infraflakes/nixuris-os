@@ -1,8 +1,8 @@
 { config, lib, pkgs, ... }:
 {
-    users.users.irisu = {
+    users.users.nixuris = {
     isNormalUser = true;
-    description = "irisu";
+    description = "nixuris";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" "adbusers" ];
     packages = with pkgs; [];
   }; 

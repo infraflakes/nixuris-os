@@ -3,8 +3,8 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "irisu";
-  home.homeDirectory = "/home/irisu";
+  home.username = "nixuris";
+  home.homeDirectory = "/home/nixuris";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -65,11 +65,11 @@
   #
   # or
   #
-  #  /etc/profiles/per-user/irisu/etc/profile.d/hm-session-vars.sh
+  #  /etc/profiles/per-user/nixuris/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
     EDITOR = "nvim";
-    GTK_THEME = "frappeBlue";
+    #GTK_THEME = "Adwaita-dark";
   };
 programs.neovim = {
   enable = true;
@@ -83,8 +83,17 @@ programs.neovim = {
 		name = "Bibata-Modern-Ice";
 };
 	theme = {
-		package = pkgs.catppuccin-gtk;
-		name = "frappeBlue";
+    #Tokyonight-Dark
+    #package = pkgs.tokyo-night-gtk;
+		#name = "Tokyonight-Dark";
+    
+    #Catppuccin Blue
+    package = pkgs.catppuccin-gtk;
+		name = "catppuccin-frappe-blue-standard";
+		
+    #Adwaita-dark
+    #package = pkgs.gnome-themes-extra;
+		#name = "Adwaita-dark";
 };
 	iconTheme = {
 		package = pkgs.papirus-icon-theme;
