@@ -34,8 +34,6 @@ set -Ux fish_features no-keyboard-protocols
 
 ## Ver. 4.7.1:
 
-- Changing default File Manager to Thunar. 
-
 - Changing zsh's config location.
 
 - Optimized theming with Home manager.
