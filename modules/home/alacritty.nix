@@ -10,7 +10,9 @@
         };
         size = 13.0;
       };
-
+      terminal.shell = {
+        program = "/etc/profiles/per-user/nixuris/bin/fish"; # Replace with the correct path from step 1
+      };
       window = {
         opacity = 0.9;
         decorations = "full";

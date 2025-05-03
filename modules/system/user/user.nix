@@ -7,7 +7,6 @@
     packages = with pkgs; [];
   }; 
 
-    users.defaultUserShell = pkgs.fish;
     environment.variables.QT_QPA_PLATFORMTHEME = "qt5ct";
     services.xserver.excludePackages = with pkgs; [nano xterm];
 
