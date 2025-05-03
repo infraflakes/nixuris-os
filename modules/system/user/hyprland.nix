@@ -1,16 +1,12 @@
 { config, lib, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-	home-manager #handling gtk and nvim
-	#cool-retro-term #terminal
-	ranger #file-manager
-	fastfetch #fetch
 	brightnessctl #brightness changing
 	bc jq #lib for scripts
 	pavucontrol #volume control 
 	yad #display keybinding
 	waybar #panel
-	dunst libnotify #notification
+	libnotify #notification
 	swww imagemagick #wallpaper
 	rofi-wayland #instances launcher
 	swaynotificationcenter #gui for notification center
@@ -27,8 +23,8 @@
     xdg.portal.enable = true;
     xdg.portal.extraPortals  = [pkgs.xdg-desktop-portal-gtk pkgs.xdg-desktop-portal-wlr];
     programs.hyprland = {
-	enable = true;
-	xwayland.enable = true;
+	  enable = true;
+	  xwayland.enable = true;
 };
     environment.sessionVariables = {
 	#WLR_NO_HARDWARE_CURSORS ="1";

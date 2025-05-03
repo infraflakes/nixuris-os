@@ -10,6 +10,7 @@
     ./modules/home/cava.nix
     ./modules/home/fastfetch.nix
     ./modules/home/fish.nix
+    ./modules/home/ranger.nix
   ];
 
   home.stateVersion = "25.05"; # Please read the comment before changing.
