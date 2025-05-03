@@ -5,9 +5,10 @@
   # manage.
   home.username = "nixuris";
   home.homeDirectory = "/home/nixuris";
-imports = [
+  imports = [
     ./modules/home/alacritty.nix
     ./modules/home/cava.nix
+    ./modules/home/fastfetch.nix
   ];
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release

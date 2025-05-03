@@ -127,7 +127,6 @@ environment.systemPackages = with pkgs; [
     glib
     pciutils
     tree
-    fastfetch
     htop
     atool
     zip
