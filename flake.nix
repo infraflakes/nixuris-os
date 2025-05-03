@@ -22,7 +22,7 @@
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          #./nixos/hardware-configuration.nix
+          ./nixos/hardware-configuration.nix
           ./nixos/sys/basic.nix
           ./nixos/sys/nvidia.nix
           ./nixos/user/user.nix
