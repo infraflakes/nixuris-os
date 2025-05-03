@@ -9,7 +9,6 @@
 	libnotify #notification
 	swww imagemagick #wallpaper
 	rofi-wayland #instances launcher
-	swaynotificationcenter #gui for notification center
 	wl-clipboard cliphist #clipboard
 	swaylock #lockscreen
 	grim slurp swappy #screenshot
