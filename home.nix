@@ -10,6 +10,7 @@
     ./modules/home/fish.nix
     ./modules/home/ranger.nix
     ./modules/home/swaync.nix
+    ./modules/home/rofi.nix
   ];
 
   home.stateVersion = "25.05";

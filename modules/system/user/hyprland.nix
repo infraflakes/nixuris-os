@@ -8,7 +8,6 @@
 	waybar #panel
 	libnotify #notification
 	swww imagemagick #wallpaper
-	rofi-wayland #instances launcher
 	wl-clipboard cliphist #clipboard
 	swaylock #lockscreen
 	grim slurp swappy #screenshot
