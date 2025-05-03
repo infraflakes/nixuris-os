@@ -8,13 +8,13 @@
 
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-    /*"logo": {
-        "source": "~/.config/fastfetch/nix.txt",
+    "logo": {
+        "source": "~/.config/fastfetch/2b.txt",
         "padding": {
             "top": 2,
             "right": 6
         }
-    },*/
+    },
     "display": {
         "separator": " "
     },
