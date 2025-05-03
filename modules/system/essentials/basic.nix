@@ -97,7 +97,6 @@
 #      }; 
 #};
     #Shell
-    programs.fish.enable = true;    
 
     #Sound 
     security.rtkit.enable = true;
