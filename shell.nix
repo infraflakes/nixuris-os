@@ -2,10 +2,8 @@
 
 pkgs.mkShell {
   buildInputs = [
-    pkgs.zsh
 
     # Git
-    pkgs.gitui
     pkgs.git-filter-repo
 
     # Docker
@@ -49,7 +47,7 @@ shellHook = ''
     export VIRTUAL_ENV_DISABLE_PROMPT=1
   source .venv/bin/activate
   echo "Dev environment (Java, JS, C/C++, Python) is ready!"
- exec zsh
+ exec fish
  '';
  }
 
