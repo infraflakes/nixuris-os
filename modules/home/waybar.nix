@@ -343,6 +343,15 @@ tooltip label {
        {used:0.1f}GB/{total:0.1f}GB
     '';
   };
+  
+  "hyprland/window" = {
+    max-length = 23;
+    format = "{}";
+    icon = true;
+    icon-size = 18;
+    rewrite = "{\"\": \"Hyprland\"}";
+    separate-outputs = true;
+  };
 
   "hyprland/workspaces" = {
     format                = "{icon}";

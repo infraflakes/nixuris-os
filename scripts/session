@@ -8,7 +8,7 @@ case "$chosen" in
 	"Shutdown") shutdown -P now ;;
 	"Reboot") shutdown -r now ;;
 	"Logout") hyprctl dispatch exit ;;
-	"Lock") $(dirname "$0")/lockscreen ;;
+	"Lock") swaylock ;;
 esac
 
 exit
