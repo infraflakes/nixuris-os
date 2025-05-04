@@ -38,6 +38,9 @@
     zoom-us
     obs-studio obs-studio-plugins.wlrobs #obs wayland
     #cava cbonsai cmatrix pipes tty-clock #cli aesthetics
+    yad
+    imagemagick
+    wl-clipboard
 ];
 #services.flatpak.enable = true;
 }
