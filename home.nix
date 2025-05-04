@@ -14,6 +14,7 @@
     ./modules/home/nvim.nix
     ./modules/home/waybar.nix
     ./modules/home/swappy.nix
+    ./modules/home/swaylock.nix
   ];
 
   home.stateVersion = "25.05";
