@@ -13,13 +13,14 @@
     ./modules/home/rofi.nix
     ./modules/home/nvim.nix
     ./modules/home/waybar.nix
+    ./modules/home/swappy.nix
   ];
 
   home.stateVersion = "25.05";
 
  
   home.packages = [
-   
+     
   ];
 
   home.sessionPath = [ ".local/bin" ];
