@@ -5,7 +5,7 @@
     enable = true;
     settings = {
     logo = {
-      source = "~/hyprnix/resources/2b.txt";
+      source = "${config.home.homeDirectory}/hyprnix/resources/2b.txt";
       padding = { top = 2; right = 6; };
     };
     display.separator = " ";

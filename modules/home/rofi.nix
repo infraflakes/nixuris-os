@@ -11,8 +11,8 @@
     yoffset   = 0;
     cycle     = true;
     terminal  = "alacritty";
-    configPath = "~/.config/rofi/auto-config.rasi";
-    theme     = "~/.config/rofi/themes/menu.rasi";
+    configPath = "${config.home.homeDirectory}/.config/rofi/auto-config.rasi";
+    theme     = "${config.home.homeDirectory}/.config/rofi/themes/menu.rasi";
     # no extraConfig or home.file for config.rasi, we’ll inline it below
   };
 
