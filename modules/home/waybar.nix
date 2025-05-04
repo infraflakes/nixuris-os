@@ -248,6 +248,7 @@ tooltip label {
       exclusive   = true;
       passthrough = false;
       gtk-layer-shell = true;
+      reload_style_on_change = true;
       width       = 1900;
       margin-top = 10;
       output      = [ "eDP-1" ];
@@ -272,6 +273,27 @@ tooltip label {
         "backlight" "battery" "custom/r_end" "custom/l_end"
         "custom/power" "custom/r_end" "custom/padd"
       ];
+  "group/expand-3" = {
+        orientation = "horizontal";
+        drawer = {
+            transition-duration = 600;
+            children-class = "not-power";
+            transition-to-left = true;
+            click-to-reveal = true;
+        };
+        modules = [
+            "pulseaudio"
+            "pulseaudio/slider"
+        ];
+    };
+  
+  "pulseaudio/slider" = {
+        min = 5;
+        max = 100;
+        rotate = 0;
+        device = "pulseaudio";
+        scroll-step = 1;
+    };
 
   "custom/power" = {
     format   = " ⏻ ";
@@ -307,7 +329,8 @@ tooltip label {
 
   "custom/logo" = {
     format   = " ";
-    on-click = "exec ${config.home.homeDirectory}/hyprnix/scripts/swww";
+    #on-click = "exec ${config.home.homeDirectory}/hyprnix/scripts/swww";
+    on-click = "exec rofi -show drun";
   };
 
   "idle_inhibitor" = {
@@ -338,10 +361,7 @@ tooltip label {
     format-alt     = "󰾆 {percentage}%";
     max-length     = 10;
     tooltip        = true;
-    tooltip-format = ''
-      󰾆 {percentage}%\n
-       {used:0.1f}GB/{total:0.1f}GB
-    '';
+    tooltip-format = "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB";
   };
   
   "hyprland/window" = {
@@ -375,13 +395,10 @@ tooltip label {
     format-wifi       = " ";
     rotate            = 0;
     format-ethernet   = "󰈀 ";
-    tooltip-format    = ''
-      Network: <big><b>{essid}</b></big>\n
-      Signal: <b>{signalStrength}%</b>\n
-      IP: <b>{ipaddr}/{cidr}</b>
-    '';
+    tooltip-format    = "Network: <big><b>{essid}</b></big>\nSignal: <b>{signalStrength}%</b>\nIP: <b>{ipaddr}/{cidr}</b>";
     format-linked     = "󰈀 {ifname} (No IP)";
     format-disconnected = "󰖪 ";
+    format-alt = "<span foreground='#86afef'> {bandwidthDownBytes}</span> <span foreground='#86afef'> {bandwidthUpBytes}</span>";
     interval          = 2;
   };
 

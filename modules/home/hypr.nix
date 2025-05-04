@@ -55,6 +55,8 @@
       ];
       
       decoration = {
+        inactive_opacity = 0.85;
+        active_opacity = 1.0;
         rounding = 20;
       };
 
@@ -82,7 +84,6 @@
 
       animation = [
         "windows, 1, 6, default"
-        "windowsIn, 1, 6, default"
         "windowsOut, 1, 5, default"
         "windowsMove, 1, 5, default"
         "fade, 1, 10, default"
@@ -116,6 +117,7 @@
       ];
 
       "$terminal" = "alacritty";
+      "$shell" = "fish";
       
       bind = [
         "SUPER, Return, exec, $terminal"
@@ -132,7 +134,7 @@
         #
         "SUPER, Q, killactive,"
         "SUPER SHIFT, Q, exec, ~/hyprnix/scripts/killin"
-        "SUPER, T, exec, $terminal -e ranger"
+        "SUPER, T, exec, $terminal -e $shell -c ranger"
         "bind = SUPER, F, fullscreen"
         "SUPER, L, exec, ~/hyprnix/scripts/session"
         "bind = SUPER, R, exec, pkill waybar || waybar & disown"
@@ -195,7 +197,7 @@
         "float,class:^(Yad|yad)$"
         "size 800 915,class:^(Yad|yad)$"
         "float,class:^(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol)$"
-        "opacity 0.8 0.7, class:^(Alacritty)$ # Alacritty"
+        #"opacity 0.85 0.7, class:^(Alacritty)$ # Alacritty"
         "opacity 0.0 override, class:^(xwaylandvideobridge)$"
         "noanim, class:^(xwaylandvideobridge)$"
         "noinitialfocus, class:^(xwaylandvideobridge)$"
