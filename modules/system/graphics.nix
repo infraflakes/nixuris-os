@@ -1,6 +1,15 @@
 { config, lib, pkgs, ... }:
 {
-
+    #GPU
+    hardware.graphics = {
+      enable = true;
+      enable32Bit = true;
+      extraPackages = with pkgs; [libglvnd libvdpau-va-gl];
+    };
+    environment.variables = {
+		  VDPAU_DRIVER = "va_gl";
+    	LIBVA_DRIVER_NAME = "intel";
+	  };
     services.xserver.videoDrivers = [ "nvidia" ]; 
     hardware.nvidia = {
     modesetting.enable = true; #required!!

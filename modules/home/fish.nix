@@ -5,28 +5,27 @@
     functions = {
       fish_greeting = '' ''; 
       fish_prompt = ''  
-    echo
-    set_color -o 4a4b52
-    echo -n ""
-    set_color normal
-    set_color -o 8ab4f8
-    set_color -b 4a4b52
-    echo -n "  "
-    set_color normal
-    set_color -o 8ab4f8
-    set_color -b 4a4b52
-    echo -n (prompt_pwd)
-    set_color normal
-    set_color -o 4a4b52
-    echo -n ""
-    set_color normal
-    echo -n (set_color -o 8ab4f8)" ❯ "
+        echo
+        set_color -o 4a4b52
+        echo -n ""
+        set_color normal
+        set_color -o 8ab4f8
+        set_color -b 4a4b52
+        echo -n "  "
+        set_color normal
+        set_color -o 8ab4f8
+        set_color -b 4a4b52
+        echo -n (prompt_pwd)
+        set_color normal
+        set_color -o 4a4b52
+        echo -n ""
+        set_color normal
+        echo -n (set_color -o 8ab4f8)" ❯ "
       '';
     };
     shellAliases = {
       xs = "sudo nixos-rebuild switch --flake ~/hyprnix#nixos";
-      xr = "sudo nix-collect-garbage";
-      xrg = "sudo nix-collect-garbage -d";
+      xr = "sudo nix-collect-garbage -d";
       xu = "nix flake update";
       e = "nvim";
     };
