@@ -3,40 +3,25 @@
     #Bootloader
     boot = {
     	loader = {
-        	#systemd-boot.enable = true;
-        	efi.canTouchEfiVariables = true;
-        	#kernelParams = ["acpi_backlight=native"];
-		grub = {
-			enable = true;
-			device = "nodev";
-			useOSProber = true;
-			efiSupport = true;
-		};
-    	};
-	blacklistedKernelModules = [
-    		"kvm"
-    		"kvm-intel"
-   		"bridge"
-    		"macvlan"
-    		"tap"
-    		"tun"
-  	];
-};
-    #Display Manager
-    
-    #services.xserver = {
-     #  enable = true;
-       #displayManager.gdm.enable = true;
-    #};
+        efi.canTouchEfiVariables = true;
+        #kernelParams = ["acpi_backlight=native"];
+		  grub = {
+			  enable = true;
+			  device = "nodev";
+			  useOSProber = true;
+			  efiSupport = true;
+		  };
+    };
+	    blacklistedKernelModules = [ "kvm" "kvm-intel" "bridge" "macvlan" "tap" "tun"];
+  };
     
     #Network
     #hardware.bluetooth.enable =true;
     networking = {
-        hostName = "nixos";
-        networkmanager.enable = true;
-	nameservers = [ "1.1.1.1" ];
+      hostName = "nixos";
+      networkmanager.enable = true;
+	    nameservers = [ "1.1.1.1" ];
     };
-
 
     #Time zone
     time.timeZone = "Asia/Ho_Chi_Minh";
@@ -44,15 +29,27 @@
     #Tablet
     #hardware.opentabletdriver.enable = true;
     #GPU
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-    extraPackages = with pkgs; [libglvnd libvdpau-va-gl];
-};
+    hardware.graphics = {
+      enable = true;
+      enable32Bit = true;
+      extraPackages = with pkgs; [libglvnd libvdpau-va-gl];
+    };
+
+    fonts.packages = with pkgs; [
+	    noto-fonts
+	    noto-fonts-cjk-sans
+	    noto-fonts-emoji
+	    nerd-fonts.jetbrains-mono
+	    fira-code
+	    fira-code-symbols
+	    font-awesome
+      jetbrains-mono
+    ];
+
 	#Environment Variables
-	environment.variables = {
-		VDPAU_DRIVER = "va_gl";
-    		LIBVA_DRIVER_NAME = "intel";
+	  environment.variables = {
+		  VDPAU_DRIVER = "va_gl";
+    	LIBVA_DRIVER_NAME = "intel";
 	};  
      			
     #PowerManagement
@@ -122,6 +119,8 @@ services.usbmuxd = {
   enable = true;
   package = pkgs.usbmuxd2;
 };
+programs.adb.enable = true;
+
 environment.systemPackages = with pkgs; [
     glib
     pciutils
@@ -138,7 +137,6 @@ environment.systemPackages = with pkgs; [
     ifuse
     brightnessctl
     bc jq
-    libnotify
 ];
 
 services.gvfs.enable = true; # Mount, trash, and other functionalities

@@ -25,7 +25,6 @@
           ./modules/system/essentials/nvidia.nix
           ./modules/system/user/user.nix
           ./modules/system/user/apps.nix
-          ./modules/system/user/hyprland.nix
           ({ config, pkgs, ... }: {
             nix.settings.experimental-features = [ "nix-command" "flakes" ];
             system.stateVersion = "24.11";

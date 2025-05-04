@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-CONFIG="$(dirname "$0")/config"
-
-sleep 0.5s; swaylock --config ${CONFIG} & disown

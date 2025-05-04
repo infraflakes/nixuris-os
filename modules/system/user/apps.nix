@@ -4,17 +4,16 @@
     nixpkgs.config.allowUnfree = true;
 
     fonts.packages = with pkgs; [
-	noto-fonts
-	noto-fonts-cjk-sans
-	noto-fonts-emoji
-	nerd-fonts.jetbrains-mono
-	fira-code
-	fira-code-symbols
-	font-awesome
-    	jetbrains-mono
-];
+	    noto-fonts
+	    noto-fonts-cjk-sans
+	    noto-fonts-emoji
+	    nerd-fonts.jetbrains-mono
+	    fira-code
+	    fira-code-symbols
+	    font-awesome
+      jetbrains-mono
+    ];
   
-  programs.adb.enable = true;
 
   environment.systemPackages = with pkgs; [
     bottles
@@ -41,6 +40,11 @@
     yad
     imagemagick
     wl-clipboard
+    pavucontrol #volume control
+    libnotify
+    wlroots
+
+
 ];
 #services.flatpak.enable = true;
 }
