@@ -5,7 +5,6 @@
 	bc jq #lib for scripts
 	pavucontrol #volume control 
 	yad #display keybinding
-	waybar #panel
 	libnotify #notification
 	swww imagemagick #wallpaper
 	wl-clipboard cliphist #clipboard
