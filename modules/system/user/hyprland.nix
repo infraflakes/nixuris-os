@@ -9,7 +9,6 @@
 	swww imagemagick #wallpaper
 	wl-clipboard cliphist #clipboard
 	swaylock #lockscreen
-	grim slurp swappy #screenshot
 	wlroots
 	hypridle
 	wlogout
