@@ -11,6 +11,7 @@
     ./modules/home/ranger.nix
     ./modules/home/swaync.nix
     ./modules/home/rofi.nix
+    ./modules/home/nvim.nix
   ];
 
   home.stateVersion = "25.05";
@@ -27,11 +28,6 @@
     XDG_CONFIG_HOME = "$HOME/.config";
     #GTK_THEME = "Adwaita-dark";
   };
-programs.neovim = {
-  enable = true;
-  viAlias = true;
-  vimAlias = true;
-};
 
   gtk = {
 	cursorTheme = {
