@@ -12,6 +12,7 @@
     ./modules/home/swaync.nix
     ./modules/home/rofi.nix
     ./modules/home/nvim.nix
+    ./modules/home/waybar.nix
   ];
 
   home.stateVersion = "25.05";
