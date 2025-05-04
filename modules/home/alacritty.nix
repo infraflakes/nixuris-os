@@ -15,7 +15,7 @@
         args = ["-c" "fish"];
       };
       window = {
-        opacity = 0.9;
+        opacity = 0.8;
         decorations = "full";
         padding = {
           x = 15;
