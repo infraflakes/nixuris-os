@@ -7,7 +7,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, home-manager, flake-utils, ... }:
+  outputs = { self, nixpkgs, home-manager, ... }:
   let
     system = "x86_64-linux";
   in {
@@ -33,6 +33,7 @@
           home-manager.nixosModules.home-manager
           ({ config, pkgs, ... }: {
             home-manager = {
+              useGlobalPkgs    = true;
               users.nixuris = {
                 imports = [
                   ./modules/home/alacritty.nix
