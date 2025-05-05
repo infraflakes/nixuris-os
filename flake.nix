@@ -18,9 +18,9 @@
       nixos = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
-          ./modules/system/hardware-configuration.nix
-          ./modules/system/sys.nix
-          ./modules/system/graphics.nix
+          ./modules/hardware-configuration.nix
+          ./modules/sys.nix
+          ./modules/graphics.nix
           ({ config, pkgs, ... }: {
             nix.settings.experimental-features = [ "nix-command" "flakes" ];
             system.stateVersion              = "24.11";
