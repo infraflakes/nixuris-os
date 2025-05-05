@@ -1,6 +1,8 @@
 { config, lib, pkgs, ... }:
 {
-    home.packages = with pkgs; [ swww ];
+    home.packages = with pkgs; [ 
+      swww wl-clipboard pavucontrol libnotify imagemagick yad wlroots ueberzugpp bc jq brightnessctl  
+    ];
     xdg.portal = {
       enable = true;
       extraPortals = with pkgs; [
@@ -141,11 +143,11 @@
         "SUPER, W, togglefloating"
         "bind = SUPER SHIFT, W, exec, ~/hyprnix/scripts/wallselect"
         "ALT, S, exec, $terminal -e cmus"
-        "SUPER SHIFT, S, exec, ~/hyprnix/scripts/ScreenShot --swappy"
+        "SUPER SHIFT, S, exec, ~/hyprnix/scripts/scrshot --swappy"
         "SUPER, H, exec, ~/hyprnix/scripts/hints"
-        "SUPER, V, exec, ~/hyprnix/scripts/ClipManager"
+        "SUPER, V, exec, ~/hyprnix/scripts/clip"
         ",XF86Launch3, exec, rog-control-center"
-        "SUPER, Period, exec, ~/hyprnix/scripts/RofiEmoji"
+        "SUPER, Period, exec, ~/hyprnix/scripts/emoji"
         "SUPER, P, exec, $terminal -e htop"
         #Hidden workspace
         "SUPER ALT, S, movetoworkspacesilent, special"
