@@ -1,5 +1,6 @@
 { config, lib, pkgs, ... }:
 {
+    nixpkgs.config.allowUnfree = true;
     #Bootloader
     boot = {
     	loader = {
@@ -58,7 +59,8 @@
           enableUserService = true;
       };
   };
-    
+      security.pam.services.swaylock = {};
+
     #Mounting
     services.usbmuxd = {
       enable = true;
@@ -69,6 +71,7 @@
     #Tablet
     #hardware.opentabletdriver.enable = true;
     environment.systemPackages = with pkgs; [
+      git
       glib
       pciutils
       tree
@@ -79,12 +82,8 @@
       unzip
       p7zip
       usbutils
-      nautilus
-      sushi
-      libimobiledevice
-      ifuse
-      brightnessctl
-      bc jq
+      nautilus sushi
+      libimobiledevice ifuse
   ];
     #Disabled systemd services  
     systemd = {

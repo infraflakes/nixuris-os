@@ -22,7 +22,6 @@
           ./modules/system/sys.nix
           ./modules/system/graphics.nix
           ./modules/system/user.nix
-          ./modules/system/apps.nix
           ({ config, pkgs, ... }: {
             nix.settings.experimental-features = [ "nix-command" "flakes" ];
             system.stateVersion              = "24.11";
@@ -67,7 +66,23 @@
                 username       = "nixuris";
                 homeDirectory  = "/home/nixuris";
                 stateVersion   = "25.05";
-                packages       = [ pkgs.dconf ];
+                packages       = with pkgs; [ 
+                  dconf
+                  #vscode #code-cursor #code-editor 
+                  #obsidian #documentation
+    
+                  # Media
+                  firefox telegram-desktop vesktop
+                  mpv ani-cli
+                  cmus #youtube-music ffmpeg yt-dlp 
+                  imv
+                  libreoffice-fresh
+    
+                  #Others  
+                  zoom-us
+                  obs-studio obs-studio-plugins.wlrobs #obs wayland
+                  #cbonsai cmatrix pipes tty-clock #cli aesthetics
+                ];
                 sessionVariables = {
                   EDITOR          = "nvim";
                   VISUAL          = "nvim";
