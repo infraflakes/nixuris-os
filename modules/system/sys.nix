@@ -1,5 +1,9 @@
 { config, lib, pkgs, ... }:
 {
+    users.users.nixuris = {
+    isNormalUser = true;
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" "adbusers" ];
+  };
     nixpkgs.config.allowUnfree = true;
     #Bootloader
     boot = {
