@@ -21,7 +21,6 @@
           ./modules/system/hardware-configuration.nix
           ./modules/system/sys.nix
           ./modules/system/graphics.nix
-          ./modules/system/user.nix
           ({ config, pkgs, ... }: {
             nix.settings.experimental-features = [ "nix-command" "flakes" ];
             system.stateVersion              = "24.11";
