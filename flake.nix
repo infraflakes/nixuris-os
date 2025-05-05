@@ -6,13 +6,10 @@
       url                  = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    flake-utils.url = "github:numtide/flake-utils";
   };
-
   outputs = { self, nixpkgs, home-manager, flake-utils, ... }:
   let
     system = "x86_64-linux";
-    pkgs   = import nixpkgs { inherit system; config.allowUnfree = true; };
   in {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
@@ -32,15 +29,11 @@
               #hardware.opentabletdriver.enable = true;
           })
 
-          # pull in home-manager
+          # Home Manager
           home-manager.nixosModules.home-manager
-          # inline your home-manager config
           ({ config, pkgs, ... }: {
             home-manager = {
-              useGlobalPkgs    = true;
-              useUserPackages  = true;
               users.nixuris = {
-                programs.home-manager.enable = true;
                 imports = [
                   ./modules/home/alacritty.nix
                   ./modules/home/cava.nix
@@ -112,6 +105,7 @@
               };
             };
           })
+
         ];
       };
     };
