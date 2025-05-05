@@ -1,9 +1,5 @@
 { config, lib, pkgs, ... }:
 {
-    users.users.nixuris = {
-    isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" "adbusers" ];
-  };
     nixpkgs.config.allowUnfree = true;
     #Bootloader
     boot = {
@@ -23,15 +19,15 @@
     time.timeZone = "Asia/Ho_Chi_Minh";
     services.timesyncd.enable = true; 
     
-    #Bluetooth
-    #hardware.bluetooth.enable =true;
-    
     #Network
     networking = {
       hostName = "nixos";
       networkmanager.enable = true;
 	    nameservers = [ "1.1.1.1" ];
     };
+    
+    #Bluetooth
+    #hardware.bluetooth.enable =true;
     
     #Sound 
     security.rtkit.enable = true;
@@ -53,6 +49,17 @@
 	    font-awesome
       jetbrains-mono
     ];
+    
+    #Disabled systemd services  
+    systemd = {
+      services = {
+        avahi-daemon.enable = false;
+        NetworkManager-wait-online.enable = false;
+        NetworkManager-dispatcher.enable = false;
+        firewall.enable = false;
+        accounts-daemon.enable = false;
+    };
+  };
 
     #Asus Linux
     services.supergfxd.enable = false;
@@ -72,8 +79,8 @@
   };
     programs.adb.enable = true;
     services.gvfs.enable = true; # Mount, trash, and other functionalities
-    #Tablet
-    #hardware.opentabletdriver.enable = true;
+    
+    #Sys pkgs 
     environment.systemPackages = with pkgs; [
       git
       glib
@@ -89,15 +96,5 @@
       nautilus sushi
       libimobiledevice ifuse
   ];
-    #Disabled systemd services  
-    systemd = {
-      services = {
-        avahi-daemon.enable = false;
-        NetworkManager-wait-online.enable = false;
-        NetworkManager-dispatcher.enable = false;
-        firewall.enable = false;
-        accounts-daemon.enable = false;
-    };
-  };
   
 }
