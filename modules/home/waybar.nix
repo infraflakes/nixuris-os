@@ -256,8 +256,9 @@ tooltip label {
 
         modules-left = [
           "custom/padd"  "custom/padd" "custom/logo" "custom/padd"
-          "custom/l_end" "hyprland/workspaces" "custom/r_end" "custom/l_end"
-          "cpu" "memory" "custom/r_end" "custom/padd"
+          "custom/l_end" "hyprland/workspaces" "custom/r_end"
+          "custom/l_end"  "hyprland/window" "custom/r_end" 
+           "custom/padd"
         ];
 
         modules-center = [
@@ -269,6 +270,7 @@ tooltip label {
           "custom/padd"
           "custom/l_end" "network" "custom/r_end"
           #"custom/l_end" "bluetooth" "custom/r_end"
+          "custom/l_end" "cpu" "memory" "custom/r_end"
           "custom/l_end" "pulseaudio" "pulseaudio#microphone" "custom/r_end" 
           "custom/l_end" "custom/power" "custom/r_end" 
           "custom/padd"
@@ -350,7 +352,7 @@ tooltip label {
           all-outputs           = true;
           active-only           = false;
           on-click              = "activate";
-          persistent-workspaces = { "*" = 3; };
+          persistent-workspaces = { "*" = 5; };
         };
 
         "network" = {
@@ -423,6 +425,14 @@ tooltip label {
             on-scroll-down   = "shift_down";
           };
         };
+        "hyprland/window" = {
+            max-length = 70;
+            format = "{}";
+            icon = true;
+            icon-size = 18;
+            rewrite = "{\"\": \"Hyprland\"}";
+            separate-outputs = true;
+          };
 
         "custom/l_end" = { format = " "; interval = "once"; tooltip = false; };
         "custom/r_end" = { format = " "; interval = "once"; tooltip = false; };
@@ -491,15 +501,6 @@ tooltip label {
             on-scroll-up   = "brightnessctl set 1%+";
             on-scroll-down = "brightnessctl set 1%-";
             min-length     = 6;
-          };
-          
-          "hyprland/window" = {
-            max-length = 70;
-            format = "{}";
-            icon = true;
-            icon-size = 18;
-            rewrite = "{\"\": \"Hyprland\"}";
-            separate-outputs = true;
           };
 
           "custom/l_end" = { format = " "; interval = "once"; tooltip = false; };
