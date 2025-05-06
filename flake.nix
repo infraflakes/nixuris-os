@@ -65,13 +65,13 @@
                   stateVersion   = "25.05";
                   packages       = with pkgs; [ 
                     dconf
-                    #vscode #code-cursor #code-editor 
-                    #obsidian #documentation
+                    vscode #code-cursor 
+                    #obsidian
     
                     # Media
                     firefox telegram-desktop vesktop
                     mpv ani-cli
-                    cmus #youtube-music ffmpeg yt-dlp 
+                    cmus playerctl #youtube-music ffmpeg yt-dlp 
                     imv
                     libreoffice-fresh
     
