@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 {
     home.packages = with pkgs; [ 
-      swww wl-clipboard pavucontrol libnotify imagemagick yad wlroots ueberzugpp bc jq brightnessctl  
+      swww wl-clipboard pavucontrol libnotify imagemagick yad wlroots bc jq brightnessctl  
     ];
     xdg.portal = {
       enable = true;
