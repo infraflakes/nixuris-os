@@ -1,22 +1,21 @@
 ### Personal flakes for NixOS setup. (ASUS FX507ZU4)
 
-> [!CAUTION] 
+### CAUTION! 
+- flake.nix acts as a replacement for home.nix and configuration.nix!
 
-> flake.nix acts as a replacement for home.nix and configuration.nix!
+- Nix files in modules directory are systemwide configurations (asusctl, bootloader, fonts, timezones, users, etc....) and the ones in modules/home directory are my dotfiles config.
 
-> Nix files in modules directory are systemwide configurations (asusctl, bootloader, fonts, timezones, users, etc....) and the ones in modules/home directory are my dotfiles config.
+- I suggest looking into modules/home/hypr.nix to see what needs to be installed if you only want to use my hyprland dots and the scripts. 
 
-> I suggest looking into modules/home/hypr.nix to see what needs to be installed if you only want to use my hyprland dots and the scripts. 
+- Since this is a personal configuration. I recommend looking into flake.nix to change "nixuris" to your preferred username, change to your preferred channel (default is unstable), change "nixos" to your actual hostname (find it using the command 'hostname') and looking into home.packages as well as modules/sys.nix to see what packages will be installed! 
 
-> Since this is a personal configuration. I recommend looking into flake.nix to change "nixuris" to your preferred username, change to your preferred channel (default is unstable), change "nixos" to your actual hostname (find it using the command 'hostname') and looking into home.packages as well as modules/sys.nix to see what packages will be installed! 
+- Also check the graphics.nix in the same directory to modify according to your setup assuming its not NVIDIA hybrid with Intel.
 
-> Also check the graphics.nix in the same directory to modify according to your setup assuming its not NVIDIA hybrid with Intel.
+- The default shell in this setup is fish and the default editor is neovim. 
 
-> The default shell in this setup is fish and the default editor is neovim. 
+- NeoVim will use the config in resources/nvim as default so change that if you want. If you want to use my nvim config, I suggest using my shell.nix at the first neovim activation for the sake of simplicity to provide the necessary components to set it up (or provide it with any other way).
 
-> NeoVim will use the config in resources/nvim as default so change that if you want. If you want to use my nvim config, I suggest using my shell.nix at the first neovim activation for the sake of simplicity to provide the necessary components to set it up (or provide it with any other way).
-
-> If you want to use my wallpaper changing script (SUPER + SHIFT + W) I suggest you put the wallpapers in 'pics' directory or change it in scripts/wallselect to your preferred location.
+- If you want to use my wallpaper changing script (SUPER + SHIFT + W) I suggest you put the wallpapers in 'pics' directory or change it in scripts/wallselect to your preferred location.
 
 ### How to install!
 
