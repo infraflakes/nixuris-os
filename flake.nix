@@ -16,18 +16,23 @@
     devShells = {
       x86_64-linux.default = pkgs.mkShell {
         buildInputs = [
+          #Git
           pkgs.git-filter-repo
+          #Docker
           pkgs.docker
+          #C++
           pkgs.gcc
           pkgs.gdb
           pkgs.clang-tools
           pkgs.cmake
-          pkgs.ninja
+          #Java
           pkgs.jdk
-          pkgs.nodejs_23
+          #JS/Node
+          pkgs.nodejs_24
           pkgs.pnpm
           pkgs.nodePackages.eslint
           pkgs.nodePackages.prettier
+          #Python
           (pkgs.python3.withPackages (ps: with ps; [ pip virtualenv ]))
         ];
 
