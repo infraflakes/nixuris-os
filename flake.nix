@@ -18,6 +18,7 @@
         buildInputs = [
           #Git
           pkgs.git-filter-repo
+          pkgs.gitui
           #Docker
           pkgs.docker
           #C++

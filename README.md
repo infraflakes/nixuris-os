@@ -11,6 +11,8 @@
 
 - Also check the graphics.nix in the same directory to modify according to your setup assuming its not NVIDIA hybrid with Intel.
 
+- You can use the default alias 'xu' to update flake (has to be in same directory as the flake), 'xs' to rebuild system, 'xr' to remove garbages and 'xd' for nix develop (hardcoded path in modules/home/fish.nix, change it if you will. The default alias assumes the hyprnix directory has the same structure as the repo and lies in your $HOME directory).
+
 - The default shell in this setup is fish and the default editor is neovim. 
 
 - NeoVim will use the config in resources/nvim as default so change that if you want. If you want to use my nvim config, I suggest using my shell.nix at the first neovim activation for the sake of simplicity to provide the necessary components to set it up (or provide it with any other way).
@@ -43,6 +45,12 @@ Assuming you're in the same directory as flake.nix and your hostname is 'nixos'.
 
 ---
 ### Changelogs:
+
+## Ver. 5.3.8:
+
+- Nix develop! (Java, C++, Python, JS/Node, Docker)!
+
+- Removed shell.nix (you can still get it in flakeless branch).
 
 ## Ver. 5.2.6:
 
