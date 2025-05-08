@@ -27,7 +27,7 @@
       xs = "sudo nixos-rebuild switch --flake ~/hyprnix#nixos";
       xr = "sudo nix-collect-garbage -d";
       xu = "nix flake update";
-      xd = "nix develop ./hyprnix#default";
+      xd = "nix develop ~/hyprnix#default";
       e = "nvim";
     };
     interactiveShellInit = ''
