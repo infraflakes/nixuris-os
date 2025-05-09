@@ -476,6 +476,7 @@ tooltip label {
           
           "mpris" = {
             interval = 1;
+            max-length = 80;
           };
 
           "tray" = {
