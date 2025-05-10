@@ -59,7 +59,7 @@
       decoration = {
         inactive_opacity = 0.85;
         active_opacity = 1.0;
-        rounding = 20;
+        #rounding = 20;
       };
 
       input = {
@@ -127,9 +127,12 @@
         ",XF86AudioLowerVolume, exec, ~/hyprnix/scripts/volume down"
         ",XF86AudioRaiseVolume, exec, ~/hyprnix/scripts/volume up"
         ",XF86AudioMute, exec, ~/hyprnix/scripts/volume mute"
+        ",F1, exec, ~/hyprnix/scripts/volume mute"
         #bright
         ",XF86MonBrightnessDown,exec, ~/hyprnix/scripts/bright down"
         ",XF86MonBrightnessUp,exec, ~/hyprnix/scripts/bright up"
+        ",F7,exec, ~/hyprnix/scripts/bright down"
+        ",F8,exec, ~/hyprnix/scripts/bright up"
         #
         "SUPER, Space, exec, pkill rofi || rofi -show drun"
         "SUPER, N, exec, swaync-client -t -sw"
@@ -144,6 +147,7 @@
         "bind = SUPER SHIFT, W, exec, ~/hyprnix/scripts/wallselect"
         "ALT, S, exec, $terminal -e cmus"
         "SUPER SHIFT, S, exec, ~/hyprnix/scripts/scrshot --swappy"
+        ",F6, exec, ~/hyprnix/scripts/scrshot --swappy"
         "SUPER, H, exec, ~/hyprnix/scripts/hints"
         "SUPER, V, exec, ~/hyprnix/scripts/clip"
         ",XF86Launch3, exec, rog-control-center"

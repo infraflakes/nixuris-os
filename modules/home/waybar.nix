@@ -268,10 +268,8 @@ tooltip label {
 
         modules-right = [
           "custom/padd"
-          "custom/l_end" "network" "custom/r_end"
-          #"custom/l_end" "bluetooth" "custom/r_end"
-          "custom/l_end" "cpu" "memory" "custom/r_end"
           "custom/l_end" "pulseaudio" "pulseaudio#microphone" "custom/r_end" 
+          "backlight" "battery" "custom/r_end" "custom/padd"
           "custom/l_end" "custom/power" "custom/r_end" 
           "custom/padd"
         ];
@@ -320,27 +318,7 @@ tooltip label {
         };
       };
 
-        "cpu" = {
-          interval     = 1;
-          format       = "󰍛 {usage}%";
-          rotate       = 0;
-          format-alt   = "{icon0}{icon1}{icon2}{icon3}";
-          format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
-        };
-
-        "memory" = {
-          states = { c = 90; h = 60; m = 30; };
-          interval       = 1;
-          format         = "󰾆 {used}GB";
-          rotate         = 0;
-          format-m       = "󰾅 {used}GB";
-          format-h       = "󰓅 {used}GB";
-          format-c       = " {used}GB";
-          format-alt     = "󰾆 {percentage}%";
-          max-length     = 10;
-          tooltip        = true;
-          tooltip-format = "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB";
-        };
+        
   
         
 
@@ -355,27 +333,7 @@ tooltip label {
           persistent-workspaces = { "*" = 5; };
         };
 
-        "network" = {
-          tooltip           = true;
-          format-alt       = " ";
-          rotate            = 0;
-          format-ethernet   = "󰈀 ";
-          tooltip-format    = "Network: <big><b>{essid}</b></big>\nSignal: <b>{signalStrength}%</b>\nIP: <b>{ipaddr}/{cidr}</b>";
-          format-linked     = "󰈀 {ifname} (No IP)";
-          format-disconnected = "󰖪 ";
-          format-wifi = "<span foreground='#86afef'>  {essid}:  {bandwidthDownBytes}</span> <span foreground='#86afef'> {bandwidthUpBytes}</span>";
-          interval          = 2;
-        };
-
-        "bluetooth" = {
-          format               = "";
-          format-connected     = "󰂱";
-          format-disabled      = "󰂲";
-          rotate               = 0;
-          format-icons         = [ "󰥇" "󰤾" "󰤿" "󰥀" "󰥁" "󰥂" "󰥃" "󰥄" "󰥅" "󰥆" "󰥈" ];
-          tooltip-format       = "{controller_alias}\n{num_connections} connected";
-          tooltip-format-connected = "{device_enumerate}";
-        };
+        
 
         "pulseaudio" = {
           format        = "{icon} {volume}%";
@@ -433,6 +391,25 @@ tooltip label {
             rewrite = "{\"\": \"Hyprland\"}";
             separate-outputs = true;
           };
+        "backlight" = {
+            device         = "intel_backlight";
+            rotate         = 0;
+            format         = "{icon} {percent}%";
+            format-icons   = [ "" "" "" "" "" ];
+            on-scroll-up   = "brightnessctl set 1%+";
+            on-scroll-down = "brightnessctl set 1%-";
+            min-length     = 6;
+          };
+        
+        "battery" = {
+            states        = { good = 95; warning = 30; critical = 20; };
+            format        = "{icon} {capacity}%";
+            rotate        = 0;
+            format-charging = " {capacity}%";
+            format-plugged  = " {capacity}%";
+            format-alt    = "{time} {icon}";
+            format-icons  = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" ];
+          };
 
         "custom/l_end" = { format = " "; interval = "once"; tooltip = false; };
         "custom/r_end" = { format = " "; interval = "once"; tooltip = false; };
@@ -465,8 +442,12 @@ tooltip label {
           "custom/padd"
           ];
           modules-right = [
-          "custom/padd" "custom/l_end" "tray" "custom/r_end"
-          "backlight" "battery" "custom/r_end" "custom/padd"
+          "custom/padd" 
+          "custom/l_end" "tray" "custom/r_end"
+          "custom/l_end" "network" "custom/r_end"
+          #"custom/l_end" "bluetooth" "custom/r_end"
+          "custom/l_end" "cpu" "memory" "custom/r_end"
+          "custom/padd"
           ];
           
           "custom/cava" = {
@@ -484,25 +465,50 @@ tooltip label {
             rotate    = 0;
             spacing   = 5;
           };
-          "battery" = {
-            states        = { good = 95; warning = 30; critical = 20; };
-            format        = "{icon} {capacity}%";
-            rotate        = 0;
-            format-charging = " {capacity}%";
-            format-plugged  = " {capacity}%";
-            format-alt    = "{time} {icon}";
-            format-icons  = [ "󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" ];
+          "cpu" = {
+          interval     = 1;
+          format       = "󰍛 {usage}%";
+          rotate       = 0;
+          format-alt   = "{icon0}{icon1}{icon2}{icon3}";
+          format-icons = [ "▁" "▂" "▃" "▄" "▅" "▆" "▇" "█" ];
+        };
+
+          "memory" = {
+            states = { c = 90; h = 60; m = 30; };
+            interval       = 1;
+            format         = "󰾆 {used}GB";
+            rotate         = 0;
+            format-m       = "󰾅 {used}GB";
+            format-h       = "󰓅 {used}GB";
+            format-c       = " {used}GB";
+            format-alt     = "󰾆 {percentage}%";
+            max-length     = 10;
+            tooltip        = true;
+            tooltip-format = "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB";
           };
 
-          "backlight" = {
-            device         = "intel_backlight";
-            rotate         = 0;
-            format         = "{icon} {percent}%";
-            format-icons   = [ "" "" "" "" "" ];
-            on-scroll-up   = "brightnessctl set 1%+";
-            on-scroll-down = "brightnessctl set 1%-";
-            min-length     = 6;
+          "network" = {
+            tooltip           = true;
+            format-alt       = " ";
+            rotate            = 0;
+            format-ethernet   = "󰈀 ";
+            tooltip-format    = "Network: <big><b>{essid}</b></big>\nSignal: <b>{signalStrength}%</b>\nIP: <b>{ipaddr}/{cidr}</b>";
+            format-linked     = "󰈀 {ifname} (No IP)";
+            format-disconnected = "󰖪 ";
+            format-wifi = "<span foreground='#86afef'>  {essid}:  {bandwidthDownBytes}</span> <span foreground='#86afef'> {bandwidthUpBytes}</span>";
+            interval          = 2;
           };
+
+          "bluetooth" = {
+            format               = "";
+            format-connected     = "󰂱";
+            format-disabled      = "󰂲";
+            rotate               = 0;
+            format-icons         = [ "󰥇" "󰤾" "󰤿" "󰥀" "󰥁" "󰥂" "󰥃" "󰥄" "󰥅" "󰥆" "󰥈" ];
+            tooltip-format       = "{controller_alias}\n{num_connections} connected";
+            tooltip-format-connected = "{device_enumerate}";
+          };
+          
 
           "custom/l_end" = { format = " "; interval = "once"; tooltip = false; };
           "custom/r_end" = { format = " "; interval = "once"; tooltip = false; };
