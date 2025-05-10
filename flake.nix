@@ -61,6 +61,7 @@
           ./modules/hardware-configuration.nix
           ./modules/sys.nix
           ./modules/graphics.nix
+          ./modules/power.nix
           ({ config, pkgs, ... }: {
             nix.settings.experimental-features = [ "nix-command" "flakes" ];
             system.stateVersion              = "25.05";

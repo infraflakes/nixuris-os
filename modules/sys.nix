@@ -85,6 +85,7 @@
       git
       glib
       pciutils
+      powertop
       tree
       wget
       htop
