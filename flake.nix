@@ -63,7 +63,7 @@
           ./modules/graphics.nix
           ({ config, pkgs, ... }: {
             nix.settings.experimental-features = [ "nix-command" "flakes" ];
-            system.stateVersion              = "24.11";
+            system.stateVersion              = "25.05";
             users.users.nixuris = {
               isNormalUser = true;
               extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" "adbusers" ];
@@ -101,7 +101,7 @@
                 stateVersion  = "25.05";
                 packages      = with pkgs; [
                   dconf vscode firefox telegram-desktop vesktop mpv ani-cli
-                  cmus playerctl imv libreoffice-fresh zoom-us obs-studio
+                  cmus imv libreoffice-fresh zoom-us obs-studio
                   obs-studio-plugins.wlrobs
                 ];
                 sessionVariables = {
