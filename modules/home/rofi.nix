@@ -1,34 +1,38 @@
 # modules/rofi.nix
-{ config, lib, pkgs, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   programs.rofi = {
-    enable    = true;
-    package   = pkgs.rofi;
-    font      = "JetBrains Mono Nerd Font 10";
-    location  = "center";
-    xoffset   = 0;
-    yoffset   = 0;
-    cycle     = true;
-    terminal  = "alacritty";
+    enable = true;
+    package = pkgs.rofi;
+    font = "JetBrains Mono Nerd Font 10";
+    location = "center";
+    xoffset = 0;
+    yoffset = 0;
+    cycle = true;
+    terminal = "alacritty";
     configPath = "${config.home.homeDirectory}/.config/rofi/auto-config.rasi";
-    theme     = "${config.home.homeDirectory}/.config/rofi/themes/menu.rasi";
+    theme = "${config.home.homeDirectory}/.config/rofi/themes/menu.rasi";
     # no extraConfig or home.file for config.rasi, we’ll inline it below
   };
 
-  home.file = lib.mkMerge
+  home.file =
+    lib.mkMerge
     [
       # main config.rasi
       {
         ".config/rofi/config.rasi".text = ''
-    @theme "~/.config/rofi/themes/menu.rasi"
+          @theme "~/.config/rofi/themes/menu.rasi"
 
-    configuration {
-      hover-select:    true;
-      me-select-entry: "";
-      me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
-    }
-  '';
+          configuration {
+            hover-select:    true;
+            me-select-entry: "";
+            me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
+          }
+        '';
       }
 
       # themes/menu.rasi, fully inlined
@@ -309,4 +313,3 @@
       }
     ];
 }
-

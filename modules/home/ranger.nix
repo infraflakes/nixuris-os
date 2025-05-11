@@ -1,6 +1,9 @@
-{ config, pkgs, ... }:
 {
-  home.packages = with pkgs; [ ueberzugpp ];
+  config,
+  pkgs,
+  ...
+}: {
+  home.packages = with pkgs; [ueberzugpp];
   programs.ranger = {
     enable = true;
     settings = {
@@ -11,4 +14,3 @@
     };
   };
 }
-

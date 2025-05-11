@@ -1,6 +1,9 @@
-{ config, pkgs, lib, ... }:
-
-let
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   nvimConfigPath = builtins.toString ../../resources/nvim;
 in {
   programs.neovim = {
@@ -10,7 +13,7 @@ in {
   };
 
   xdg.configFile."nvim" = {
-    source =  config.lib.file.mkOutOfStoreSymlink nvimConfigPath;
+    source = config.lib.file.mkOutOfStoreSymlink nvimConfigPath;
     recursive = true;
   };
 }

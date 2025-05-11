@@ -1,5 +1,8 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.alacritty = {
     enable = true;
     settings = {
@@ -40,28 +43,27 @@
         };
 
         normal = {
-          black   = "#4f4f4f";
-          red     = "#fa6c5f";
-          green   = "#a8fe60";
-          yellow  = "#586eae";
-          blue    = "#6b82ba";
+          black = "#4f4f4f";
+          red = "#fa6c5f";
+          green = "#a8fe60";
+          yellow = "#586eae";
+          blue = "#6b82ba";
           magenta = "#6383cf";
-          cyan    = "#6383aa";
-          white   = "#eeedee";
+          cyan = "#6383aa";
+          white = "#eeedee";
         };
 
         bright = {
-          black   = "#7b7b7b";
-          red     = "#fcb6af";
-          green   = "#ceffab";
-          yellow  = "#fffecc";
-          blue    = "#b5dcfe";
+          black = "#7b7b7b";
+          red = "#fcb6af";
+          green = "#ceffab";
+          yellow = "#fffecc";
+          blue = "#b5dcfe";
           magenta = "#fb9bfe";
-          cyan    = "#dfdffd";
-          white   = "#fefffe";
+          cyan = "#dfdffd";
+          white = "#fefffe";
         };
       };
     };
   };
 }
-
