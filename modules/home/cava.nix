@@ -1,8 +1,10 @@
-{ config, pkgs, ... }:
-
 {
-  home.packages = with pkgs; [ cava ];
- home.file.".config/cava/config".text = ''
+  config,
+  pkgs,
+  ...
+}: {
+  home.packages = with pkgs; [cava];
+  home.file.".config/cava/config".text = ''
     [general]
     framerate = 120
     autosens = 1
@@ -68,4 +70,3 @@
     5 = 1
   '';
 }
-

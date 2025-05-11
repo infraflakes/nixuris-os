@@ -1,21 +1,27 @@
 {
   description = "configuration.nix + home.nix in one flake with dev shell";
   inputs = {
-    nixpkgs.url    = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url                  = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, home-manager, ... }:
-  let
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  }: let
     system = "x86_64-linux";
-    pkgs = import nixpkgs { inherit system; };
+    pkgs = import nixpkgs {inherit system;};
   in {
     # Development shell for project
     devShells = {
       x86_64-linux.default = pkgs.mkShell {
         buildInputs = [
+          #Nix formatter
+          pkgs.alejandra
           #Git
           pkgs.git-filter-repo
           pkgs.gitui
@@ -34,7 +40,7 @@
           pkgs.nodePackages.eslint
           pkgs.nodePackages.prettier
           #Python
-          (pkgs.python3.withPackages (ps: with ps; [ pip virtualenv ]))
+          (pkgs.python3.withPackages (ps: with ps; [pip virtualenv]))
         ];
 
         shellHook = ''
@@ -62,16 +68,24 @@
           ./modules/sys.nix
           ./modules/graphics.nix
           ./modules/power.nix
-          ({ config, pkgs, ... }: {
-            nix.settings.experimental-features = [ "nix-command" "flakes" ];
-            system.stateVersion              = "25.05";
+          ({
+            config,
+            pkgs,
+            ...
+          }: {
+            nix.settings.experimental-features = ["nix-command" "flakes"];
+            system.stateVersion = "25.05";
             users.users.nixuris = {
               isNormalUser = true;
-              extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" "adbusers" ];
+              extraGroups = ["networkmanager" "wheel" "libvirtd" "kvm" "adbusers"];
             };
           })
           home-manager.nixosModules.home-manager
-          ({ config, pkgs, ... }: {
+          ({
+            config,
+            pkgs,
+            ...
+          }: {
             home-manager.useGlobalPkgs = true;
             home-manager.users.nixuris = {
               imports = [
@@ -90,33 +104,52 @@
               ];
               i18n = {
                 inputMethod.enable = true;
-                inputMethod.type   = "fcitx5";
+                inputMethod.type = "fcitx5";
                 inputMethod.fcitx5 = {
                   waylandFrontend = true;
-                  addons          = with pkgs; [ fcitx5-unikey ];
+                  addons = with pkgs; [fcitx5-unikey];
                 };
               };
               home = {
-                username      = "nixuris";
+                username = "nixuris";
                 homeDirectory = "/home/nixuris";
-                stateVersion  = "25.05";
-                packages      = with pkgs; [
-                  dconf vscode firefox telegram-desktop vesktop mpv ani-cli
-                  cmus imv libreoffice-fresh zoom-us obs-studio
+                stateVersion = "25.05";
+                packages = with pkgs; [
+                  dconf
+                  vscode
+                  firefox
+                  telegram-desktop
+                  vesktop
+                  mpv
+                  ani-cli
+                  cmus
+                  imv
+                  libreoffice-fresh
+                  zoom-us
+                  obs-studio
                   obs-studio-plugins.wlrobs
                 ];
                 sessionVariables = {
-                  EDITOR         = "nvim";
-                  VISUAL         = "nvim";
+                  EDITOR = "nvim";
+                  VISUAL = "nvim";
                   XDG_CONFIG_HOME = "$HOME/.config";
                   NIXOS_OZONE_WL = "1";
                 };
               };
               gtk = {
-                enable      = true;
-                cursorTheme = { package = pkgs.bibata-cursors; name = "Bibata-Modern-Ice"; };
-                theme       = { package = pkgs.catppuccin-gtk; name = "catppuccin-frappe-blue-standard"; };
-                iconTheme   = { package = pkgs.papirus-icon-theme; name = "Papirus-Dark"; };
+                enable = true;
+                cursorTheme = {
+                  package = pkgs.bibata-cursors;
+                  name = "Bibata-Modern-Ice";
+                };
+                theme = {
+                  package = pkgs.catppuccin-gtk;
+                  name = "catppuccin-frappe-blue-standard";
+                };
+                iconTheme = {
+                  package = pkgs.papirus-icon-theme;
+                  name = "Papirus-Dark";
+                };
               };
             };
           })
@@ -125,4 +158,3 @@
     };
   };
 }
-

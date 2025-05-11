@@ -1,22 +1,36 @@
-{ config, lib, pkgs, ... }:
-let 
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   scriptsDir = builtins.toString ../../scripts;
 in {
-    home.packages = with pkgs; [ 
-      swww wl-clipboard pavucontrol libnotify imagemagick yad wlroots bc jq brightnessctl playerctl 
+  home.packages = with pkgs; [
+    swww
+    wl-clipboard
+    pavucontrol
+    libnotify
+    imagemagick
+    yad
+    wlroots
+    bc
+    jq
+    brightnessctl
+    playerctl
+  ];
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gtk
     ];
-    xdg.portal = {
-      enable = true;
-      extraPortals = with pkgs; [
-        xdg-desktop-portal-wlr
-        xdg-desktop-portal-gtk
-      ];
-    };
-    services.cliphist.enable = true;
-    services.blueman-applet.enable = true;
-    wayland.windowManager.hyprland = {
-	  enable = true;
-	  xwayland.enable = true;
+  };
+  services.cliphist.enable = true;
+  services.blueman-applet.enable = true;
+  wayland.windowManager.hyprland = {
+    enable = true;
+    xwayland.enable = true;
     settings = {
       monitor = [
         "eDP-1, highrr, 0x0, 1"
@@ -33,7 +47,7 @@ in {
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
       ];
-      
+
       env = [
         "XCURSOR_THEME,Bibata-Modern-Ice"
         "XCURSOR_SIZE,24"
@@ -57,7 +71,7 @@ in {
         #"GBM_BACKEND,nvidia-drm"
         #" __GLX_VENDOR_LIBRARY_NAME,nvidia"
       ];
-      
+
       decoration = {
         inactive_opacity = 0.85;
         active_opacity = 1.0;
@@ -75,15 +89,14 @@ in {
           disable_while_typing = true;
         };
       };
-      
+
       general = {
         gaps_in = 5;
         gaps_out = 20;
-        border_size = 4; 
-        "col.active_border" = "0xFF86AFEF"; 
+        border_size = 4;
+        "col.active_border" = "0xFF86AFEF";
         "col.inactive_border" = "0xFF1B1E25";
         layout = "dwindle";
-      
       };
 
       animation = [
@@ -95,7 +108,7 @@ in {
       ];
 
       dwindle = {
-        pseudotile = true; 
+        pseudotile = true;
         preserve_split = true;
       };
 
@@ -114,7 +127,7 @@ in {
       debug = {
         disable_logs = false;
       };
-      
+
       bindm = [
         "SUPER, mouse:272, movewindow"
         "SUPER, mouse:273, resizewindow"
@@ -122,7 +135,7 @@ in {
 
       "$terminal" = "alacritty";
       "$shell" = "fish";
-      
+
       bind = [
         "SUPER, Return, exec, $terminal"
         #volume
@@ -163,7 +176,7 @@ in {
         "SUPER, right, movefocus, r"
         "SUPER, up, movefocus, u"
         "SUPER, down, movefocus, d"
-        # Switch workspaces 
+        # Switch workspaces
         "SUPER, 1, workspace, 1"
         "SUPER, 2, workspace, 2"
         "SUPER, 3, workspace, 3"
@@ -174,7 +187,7 @@ in {
         "SUPER, 8, workspace, 8"
         "SUPER, 9, workspace, 9"
         "SUPER, 0, workspace, 10"
-        # Move active window to a workspace 
+        # Move active window to a workspace
         "SUPER SHIFT, 1, movetoworkspacesilent, 1"
         "SUPER SHIFT, 2, movetoworkspacesilent, 2"
         "SUPER SHIFT, 3, movetoworkspacesilent, 3"
@@ -185,7 +198,7 @@ in {
         "SUPER SHIFT, 8, movetoworkspacesilent, 8"
         "SUPER SHIFT, 9, movetoworkspacesilent, 9"
         "SUPER SHIFT, 0, movetoworkspacesilent, 10"
-        # Move/resize windows 
+        # Move/resize windows
         "SUPER SHIFT, right, resizeactive, 50 0"
         "SUPER SHIFT, left, resizeactive, -50 0"
         "SUPER SHIFT, up, resizeactive, 0 -50"
@@ -212,8 +225,6 @@ in {
         "maxsize 1 1, class:^(xwaylandvideobridge)$"
         "noblur, class:^(xwaylandvideobridge)$"
       ];
-
     };
-};
-
+  };
 }
