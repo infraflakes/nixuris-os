@@ -28,7 +28,7 @@
     
     #Bluetooth
     #hardware.bluetooth.enable =true;
-    
+    #services.blueman.enable = true; 
     #Sound 
     security.rtkit.enable = true;
     services.pipewire = {
