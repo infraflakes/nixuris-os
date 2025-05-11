@@ -1,5 +1,7 @@
 { config, lib, pkgs, ... }:
-{
+let 
+  scriptsDir = builtins.toString ../../scripts;
+in {
     home.packages = with pkgs; [ 
       swww wl-clipboard pavucontrol libnotify imagemagick yad wlroots bc jq brightnessctl playerctl 
     ];
@@ -124,34 +126,34 @@
       bind = [
         "SUPER, Return, exec, $terminal"
         #volume
-        ",XF86AudioLowerVolume, exec, ~/hyprnix/scripts/volume down"
-        ",XF86AudioRaiseVolume, exec, ~/hyprnix/scripts/volume up"
-        ",XF86AudioMute, exec, ~/hyprnix/scripts/volume mute"
-        ",F1, exec, ~/hyprnix/scripts/volume mute"
+        ",XF86AudioLowerVolume, exec, ${scriptsDir}/volume down"
+        ",XF86AudioRaiseVolume, exec, ${scriptsDir}/volume up"
+        ",XF86AudioMute, exec, ${scriptsDir}/volume mute"
+        ",F1, exec, ${scriptsDir}/volume mute"
         #bright
-        ",XF86MonBrightnessDown,exec, ~/hyprnix/scripts/bright down"
-        ",XF86MonBrightnessUp,exec, ~/hyprnix/scripts/bright up"
-        ",F7,exec, ~/hyprnix/scripts/bright down"
-        ",F8,exec, ~/hyprnix/scripts/bright up"
+        ",XF86MonBrightnessDown,exec, ${scriptsDir}/bright down"
+        ",XF86MonBrightnessUp,exec, ${scriptsDir}/bright up"
+        ",F7,exec, ${scriptsDir}/bright down"
+        ",F8,exec, ${scriptsDir}/bright up"
         #
         "SUPER, Space, exec, pkill rofi || rofi -show drun"
         "SUPER, N, exec, swaync-client -t -sw"
         #
         "SUPER, Q, killactive,"
-        "SUPER SHIFT, Q, exec, ~/hyprnix/scripts/killin"
+        "SUPER SHIFT, Q, exec, ${scriptsDir}/killin"
         "SUPER, T, exec, $terminal -e $shell -c ranger"
         "bind = SUPER, F, fullscreen"
-        "SUPER, L, exec, ~/hyprnix/scripts/session"
+        "SUPER, L, exec, ${scriptsDir}/session"
         "bind = SUPER, R, exec, pkill waybar || waybar & disown"
         "SUPER, W, togglefloating"
-        "bind = SUPER SHIFT, W, exec, ~/hyprnix/scripts/wallselect"
+        "bind = SUPER SHIFT, W, exec, ${scriptsDir}/wallselect"
         "ALT, S, exec, $terminal -e cmus"
-        "SUPER SHIFT, S, exec, ~/hyprnix/scripts/scrshot --swappy"
-        ",F6, exec, ~/hyprnix/scripts/scrshot --swappy"
-        "SUPER, H, exec, ~/hyprnix/scripts/hints"
-        "SUPER, V, exec, ~/hyprnix/scripts/clip"
+        "SUPER SHIFT, S, exec, ${scriptsDir}/scrshot --swappy"
+        ",F6, exec, ${scriptsDir}/scrshot --swappy"
+        "SUPER, H, exec, ${scriptsDir}/hints"
+        "SUPER, V, exec,${scriptsDir}/clip"
         ",XF86Launch3, exec, rog-control-center"
-        "SUPER, Period, exec, ~/hyprnix/scripts/emoji"
+        "SUPER, Period, exec, ${scriptsDir}/emoji"
         "SUPER, P, exec, $terminal -e htop"
         #Hidden workspace
         "SUPER ALT, S, movetoworkspacesilent, special"

@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
-{
+let 
+  scriptsDir = builtins.toString ../../scripts;
+in {
   programs.waybar = {
     enable = true;
     
@@ -276,7 +278,7 @@ tooltip label {
 
         "custom/power" = {
           format   = " ⏻ ";
-          on-click = "${config.home.homeDirectory}/hyprnix/scripts/session";
+          on-click = "${scriptsDir}/session";
           tooltip  = false;
       };
 
@@ -305,7 +307,7 @@ tooltip label {
 
         "custom/logo" = {
           format   = " ";
-          #on-click = "exec ${config.home.homeDirectory}/hyprnix/scripts/swww";
+          #on-click = "exec ${scriptsDir}/swww";
           on-click = "exec rofi -show drun";
         };
 
@@ -330,7 +332,7 @@ tooltip label {
           all-outputs           = true;
           active-only           = false;
           on-click              = "activate";
-          persistent-workspaces = { "*" = 5; };
+          persistent-workspaces = { "*" = 3; };
         };
 
         
@@ -451,7 +453,7 @@ tooltip label {
           ];
           
           "custom/cava" = {
-            exec   = "${config.home.homeDirectory}/hyprnix/scripts/cava";
+            exec   = "${scriptsDir}/cava";
             format = "{}";
           };
           

@@ -1,4 +1,7 @@
 { config, pkgs, ... }:
+let
+  rootDir = builtins.toString ../..;
+in 
 {
   programs.fish = {
     enable = true;
@@ -24,10 +27,10 @@
       '';
     };
     shellAliases = {
-      xs = "sudo nixos-rebuild switch --flake ~/hyprnix#nixos";
+      xs = "sudo nixos-rebuild switch --flake ${rootDir}#nixos";
       xr = "sudo nix-collect-garbage -d";
-      xu = "nix flake update";
-      xd = "nix develop ~/hyprnix#default";
+      xu = "nix flake update --flake ${rootDir}/flake.lock";
+      xd = "nix develop ${rootDir}#default";
       e = "nvim";
     };
     interactiveShellInit = ''

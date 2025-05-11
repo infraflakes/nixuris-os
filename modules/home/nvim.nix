@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  nvimConfigPath = "${config.home.homeDirectory}/hyprnix/resources/nvim";
+  nvimConfigPath = builtins.toString ../../resources/nvim;
 in {
   programs.neovim = {
     enable = true;
