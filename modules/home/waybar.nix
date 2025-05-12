@@ -410,7 +410,6 @@ in {
           format = "{}";
           icon = true;
           icon-size = 18;
-          rewrite = "{\"\": \"Hyprland\"}";
           separate-outputs = true;
         };
         "backlight" = {
@@ -458,7 +457,6 @@ in {
         layer = "top";
         position = "bottom";
         margin-bottom = 10;
-        #mod         = "dock";
         #width      = 43;
         #height       = 1000;
         height = 43;
