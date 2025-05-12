@@ -115,7 +115,6 @@
                 homeDirectory = "/home/nixuris";
                 stateVersion = "25.05";
                 packages = with pkgs; [
-                  dconf
                   vscode
                   firefox
                   telegram-desktop
