@@ -82,8 +82,7 @@
     package = pkgs.usbmuxd2;
   };
   programs.adb.enable = true;
-  services.gvfs.enable = true; # Mount, trash, and other functionalities
-
+  services.udisks2.enable = true;
   #Sys pkgs
   environment.systemPackages = with pkgs; [
     git
@@ -98,8 +97,6 @@
     unzip
     p7zip
     usbutils
-    nautilus
-    sushi
     libimobiledevice
     ifuse
   ];
