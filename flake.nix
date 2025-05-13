@@ -6,11 +6,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    zen-browser = {
+    url = "github:0xc000022070/zen-browser-flake";
+    inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {
     self,
     nixpkgs,
     home-manager,
+    zen-browser,
     ...
   }: let
     system = "x86_64-linux";
@@ -117,7 +122,6 @@
                 packages = with pkgs; [
                   dconf
                   vscode
-                  firefox
                   telegram-desktop
                   vesktop
                   mpv
@@ -128,7 +132,9 @@
                   zoom-us
                   obs-studio
                   obs-studio-plugins.wlrobs
+                  zen-browser.packages.x86_64-linux.twilight-official
                 ];
+                
                 sessionVariables = {
                   EDITOR = "nvim";
                   VISUAL = "nvim";
