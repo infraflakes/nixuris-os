@@ -127,6 +127,7 @@
                   mpv
                   ani-cli
                   cmus
+                  nicotine-plus
                   imv
                   libreoffice-fresh
                   zoom-us
