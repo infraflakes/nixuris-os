@@ -26,7 +26,7 @@
 
       #PLATFORM_PROFILE_ON_AC= "performance";
       PLATFORM_PROFILE_ON_AC = "balanced";
-      PLATFORM_PROFILE_ON_BAT = "quiet";
+      PLATFORM_PROFILE_ON_BAT = "balanced";
 
       WIFI_PWR_ON_AC = "off";
       WIFI_PWR_ON_BAT = "on";
