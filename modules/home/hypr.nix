@@ -42,6 +42,7 @@ in {
         "swww init"
         "waybar"
         "swaync"
+        "rog-control-center"
         "wl-clipboard-history -t"
         "fcitx5"
         "wl-paste --type text --watch cliphist store"
