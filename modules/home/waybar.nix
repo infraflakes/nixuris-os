@@ -124,7 +124,6 @@ in {
       #memory,
       #mpris,
       #network,
-      #custom-power,
       #pulseaudio,
       #custom-spotify,
       #taskbar,
@@ -303,7 +302,7 @@ in {
 
         "custom/power" = {
           format = " ⏻ ";
-          on-click = "${scriptsDir}/session";
+          on-click = "exec ${scriptsDir}/session";
           tooltip = false;
         };
 
