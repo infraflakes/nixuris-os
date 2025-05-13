@@ -107,6 +107,7 @@ in {
           animation: tb_hover 20s ease-in-out 1;
           transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
       }
+      #temperature,
       #window,
       #custom-cava,
       #custom-power,
@@ -289,17 +290,55 @@ in {
           "custom/l_end"
           "pulseaudio"
           "pulseaudio#microphone"
-          "custom/r_end"
           "backlight"
-          "battery"
           "custom/r_end"
-          "custom/padd"
+          "custom/l_end"
+          "cpu"
+          "temperature"
+          "memory"
+          "custom/r_end"
           "custom/l_end"
           "custom/power"
           "custom/r_end"
           "custom/padd"
         ];
+        "temperature" = {
+          interval = 1;
+          tooltip = true;
+          hwmon-path = [
+            "/sys/class/hwmon/hwmon4/temp1_input"
+            "/sys/class/thermal/thermal_zone5/temp"
+          ];
+          critical-threshold = 82;
+          format-critical = "{temperatureC}°C {icon}";
+          format = "{icon} {temperatureC}°C";
+          format-icons = ["󰈸"];
+        };
+        "cpu" = {
+          interval = 1;
+          format = "󰍛 {usage}%";
+          rotate = 0;
+          format-alt = "{icon0}{icon1}{icon2}{icon3}";
+          format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
+        };
 
+        "memory" = {
+          states = {
+            c = 90;
+            h = 60;
+            m = 30;
+          };
+          interval = 1;
+          format = "󰾆 {used}GB";
+          rotate = 0;
+          format-m = "󰾅 {used}GB";
+          format-h = "󰓅 {used}GB";
+          format-c = " {used}GB";
+          format-alt = "󰾆 {percentage}%";
+          max-length = 10;
+          tooltip = true;
+          tooltip-format = "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB";
+        };
         "custom/power" = {
           format = " ⏻ ";
           on-click = "exec ${scriptsDir}/session";
@@ -326,7 +365,15 @@ in {
           on-click-right = "swaync-client -d -sw";
           escape = true;
         };
-
+        "backlight" = {
+          device = "intel_backlight";
+          rotate = 0;
+          format = "{icon} {percent}%";
+          format-icons = ["" "" "" "" ""];
+          on-scroll-up = "brightnessctl set 1%+";
+          on-scroll-down = "brightnessctl set 1%-";
+          min-length = 6;
+        };
         "custom/logo" = {
           format = " ";
           #on-click = "exec ${scriptsDir}/swww";
@@ -411,29 +458,6 @@ in {
           icon-size = 18;
           separate-outputs = true;
         };
-        "backlight" = {
-          device = "intel_backlight";
-          rotate = 0;
-          format = "{icon} {percent}%";
-          format-icons = ["" "" "" "" ""];
-          on-scroll-up = "brightnessctl set 1%+";
-          on-scroll-down = "brightnessctl set 1%-";
-          min-length = 6;
-        };
-
-        "battery" = {
-          states = {
-            good = 95;
-            warning = 30;
-            critical = 20;
-          };
-          format = "{icon} {capacity}%";
-          rotate = 0;
-          format-charging = " {capacity}%";
-          format-plugged = " {capacity}%";
-          format-alt = "{time} {icon}";
-          format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁"];
-        };
 
         "custom/l_end" = {
           format = " ";
@@ -488,9 +512,9 @@ in {
           "network"
           "custom/r_end"
           #"custom/l_end" "bluetooth" "custom/r_end"
+
           "custom/l_end"
-          "cpu"
-          "memory"
+          "battery"
           "custom/r_end"
           "custom/padd"
         ];
@@ -509,31 +533,6 @@ in {
           icon-size = 18;
           rotate = 0;
           spacing = 5;
-        };
-        "cpu" = {
-          interval = 1;
-          format = "󰍛 {usage}%";
-          rotate = 0;
-          format-alt = "{icon0}{icon1}{icon2}{icon3}";
-          format-icons = ["▁" "▂" "▃" "▄" "▅" "▆" "▇" "█"];
-        };
-
-        "memory" = {
-          states = {
-            c = 90;
-            h = 60;
-            m = 30;
-          };
-          interval = 1;
-          format = "󰾆 {used}GB";
-          rotate = 0;
-          format-m = "󰾅 {used}GB";
-          format-h = "󰓅 {used}GB";
-          format-c = " {used}GB";
-          format-alt = "󰾆 {percentage}%";
-          max-length = 10;
-          tooltip = true;
-          tooltip-format = "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB";
         };
 
         "network" = {
@@ -556,6 +555,20 @@ in {
           format-icons = ["󰥇" "󰤾" "󰤿" "󰥀" "󰥁" "󰥂" "󰥃" "󰥄" "󰥅" "󰥆" "󰥈"];
           tooltip-format = "{controller_alias}\n{num_connections} connected";
           tooltip-format-connected = "{device_enumerate}";
+        };
+
+        "battery" = {
+          states = {
+            good = 95;
+            warning = 30;
+            critical = 20;
+          };
+          format = "{icon} {capacity}%";
+          rotate = 0;
+          format-charging = " {capacity}%";
+          format-plugged = " {capacity}%";
+          format-alt = "{time} {icon}";
+          format-icons = ["󰂎" "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁"];
         };
 
         "custom/l_end" = {
