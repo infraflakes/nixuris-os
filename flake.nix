@@ -26,14 +26,14 @@
           pkgs.git-filter-repo
           pkgs.gitui
           #Docker
-          pkgs.docker
+          #pkgs.docker
           #C++
           pkgs.gcc
           pkgs.gdb
           pkgs.clang-tools
           pkgs.cmake
           #Java
-          pkgs.jdk
+          #pkgs.jdk
           #JS/Node
           pkgs.nodejs_24
           pkgs.pnpm
