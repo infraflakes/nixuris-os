@@ -17,7 +17,7 @@
         efiSupport = true;
       };
     };
-    blacklistedKernelModules = ["kvm" "kvm-intel" "bridge" "macvlan" "tap" "tun"];
+    #blacklistedKernelModules = ["kvm" "kvm-intel" "bridge" "macvlan" "tap" "tun"];
   };
   #Time zone
   time.timeZone = "Asia/Ho_Chi_Minh";
