@@ -94,18 +94,20 @@
             home-manager.useGlobalPkgs = true;
             home-manager.users.nixuris = {
               imports = [
+                #Others
                 ./modules/home/alacritty.nix
                 ./modules/home/cava.nix
                 ./modules/home/fastfetch.nix
                 ./modules/home/fish.nix
-                ./modules/home/hypr.nix
                 ./modules/home/nvim.nix
                 ./modules/home/ranger.nix
-                ./modules/home/rofi.nix
                 ./modules/home/swappy.nix
-                ./modules/home/swaylock.nix
-                ./modules/home/swaync.nix
-                ./modules/home/waybar.nix
+                #Hyprland Nord config
+                ./modules/home/Nord/hypr.nix
+                ./modules/home/Nord/rofi.nix
+                ./modules/home/Nord/swaylock.nix
+                ./modules/home/Nord/swaync.nix
+                ./modules/home/Nord/waybar.nix
               ];
               i18n = {
                 inputMethod.enable = true;
