@@ -73,6 +73,7 @@
           ./modules/sys.nix
           ./modules/graphics.nix
           ./modules/power.nix
+          ./modules/virt.nix
           ({
             config,
             pkgs,
