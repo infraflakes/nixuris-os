@@ -3,9 +3,9 @@
 set -euo pipefail  # Exit on error, undefined vars, and pipe failures
 
 # Set some variables
-WALL_DIR="${HOME}/hyprnix/pics/"
+WALL_DIR="${HOME}/hyprnix/modules/home/Nord/pics/"
 CACHE_DIR="${HOME}/.cache/rofi_icons/"
-TRACKING_FILE="$HOME/hyprnix/pics/wallpaper_tracking.txt"
+TRACKING_FILE="$HOME/hyprnix/modules/home/Nord/pics/wallpaper_tracking.txt"
 
 # Cleanup function to handle script interruption
 cleanup() {
@@ -71,6 +71,4 @@ echo "$BASENAME" > "$TRACKING_FILE"
 
 # Update config files with the new wallpaper
 sed -i "s#background-image:.*#background-image: url(\"${WALL_DIR}${BASENAME}\",width);#" "$HOME/.config/rofi/themes/menu.rasi"
-sed -i "s#^image=.*#image=${WALL_DIR}${BASENAME}#" "$(dirname "$0")/config"
-
 echo "Wallpaper set successfully!"

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Define the directories for colorful and black-and-white wallpapers
-COLOR_DIR="$HOME/hyprnix/pics/"
+COLOR_DIR="$HOME/hyprnix/modules/home/Nord/pics/"
 # Define the path to the file storing the last wallpaper name
-TRACKING_FILE="$HOME/hyprnix/pics/wallpaper_tracking.txt"
+TRACKING_FILE="$HOME/hyprnix/modules/home/Nord/pics/wallpaper_tracking.txt"
 
 # Determine the current wallpaper displayed by swww
 CURRENT_WALLPAPER=$(swww query | grep "currently displaying:" | awk -F 'image: ' '{print $2}')
@@ -32,6 +32,3 @@ echo "$BASENAME" >"$TRACKING_FILE"
 # Update the rofi config with the new wallpaper
 IMAGE1="background-image: url(\"${RANDOMPICS}\",width);"
 sed -i "s#background-image:.*#${IMAGE1}#" "$HOME/.config/rofi/themes/menu.rasi"
-
-IMAGE2="image=${RANDOMPICS}"
-sed -i "s#^image=.*#${IMAGE2}#" "$HOME/.config/hypr/Scripts/config"
