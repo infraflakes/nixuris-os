@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  scriptsDir = builtins.toString ../../../scripts;
+  scriptsDir = builtins.toString ./scripts;
 in {
   home.packages = with pkgs; [
     swww
