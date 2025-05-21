@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  scriptsDir = builtins.toString ../../../scripts;
+  scriptsDir = builtins.toString ./scripts;
 in {
   programs.waybar = {
     enable = true;
