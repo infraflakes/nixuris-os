@@ -18,6 +18,7 @@ in {
     jq
     brightnessctl
     playerctl
+    python3
   ];
   xdg.portal = {
     enable = true;
@@ -99,12 +100,19 @@ in {
         layout = "dwindle";
       };
 
+      bezier = [
+        "in-out, .65, -0.01, 0, .95"
+        "woa, 0, 0, 0, 1"
+      ];
+
       animation = [
-        "windows, 1, 6, default"
-        "windowsOut, 1, 5, default"
-        "windowsMove, 1, 5, default"
+        #"windows, 1, 6, default"
+        "windows, 1, 2, woa, popin"
+        "border, 1, 10, default"
+        #"windowsOut, 1, 5, default"
+        #"windowsMove, 1, 5, default"
         "fade, 1, 10, default"
-        "workspaces, 1, 5, default, slidevert"
+        "workspaces, 1, 5, in-out, slide"
       ];
 
       dwindle = {
