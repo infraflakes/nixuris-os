@@ -37,7 +37,7 @@
             ...
           }: {
             nix.settings.experimental-features = ["nix-command" "flakes"];
-            system.stateVersion = "25.05";
+            system.stateVersion = "25.11";
             users.users.nixuris = {
               isNormalUser = true;
               extraGroups = ["networkmanager" "wheel" "libvirtd" "kvm" "adbusers"];
@@ -79,7 +79,7 @@
               home = {
                 username = "nixuris";
                 homeDirectory = "/home/nixuris";
-                stateVersion = "25.05";
+                stateVersion = "25.11";
                 packages = with pkgs; [
                   dconf
                   vscode
