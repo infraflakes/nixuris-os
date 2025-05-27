@@ -6,6 +6,7 @@
     "workbench.settings.applyToAllProfiles": [
         "editor.fontFamily"
     ],
+        "telemetry.telemetryLevel": "off",
         "window.zoomLevel": 0,
         "symbols.hidesExplorerArrows": false,
         "workbench.iconTheme": "symbols",
