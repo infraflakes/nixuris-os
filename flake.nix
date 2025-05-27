@@ -30,7 +30,7 @@
           ./modules/sys.nix
           ./modules/graphics.nix
           ./modules/power.nix
-          ./modules/virt.nix
+          #./modules/virt.nix
           ({
             config,
             pkgs,
@@ -90,7 +90,7 @@
                   cmus
                   nicotine-plus
                   imv
-                  libreoffice-fresh
+                  onlyoffice-desktopeditors
                   zoom-us
                   obs-studio
                   obs-studio-plugins.wlrobs
