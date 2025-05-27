@@ -76,13 +76,23 @@
                   addons = with pkgs; [fcitx5-unikey];
                 };
               };
+              programs.vscode = {
+                  enable = true;
+                  #package = pkgs.vscodium;
+                  profiles.default.extensions = with pkgs.vscode-extensions; [
+                    ms-python.python
+                    ms-vscode.cpptools
+                    #llvm-vs-code-extensions.vscode-clangd
+                    github.github-vscode-theme
+                    bbenoist.nix
+                  ];
+              };
               home = {
                 username = "nixuris";
                 homeDirectory = "/home/nixuris";
                 stateVersion = "25.11";
                 packages = with pkgs; [
                   dconf
-                  vscode
                   telegram-desktop
                   vesktop
                   mpv
@@ -132,7 +142,6 @@
           pkgs.alejandra
           #Git
           pkgs.git-filter-repo
-          pkgs.gitui
           #Docker
           #pkgs.docker
           #C++
