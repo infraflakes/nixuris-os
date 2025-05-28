@@ -49,11 +49,13 @@
             pkgs,
             ...
           }: {
+            home-manager.extraSpecialArgs = {inherit inputs;};
             home-manager.useGlobalPkgs = true;
             home-manager.users.nixuris = {
               imports = [
                 #Others
                 ./modules/home/alacritty.nix
+                ./modules/home/foot.nix
                 ./modules/home/cava.nix
                 ./modules/home/fastfetch.nix
                 ./modules/home/nvim.nix
@@ -77,15 +79,15 @@
                 };
               };
               programs.vscode = {
-                  enable = true;
-                  #package = pkgs.vscodium;
-                  profiles.default.extensions = with pkgs.vscode-extensions; [
-                    ms-python.python
-                    ms-vscode.cpptools
-                    #llvm-vs-code-extensions.vscode-clangd
-                    github.github-vscode-theme
-                    bbenoist.nix
-                  ];
+                enable = true;
+                #package = pkgs.vscodium;
+                profiles.default.extensions = with pkgs.vscode-extensions; [
+                  ms-python.python
+                  ms-vscode.cpptools
+                  #llvm-vs-code-extensions.vscode-clangd
+                  github.github-vscode-theme
+                  bbenoist.nix
+                ];
               };
               home = {
                 username = "nixuris";
@@ -93,17 +95,13 @@
                 stateVersion = "25.11";
                 packages = with pkgs; [
                   dconf
-                  telegram-desktop
-                  vesktop
-                  mpv
-                  ani-cli
-                  cmus
-                  nicotine-plus
+                  telegram-desktop vesktop
+                  mpv ani-cli
+                  kew easytag nicotine-plus
                   imv
                   onlyoffice-desktopeditors
                   zoom-us
-                  obs-studio
-                  obs-studio-plugins.wlrobs
+                  obs-studio obs-studio-plugins.wlrobs
                   zen-browser.packages.x86_64-linux.twilight-official
                 ];
 
