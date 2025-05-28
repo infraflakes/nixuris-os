@@ -57,7 +57,7 @@
   #Disabled systemd services
   systemd = {
     services = {
-      avahi-daemon.enable = false;
+      #avahi-daemon.enable = false;
       NetworkManager-wait-online.enable = false;
       NetworkManager-dispatcher.enable = false;
       firewall.enable = false;
