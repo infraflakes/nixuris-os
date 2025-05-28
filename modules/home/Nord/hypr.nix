@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  inputs,
   ...
 }: let
   scriptsDir = builtins.toString ./scripts;
@@ -32,11 +33,15 @@ in {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
+    plugins = with pkgs; [
+      hyprlandPlugins.hyprspace
+      #hyprlandPlugins.hyprbars
+    ];
     settings = {
       monitor = [
         "eDP-1, highrr, 0x0, 1"
         "Unknown-1, disable"
-        "desc:HP Inc. HP P22v G4 CN413632DL, 1920x1080@60, -1920x0, 1"
+        "HDMI-A, highrr, -1920x0, 1"
       ];
       exec-once = [
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
@@ -47,6 +52,7 @@ in {
         "fcitx5"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
+        "hyprctl plugin load /nix/store/hjn4qyc431qv5j81bs7lmrrc4qllppry-hyprspace-0-unstable-2025-05-09/lib/libhyprspace.so"
       ];
 
       env = [
@@ -169,12 +175,11 @@ in {
         #bright
         ",XF86MonBrightnessDown,exec, ${scriptsDir}/bright down"
         ",XF86MonBrightnessUp,exec, ${scriptsDir}/bright up"
-        ",F7,exec, ${scriptsDir}/bright down"
-        ",F8,exec, ${scriptsDir}/bright up"
         #
         "SUPER, Space, exec, pkill rofi || rofi -show drun"
         "SUPER, N, exec, swaync-client -t -sw"
         #
+        "SUPER, A, exec, hyprctl dispatch overview:toggle"
         "SUPER, Q, killactive,"
         "SUPER SHIFT, Q, exec, ${scriptsDir}/killin"
         "SUPER, T, exec, $terminal -e $shell -c ranger"
@@ -184,8 +189,8 @@ in {
         "SUPER, W, togglefloating"
         "bind = SUPER SHIFT, W, exec, ${scriptsDir}/wallselect"
         "ALT, S, exec, $terminal -e cmus"
+        "ALT, M, exec, cd ~/Music && foot -e kew list Fav.m3u"
         "SUPER SHIFT, S, exec, ${scriptsDir}/scrshot --swappy"
-        ",F6, exec, ${scriptsDir}/scrshot --swappy"
         "SUPER, H, exec, ${scriptsDir}/hints"
         "SUPER, V, exec,${scriptsDir}/clip"
         ",XF86Launch3, exec, rog-control-center"
