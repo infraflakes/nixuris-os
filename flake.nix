@@ -56,7 +56,7 @@
                 #Others
                 ./modules/home/alacritty.nix
                 ./modules/home/foot.nix
-                ./modules/home/cava.nix
+                #./modules/home/cava.nix
                 ./modules/home/fastfetch.nix
                 ./modules/home/nvim.nix
                 ./modules/home/ranger.nix
