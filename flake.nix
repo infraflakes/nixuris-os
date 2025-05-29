@@ -30,7 +30,6 @@
           ./modules/sys.nix
           ./modules/graphics.nix
           ./modules/power.nix
-          #./modules/virt.nix
           ({
             config,
             pkgs,
@@ -42,6 +41,8 @@
               isNormalUser = true;
               extraGroups = ["networkmanager" "wheel" "libvirtd" "kvm" "adbusers"];
             };
+            users.defaultUserShell = pkgs.fish;
+            programs.fish.enable = true;
           })
           home-manager.nixosModules.home-manager
           ({
@@ -95,13 +96,18 @@
                 stateVersion = "25.11";
                 packages = with pkgs; [
                   dconf
-                  telegram-desktop vesktop
-                  mpv ani-cli
-                  kew easytag nicotine-plus
+                  telegram-desktop
+                  vesktop
+                  mpv
+                  ani-cli
+                  kew
+                  easytag
+                  nicotine-plus
                   imv
                   onlyoffice-desktopeditors
                   zoom-us
-                  obs-studio obs-studio-plugins.wlrobs
+                  obs-studio
+                  obs-studio-plugins.wlrobs
                   zen-browser.packages.x86_64-linux.twilight-official
                 ];
 
