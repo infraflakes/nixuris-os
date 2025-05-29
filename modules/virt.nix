@@ -4,6 +4,9 @@
   lib,
   ...
 }:{
+
+  #sudo supergfxctl -m Vfio and detach nvidia components with virsh nodedev-detach pci_0000_01_00_1 and virsh nodedev-detach pci_0000_01_00_0 before adding to pci
+
   boot.kernelParams = [
     "intel_iommu=on"
     "iommu=pt"
