@@ -9,7 +9,7 @@
   boot = {
     loader = {
       efi.canTouchEfiVariables = true;
-      #kernelParams = ["acpi_backlight=native"];
+      #kernelParams = [ "acpi_backlight=native" ];
       grub = {
         enable = true;
         device = "nodev";
@@ -17,8 +17,10 @@
         efiSupport = true;
       };
     };
-    blacklistedKernelModules = ["kvm" "kvm-intel" "bridge" "macvlan" "tap" "tun"];
+    #blacklistedKernelModules = ["kvm" "kvm-intel" "bridge" "macvlan" "tap" "tun"];
   };
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   #Time zone
   time.timeZone = "Asia/Ho_Chi_Minh";
   services.timesyncd.enable = true;
@@ -53,7 +55,6 @@
     font-awesome
     jetbrains-mono
   ];
-
   #Disabled systemd services
   systemd = {
     services = {
@@ -61,13 +62,13 @@
       NetworkManager-wait-online.enable = false;
       NetworkManager-dispatcher.enable = false;
       firewall.enable = false;
-      accounts-daemon.enable = false;
+      #accounts-daemon.enable = false;
     };
   };
 
   #Asus Linux
-  services.supergfxd.enable = false;
-  #systemd.services.supergfxd.path = [ pkgs.pciutils ];
+  services.supergfxd.enable = true;
+  systemd.services.supergfxd.path = [ pkgs.pciutils ];
   services = {
     asusd = {
       enable = true;
@@ -101,5 +102,6 @@
     libimobiledevice
     ifuse
     jmtpfs
+    looking-glass-client
   ];
 }
