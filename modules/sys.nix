@@ -19,7 +19,7 @@
     };
     #blacklistedKernelModules = ["kvm" "kvm-intel" "bridge" "macvlan" "tap" "tun"];
   };
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  #boot.kernelPackages = pkgs.linuxPackages_latest;
 
   #Time zone
   time.timeZone = "Asia/Ho_Chi_Minh";
@@ -55,6 +55,10 @@
     font-awesome
     jetbrains-mono
   ];
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
   #Disabled systemd services
   systemd = {
     services = {
@@ -102,6 +106,6 @@
     libimobiledevice
     ifuse
     jmtpfs
-    looking-glass-client
   ];
+  programs.hyprland.enable = true;
 }
