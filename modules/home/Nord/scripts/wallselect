@@ -63,7 +63,7 @@ BASENAME=$(basename "$SELECTION")
 echo "Setting wallpaper: $BASENAME"
 
 # Set wallpaper
-swww query >/dev/null 2>&1 || swww init
+swww query >/dev/null 2>&1 || swww-daemon
 swww img "${WALL_DIR}${BASENAME}" --transition-bezier .43,1.19,1,.4 --transition-fps 144 --transition-type grow --transition-duration 2 --transition-pos 0.680,0.970
 
 # Save the current wallpaper name
