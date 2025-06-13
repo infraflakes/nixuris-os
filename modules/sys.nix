@@ -20,7 +20,19 @@
     #blacklistedKernelModules = ["kvm" "kvm-intel" "bridge" "macvlan" "tap" "tun"];
   };
   #boot.kernelPackages = pkgs.linuxPackages_latest;
-
+  
+  #ZRAM Swap
+  zramSwap.enable = true;
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 8 * 1024;
+      priority = 1;
+    }
+  ];
+  boot.kernel.sysctl = {
+    "vm.swappiness" = 10;
+  };
   #Time zone
   time.timeZone = "Asia/Ho_Chi_Minh";
   services.timesyncd.enable = true;
