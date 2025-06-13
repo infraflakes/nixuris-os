@@ -3,7 +3,9 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  grubTheme = builtins.toString ../resources/hollow-grub;
+in {
   nixpkgs.config.allowUnfree = true;
   #Bootloader
   boot = {
@@ -15,12 +17,13 @@
         device = "nodev";
         #useOSProber = true;
         efiSupport = true;
+        theme = grubTheme;
       };
     };
     #blacklistedKernelModules = ["kvm" "kvm-intel" "bridge" "macvlan" "tap" "tun"];
   };
   #boot.kernelPackages = pkgs.linuxPackages_latest;
-  
+
   #ZRAM Swap
   zramSwap.enable = true;
   swapDevices = [
@@ -84,7 +87,7 @@
 
   #Asus Linux
   services.supergfxd.enable = true;
-  systemd.services.supergfxd.path = [ pkgs.pciutils ];
+  systemd.services.supergfxd.path = [pkgs.pciutils];
   services = {
     asusd = {
       enable = true;
