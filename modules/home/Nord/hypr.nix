@@ -82,7 +82,7 @@ in {
       decoration = {
         inactive_opacity = 0.85;
         active_opacity = 1.0;
-        #rounding = 20;
+        rounding = 20;
         blur = {
           size = 5;
           passes = 3;
