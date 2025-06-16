@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  grubTheme = builtins.toString ../resources/hollow-grub;
+  grubTheme = builtins.toString ../../home/assets/hollow-grub;
 in {
   nixpkgs.config.allowUnfree = true;
   #Bootloader
@@ -121,6 +121,7 @@ in {
     libimobiledevice
     ifuse
     jmtpfs
+    home-manager
   ];
   programs.hyprland.enable = true;
 }

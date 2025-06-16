@@ -7,7 +7,7 @@
     enable = true;
     settings = {
       logo = {
-        source = builtins.toString ../../resources/2b.txt;
+        source = builtins.toString ../assets/2b.txt;
         padding = {
           top = 2;
           right = 6;

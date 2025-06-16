@@ -34,9 +34,10 @@ in {
       '';
     };
     shellAliases = {
-      xs = "sudo nixos-rebuild switch --flake ~/hyprnix#nixos";
-      xr = "sudo nix-collect-garbage -d";
       xu = "nix flake update";
+      xs = "sudo nixos-rebuild switch --flake ~/hyprnix#nixos";
+      zs = "home-manager switch --flake ~/hyprnix#nixuris@nixos";
+      xr = "sudo nix-collect-garbage -d";
       xd = "nix develop ~/hyprnix#default";
       e = "nvim";
       gpu = "__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia";

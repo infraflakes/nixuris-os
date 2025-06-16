@@ -1,4 +1,3 @@
-# modules/rofi.nix
 {
   config,
   lib,
@@ -92,7 +91,7 @@
             spacing:     10px;
             padding:     80px 60px;
             background-color: transparent;
-            background-image: url("/home/nixuris/hyprnix/modules/home/Nord/pics/distort.jpg",width);
+            background-image: url("/home/nixuris/hyprnix/home/assets/wallpapers/distort.jpg",width);
             text-color:  @foreground;
             orientation: horizontal;
             children:    [ "textbox-prompt-colon", "entry", "dummy" ];

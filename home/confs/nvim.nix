@@ -4,7 +4,7 @@
   lib,
   ...
 }: let
-  nvimConfigPath = builtins.toString ../../resources/nvim;
+  nvimConfigPath = builtins.toString ../assets/nvim;
 in {
   programs.neovim = {
     enable = true;
