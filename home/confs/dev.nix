@@ -3,6 +3,7 @@
   pkgs,
   ...
 }: {
+  home.packages = with pkgs; [git gitui];
   programs.vscode = {
     enable = true;
     #package = pkgs.vscodium;

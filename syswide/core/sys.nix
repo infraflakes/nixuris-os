@@ -6,6 +6,8 @@
 }: let
   grubTheme = builtins.toString ../../home/assets/hollow-grub;
 in {
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+  system.stateVersion = "25.11";
   nixpkgs.config.allowUnfree = true;
   #Bootloader
   boot = {
@@ -65,15 +67,8 @@ in {
     noto-fonts-cjk-sans
     noto-fonts-emoji
     nerd-fonts.jetbrains-mono
-    fira-code
-    fira-code-symbols
-    font-awesome
-    jetbrains-mono
   ];
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-  };
+  
   #Disabled systemd services
   systemd = {
     services = {
@@ -85,43 +80,11 @@ in {
     };
   };
 
-  #Asus Linux
-  services.supergfxd.enable = true;
-  systemd.services.supergfxd.path = [pkgs.pciutils];
-  services = {
-    asusd = {
-      enable = true;
-      enableUserService = true;
-    };
-  };
   security.pam.services.swaylock = {};
 
-  #Mounting
-  services.usbmuxd = {
-    enable = true;
-    package = pkgs.usbmuxd2;
-  };
-  programs.adb.enable = true;
-  services.udisks2.enable = true;
   #Sys pkgs
   environment.systemPackages = with pkgs; [
-    git
-    gitui
-    glib
-    pciutils
-    powertop
-    tree
-    wget
     htop
-    atool
-    zip
-    unzip
-    p7zip
-    usbutils
-    libimobiledevice
-    ifuse
-    jmtpfs
     home-manager
   ];
-  programs.hyprland.enable = true;
 }

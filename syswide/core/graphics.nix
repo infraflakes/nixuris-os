@@ -4,7 +4,6 @@
   pkgs,
   ...
 }: {
-  services.xserver.videoDrivers = ["nvidia"];
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
@@ -14,6 +13,7 @@
     VDPAU_DRIVER = "va_gl";
     LIBVA_DRIVER_NAME = "intel";
   };
+  services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;

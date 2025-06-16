@@ -8,15 +8,11 @@
     ./core/sys.nix
     ./core/graphics.nix
     ./core/power.nix
+    ./core/user.nix
 
+    ./runtime/display-manager.nix
+    ./runtime/asus.nix
+    ./runtime/mount.nix
     ./runtime/gaming.nix
   ];
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  system.stateVersion = "25.11";
-  users.users.nixuris = {
-    isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "libvirtd" "kvm" "adbusers"];
-  };
-  users.defaultUserShell = pkgs.fish;
-  programs.fish.enable = true;
 }
