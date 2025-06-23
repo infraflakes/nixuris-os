@@ -11,12 +11,10 @@
     sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
-      XDG_CONFIG_HOME = "$HOME/.config";
-      NIXOS_OZONE_WL = "1";
     };
   };
   imports = [
-    ./pkgs.nix
+    ./pkgs/pkgs.nix
 
     #Other apps configs
     ./confs/ime.nix
@@ -29,5 +27,6 @@
 
     #Serein Hyprland Dots
     ./serein/serein.nix
+    #./serein/quickshell/default.nix
   ];
 }
