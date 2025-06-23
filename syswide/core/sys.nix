@@ -50,8 +50,7 @@ in {
   };
 
   #Bluetooth
-  #hardware.bluetooth.enable =true;
-  #services.blueman.enable = true;
+  hardware.bluetooth.enable =true;
   #Sound
   security.rtkit.enable = true;
   services.pipewire = {
@@ -63,12 +62,8 @@ in {
   };
   #Fonts
   fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-emoji
-    nerd-fonts.jetbrains-mono
   ];
-  
+
   #Disabled systemd services
   systemd = {
     services = {
