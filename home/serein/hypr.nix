@@ -17,6 +17,7 @@ in {
     wlroots
     bc
     jq
+    glib
     brightnessctl
     playerctl
     python3
@@ -27,6 +28,10 @@ in {
       xdg-desktop-portal-gtk
       xdg-desktop-portal-hyprland
     ];
+  };
+  home.sessionVariables = {
+    XDG_CONFIG_HOME = "$HOME/.config";
+    NIXOS_OZONE_WL = "1";
   };
   services.cliphist.enable = true;
   services.blueman-applet.enable = true;
@@ -62,7 +67,6 @@ in {
         "GDK_BACKEND,wayland,x11"
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
         "QT_QPA_PLATFORM,wayland;xcb"
-        "QT_QPA_PLATFORMTHEME,qt5ct"
         "QT_QPA_PLATFORMTHEME,qt6ct"
         "QT_SCALE_FACTOR,1"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
@@ -168,6 +172,8 @@ in {
       bind = [
         "SUPER, Return, exec, $terminal"
         #volume
+        #",XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%-"
+        #",XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 2%+"
         ",XF86AudioLowerVolume, exec, ${scriptsDir}/volume down"
         ",XF86AudioRaiseVolume, exec, ${scriptsDir}/volume up"
         ",XF86AudioMute, exec, ${scriptsDir}/volume mute"
@@ -191,6 +197,7 @@ in {
         "ALT, S, exec, $terminal -e cmus"
         "ALT, M, exec, cd ~/Music && foot -e kew list Fav.m3u"
         "SUPER SHIFT, S, exec, ${scriptsDir}/scrshot --swappy"
+        "SUPER ALT, S, exec, ${scriptsDir}/scrshot --now"
         "SUPER, H, exec, ${scriptsDir}/hints"
         "SUPER, V, exec,${scriptsDir}/clip"
         ",XF86Launch3, exec, rog-control-center"

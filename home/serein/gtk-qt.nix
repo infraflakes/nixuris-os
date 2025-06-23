@@ -3,6 +3,15 @@
   pkgs,
   ...
 }: {
+  home.packages = with pkgs; [
+    papirus-icon-theme
+    qt6ct
+  ];
+  home.file.".config/qt6ct/qt6ct.conf".text = ''
+    [Appearance]
+    icon_theme=Papirus
+  '';
+  dconf.enable = true;
   gtk = {
     enable = true;
     cursorTheme = {

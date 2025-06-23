@@ -1,7 +1,11 @@
-{config, pkgs, ... }: {
-  imports = [ 
+{
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
     ./hypr.nix
-    ./gtk.nix
+    ./gtk-qt.nix
     ./fish.nix
     ./rofi.nix
     ./waybar.nix
