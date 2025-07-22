@@ -1,40 +1,72 @@
 {
-  description = "configuration.nix + home.nix in one flake with dev shell";
+  description = "Personal flake for FX507ZU4";
   inputs = {
-    nixpkgs.url    = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url                  = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    astal = {
+      url = "github:aylur/astal";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { self, nixpkgs, home-manager, ... }:
-  let
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    zen-browser,
+    astal,
+    quickshell,
+    ...
+  } @ inputs: let
     system = "x86_64-linux";
-    pkgs = import nixpkgs { inherit system; };
+    pkgs = import nixpkgs {inherit system;};
   in {
+    # NixOS configuration
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      specialArgs = {inherit inputs system;};
+      modules = [./syswide/host.nix];
+    };
+    # Home Manager
+    homeConfigurations."nixuris@nixos" = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      extraSpecialArgs = {inherit inputs;};
+      modules = [./home/home.nix];
+    };
+
     # Development shell for project
     devShells = {
       x86_64-linux.default = pkgs.mkShell {
         buildInputs = [
+          #Nix formatter
+          pkgs.alejandra
           #Git
           pkgs.git-filter-repo
-          pkgs.gitui
           #Docker
-          pkgs.docker
+          #pkgs.docker
           #C++
           pkgs.gcc
           pkgs.gdb
           pkgs.clang-tools
           pkgs.cmake
           #Java
-          pkgs.jdk
+          #pkgs.jdk
           #JS/Node
           pkgs.nodejs_24
           pkgs.pnpm
           pkgs.nodePackages.eslint
           pkgs.nodePackages.prettier
           #Python
-          (pkgs.python3.withPackages (ps: with ps; [ pip virtualenv ]))
+          (pkgs.python3.withPackages (ps: with ps; [pip virtualenv]))
         ];
 
         shellHook = ''
@@ -52,76 +84,5 @@
         '';
       };
     };
-
-    # NixOS configuration
-    nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [
-          ./modules/hardware-configuration.nix
-          ./modules/sys.nix
-          ./modules/graphics.nix
-          ({ config, pkgs, ... }: {
-            nix.settings.experimental-features = [ "nix-command" "flakes" ];
-            system.stateVersion              = "24.11";
-            users.users.nixuris = {
-              isNormalUser = true;
-              extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" "adbusers" ];
-            };
-          })
-          home-manager.nixosModules.home-manager
-          ({ config, pkgs, ... }: {
-            home-manager.useGlobalPkgs = true;
-            home-manager.users.nixuris = {
-              imports = [
-                ./modules/home/alacritty.nix
-                ./modules/home/cava.nix
-                ./modules/home/fastfetch.nix
-                ./modules/home/fish.nix
-                ./modules/home/hypr.nix
-                ./modules/home/nvim.nix
-                ./modules/home/ranger.nix
-                ./modules/home/rofi.nix
-                ./modules/home/swappy.nix
-                ./modules/home/swaylock.nix
-                ./modules/home/swaync.nix
-                ./modules/home/waybar.nix
-              ];
-              i18n = {
-                inputMethod.enable = true;
-                inputMethod.type   = "fcitx5";
-                inputMethod.fcitx5 = {
-                  waylandFrontend = true;
-                  addons          = with pkgs; [ fcitx5-unikey ];
-                };
-              };
-              home = {
-                username      = "nixuris";
-                homeDirectory = "/home/nixuris";
-                stateVersion  = "25.05";
-                packages      = with pkgs; [
-                  dconf vscode firefox telegram-desktop vesktop mpv ani-cli
-                  cmus playerctl imv libreoffice-fresh zoom-us obs-studio
-                  obs-studio-plugins.wlrobs
-                ];
-                sessionVariables = {
-                  EDITOR         = "nvim";
-                  VISUAL         = "nvim";
-                  XDG_CONFIG_HOME = "$HOME/.config";
-                  NIXOS_OZONE_WL = "1";
-                };
-              };
-              gtk = {
-                enable      = true;
-                cursorTheme = { package = pkgs.bibata-cursors; name = "Bibata-Modern-Ice"; };
-                theme       = { package = pkgs.catppuccin-gtk; name = "catppuccin-frappe-blue-standard"; };
-                iconTheme   = { package = pkgs.papirus-icon-theme; name = "Papirus-Dark"; };
-              };
-            };
-          })
-        ];
-      };
-    };
   };
 }
-

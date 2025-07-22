@@ -1,47 +1,40 @@
 ### Personal flakes for NixOS setup. (ASUS FX507ZU4)
 
 ### CAUTION! 
-- flake.nix acts as a replacement for home.nix and configuration.nix!
 
-- Nix files in modules directory are systemwide configurations (asusctl, bootloader, fonts, timezones, users, etc....) and the ones in modules/home directory are my dotfiles config.
-
-- I suggest looking into modules/home/hypr.nix to see what needs to be installed if you only want to use my hyprland dots and the scripts. 
-
-- Since this is a personal configuration. I recommend looking into flake.nix to change "nixuris" to your preferred username, change to your preferred channel (default is unstable), change "nixos" to your actual hostname (find it using the command 'hostname') and looking into home.packages as well as modules/sys.nix to see what packages will be installed! 
-
-- Also check the graphics.nix in the same directory to modify according to your setup assuming its not NVIDIA hybrid with Intel.
-
-- You can use the default alias 'xu' to update flake (has to be in same directory as the flake), 'xs' to rebuild system, 'xr' to remove garbages and 'xd' for nix develop (hardcoded path in modules/home/fish.nix, change it if you will. The default alias assumes the hyprnix directory has the same structure as the repo and lies in your $HOME directory).
-
-- The default shell in this setup is fish and the default editor is neovim. 
-
-- NeoVim will use the config in resources/nvim as default so change that if you want. If you want to use my nvim config, I suggest using my shell.nix at the first neovim activation for the sake of simplicity to provide the necessary components to set it up (or provide it with any other way).
-
-- If you want to use my wallpaper changing script (SUPER + SHIFT + W) I suggest you put the wallpapers in 'pics' directory or change it in scripts/wallselect to your preferred location.
+- Nix files in syswide directory are system-wide configurations (asusctl, bootloader, fonts, timezones, users, etc....) and the ones in home directory are home manager explicit options.
 
 ### How to install!
 
-Clone my repo!
+Clone the repo:
 
 ```
 git clone https://github.com/nixuris/hyprnix.git
 ```
 
-Copy your hardware-configuration in!
+Copy hardware-configuration in:
 
 ```
 cd hyprnix
-rm modules/hardware-configuration.nix
-sudo cp /etc/nixos/hardware-configuration.nix modules
+rm syswide/core/hardware-configuration.nix
+sudo cp /etc/nixos/hardware-configuration.nix syswide/core
 ```
 
-You may edit the configurations as stated in the caution and build it!
+Apply changes system wide:
 
 ```
 sudo nixos-rebuild switch --flake .#nixos
 ```
 
-Assuming you're in the same directory as flake.nix and your hostname is 'nixos'.
+Assuming in the same directory as flake.nix and your hostname is 'nixos'.
+
+Then set up home manager:
+
+```
+home-manager switch --flake ~/hyprnix#nixuris@nixos
+```
+
+Assuming username is 'nixuris'.
 
 ---
 ### Changelogs:
@@ -50,7 +43,7 @@ Assuming you're in the same directory as flake.nix and your hostname is 'nixos'.
 
 - Nix develop! (Java, C++, Python, JS/Node, Docker)!
 
-- Removed shell.nix (you can still get it in flakeless branch).
+- Removed shell.nix (Still available in flakeless branch).
 
 ## Ver. 5.2.6:
 
