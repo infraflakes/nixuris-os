@@ -5,7 +5,7 @@
 }: {
   imports = [
     ./hypr.nix
-    ./gtk-qt.nix
+    ./gtk.nix
     ./fish.nix
     ./rofi.nix
     ./waybar.nix

@@ -27,6 +27,5 @@
 
     #Serein Hyprland Dots
     ./serein/serein.nix
-    #./serein/quickshell/default.nix
   ];
 }
