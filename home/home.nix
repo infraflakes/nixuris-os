@@ -11,7 +11,7 @@
   };
   imports = [
     ./pkgs/pkgs.nix
-
+    ./pkgs/hide-desktop-entry.nix
     #Other apps configs
     ./confs/ime.nix
     ./confs/dev.nix
