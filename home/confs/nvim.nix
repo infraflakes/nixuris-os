@@ -3,17 +3,13 @@
   pkgs,
   lib,
   ...
-}: let
-  nvimConfigPath = builtins.toString ../assets/nvim;
-in {
+}: {
+  home.packages = with pkgs; [ fzf ripgrep ];
   programs.neovim = {
     enable = true;
     viAlias = true;
     vimAlias = true;
   };
 
-  xdg.configFile."nvim" = {
-    source = config.lib.file.mkOutOfStoreSymlink nvimConfigPath;
-    recursive = true;
-  };
+  home.file.".config/nvim".source = ./config/nvim;
 }

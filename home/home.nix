@@ -19,8 +19,8 @@
     #Other apps configs
     ./confs/ime.nix
     ./confs/dev.nix
-    ./confs/alacritty.nix
-    ./confs/foot.nix
+    ./confs/kitty.nix
+    ./confs/fish.nix
     ./confs/fastfetch.nix
     ./confs/nvim.nix
     ./confs/ranger.nix

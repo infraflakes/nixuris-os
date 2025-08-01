@@ -2,14 +2,18 @@
   config,
   pkgs,
   ...
-}: let
-  scriptsDir = builtins.toString ./scripts;
-in {
+}: {
   home.packages = with pkgs; [zoxide];
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
   };
+  home.file.".config/fish/conf.d/npm.fish".text = ''
+  set -gx NPM_GLOBAL_BIN "$HOME/.local/bin"
+if not string match -q -- $NPM_GLOBAL_BIN $PATH
+  set -gx PATH "$NPM_GLOBAL_BIN" $PATH
+end
+  '';
   programs.fish = {
     enable = true;
     functions = {
@@ -39,13 +43,18 @@ in {
       zs = "home-manager switch --flake ~/hyprnix#nixuris@nixos";
       xr = "sudo nix-collect-garbage -d";
       xd = "nix develop ~/hyprnix#default";
+      gcs = "git clone --depth=1";
       e = "nvim";
-      gpu = "__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia";
+      se = "sudo -E -s nvim";
+      nvidia-gpu = "__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia";
+
     };
     interactiveShellInit = ''
-      ${scriptsDir}/sttt scanline --scanline-reverse true -d 0.5
       fastfetch
-
+      set username (whoami)
+      echo "				Welcome back, $username!"
+      fish_add_path .local/bin
+      fish_add_path .cargo/bin
     '';
     shellInit = ''
       set -g fish_color_normal ccd0d9 --bold
