@@ -10,12 +10,8 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    astal = {
-      url = "github:aylur/astal";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+    niri = {
+      url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -24,8 +20,7 @@
     nixpkgs,
     home-manager,
     zen-browser,
-    astal,
-    quickshell,
+    niri,
     ...
   } @ inputs: let
     system = "x86_64-linux";
