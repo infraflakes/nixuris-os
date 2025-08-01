@@ -11,6 +11,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
+      DISPLAY = ":0";
     };
   };
   imports = [

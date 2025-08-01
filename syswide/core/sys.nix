@@ -50,7 +50,7 @@ in {
   };
 
   #Bluetooth
-  hardware.bluetooth.enable =true;
+  hardware.bluetooth.enable = true;
   #Sound
   security.rtkit.enable = true;
   services.pipewire = {
@@ -82,5 +82,5 @@ in {
     htop
     home-manager
   ];
-   services.flatpak.enable = true;
+  services.flatpak.enable = true;
 }

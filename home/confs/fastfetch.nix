@@ -27,7 +27,7 @@
           key = "  distro ";
           keyColor = "33";
         }
-	{
+        {
           type = "kernel";
           key = "  kernel ";
           keyColor = "33";

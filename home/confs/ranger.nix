@@ -26,7 +26,7 @@
       c = "console compress%space";
     };
   };
-  home.file.".config/ranger/new.sh".source = ./config/ranger/new.sh; 
+  home.file.".config/ranger/new.sh".source = ./config/ranger/new.sh;
   home.file.".config/ranger/rifle.conf".source = ./config/ranger/rifle.conf;
   home.file.".config/ranger/commands.py".text = ''
     import os

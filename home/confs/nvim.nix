@@ -4,7 +4,7 @@
   lib,
   ...
 }: {
-  home.packages = with pkgs; [ fzf ripgrep ];
+  home.packages = with pkgs; [fzf ripgrep];
   programs.neovim = {
     enable = true;
     viAlias = true;
