@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
-#This script requires imagemagick, please add it via systempkgs
-set -euo pipefail  # Exit on error, undefined vars, and pipe failures
 
 # Set some variables
-WALL_DIR="${HOME}/hyprnix/home/assets/wallpapers/"
+WALL_DIR="${HOME}/wallpapers/"
 CACHE_DIR="${HOME}/.cache/rofi_icons/"
-TRACKING_FILE="$HOME/hyprnix/home/assets/wallpapers/wallpaper_tracking.txt"
-
+CONFIG_DIR="${HOME}/.config/rofi/"
 # Cleanup function to handle script interruption
 cleanup() {
   echo "Wallpaper selection cancelled."
@@ -22,14 +19,31 @@ command -v swww >/dev/null 2>&1 || { echo "Error: swww required but not installe
 command -v rofi >/dev/null 2>&1 || { echo "Error: rofi required but not installed."; exit 1; }
 
 # Calculate monitor resolution and icon size
-monitor_res=$(hyprctl monitors | grep -A2 Monitor | head -n 2 | awk '{print $1}' | grep -oE '^[0-9]+')
-icon_size=$(echo "scale=0; $monitor_res * 24 / $(echo "scale=2; $monitor_res / 24" | bc | xargs printf "%.0f") / 2" | bc)
 
-# Set rofi command with x11 flag
-ROFI_EXECUTE="rofi -x11 -dmenu -theme ${HOME}/.config/rofi/wallselect.rasi -theme-str 'element-icon{size:${icon_size}px;border-radius:0px;} window{width:80%;height:75%;} listview{lines:4;columns:4;}'"
+monitor_res=$(niri msg outputs | grep "Logical size" | awk '{print $3}')
+monitor_width=$(echo "$monitor_res" | cut -d'x' -f1)
+monitor_scale=$(niri msg outputs | grep "Scale:" | awk '{print $2}')
 
-# Create cache dir if not exists
-mkdir -p "${CACHE_DIR}"
+[ -z "$monitor_width" ] && monitor_width=1920
+[ -z "$monitor_scale" ] && monitor_scale=1
+
+# Saner math:
+
+icon_size=$(( monitor_width / 12 ))
+
+
+# Safety clamps:
+if [ "$icon_size" -lt 48 ]; then
+    icon_size=48
+elif [ "$icon_size" -gt 256 ]; then
+    icon_size=256
+fi
+
+ROFI_OVERRIDE="element-icon{size:${icon_size}px;border-radius:0px;}
+window{width:80%;height:80%;}
+listview{spacing:10px;}"
+
+ROFI_EXECUTE="rofi -dmenu -theme ${HOME}/.config/rofi/wall.rasi -theme-str '${ROFI_OVERRIDE}'"
 
 # Count number of wallpapers
 wallpaper_count=$(find "${WALL_DIR}" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | wc -l)
@@ -63,12 +77,12 @@ BASENAME=$(basename "$SELECTION")
 echo "Setting wallpaper: $BASENAME"
 
 # Set wallpaper
-swww query >/dev/null 2>&1 || swww-daemon
+swww query >/dev/null 2>&1 || swww init
 swww img "${WALL_DIR}${BASENAME}" --transition-bezier .43,1.19,1,.4 --transition-fps 144 --transition-type grow --transition-duration 2 --transition-pos 0.680,0.970
 
 # Save the current wallpaper name
-echo "$BASENAME" > "$TRACKING_FILE"
+echo "$BASENAME" > "$WALL_DIR/wallpaper_tracking.txt"
 
 # Update config files with the new wallpaper
-sed -i "s#background-image:.*#background-image: url(\"${WALL_DIR}${BASENAME}\",width);#" "$HOME/.config/rofi/themes/menu.rasi"
+sed -i "s#background-image:.*#background-image: url(\"${WALL_DIR}${BASENAME}\",width);#" "${CONFIG_DIR}/themes/menu.rasi"
 echo "Wallpaper set successfully!"

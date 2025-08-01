@@ -6,6 +6,7 @@
   ...
 }: let
   scriptsDir = builtins.toString ./scripts;
+  rofiScriptsDir = builtins.toString ../shared/config/rofi/scripts;
 in {
   home.packages = with pkgs; [
     swww
@@ -166,7 +167,7 @@ in {
         "SUPER, mouse:273, resizewindow"
       ];
 
-      "$terminal" = "alacritty";
+      "$terminal" = "kitty";
       "$shell" = "fish";
 
       bind = [
@@ -190,18 +191,17 @@ in {
         "SUPER SHIFT, Q, exec, ${scriptsDir}/killin"
         "SUPER, T, exec, $terminal -e $shell -c ranger"
         "bind = SUPER, F, fullscreen"
-        "SUPER, L, exec, ${scriptsDir}/session"
+        "SUPER, L, exec, ${rofiScriptsDir}/powermenu"
         "bind = SUPER, R, exec, pkill waybar || waybar & disown"
         "SUPER, W, togglefloating"
-        "bind = SUPER SHIFT, W, exec, ${scriptsDir}/wallselect"
-        "ALT, S, exec, $terminal -e cmus"
-        "ALT, M, exec, cd ~/Music && foot -e kew list Fav.m3u"
+        "bind = SUPER SHIFT, W, exec, ${rofiScriptsDir}/wallselect-hypr"
+        "SUPER, M, exec, ${rofiScriptsDir}/mpd"
         "SUPER SHIFT, S, exec, ${scriptsDir}/scrshot --swappy"
         "SUPER ALT, S, exec, ${scriptsDir}/scrshot --now"
         "SUPER, H, exec, ${scriptsDir}/hints"
-        "SUPER, V, exec,${scriptsDir}/clip"
+        "SUPER, V, exec, ${rofiScriptsDir}/clip"
         ",XF86Launch3, exec, rog-control-center"
-        "SUPER, Period, exec, ${scriptsDir}/emoji"
+        "SUPER, Period, exec, ${rofiScriptsDir}/emoji"
         "SUPER, P, exec, $terminal -e htop"
         #Hidden workspace
         "SUPER ALT, S, movetoworkspacesilent, special"
