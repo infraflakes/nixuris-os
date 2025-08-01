@@ -81,6 +81,7 @@ in {
   environment.systemPackages = with pkgs; [
     htop
     home-manager
+    gcc
   ];
   services.flatpak.enable = true;
 }
