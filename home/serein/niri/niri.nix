@@ -11,10 +11,7 @@
     pavucontrol
     libnotify
     glib
-    imagemagick
     brightnessctl
-    playerctl
-    xwayland-satellite
   ];
   services.cliphist.enable = true;
   services.blueman-applet.enable = true;

@@ -6,6 +6,7 @@
   imports = [
     # Niri specifics
     ./niri/niri.nix
+    ./niri/xwayland.nix
     ./niri/mako.nix
     # Shared between WMs
     ./shared/gtk.nix

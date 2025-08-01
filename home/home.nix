@@ -8,11 +8,6 @@
     username = "nixuris";
     homeDirectory = "/home/nixuris";
     stateVersion = "25.11";
-    sessionVariables = {
-      EDITOR = "nvim";
-      VISUAL = "nvim";
-      DISPLAY = ":0";
-    };
   };
   imports = [
     ./pkgs/pkgs.nix

@@ -4,7 +4,13 @@
   lib,
   ...
 }: {
-  home.packages = with pkgs; [fzf ripgrep];
+  home = {
+		packages = with pkgs; [fzf ripgrep];
+		sessionVariables = {
+      EDITOR = "nvim";
+      VISUAL = "nvim";
+    };
+	};
   programs.neovim = {
     enable = true;
     viAlias = true;
