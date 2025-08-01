@@ -7,7 +7,7 @@
     enable = true;
     settings = {
       logo = {
-        source = builtins.toString ../assets/2b.txt;
+        source = builtins.toString ./config/fastfetch/2b.txt;
         padding = {
           top = 2;
           right = 6;
@@ -24,65 +24,37 @@
         "break"
         {
           type = "os";
-          key = " ";
+          key = "  distro ";
+          keyColor = "33";
+        }
+	{
+          type = "kernel";
+          key = "  kernel ";
           keyColor = "33";
         }
         {
           type = "uptime";
-          key = " ├  ";
-          keyColor = "33";
-        }
-        {
-          type = "kernel";
-          key = " ├  ";
+          key = "  uptime ";
           keyColor = "33";
         }
         {
           type = "memory";
-          key = " ├  ";
+          key = "  memory ";
           keyColor = "33";
         }
         {
           type = "disk";
-          key = " ├ 󰋊 ";
-          keyColor = "33";
-        }
-        {
-          type = "cpu";
-          format = "{1} @ {7}";
-          key = " ├  ";
-          keyColor = "33";
-        }
-        {
-          type = "gpu";
-          format = "{1} {2}";
-          key = " ├ 󰢮 ";
+          key = "󰋊  disk   ";
           keyColor = "33";
         }
         {
           type = "packages";
-          key = " ";
+          key = "  pkgs   ";
           keyColor = "33";
         }
-        {
-          type = "shell";
-          key = " ├  ";
-          keyColor = "33";
-        }
-        {
-          type = "terminal";
-          key = " ├  ";
-          keyColor = "33";
-        }
-        {
-          type = "wm";
-          key = " ├  ";
-          keyColor = "33";
-        }
-        "break"
         {
           type = "media";
-          key = "󰝚 ";
+          key = "󰝚  media  ";
           keyColor = "33";
         }
         "break"

@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+# Current Theme
+dir="$HOME/.config/rofi/"
+theme='power'
+
+# CMDs
+uptime="`uptime -p | sed -e 's/up //g'`"
+host=`hostnamectl hostname`
+
+# Options
+shutdown=' Shutdown'
+reboot=' Reboot'
+lock=' Lock'
+logout='󰍃 Logout'
+
+# Rofi CMD
+rofi_cmd() {
+	rofi -dmenu \
+		-p "$host" \
+		-mesg "Uptime: $uptime" \
+		-theme ${dir}/${theme}.rasi
+}
+
+# Pass variables to rofi dmenu
+run_rofi() {
+	echo -e "$lock\n$logout\n$reboot\n$shutdown" | rofi_cmd
+}
+
+# Actions
+chosen="$(run_rofi)"
+case ${chosen} in
+    $shutdown)
+		shutdown -P now
+        ;;
+    $reboot)
+		reboot
+        ;;
+    $lock)
+		swaylock	
+        ;;
+    $logout)
+		run_cmd --logout
+        ;;
+esac

@@ -82,4 +82,5 @@ in {
     htop
     home-manager
   ];
+   services.flatpak.enable = true;
 }

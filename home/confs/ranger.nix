@@ -11,12 +11,23 @@
   programs.ranger = {
     enable = true;
     settings = {
-      preview_images_method = "ueberzug";
+      preview_images_method = "kitty";
+      draw_borders = true;
     };
     mappings = {
-      DD = "shell mv %s ~/.local/share/Trash/files/";
+      d = "shell mv %s ~/.local/share/Trash/files/";
+      gc = "cd ~/.config";
+      gt = "cd ~/.local/share/Trash/files";
+      r = "rename_append";
+      a = "console shell ~/.config/ranger/new.sh%space";
+      DD = "delete";
+      x = "cut";
+      e = "shell atool -x %f";
+      c = "console compress%space";
     };
   };
+  home.file.".config/ranger/new.sh".source = ./config/ranger/new.sh; 
+  home.file.".config/ranger/rifle.conf".source = ./config/ranger/rifle.conf;
   home.file.".config/ranger/commands.py".text = ''
     import os
     from ranger.api.commands import Command

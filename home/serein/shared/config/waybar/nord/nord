@@ -1,0 +1,291 @@
+[
+  {
+/* 
+   ████████╗ ██████╗ ██████╗ 
+   ╚══██╔══╝██╔═══██╗██╔══██╗
+      ██║   ██║   ██║██████╔╝
+      ██║   ██║   ██║██╔═══╝ 
+      ██║   ╚██████╔╝██║     
+      ╚═╝    ╚═════╝ ╚═╝     
+*/
+//top bar config    
+    "exclusive": true,
+    "passthrough": false,
+    "position": "top",
+    "reload_style_on_change": true,
+    "gtk-layer-shell": true,
+    "width": 1900,
+    "height": 54,
+    "layer": "top",
+    "margin-top": 10,
+    "mod": "dock",
+    
+    "modules-left": [
+      "cpu",
+      "custom/padd",
+      "temperature",
+      "custom/padd",
+      "memory",
+    ],
+    
+    "modules-center": [
+      "custom/l_end",
+      "custom/padd",
+      "mpris",
+      "custom/padd",
+      "custom/r_end"
+    ],
+    
+    "modules-right": [
+      "backlight",
+      "custom/padd",
+      "pulseaudio",
+      "custom/padd",
+      "pulseaudio#microphone",
+      "custom/padd",
+      "clock",
+    ],
+
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "{icon} {percent}%",
+      "format-icons": [
+        "",
+        "󰪞",
+        "󰪟",
+        "󰪠",
+        "󰪡",
+        "󰪢",
+	"󰪣",
+	"󰪤",
+	"󰪥"
+      ],
+      "min-length": 6,
+      "on-scroll-down": "brightnessctl set 1%-",
+      "on-scroll-up": "brightnessctl set 1%+",
+      "rotate": 0
+    },
+
+    "clock": {
+      "actions": {
+        "on-click-backward": "tz_down",
+        "on-click-forward": "tz_up",
+        "on-click-right": "mode",
+        "on-scroll-down": "shift_down",
+        "on-scroll-up": "shift_up"
+      },
+      "calendar": {
+        "format": {
+          "months": "<b>{}</b>",
+          "today": "<b>{}</b>",
+          "weekdays": "<b>{}</b>"
+        },
+        "mode": "month",
+        "mode-mon-col": 3,
+        "on-click-right": "mode",
+        "on-scroll": 1
+      },
+      //"format": " {:%H:%M:%S}",
+      "format": "{:%I:%M%p}",
+      "format-alt": "{:%a %d/%m}",
+      "interval": 1,
+      "rotate": 0,
+      "tooltip-format": "<tt>{calendar}</tt>"
+    },
+    "cpu": {
+      "format": "󰍛 {usage}%",
+      "interval": 1,
+      "rotate": 0
+    },
+    
+    "mpris": {
+      "interval": 1,
+      "max-length": 47,
+    },
+
+    "memory": {
+      "format": "󰾆 {used}GB",
+      "format-alt": "󰾆 {percentage}%",
+      "format-c": " {used}GB",
+      "format-h": "󰓅 {used}GB",
+      "format-m": "󰾅 {used}GB",
+      "interval": 1,
+      "max-length": 10,
+      "rotate": 0,
+      "states": {
+        "c": 90,
+        "h": 60,
+        "m": 30
+      },
+      "tooltip": true,
+      "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB"
+    },
+    
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-icons": {
+        "default": [
+          "",
+          "",
+          ""
+        ],
+        "headphone": ""
+      },
+      "format-muted": "󰖁",
+      "on-click": "pavucontrol -t 3",
+      "rotate": 0,
+      "scroll-step": 5,
+      "tooltip-format": "{icon} {desc} // {volume}%"
+    },
+    "pulseaudio#microphone": {
+      "format": "{format_source}",
+      "format-source": " {volume}%",
+      "format-source-muted": "",
+      "on-click": "pavucontrol -t 4",
+      "rotate": 0,
+      "scroll-step": 5,
+      "tooltip-format": "{format_source} {source_volume}%"
+    },
+    "temperature": {
+      "critical-threshold": 82,
+      "format": "{icon} {temperatureC}°C",
+      "format-critical": "{temperatureC}°C {icon}",
+      "format-icons": [
+        "󰈸"
+      ],
+      "hwmon-path": [
+        "/sys/class/thermal/thermal_zone3/temp",
+        "/sys/class/thermal/thermal_zone5/temp"
+      ],
+      "interval": 1,
+      "tooltip": true
+    },
+    "custom/l_end": {
+      "format": " ",
+      "interval": "once",
+      "tooltip": false
+    },
+    "custom/padd": {
+      "format": " ",
+      "interval": "once",
+      "tooltip": false
+    },
+    "custom/r_end": {
+      "format": " ",
+      "interval": "once",
+      "tooltip": false
+    },
+  }, 
+/*
+  ███████╗██╗██████╗ ███████╗
+  ██╔════╝██║██╔══██╗██╔════╝
+  ███████╗██║██║  ██║█████╗  
+  ╚════██║██║██║  ██║██╔══╝  
+  ███████║██║██████╔╝███████╗
+  ╚══════╝╚═╝╚═════╝ ╚══════╝
+                           
+*/
+//side bar config
+  {
+    "exclusive": true,
+    "gtk-layer-shell": true,
+    "height": 750,
+    //"height": 1000,
+    "layer": "top",
+    "margin-left": 10,
+    "mod": "dock",
+    "width": 53,
+    "passthrough": false,
+    "position": "left",
+    "reload_style_on_change": true,
+    
+    "modules-left": [
+      "custom/logo",
+      "tray"
+    ],
+    
+    "modules-center": [],
+    
+    "modules-right": [
+      "network",
+      "battery",
+    ],
+
+    "battery": {
+      "format": " {icon} {capacity}%",
+      "format-alt": "{time} {icon}",
+      "format-icons": [
+        "󰂎",
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁"
+      ],
+      "format-plugged": "  {capacity}%",
+      "states": {
+        "critical": 20,
+        "good": 95,
+        "warning": 30
+      }
+    },
+    "bluetooth": {
+      "format": "",
+      "format-connected": "󰂱",
+      "format-disabled": "󰂲",
+      "format-icons": [ "󰥇", "󰤾", "󰤿", "󰥀", "󰥁", "󰥂", "󰥃", "󰥄", "󰥅", "󰥆", "󰥈" ],
+      "rotate": 0,
+      "tooltip-format": "{controller_alias}\n{num_connections} connected",
+      "tooltip-format-connected": "{device_enumerate}"
+    },
+    
+    "custom/logo": {
+      "format": " ",
+      "on-click": "exec rofi -show drun"
+    },
+    "custom/power": {
+      "format": "⏻",
+      "on-click": "exec ~/.config/niri/scripts/session",
+      "tooltip": false
+    },
+    "custom/swaync": {
+      "escape": true,
+      "exec": "swaync-client -swb",
+      "exec-if": "which swaync-client",
+      "format": "{icon}",
+      "format-icons": {
+        "dnd-inhibited-none": "󱏧",
+        "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+        "dnd-none": "󱏧",
+        "dnd-notification": "󱏧<span foreground='red'><sup></sup></span>",
+        "inhibited-none": "󰂚",
+        "inhibited-notification": "󰂚<span foreground='red'><sup></sup></span>",
+        "none": "󰂚",
+        "notification": "󱅫"
+      },
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "return-type": "json",
+      "tooltip": false
+    },
+    "network": {
+      "format-alt": "  {essid}\n {bandwidthDownBytes:<1}\n {bandwidthUpBytes:<1}",
+      "format-disconnected": "󰖪 ",
+      "format-ethernet": "󰈀 ",
+      "format-linked": "󰈀 {ifname} (No IP)",
+      "format-wifi": " ",
+      "interval": 1,
+      "rotate": 0,
+      "tooltip": true,
+      "tooltip-format": "<span foreground='#86afef'>  {essid}:\n {bandwidthDownBytes}</span>\n<span foreground='#86afef'> {bandwidthUpBytes}</span>"
+    },
+    "tray": {
+      "icon-size": 18,
+      "rotate": 0,
+      "spacing": 10
+    },
+  }
+]

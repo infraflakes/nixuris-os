@@ -1,0 +1,14 @@
+@theme "~/.config/rofi/themes/menu.rasi"
+entry {
+  width: 15%;
+  placeholder: "       Search Wallpapers";
+}
+configuration {
+  hover-select:    true;
+  me-select-entry: "";
+  me-accept-entry: [ MousePrimary, MouseSecondary, MouseDPrimary ];
+}
+listview {
+  columns: 3;
+  lines: 4;
+}
