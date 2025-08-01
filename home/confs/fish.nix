@@ -39,10 +39,10 @@ end
     };
     shellAliases = {
       xu = "nix flake update";
-      xs = "sudo nixos-rebuild switch --flake ~/hyprnix#nixos";
-      zs = "home-manager switch --flake ~/hyprnix#nixuris@nixos";
+      xs = "sudo nixos-rebuild switch --flake ~/serein-nix#nixos";
+      zs = "home-manager switch --flake ~/serein-nix#nixuris@nixos";
       xr = "sudo nix-collect-garbage -d";
-      xd = "nix develop ~/hyprnix#default";
+      xd = "nix develop ~/serein-nix#default";
       gcs = "git clone --depth=1";
       e = "nvim";
       se = "sudo -E -s nvim";
