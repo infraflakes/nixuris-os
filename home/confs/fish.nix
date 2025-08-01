@@ -38,11 +38,15 @@
       '';
     };
     shellAliases = {
+      nixgen = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
+      homegen = "home-manager generations";
+      nixgen-d = "sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations";
+      homegen-d = "home-manager remove-generations";
       xu = "nix flake update";
       xs = "sudo nixos-rebuild switch --flake ~/serein-nix#nixos";
       zs = "home-manager switch --flake ~/serein-nix#nixuris@nixos";
-      xr = "sudo nix-collect-garbage -d";
       xd = "nix develop ~/serein-nix#default";
+      xr = "sudo nix-collect-garbage -d";
       gcs = "git clone --depth=1";
       e = "nvim";
       se = "sudo -E -s nvim";
