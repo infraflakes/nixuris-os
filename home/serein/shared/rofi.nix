@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [imagemagick];
+  home.packages = with pkgs; [ wl-clipboard ];
   programs.rofi = {
     enable = true;
     package = pkgs.rofi-wayland;

@@ -6,8 +6,6 @@
   imports = [inputs.niri.homeModules.niri];
   nixpkgs.overlays = [inputs.niri.overlays.niri];
   home.packages = with pkgs; [
-    swww
-    wl-clipboard
     pavucontrol
     libnotify
     glib
