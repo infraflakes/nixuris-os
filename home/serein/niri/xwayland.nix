@@ -4,7 +4,7 @@
   ...
 }: {
   home = {
-    packages = with pkgs; [ xwayland-satellite openbox ];
+    packages = with pkgs; [ xwayland-satellite xwayland openbox ];
     sessionVariables = {
       DISPLAY = ":0";
     };
