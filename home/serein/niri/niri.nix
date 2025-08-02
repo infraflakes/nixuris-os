@@ -62,7 +62,7 @@
 
           touchpad {
               tap
-              // dwt
+              dwt
               // dwtp
               // drag false
               // drag-lock
@@ -107,7 +107,7 @@
       layout {
           gaps 16
           background-color "transparent"
-          center-focused-column "always"
+          center-focused-column "never"
           preset-column-widths {
               proportion 0.33333
               proportion 0.5
