@@ -13,6 +13,7 @@
     ./shared/rofi.nix
     ./shared/waybar.nix
     ./shared/swaylock.nix
+    ./shared/wallpapers.nix
     # Hyprland specifics
     #./hypr/hypr.nix
     #./hypr/swappy.nix
