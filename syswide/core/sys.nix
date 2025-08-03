@@ -19,7 +19,7 @@ in {
         device = "nodev";
         #useOSProber = true;
         efiSupport = true;
-	#theme = grubTheme;
+        #theme = grubTheme;
       };
     };
     #blacklistedKernelModules = ["kvm" "kvm-intel" "bridge" "macvlan" "tap" "tun"];
