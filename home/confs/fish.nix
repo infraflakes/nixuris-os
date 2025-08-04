@@ -43,7 +43,7 @@
       nixgen-d = "sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations";
       homegen-d = "home-manager remove-generations";
       xu = "nix flake update";
-      xs = "sudo nixos-rebuild switch --flake ~/serein-nix#nixos";
+      xs = "sudo nixos-rebuild switch --impure --flake ~/serein-nix#nixos";
       zs = "home-manager switch --flake ~/serein-nix#nixuris@nixos";
       xd = "nix develop ~/serein-nix#default";
       xr = "sudo nix-collect-garbage -d";

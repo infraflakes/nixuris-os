@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./core/hardware-configuration.nix
+    /etc/nixos/hardware-configuration.nix
     ./core/sys.nix
     ./core/graphics.nix
     ./core/power.nix
