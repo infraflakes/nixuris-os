@@ -3,7 +3,6 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [git gitui];
   programs.vscode = {
     enable = true;
     #package = pkgs.vscodium;
@@ -14,5 +13,11 @@
       github.github-vscode-theme
       bbenoist.nix
     ];
+  };
+  home.packages = with pkgs; [gitui];
+  programs.git = {
+    enable = true;
+    userName = "nixuris";
+    userEmail = "nixuriss@proton.me";
   };
 }

@@ -12,16 +12,20 @@
   imports = [
     ./pkgs/pkgs.nix
     ./pkgs/hide-desktop-entry.nix
+    ./pkgs/ime.nix
+    ./pkgs/dev.nix
+    ./pkgs/fonts.nix
+    ./pkgs/media.nix
+    ./pkgs/social.nix
+    ./pkgs/misc.nix
     #Other apps configs
-    ./confs/ime.nix
-    ./confs/dev.nix
     ./confs/kitty.nix
     ./confs/fish.nix
     ./confs/fastfetch.nix
     ./confs/nvim.nix
     ./confs/ranger.nix
 
-    #Serein Hyprland Dots
+    #Serein Dots
     ./serein/serein.nix
   ];
 }
