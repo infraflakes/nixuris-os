@@ -149,6 +149,7 @@
 
       spawn-at-startup "fcitx5"
       spawn-at-startup "udiskie"
+      spawn-at-startup "mpd"
       spawn-at-startup "mpris-discord-rpc"
 
       window-rule {
