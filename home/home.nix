@@ -10,7 +10,6 @@
     stateVersion = "25.11";
   };
   imports = [
-    ./pkgs/pkgs.nix
     ./pkgs/hide-desktop-entry.nix
     ./pkgs/ime.nix
     ./pkgs/dev.nix
