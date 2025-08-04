@@ -40,6 +40,6 @@ case ${chosen} in
 		swaylock	
         ;;
     $logout)
-		run_cmd --logout
+		niri msg action quit
         ;;
 esac
