@@ -141,6 +141,7 @@
       prefer-no-csd
 
       spawn-at-startup "waybar"
+      spawn-at-startup "mpd-mpris"
       spawn-at-startup "swww-daemon"
       spawn-at-startup "mako"
 

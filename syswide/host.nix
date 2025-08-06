@@ -17,5 +17,6 @@
     #./runtime/gnome.nix
     #./runtime/kde.nix
     ./runtime/gaming.nix
+    ./runtime/virt.nix
   ];
 }
