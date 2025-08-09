@@ -3,6 +3,7 @@
   pkgs,
   ...
 }: {
+  home.packages = with pkgs; [gitui];
   programs.vscode = {
     enable = true;
     #package = pkgs.vscodium;
@@ -14,7 +15,6 @@
       bbenoist.nix
     ];
   };
-  home.packages = with pkgs; [gitui];
   programs.git = {
     enable = true;
     userName = "nixuris";
