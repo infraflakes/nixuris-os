@@ -8,12 +8,6 @@
     enable = true;
     enableFishIntegration = true;
   };
-  home.file.".config/fish/conf.d/npm.fish".text = ''
-      set -gx NPM_GLOBAL_BIN "$HOME/.local/bin"
-    if not string match -q -- $NPM_GLOBAL_BIN $PATH
-      set -gx PATH "$NPM_GLOBAL_BIN" $PATH
-    end
-  '';
   programs.fish = {
     enable = true;
     functions = {
