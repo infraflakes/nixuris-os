@@ -21,14 +21,13 @@ return {
         }
 
         dashboard.section.buttons.val = {
-          -- dashboard.button("❖", "󱙖  Serein CLI Hub", ":lua OpenSereinDashboard()<CR>"),
-          dashboard.button("❖", "  Git Repositories", ":OpenGitRepos <CR>"),
-          dashboard.button("❖", "  Open File Manager (Ranger)", ":terminal ranger<CR>"),
-          dashboard.button("❖", "󰈞  Find Files", ":Telescope find_files<CR>"),
-          dashboard.button("❖", "  New File", ":ene <BAR> startinsert <CR>"),
-          dashboard.button("❖", "󰱼  Grep Text", ":Telescope live_grep<CR>"),
-          dashboard.button("❖", "  Recent Files", ":Telescope oldfiles<CR>"),
-          dashboard.button("❖", "  Quit Neovim", ":qa<CR>"),
+          dashboard.button("g", "  Git Repositories", ":OpenGitRepos <CR>"),
+          dashboard.button("t", "  Open File Manager (Ranger)", ":terminal ranger<CR>"),
+          dashboard.button("ff","󰈞  Find Files", ":Telescope find_files<CR>"),
+          dashboard.button("n", "  New File", ":ene <BAR> startinsert <CR>"),
+          dashboard.button("fg","󰱼  Grep Text", ":Telescope live_grep<CR>"),
+          dashboard.button("fr","  Recent Files", ":Telescope oldfiles<CR>"),
+          dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
         }
 
         alpha.setup(dashboard.config)
@@ -36,28 +35,6 @@ return {
         vim.schedule(function()
           vim.cmd "stopinsert | redraw!"
         end)
-      end
-
-      -- Define Serein Dashboard
-      function OpenSereinDashboard()
-        dashboard.section.header.val = {
-          "Serein Hub",
-          "Manage your Niri system",
-          " ",
-        }
-
-        dashboard.section.buttons.val = {
-          dashboard.button("❖", "  Serein Package Manager", ":terminal serein pkg<CR>"),
-          dashboard.button("❖", "󰚰  Update (Edge)", ":terminal serein update edge<CR>"),
-          dashboard.button("❖", "󰚰  Update (Stable)", ":terminal serein update stable<CR>"),
-          dashboard.button("❖", "󰑓  Rollback", ":terminal serein rollback<CR>"),
-          dashboard.button("❖", "  Config Manager", ":terminal serein config<CR>"),
-          dashboard.button("❖", "󰆴  Uninstall Serein", ":terminal serein uninstall<CR>"),
-          dashboard.button("❖", "󰁯  Back", ":lua OpenMainDashboard()<CR>"),
-        }
-
-        alpha.setup(dashboard.config)
-        vim.cmd "AlphaRedraw"
       end
 
       -- Initialize Main Dashboard
@@ -72,7 +49,7 @@ return {
       })
 
       vim.api.nvim_create_autocmd("TermOpen", {
-        pattern = { "*ranger*", "*serein*" },
+        pattern = { "*ranger*" },
         callback = function()
           vim.cmd "startinsert"
         end,
@@ -89,7 +66,7 @@ return {
       })
 
       vim.api.nvim_create_autocmd("TermClose", {
-        pattern = { "*ranger*", "*serein*" },
+        pattern = { "*ranger*" },
         callback = function()
           vim.defer_fn(function()
             vim.cmd "Alpha"
