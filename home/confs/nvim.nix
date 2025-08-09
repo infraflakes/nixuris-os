@@ -5,7 +5,7 @@
   ...
 }: {
   home = {
-    packages = with pkgs; [fzf ripgrep];
+    packages = with pkgs; [fzf ripgrep gcc];
     sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
