@@ -27,12 +27,12 @@
     pkgs = import nixpkgs {inherit system;};
   in {
     # NixOS configuration
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.serein = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs system;};
       modules = [./syswide/host.nix];
     };
     # Home Manager
-    homeConfigurations."nixuris@nixos" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."nixuris@serein" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = {inherit inputs;};
       modules = [./home/home.nix];

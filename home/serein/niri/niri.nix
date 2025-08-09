@@ -10,6 +10,7 @@
     libnotify
     glib
     brightnessctl
+    mpris-discord-rpc
   ];
   services.cliphist.enable = true;
   services.blueman-applet.enable = true;
