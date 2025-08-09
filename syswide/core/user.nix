@@ -38,7 +38,7 @@
 
   #Network
   networking = {
-    hostName = "nixos";
+    hostName = "serein";
     networkmanager.enable = true;
     nameservers = ["1.1.1.1"];
   };
