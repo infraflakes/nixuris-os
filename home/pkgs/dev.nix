@@ -3,7 +3,12 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [gitui];
+  home.packages = with pkgs; [gitui direnv];
+  programs.git = {
+    enable = true;
+    userName = "nixuris";
+    userEmail = "nixuriss@proton.me";
+  };
   programs.vscode = {
     enable = true;
     #package = pkgs.vscodium;
@@ -13,11 +18,8 @@
       #llvm-vs-code-extensions.vscode-clangd
       github.github-vscode-theme
       bbenoist.nix
+      mkhl.direnv
     ];
   };
-  programs.git = {
-    enable = true;
-    userName = "nixuris";
-    userEmail = "nixuriss@proton.me";
-  };
+  home.file.".config/Code/User/settings.json".source = ./config/Code/minimal-ui.json;
 }
