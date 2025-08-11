@@ -18,7 +18,6 @@ return {
             "%.xlxs",
             "Games/",
             "Pictures/",
-            "Documents/",
             "Downloads/",
             "Music/",
             "Videos/",
