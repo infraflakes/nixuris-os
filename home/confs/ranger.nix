@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [ueberzugpp atool zip unzip p7zip];
+  home.packages = with pkgs; [ueberzugpp atool zip unzip p7zip unrar];
   services = {
     udiskie.enable = true;
     udiskie.tray = "auto";
