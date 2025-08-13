@@ -14,7 +14,7 @@
   };
   programs.fish.enable = true;
   #Sys pkgs
-  environment.systemPackages = with pkgs; [htop home-manager];
+  environment.systemPackages = with pkgs; [htop home-manager ncdu];
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -38,13 +38,20 @@
     networkmanager.enable = true;
     nameservers = ["1.1.1.1"];
   };
-
+  # SSH
+  services.openssh = {
+    enable = true;
+    settings = {
+      PermitRootLogin = "prohibit-password";
+      PasswordAuthentication = true;
+    };
+  };
+  networking.firewall.allowedTCPPorts = [22];
   #Disabled systemd services
   systemd = {
     services = {
       NetworkManager-wait-online.enable = false;
       NetworkManager-dispatcher.enable = false;
-      firewall.enable = false;
     };
   };
 

@@ -6,8 +6,8 @@
   nvidia = "cuda";
   amd = "rocm";
 in {
-    home.packages = [
-    (pkgs.ollama.override { 
+  home.packages = [
+    (pkgs.ollama.override {
       acceleration = nvidia;
     })
   ];
