@@ -1,4 +1,4 @@
-{pkgs}:
+{pkgs ? import <nixpkgs> {}}:
 pkgs.mkShell {
   buildInputs = [
     pkgs.alejandra
@@ -12,6 +12,8 @@ pkgs.mkShell {
     pkgs.nodePackages.eslint
     pkgs.nodePackages.prettier
     (pkgs.python3.withPackages (ps: with ps; [pip virtualenv]))
+    pkgs.go
+    pkgs.go-tools
   ];
 
   shellHook = ''

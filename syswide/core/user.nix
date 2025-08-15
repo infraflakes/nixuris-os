@@ -54,7 +54,8 @@
       NetworkManager-dispatcher.enable = false;
     };
   };
-
+  #Nix-LD
+  programs.nix-ld.enable = true;
   #Required for swaylock to work
   security.pam.services.swaylock = {};
 
