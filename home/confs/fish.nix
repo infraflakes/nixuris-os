@@ -32,14 +32,6 @@
       '';
     };
     shellAliases = {
-      nixgen = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
-      homegen = "home-manager generations";
-      nixgen-d = "sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations";
-      homegen-d = "home-manager remove-generations";
-      xu = "nix flake update";
-      xs = "sudo nixos-rebuild switch --impure --flake .#serein";
-      zs = "home-manager switch --flake .#nixuris@serein";
-      xr = "sudo nix-collect-garbage -d";
       gcs = "git clone --depth=1";
       e = "nvim";
       se = "sudo -E -s nvim";
