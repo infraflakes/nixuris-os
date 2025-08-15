@@ -166,11 +166,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1755283834,
-        "narHash": "sha256-d0LBrJjwKTDVnPQx2wog4F4lbOI08XefaYe15Z2HzGQ=",
+        "lastModified": 1755288409,
+        "narHash": "sha256-oDfSZbNXmrr0nVl479GuPp0JQaekG4HmTX4vHpnfW0k=",
         "owner": "nixuris",
         "repo": "serein-cli",
-        "rev": "c2185a9cb235c11ddd5ce08750f03e3bc0bcf266",
+        "rev": "c6abcab5dd514c762a804b008b4b1982b5c45b85",
         "type": "github"
       },
       "original": {
