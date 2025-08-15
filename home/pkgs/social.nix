@@ -2,7 +2,6 @@
   config,
   pkgs,
   inputs,
-  zen-browser,
   ...
 }: {
   home.packages = with pkgs; [

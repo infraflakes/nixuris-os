@@ -6,6 +6,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    serein-cli = {
+      url = "github:nixuris/serein-cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +23,7 @@
     self,
     nixpkgs,
     home-manager,
+    serein-cli,
     zen-browser,
     niri,
     ...

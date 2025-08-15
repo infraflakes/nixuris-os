@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -8,6 +9,7 @@
     username = "nixuris";
     homeDirectory = "/home/nixuris";
     stateVersion = "25.11";
+    packages = [inputs.serein-cli.packages.${pkgs.system}.default];
   };
   imports = [
     ./pkgs/hide-desktop-entry.nix

@@ -3,7 +3,7 @@ pkgs.mkShell {
   buildInputs = with pkgs; [
     go
   ];
-	shellHook = ''
+  shellHook = ''
     echo "Go environment is ready!"
     exec fish
   '';
