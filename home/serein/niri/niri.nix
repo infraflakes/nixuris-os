@@ -24,7 +24,7 @@
   home.file.".config/niri/scripts".source = ./config/niri/scripts;
   programs.niri = {
     enable = true;
-    package = pkgs.niri-unstable;
+    package = pkgs.niri;
     config = ''
           environment {
           ELECTRON_OZONE_PLATFORM_HINT "auto"
