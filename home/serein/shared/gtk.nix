@@ -4,9 +4,8 @@
   ...
 }: {
   home.packages = with pkgs; [
-    papirus-icon-theme
+    nordzy-icon-theme
   ];
-  dconf.enable = true;
   gtk = {
     enable = true;
     cursorTheme = {
@@ -14,12 +13,23 @@
       name = "Bibata-Modern-Ice";
     };
     theme = {
-      package = pkgs.catppuccin-gtk;
-      name = "catppuccin-frappe-blue-standard";
+      package = pkgs.nordic;
+      name = "Nordic";
     };
     iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus-Dark";
+      package = pkgs.nordzy-icon-theme;
+      name = "Nordzy";
+    };
+  };
+
+	dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        gtk-theme  = "Nordic";
+        icon-theme = "Nordzy";
+        color-scheme = "prefer-dark";
+      };
     };
   };
 }

@@ -28,7 +28,7 @@
     config = ''
           environment {
           ELECTRON_OZONE_PLATFORM_HINT "auto"
-          GTK_THEME "catppuccin-frappe-blue-standard+default"
+          GTK_THEME "Nordic"
           MOZ_ENABLE_WAYLAND "1"
           MOZ_DISABLE_RDD_SANDBOX "1"
           QT_SCALE_FACTOR "1"
@@ -139,10 +139,10 @@
 
           struts {}
       }
-      prefer-no-csd
+      //prefer-no-csd
 
       spawn-at-startup "waybar"
-      spawn-at-startup "mpd-mpris"
+      spawn-at-startup "mpd-mpris &"
       spawn-at-startup "swww-daemon"
       spawn-at-startup "mako"
 
