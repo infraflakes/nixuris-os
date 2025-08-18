@@ -22,11 +22,11 @@
     };
   };
 
-	dconf = {
+  dconf = {
     enable = true;
     settings = {
       "org/gnome/desktop/interface" = {
-        gtk-theme  = "Nordic";
+        gtk-theme = "Nordic";
         icon-theme = "Nordzy";
         color-scheme = "prefer-dark";
       };
