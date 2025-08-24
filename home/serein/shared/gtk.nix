@@ -29,6 +29,9 @@
         gtk-theme = "Nordic";
         icon-theme = "Nordzy";
         color-scheme = "prefer-dark";
+        font-name = "JetBrainsMono Nerd Font 12";
+        document-font-name = "JetBrainsMono Nerd Font 12";
+        monospace-font-name = "JetBrainsMono Nerd Font 12";
       };
     };
   };
