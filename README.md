@@ -1,4 +1,4 @@
-### Personal flakes for home server.
+### Bare bone flakes for home server.
 
 ### CAUTION!
 
