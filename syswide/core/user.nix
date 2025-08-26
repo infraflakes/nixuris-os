@@ -14,7 +14,7 @@
   };
   programs.fish.enable = true;
   #Sys pkgs
-  environment.systemPackages = with pkgs; [htop home-manager ncdu];
+  environment.systemPackages = with pkgs; [htop home-manager ncdu bottom];
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
