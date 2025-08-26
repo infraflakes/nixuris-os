@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [gitui direnv];
+  home.packages = with pkgs; [direnv];
   programs.git = {
     enable = true;
     userName = "nixuris";
@@ -13,7 +13,7 @@
     enable = true;
     #package = pkgs.vscodium;
     profiles.default.extensions = with pkgs.vscode-extensions; [
-      ms-python.python
+			#ms-python.python
       ms-vscode.cpptools
       #llvm-vs-code-extensions.vscode-clangd
       github.github-vscode-theme
