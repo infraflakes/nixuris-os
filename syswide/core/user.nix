@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  libs,
   ...
 }: {
   users = {
@@ -13,8 +14,6 @@
     };
   };
   programs.fish.enable = true;
-  #Sys pkgs
-  environment.systemPackages = with pkgs; [htop home-manager ncdu bottom];
   i18n.defaultLocale = "en_US.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -47,17 +46,4 @@
     };
   };
   networking.firewall.allowedTCPPorts = [22];
-  #Disabled systemd services
-  systemd = {
-    services = {
-      NetworkManager-wait-online.enable = false;
-      NetworkManager-dispatcher.enable = false;
-    };
-  };
-  #Nix-LD
-  programs.nix-ld.enable = true;
-  #Required for swaylock to work
-  security.pam.services.swaylock = {};
-
-  services.flatpak.enable = true;
 }
