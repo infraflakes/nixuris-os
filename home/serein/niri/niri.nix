@@ -150,7 +150,7 @@
 
       spawn-at-startup "fcitx5"
       spawn-at-startup "udiskie"
-      spawn-at-startup "mpd && mpd-mpris"
+      spawn-at-startup "mpd ~/.config/mpd/mpd.conf && mpd-mpris"
       spawn-at-startup "mpris-discord-rpc"
 
       window-rule {
