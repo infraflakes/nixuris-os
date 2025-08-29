@@ -59,5 +59,5 @@
   #Required for swaylock to work
   security.pam.services.swaylock = {};
 
-  services.flatpak.enable = true;
+  #services.flatpak.enable = true;
 }
