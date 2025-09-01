@@ -4,7 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
-    ffmpeg
+    ffmpeg-full
     rmpc
     mpc
     mpd
