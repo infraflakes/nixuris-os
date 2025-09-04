@@ -28,7 +28,7 @@
     config = ''
           environment {
           ELECTRON_OZONE_PLATFORM_HINT "auto"
-          GTK_THEME "Nordic"
+          GTK_THEME "Tokyonight-Dark"
           MOZ_ENABLE_WAYLAND "1"
           MOZ_DISABLE_RDD_SANDBOX "1"
           QT_SCALE_FACTOR "1"
