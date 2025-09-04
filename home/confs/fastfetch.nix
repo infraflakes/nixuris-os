@@ -7,7 +7,7 @@
     enable = true;
     settings = {
       logo = {
-        source = builtins.toString ./config/fastfetch/2b.txt;
+        source = builtins.toString ./config/fastfetch/nix.txt;
         padding = {
           top = 2;
           right = 6;
@@ -27,7 +27,7 @@
           key = "  distro ";
           keyColor = "33";
         }
-	{
+        {
           type = "kernel";
           key = "  kernel ";
           keyColor = "33";

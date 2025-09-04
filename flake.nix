@@ -6,6 +6,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    serein-cli = {
+      url = "github:nixuris/serein-cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +23,7 @@
     self,
     nixpkgs,
     home-manager,
+    serein-cli,
     zen-browser,
     niri,
     ...
@@ -27,57 +32,23 @@
     pkgs = import nixpkgs {inherit system;};
   in {
     # NixOS configuration
-    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.serein = nixpkgs.lib.nixosSystem {
       specialArgs = {inherit inputs system;};
       modules = [./syswide/host.nix];
     };
     # Home Manager
-    homeConfigurations."nixuris@nixos" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."nixuris@serein" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = {inherit inputs;};
       modules = [./home/home.nix];
     };
-
-    # Development shell for project
-    devShells = {
-      x86_64-linux.default = pkgs.mkShell {
-        buildInputs = [
-          #Nix formatter
-          pkgs.alejandra
-          #Git
-          pkgs.git-filter-repo
-          #Docker
-          #pkgs.docker
-          #C++
-          pkgs.gcc
-          pkgs.gdb
-          pkgs.clang-tools
-          pkgs.cmake
-          #Java
-          #pkgs.jdk
-          #JS/Node
-          pkgs.nodejs_24
-          pkgs.pnpm
-          pkgs.nodePackages.eslint
-          pkgs.nodePackages.prettier
-          #Python
-          (pkgs.python3.withPackages (ps: with ps; [pip virtualenv]))
-        ];
-
-        shellHook = ''
-          LIBRARY_PATH="${pkgs.stdenv.cc.cc}/lib:${pkgs.glibc}/lib:${pkgs.libgcc}/lib:${pkgs.libclang}/lib"
-          export NIX_LD_LIBRARY_PATH="$LIBRARY_PATH"
-          export NIX_LD="${pkgs.stdenv.cc}/nix-support/dynamic-linker"
-
-          if [ ! -d .venv ]; then
-            python -m venv .venv
-          fi
-          export VIRTUAL_ENV_DISABLE_PROMPT=1
-          source .venv/bin/activate
-          echo "Dev environment (Java, JS, C/C++, Python) is ready!"
-          exec fish
-        '';
-      };
+    # Dev Shell
+    devShells.${system} = {
+      cpp = import ./devshells/cpp.nix {inherit pkgs;};
+      go = import ./devshells/go.nix {inherit pkgs;};
+      js = import ./devshells/js.nix {inherit pkgs;};
+      python = import ./devshells/python.nix {inherit pkgs;};
+      all = import ./devshells/all.nix {inherit pkgs;};
     };
   };
 }

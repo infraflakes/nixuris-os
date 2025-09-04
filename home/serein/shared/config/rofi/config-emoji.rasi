@@ -4,6 +4,6 @@ entry {
   placeholder: "                        💫 Search Emojis";
 }
 listview {
-  columns: 1;
+  columns: 5;
   lines: 8;
 }

@@ -17,15 +17,13 @@ in {
       grub = {
         enable = true;
         device = "nodev";
-        #useOSProber = true;
         efiSupport = true;
-        theme = grubTheme;
+        #useOSProber = true;
+        #theme = grubTheme;
       };
     };
     #blacklistedKernelModules = ["kvm" "kvm-intel" "bridge" "macvlan" "tap" "tun"];
   };
-  #boot.kernelPackages = pkgs.linuxPackages_latest;
-
   #ZRAM Swap
   zramSwap.enable = true;
   swapDevices = [
@@ -38,19 +36,9 @@ in {
   boot.kernel.sysctl = {
     "vm.swappiness" = 10;
   };
-  #Time zone
-  time.timeZone = "Asia/Ho_Chi_Minh";
-  services.timesyncd.enable = true;
-
-  #Network
-  networking = {
-    hostName = "nixos";
-    networkmanager.enable = true;
-    nameservers = ["1.1.1.1"];
-  };
 
   #Bluetooth
-  hardware.bluetooth.enable =true;
+  hardware.bluetooth.enable = true;
   #Sound
   security.rtkit.enable = true;
   services.pipewire = {
@@ -60,27 +48,4 @@ in {
     pulse.enable = true;
     jack.enable = true;
   };
-  #Fonts
-  fonts.packages = with pkgs; [
-  ];
-
-  #Disabled systemd services
-  systemd = {
-    services = {
-      #avahi-daemon.enable = false;
-      NetworkManager-wait-online.enable = false;
-      NetworkManager-dispatcher.enable = false;
-      firewall.enable = false;
-      #accounts-daemon.enable = false;
-    };
-  };
-
-  security.pam.services.swaylock = {};
-
-  #Sys pkgs
-  environment.systemPackages = with pkgs; [
-    htop
-    home-manager
-  ];
-   services.flatpak.enable = true;
 }

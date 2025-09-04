@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Set some variables
-WALL_DIR="${HOME}/wallpapers/"
+WALL_DIR="${HOME}/.config/wallpapers/"
 CACHE_DIR="${HOME}/.cache/rofi_icons/"
 CONFIG_DIR="${HOME}/.config/rofi/"
 # Cleanup function to handle script interruption

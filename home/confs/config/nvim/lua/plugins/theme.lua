@@ -14,6 +14,7 @@ return {
       vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none" })
       vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" })
       vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
+      vim.api.nvim_set_hl(0, 'MarkdownHighlightRed', { fg = '#ffffff', bg = '#ff0000', bold = true })
     end,
   },
 

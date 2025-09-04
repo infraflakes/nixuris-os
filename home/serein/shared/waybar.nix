@@ -2,12 +2,10 @@
   config,
   pkgs,
   ...
-}: let
-  scriptsDir = builtins.toString ./scripts;
-in {
-  home.packages = with pkgs; [ mpd-mpris cava ];
+}: {
+  home.packages = with pkgs; [mpd-mpris cava playerctl];
   programs.waybar = {
-    enable = true;  
+    enable = true;
   };
   home.file.".config/waybar".source = ./config/waybar;
 }

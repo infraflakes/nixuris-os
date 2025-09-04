@@ -9,19 +9,14 @@
   rofiScriptsDir = builtins.toString ../shared/config/rofi/scripts;
 in {
   home.packages = with pkgs; [
-    swww
-    wl-clipboard
     pavucontrol
     libnotify
-    imagemagick
     yad
     wlroots
     bc
     jq
     glib
     brightnessctl
-    playerctl
-    python3
   ];
   xdg.portal = {
     enable = true;

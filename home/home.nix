@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  inputs,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
@@ -8,24 +9,25 @@
     username = "nixuris";
     homeDirectory = "/home/nixuris";
     stateVersion = "25.11";
-    sessionVariables = {
-      EDITOR = "nvim";
-      VISUAL = "nvim";
-    };
+    packages = [inputs.serein-cli.packages.${pkgs.system}.default];
   };
   imports = [
-    ./pkgs/pkgs.nix
-
+    ./pkgs/hide-desktop-entry.nix
+    ./pkgs/ime.nix
+    ./pkgs/dev.nix
+    ./pkgs/fonts.nix
+    ./pkgs/media.nix
+    ./pkgs/social.nix
+    #./pkgs/llm.nix
+    ./pkgs/misc.nix
     #Other apps configs
-    ./confs/ime.nix
-    ./confs/dev.nix
     ./confs/kitty.nix
     ./confs/fish.nix
     ./confs/fastfetch.nix
     ./confs/nvim.nix
     ./confs/ranger.nix
 
-    #Serein Hyprland Dots
+    #Serein Dots
     ./serein/serein.nix
   ];
 }
