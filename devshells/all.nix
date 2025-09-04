@@ -14,11 +14,13 @@ pkgs.mkShell {
     (pkgs.python3.withPackages (ps: with ps; [pip virtualenv]))
     pkgs.go
     pkgs.go-tools
+    pkgs.golangci-lint
   ];
 
   shellHook = ''
     export NPM_CONFIG_PREFIX="$HOME/.local"
     export PATH="$HOME/.local/bin:$PATH"
+    go env -w GOPATH=$HOME/.local/share/go
 
     if [ ! -d .venv ]; then
       python -m venv .venv
