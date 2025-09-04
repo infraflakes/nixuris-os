@@ -18,17 +18,13 @@ Apply changes system wide:
 
 ```
 cd serein-nix
-sudo nixos-rebuild switch --impure --flake .#nixos
+sudo nixos-rebuild switch --impure --flake .#<hostname>
 ```
-
-Assuming your hostname is 'nixos'.
 
 Then set up home manager:
 
 ```
-home-manager switch --flake .#nixuris@nixos
+home-manager switch --flake .#<username>@<hostname>
 ```
-
-Assuming username is 'nixuris'.
 
 ---
