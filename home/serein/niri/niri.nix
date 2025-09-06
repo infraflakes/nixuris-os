@@ -150,8 +150,8 @@
 
       spawn-at-startup "fcitx5"
       spawn-at-startup "udiskie"
-      spawn-at-startup "mpd" "/home/nixuris/.config/mpd/mpd.conf"
       spawn-at-startup "mpd-mpris"
+      spawn-at-startup "mpd" "/home/nixuris/.config/mpd/mpd.conf"
       spawn-at-startup "mpris-discord-rpc"
 
       window-rule {
@@ -194,7 +194,7 @@
           Mod+Shift+P hotkey-overlay-title="Htop" { spawn "kitty" "-e" "htop"; }
           Mod+S hotkey-overlay-title="Music Player: rmpc" { spawn "kitty" "-e" "rmpc"; }
           Mod+M hotkey-overlay-title="MPD Control" { spawn "~/.config/rofi/scripts/mpd"; }
-          Mod+T hotkey-overlay-title="Ranger" { spawn "env" "EDITOR=nvim" "kitty" "-e" "ranger"; }
+          Mod+T hotkey-overlay-title="File Manager" { spawn "kitty" "-e" "yazi"; }
 
           Mod+A repeat=false { toggle-overview; }
 

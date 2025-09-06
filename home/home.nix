@@ -25,7 +25,7 @@
     ./confs/fish.nix
     ./confs/fastfetch.nix
     ./confs/nvim.nix
-    ./confs/ranger.nix
+    ./confs/yazi.nix
 
     #Serein Dots
     ./serein/serein.nix
