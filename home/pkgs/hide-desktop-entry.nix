@@ -10,6 +10,20 @@
     terminal = true;
     noDisplay = true;
   };
+  #Bottom
+  xdg.desktopEntries.bottom = {
+    name = "bottom";
+    exec = "btm";
+    terminal = true;
+    noDisplay = true;
+  };
+  #Yazi
+  xdg.desktopEntries.yazi = {
+    name = "Yazi";
+    exec = "yazi";
+    terminal = true;
+    noDisplay = true;
+  };
   #MPV
   xdg.desktopEntries.mpv = {
     name = "mpv";

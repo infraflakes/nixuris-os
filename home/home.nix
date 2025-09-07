@@ -18,6 +18,7 @@
     ./pkgs/fonts.nix
     ./pkgs/media.nix
     ./pkgs/social.nix
+    ./pkgs/vpn.nix
     #./pkgs/llm.nix
     ./pkgs/misc.nix
     #Other apps configs
