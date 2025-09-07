@@ -22,7 +22,7 @@
     #./pkgs/llm.nix
     ./pkgs/misc.nix
     #Other apps configs
-    ./confs/kitty.nix
+    ./confs/ghostty.nix
     ./confs/fish.nix
     ./confs/fastfetch.nix
     ./confs/nvim.nix

@@ -180,7 +180,7 @@
 
           Mod+Q { close-window; }
 
-          Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "kitty"; }
+          Mod+Return hotkey-overlay-title="Open a Terminal: Ghostty" { spawn "ghostty"; }
           Mod+R hotkey-overlay-title="Refresh Waybar" { spawn "~/.config/niri/scripts/refresh-waybar"; }
           Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
           Mod+N hotkey-overlay-title="Notification Restore: Mako" { spawn "makoctl" "restore"; }
@@ -189,15 +189,14 @@
           Mod+Period hotkey-overlay-title="Emoji Selector" { spawn "~/.config/rofi/scripts/emoji"; }
           Mod+Shift+W hotkey-overlay-title="Wallpaper Manager" { spawn "~/.config/rofi/scripts/wallselect-niri"; }
 
-          Mod+E hotkey-overlay-title="Neovim" { spawn "kitty" "-e" "nvim"; }
-          Mod+P hotkey-overlay-title="Bottom" { spawn "kitty" "-e" "btm"; }
-          Mod+Shift+P hotkey-overlay-title="Htop" { spawn "kitty" "-e" "htop"; }
-          Mod+S hotkey-overlay-title="Music Player: rmpc" { spawn "kitty" "-e" "rmpc"; }
+          Mod+E hotkey-overlay-title="Neovim" { spawn "ghostty" "-e" "nvim"; }
+          Mod+P hotkey-overlay-title="Bottom" { spawn "ghostty" "-e" "btm"; }
+          Mod+Shift+P hotkey-overlay-title="Htop" { spawn "ghostty" "-e" "htop"; }
+          Mod+S hotkey-overlay-title="Music Player: rmpc" { spawn "ghostty" "-e" "rmpc"; }
           Mod+M hotkey-overlay-title="MPD Control" { spawn "~/.config/rofi/scripts/mpd"; }
-          Mod+T hotkey-overlay-title="File Manager" { spawn "kitty" "-e" "yazi"; }
+          Mod+T hotkey-overlay-title="File Manager" { spawn "ghostty" "-e" "yazi"; }
 
           Mod+A repeat=false { toggle-overview; }
-
 
           Mod+Left  { focus-column-left; }
           Alt+Down  { focus-window-down; }
