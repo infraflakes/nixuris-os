@@ -8,11 +8,11 @@
     enable = true;
     settings = {
       keybind = [
-        "ctrl+t=new_tab"
-        "ctrl+a=toggle_tab_overview"
-        "ctrl+q=close_tab"
-        "ctrl+right=next_tab"
-        "ctrl+left=previous_tab"
+        "alt+n=new_tab"
+        "alt+a=toggle_tab_overview"
+        "alt+q=close_tab"
+        "alt+right=next_tab"
+        "alt+left=previous_tab"
       ];
       font-family = "JetBrains Mono Nerd Font";
       font-size = 13;
