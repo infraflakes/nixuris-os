@@ -171,7 +171,7 @@
     },
     "network": {
       "format-alt": " {essid}  {bandwidthDownBytes:<1}  {bandwidthUpBytes:<1}",
-      "format-disconnected": "󰖪 ",
+      "format-disconnected": " 󰖪 ",
       "format-ethernet": "󰈀 ",
       "format-linked": "󰈀 {ifname} (No IP)",
       "format-wifi": " {essid}",
