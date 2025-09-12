@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [direnv];
+  home.packages = with pkgs; [direnv codeblocks];
   programs.git = {
     enable = true;
     userName = "nixuris";
