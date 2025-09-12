@@ -4,6 +4,7 @@
   ...
 }: {
   home.packages = with pkgs; [
+    papers
     ffmpeg-full
     rmpc
     mpc
