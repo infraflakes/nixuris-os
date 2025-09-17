@@ -14,10 +14,6 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
   outputs = {
     self,
@@ -25,7 +21,6 @@
     home-manager,
     serein-cli,
     zen-browser,
-    niri,
     ...
   } @ inputs: let
     system = "x86_64-linux";
