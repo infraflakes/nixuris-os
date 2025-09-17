@@ -15,6 +15,7 @@
     easytag
     nicotine-plus
     imv
+    libnotify
   ];
   home.file.".config/rmpc".source = ../confs/config/rmpc;
   home.file.".config/mpd/mpd.conf".text = ''
