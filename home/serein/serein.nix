@@ -9,7 +9,6 @@
     ./niri/xwayland.nix
     ./niri/mako.nix
     # Shared between WMs
-    ./shared/gtk.nix
     ./shared/rofi.nix
     ./shared/waybar.nix
     ./shared/swaylock.nix

@@ -4,6 +4,14 @@
   pkgs,
   ...
 }: {
+  environment.etc."xdg/wayland-sessions/gnome.desktop".text = ''
+    [Desktop Entry]
+    Name=Gnome On Wayland
+    Exec=/run/current-system/sw/bin/gnome-session -- session=gnome-wayland
+    TryExec=/run/current-system/sw/bin/gnome-session
+    Type=Application
+    DesktopNames=GNOME
+  '';
   services.desktopManager.gnome.enable = true;
   services.power-profiles-daemon.enable = false;
   services.udev.packages = [pkgs.gnome-settings-daemon];
@@ -17,21 +25,11 @@
     gnome-disk-utility
     seahorse
     sysprof
-    #
     gnome-color-manager
     adwaita-icon-theme
-    # nixos-background-info
     gnome-backgrounds
-    # gnome-bluetooth
-    # gnome-color-manager
-    # gnome-control-center
-    # gnome-shell-extensions
-    gnome-tour # GNOME Shell detects the .desktop file on first log-in.
+    gnome-tour
     gnome-user-docs
-    # gtk3.out # for gtk-launch program
-    # xdg-user-dirs # Update user dirs as described in https://freedesktop.org/wiki/Software/xdg-user-dirs/
-    # xdg-user-dirs-gtk # Used to create the default bookmarks
-    #
     baobab
     epiphany
     gnome-text-editor
@@ -45,21 +43,21 @@
     gnome-logs
     gnome-maps
     gnome-music
-    # gnome-system-monitor
     gnome-weather
-    # loupe
     gnome-connections
     simple-scan
-    #snapshot
     totem
     yelp
     gnome-software
   ];
   environment.systemPackages = with pkgs; [
+    gnome-session
+    mutter
     gnome-tweaks
     gnome-extension-manager
     dconf-editor
     gnomeExtensions.blur-my-shell
+    gnomeExtensions.media-controls
     gnomeExtensions.vitals
     gnomeExtensions.dash-to-dock
     gnomeExtensions.clipboard-indicator

@@ -13,7 +13,6 @@
     mpris-discord-rpc
   ];
   services.cliphist.enable = true;
-  services.blueman-applet.enable = true;
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
