@@ -13,6 +13,7 @@
   };
   imports = [
     ./pkgs/hide-desktop-entry.nix
+    ./pkgs/autostart.nix
     ./pkgs/ime.nix
     ./pkgs/dev.nix
     ./pkgs/fonts.nix

@@ -16,8 +16,10 @@
   services.power-profiles-daemon.enable = false;
   services.udev.packages = [pkgs.gnome-settings-daemon];
   services.gnome.rygel.enable = false;
+  services.gvfs.enable = true;
 
   environment.gnome.excludePackages = with pkgs; [
+    file-roller
     rygel
     orca
     evince
@@ -57,7 +59,6 @@
     gnome-extension-manager
     dconf-editor
     gnomeExtensions.blur-my-shell
-    gnomeExtensions.media-controls
     gnomeExtensions.vitals
     gnomeExtensions.dash-to-dock
     gnomeExtensions.clipboard-indicator
@@ -67,6 +68,5 @@
     gnomeExtensions.app-menu-is-back
     gnomeExtensions.kimpanel
     gnomeExtensions.just-perfection
-    # ...
   ];
 }

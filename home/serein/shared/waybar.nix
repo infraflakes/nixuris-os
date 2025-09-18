@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [mpd-mpris cava playerctl];
+  home.packages = with pkgs; [];
   programs.waybar = {
     enable = true;
   };

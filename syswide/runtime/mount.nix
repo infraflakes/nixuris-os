@@ -8,8 +8,6 @@
     usbutils
     libimobiledevice
     ifuse
-    nautilus
-    sushi
     #jmtpfs
   ];
   services.usbmuxd = {
@@ -17,6 +15,4 @@
     package = pkgs.usbmuxd2;
   };
   programs.adb.enable = true;
-  #services.udisks2.enable = true;
-  services.gvfs.enable = true;
 }
