@@ -16,7 +16,7 @@
       ];
       font-family = "JetBrains Mono Nerd Font";
       font-size = 13;
-      theme = "catppuccin-frappe";
+      theme = "Catppuccin Frappe";
       background = "1b1e25";
     };
     enableFishIntegration = true;
