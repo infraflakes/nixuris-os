@@ -11,7 +11,7 @@ window-height=681
 window-width=925
 
 [org/gnome/control-center]
-last-panel='keyboard'
+last-panel='wifi'
 window-state=(980, 640, false)
 
 [org/gnome/desktop/app-folders]
@@ -72,7 +72,7 @@ monospace-font-name='JetBrainsMono Nerd Font 12'
 show-battery-percentage=true
 
 [org/gnome/desktop/notifications]
-application-children=['onlyoffice-desktopeditors', 'vesktop', 'org-gnome-nautilus', 'rog-control-center', 'ca-desrt-dconf-editor']
+application-children=['onlyoffice-desktopeditors', 'vesktop', 'org-gnome-nautilus', 'rog-control-center', 'ca-desrt-dconf-editor', 'zen-twilight']
 
 [org/gnome/desktop/notifications/application/ca-desrt-dconf-editor]
 application-id='ca.desrt.dconf-editor.desktop'
@@ -89,6 +89,9 @@ application-id='rog-control-center.desktop'
 [org/gnome/desktop/notifications/application/vesktop]
 application-id='vesktop.desktop'
 
+[org/gnome/desktop/notifications/application/zen-twilight]
+application-id='zen-twilight.desktop'
+
 [org/gnome/desktop/peripherals/keyboard]
 numlock-state=false
 
@@ -101,6 +104,10 @@ picture-options='zoom'
 picture-uri='file:///home/nixuris/.local/share/backgrounds/2025-09-16-22-58-09-Unti124tled.png'
 primary-color='#000000000000'
 secondary-color='#000000000000'
+
+[org/gnome/desktop/sound]
+event-sounds=true
+theme-name='__custom'
 
 [org/gnome/desktop/wm/keybindings]
 begin-resize=['<Super>w']
@@ -137,6 +144,9 @@ sort-mode='ascending-track-number'
 [org/gnome/evolution-data-server]
 migrated=true
 
+[org/gnome/file-roller/listing]
+show-path=false
+
 [org/gnome/mutter]
 dynamic-workspaces=false
 
@@ -152,6 +162,19 @@ search-filter-time-type='last_modified'
 [org/gnome/nautilus/window-state]
 initial-size=(1304, 750)
 initial-size-file-chooser=(890, 550)
+
+[org/gnome/papers]
+night-mode=false
+
+[org/gnome/papers/default]
+annot-color='yellow'
+continuous=true
+dual-page=false
+dual-page-odd-left=false
+enable-spellchecking=true
+show-sidebar=true
+sizing-mode='automatic'
+window-height=1045
 
 [org/gnome/settings-daemon/plugins/color]
 night-light-schedule-automatic=false
@@ -170,10 +193,11 @@ power-button-action='interactive'
 sleep-inactive-ac-type='nothing'
 
 [org/gnome/shell]
-app-picker-layout=[{'Utilities': <{'position': <0>}>, 'System': <{'position': <1>}>, 'codeblocks.desktop': <{'position': <2>}>, 'easytag.desktop': <{'position': <3>}>, 'org.nicotine_plus.Nicotine.desktop': <{'position': <4>}>, 'org.gnome.Papers.desktop': <{'position': <5>}>, 'rog-control-center.desktop': <{'position': <6>}>, 'vesktop.desktop': <{'position': <7>}>, 'org.pulseaudio.pavucontrol.desktop': <{'position': <8>}>, 'com.obsproject.Studio.desktop': <{'position': <9>}>, 'Zoom.desktop': <{'position': <10>}>}]
-disabled-extensions=@as []
-enabled-extensions=['appmenu-is-back@fthx', 'blur-my-shell@aunetx', 'clipboard-indicator@tudmotu.com', 'dash-to-dock@micxgx.gmail.com', 'emoji-copy@felipeftn', 'kimpanel@kde.org', 'just-perfection-desktop@just-perfection', 'mprisLabel@moon-0xff.github.com', 'Vitals@CoreCoding.com', 'appindicatorsupport@rgcjonas.gmail.com']
-favorite-apps=['org.gnome.Settings.desktop', 'org.gnome.Nautilus.desktop', 'zen-twilight.desktop', 'vesktop.desktop', 'com.mitchellh.ghostty.desktop', 'code.desktop', 'steam.desktop', 'onlyoffice-desktopeditors.desktop', 'protonvpn-app.desktop']
+app-picker-layout=[{'Utilities': <{'position': <0>}>, 'System': <{'position': <1>}>, 'codeblocks.desktop': <{'position': <2>}>, 'easytag.desktop': <{'position': <3>}>, 'org.nicotine_plus.Nicotine.desktop': <{'position': <4>}>, 'org.gnome.Papers.desktop': <{'position': <5>}>, 'rog-control-center.desktop': <{'position': <6>}>, 'Zoom.desktop': <{'position': <7>}>, 'com.obsproject.Studio.desktop': <{'position': <8>}>}]
+command-history=['gnome-session-properties', 'r']
+disabled-extensions=['mediacontrols@cliffniff.github.com']
+enabled-extensions=['appmenu-is-back@fthx', 'blur-my-shell@aunetx', 'clipboard-indicator@tudmotu.com', 'dash-to-dock@micxgx.gmail.com', 'emoji-copy@felipeftn', 'kimpanel@kde.org', 'just-perfection-desktop@just-perfection', 'Vitals@CoreCoding.com', 'appindicatorsupport@rgcjonas.gmail.com', 'mprisLabel@moon-0xff.github.com']
+favorite-apps=['org.gnome.Settings.desktop', 'org.gnome.Nautilus.desktop', 'zen-twilight.desktop', 'vesktop.desktop', 'com.mitchellh.ghostty.desktop', 'code.desktop', 'steam.desktop', 'onlyoffice-desktopeditors.desktop', 'protonvpn-app.desktop', 'com.obsproject.Studio.desktop']
 welcome-dialog-last-shown-version='48.4'
 
 [org/gnome/shell/extensions/blur-my-shell]
@@ -209,17 +233,24 @@ preview-size=10
 toggle-menu=['<Super>v']
 
 [org/gnome/shell/extensions/dash-to-dock]
-background-opacity=0.80000000000000004
-dash-max-icon-size=64
+apply-custom-theme=true
+background-color='rgb(153,193,241)'
+background-opacity=0.0
+custom-background-color=false
+custom-theme-shrink=false
+dash-max-icon-size=60
 dock-position='BOTTOM'
 height-fraction=0.90000000000000002
 hot-keys=false
 preferred-monitor=-2
 preferred-monitor-by-connector='eDP-1'
+running-indicator-style='DASHES'
+scroll-action='switch-workspace'
+transparency-mode='FIXED'
 
 [org/gnome/shell/extensions/emoji-copy]
 always-show=false
-recently-used=['🤤', '🐧', '😂', '❤️', '😍', '😭', '😊', '😒', '😘', '😩', '🤔']
+recently-used=['✌️', '🤤', '🐧', '😂', '❤️', '😍', '😭', '😊', '😒', '😘', '😩']
 
 [org/gnome/shell/extensions/just-perfection]
 activities-button=false
@@ -231,16 +262,23 @@ support-notifier-showed-version=34
 workspace=true
 workspace-wrap-around=true
 
+[org/gnome/shell/extensions/mediacontrols]
+extension-position='Right'
+
 [org/gnome/shell/extensions/mpris-label]
+enable-double-clicks=true
 extension-place='left'
 left-click-action='play-pause'
+left-double-click-action='open-menu'
 middle-click-action='next-track'
+middle-double-click-action='open-menu'
 remove-text-when-paused=false
 right-click-action='prev-track'
+right-double-click-action='open-menu'
 symbolic-source-icon=false
 
 [org/gnome/shell/extensions/vitals]
-hot-sensors=['__network-rx_max__', '_memory_allocated_', '_processor_usage_', '__temperature_avg__']
+hot-sensors=['_memory_allocated_', '_processor_usage_', '__temperature_avg__', '__network-rx_max__']
 
 [org/gnome/shell/keybindings]
 focus-active-notification=@as []
@@ -261,6 +299,9 @@ toggle-overview=['<Super>a']
 
 [org/gnome/tweaks]
 show-extensions-notice=false
+
+[org/gtk/gtk4/settings/color-chooser]
+selected-color=(true, 0.60000002384185791, 0.75686275959014893, 0.94509804248809814, 1.0)
 
 [org/gtk/settings/file-chooser]
 date-format='regular'
