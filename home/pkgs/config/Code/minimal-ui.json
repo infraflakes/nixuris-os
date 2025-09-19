@@ -9,7 +9,6 @@
         "telemetry.telemetryLevel": "off",
         "window.zoomLevel": 0,
         "symbols.hidesExplorerArrows": false,
-        "workbench.iconTheme": "symbols",
         "editor.lineHeight": 1.8,
         "editor.fontSize": 14,
         "editor.defaultFormatter": "ms-vscode.cpptools",
