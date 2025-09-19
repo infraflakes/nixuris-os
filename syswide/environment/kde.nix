@@ -13,7 +13,7 @@
     elisa
     gwenview
     okular
-    #kate
+    kate
     khelpcenter
     dolphin
     baloo-widgets # baloo information in Dolphin

@@ -19,4 +19,5 @@
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true; # enable copy and paste between host and guest
   virtualisation.spiceUSBRedirection.enable = true;
+  users.users.nixuris.extraGroups = ["libvirtd" "kvm"];
 }

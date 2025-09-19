@@ -14,4 +14,5 @@
       defaultNetwork.settings.dns_enabled = true;
     };
   };
+  users.users.nixuris.extraGroups = ["podman"];
 }

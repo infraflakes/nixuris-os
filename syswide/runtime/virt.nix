@@ -10,4 +10,5 @@
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
+  users.users.nixuris.extraGroups = ["libvirtd" "kvm"];
 }
