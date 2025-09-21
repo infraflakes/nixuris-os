@@ -1,7 +1,7 @@
 {pkgs ? import <nixpkgs> {}}:
 pkgs.mkShell {
-  buildInputs = [
-    (pkgs.python3.withPackages (ps: with ps; [pip virtualenv]))
+  buildInputs = with pkgs; [
+    (python3.withPackages (ps: with ps; [pip virtualenv]))
   ];
 
   shellHook = ''

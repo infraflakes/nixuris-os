@@ -1,10 +1,10 @@
 {pkgs ? import <nixpkgs> {}}:
 pkgs.mkShell {
-  buildInputs = [
-    pkgs.gcc
-    pkgs.gdb
-    pkgs.clang-tools
-    pkgs.cmake
+  buildInputs = with pkgs; [
+    gcc
+    gdb
+    clang-tools
+    cmake
   ];
   shellHook = ''
     echo "C/C++ environment is ready!"

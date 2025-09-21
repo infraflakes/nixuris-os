@@ -3,6 +3,7 @@ pkgs.mkShell {
   buildInputs = with pkgs; [
     go
     golangci-lint
+    make
   ];
   shellHook = ''
     go env -w GOPATH=$HOME/.local/share/go
