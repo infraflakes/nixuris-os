@@ -11,7 +11,7 @@ window-height=681
 window-width=925
 
 [org/gnome/control-center]
-last-panel='wifi'
+last-panel='sound'
 window-state=(980, 640, false)
 
 [org/gnome/desktop/app-folders]
@@ -72,10 +72,13 @@ monospace-font-name='JetBrainsMono Nerd Font 12'
 show-battery-percentage=true
 
 [org/gnome/desktop/notifications]
-application-children=['onlyoffice-desktopeditors', 'vesktop', 'org-gnome-nautilus', 'rog-control-center', 'ca-desrt-dconf-editor', 'zen-twilight']
+application-children=['onlyoffice-desktopeditors', 'vesktop', 'org-gnome-nautilus', 'rog-control-center', 'ca-desrt-dconf-editor', 'zen-twilight', 'gnome-power-panel']
 
 [org/gnome/desktop/notifications/application/ca-desrt-dconf-editor]
 application-id='ca.desrt.dconf-editor.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
 
 [org/gnome/desktop/notifications/application/onlyoffice-desktopeditors]
 application-id='onlyoffice-desktopeditors.desktop'
@@ -93,7 +96,7 @@ application-id='vesktop.desktop'
 application-id='zen-twilight.desktop'
 
 [org/gnome/desktop/peripherals/keyboard]
-numlock-state=false
+numlock-state=true
 
 [org/gnome/desktop/peripherals/touchpad]
 two-finger-scrolling-enabled=true
@@ -173,8 +176,11 @@ dual-page=false
 dual-page-odd-left=false
 enable-spellchecking=true
 show-sidebar=true
-sizing-mode='automatic'
-window-height=1045
+sizing-mode='free'
+window-height=666
+window-maximized=true
+window-width=1197
+zoom=0.83333333333333337
 
 [org/gnome/settings-daemon/plugins/color]
 night-light-schedule-automatic=false
@@ -250,7 +256,7 @@ transparency-mode='FIXED'
 
 [org/gnome/shell/extensions/emoji-copy]
 always-show=false
-recently-used=['✌️', '🤤', '🐧', '😂', '❤️', '😍', '😭', '😊', '😒', '😘', '😩']
+recently-used=['✌️', '😂', '💔', '🤤', '🐧', '❤️', '😍', '😭', '😊', '😒', '😘']
 
 [org/gnome/shell/extensions/just-perfection]
 activities-button=false
@@ -315,4 +321,4 @@ sort-directories-first=false
 sort-order='descending'
 type-format='category'
 window-position=(102, 102)
-window-size=(1238, 902)
+window-size=(1238, 878)

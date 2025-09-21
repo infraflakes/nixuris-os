@@ -39,6 +39,7 @@
     };
     # Dev Shell
     devShells.${system} = {
+      rs = import ./devshells/rs.nix {inherit pkgs;};
       cpp = import ./devshells/cpp.nix {inherit pkgs;};
       go = import ./devshells/go.nix {inherit pkgs;};
       js = import ./devshells/js.nix {inherit pkgs;};
