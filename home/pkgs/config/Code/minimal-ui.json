@@ -14,7 +14,7 @@
         "editor.defaultFormatter": "ms-vscode.cpptools",
         "breadcrumbs.enabled": false,
         "workbench.activityBar.location": "bottom",
-        "editor.minimap.autohide": true,
+        "editor.minimap.autohide": "mouseover",
         "editor.scrollbar.vertical": "hidden",
         "editor.scrollbar.horizontal": "hidden",
         "workbench.statusBar.visible": true,
