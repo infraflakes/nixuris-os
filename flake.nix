@@ -40,10 +40,9 @@
     # Dev Shell
     devShells.${system} = {
       rs = import ./devshells/rs.nix {inherit pkgs;};
-      cpp = import ./devshells/cpp.nix {inherit pkgs;};
       go = import ./devshells/go.nix {inherit pkgs;};
       js = import ./devshells/js.nix {inherit pkgs;};
-      python = import ./devshells/python.nix {inherit pkgs;};
+      py = import ./devshells/py.nix {inherit pkgs;};
       all = import ./devshells/all.nix {inherit pkgs;};
     };
   };
