@@ -6,8 +6,6 @@
 {
   home.packages = with pkgs; [
     mpd-mpris
-    cava
-    playerctl
     papers
     ffmpeg-full
     rmpc
@@ -15,7 +13,6 @@
     mpd
     mpv
     ani-cli
-    kew
     easytag
     nicotine-plus
     imv

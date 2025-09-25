@@ -32,13 +32,6 @@
     terminal = true;
     noDisplay = true;
   };
-  #Ranger
-  xdg.desktopEntries.ranger = {
-    name = "ranger";
-    exec = "ranger";
-    terminal = true;
-    noDisplay = true;
-  };
   #Fish
   xdg.desktopEntries.fish = {
     name = "fish";
@@ -46,26 +39,6 @@
     terminal = true;
     noDisplay = true;
   };
-  #Rofi
-  home.file.".local/share/applications/rofi.desktop".text = ''
-    [Desktop Entry]
-    Name=DO NOT USE
-    Exec=echo "nah"
-    Terminal=false
-    Type=Application
-    NoDisplay=true
-    Hidden=true
-  '';
-
-  home.file.".local/share/applications/rofi-theme-selector.desktop".text = ''
-    [Desktop Entry]
-    Name=NOPE
-    Exec=echo "nope"
-    Terminal=false
-    Type=Application
-    NoDisplay=true
-    Hidden=true
-  '';
   #Neovim
   xdg.desktopEntries."nvim" = {
     name = "Neovim wrapper";

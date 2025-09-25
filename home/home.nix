@@ -33,8 +33,5 @@
     ./confs/fastfetch.nix
     ./confs/nvim.nix
     ./confs/yazi.nix
-
-    #Serein Dots
-    #./serein/serein.nix
   ];
 }
