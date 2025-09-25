@@ -2,9 +2,14 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   home = {
-    packages = with pkgs; [xwayland-satellite xwayland openbox];
+    packages = with pkgs; [
+      labwc
+      xwayland
+      openbox
+    ];
     sessionVariables = {
       DISPLAY = ":0";
     };

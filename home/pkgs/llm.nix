@@ -2,10 +2,12 @@
   config,
   pkgs,
   ...
-}: let
+}:
+let
   nvidia = "cuda";
   amd = "rocm";
-in {
+in
+{
   home.packages = [
     (pkgs.ollama.override {
       acceleration = nvidia;

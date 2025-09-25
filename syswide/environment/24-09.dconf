@@ -1,0 +1,351 @@
+[ca/desrt/dconf-editor]
+saved-pathbar-path='/org/gnome/desktop/wm/keybindings/switch-to-workspace-9'
+saved-view='/'
+show-warning=false
+window-height=500
+window-is-maximized=false
+window-width=1012
+
+[org/gnome/Extensions]
+window-height=681
+window-width=925
+
+[org/gnome/control-center]
+last-panel='wifi'
+window-state=(1203, 702, false)
+
+[org/gnome/desktop/app-folders]
+folder-children=['System', 'Utilities', 'YaST', 'Pardus']
+
+[org/gnome/desktop/app-folders/folders/Pardus]
+categories=['X-Pardus-Apps']
+name='X-Pardus-Apps.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/System]
+apps=['org.gnome.tweaks.desktop', 'org.gnome.SystemMonitor.desktop', 'ca.desrt.dconf-editor.desktop', 'com.mattjakeman.ExtensionManager.desktop', 'org.gnome.Extensions.desktop', 'fcitx5-configtool.desktop', 'nixos-manual.desktop']
+name='X-GNOME-Shell-System.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/Utilities]
+apps=['org.gnome.Decibels.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.Loupe.desktop', 'org.gnome.Snapshot.desktop']
+name='X-GNOME-Shell-Utilities.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[org/gnome/desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///home/nixuris/.local/share/backgrounds/2025-09-16-22-58-09-Unti124tled.png'
+picture-uri-dark='file:///home/nixuris/.local/share/backgrounds/2025-09-16-22-58-09-Unti124tled.png'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/break-reminders/eyesight]
+play-sound=true
+
+[org/gnome/desktop/break-reminders/movement]
+duration-seconds=uint32 300
+interval-seconds=uint32 1800
+play-sound=true
+
+[org/gnome/desktop/input-sources]
+mru-sources=[('xkb', 'us')]
+sources=[('xkb', 'us')]
+xkb-options=['terminate:ctrl_alt_bksp']
+
+[org/gnome/desktop/interface]
+clock-show-date=false
+clock-show-seconds=true
+color-scheme='prefer-dark'
+cursor-theme='Bibata-Modern-Ice'
+document-font-name='JetBrainsMono Nerd Font 12'
+enable-animations=true
+font-name='JetBrainsMono Nerd Font 12'
+gtk-theme='Tokyonight-Dark'
+icon-theme='Papirus-Dark'
+monospace-font-name='JetBrainsMono Nerd Font 12'
+show-battery-percentage=true
+
+[org/gnome/desktop/notifications]
+application-children=['onlyoffice-desktopeditors', 'vesktop', 'org-gnome-nautilus', 'rog-control-center', 'ca-desrt-dconf-editor', 'zen-twilight', 'gnome-power-panel']
+
+[org/gnome/desktop/notifications/application/ca-desrt-dconf-editor]
+application-id='ca.desrt.dconf-editor.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
+
+[org/gnome/desktop/notifications/application/onlyoffice-desktopeditors]
+application-id='onlyoffice-desktopeditors.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
+
+[org/gnome/desktop/notifications/application/rog-control-center]
+application-id='rog-control-center.desktop'
+
+[org/gnome/desktop/notifications/application/vesktop]
+application-id='vesktop.desktop'
+
+[org/gnome/desktop/notifications/application/zen-twilight]
+application-id='zen-twilight.desktop'
+
+[org/gnome/desktop/peripherals/keyboard]
+numlock-state=false
+
+[org/gnome/desktop/peripherals/touchpad]
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/screensaver]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///home/nixuris/.local/share/backgrounds/2025-09-16-22-58-09-Unti124tled.png'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/sound]
+event-sounds=true
+theme-name='__custom'
+
+[org/gnome/desktop/wm/keybindings]
+begin-resize=['<Super>w']
+close=['<Super>q']
+maximize=['<Super>f']
+move-to-workspace-left=['<Control><Super>Left']
+move-to-workspace-right=['<Control><Super>Right']
+switch-input-source=@as []
+switch-input-source-backward=@as []
+switch-to-workspace-1=['<Super>1']
+switch-to-workspace-10=['<Super>0']
+switch-to-workspace-2=['<Super>2']
+switch-to-workspace-3=['<Super>3']
+switch-to-workspace-4=['<Super>4']
+switch-to-workspace-5=['<Super>5']
+switch-to-workspace-6=['<Super>6']
+switch-to-workspace-7=['<Super>7']
+switch-to-workspace-8=['<Super>8']
+switch-to-workspace-9=['<Super>9']
+switch-to-workspace-left=['<Super>Left']
+switch-to-workspace-right=['<Super>Right']
+toggle-fullscreen=['<Shift><Super>f']
+unmaximize=['<Super>r']
+
+[org/gnome/desktop/wm/preferences]
+button-layout='appmenu:minimize,maximize,close'
+focus-mode='sloppy'
+num-workspaces=9
+
+[org/gnome/easytag]
+default-path=b'/home/nixuris/Music'
+sort-mode='ascending-title'
+
+[org/gnome/evolution-data-server]
+migrated=true
+
+[org/gnome/file-roller/listing]
+show-path=false
+
+[org/gnome/mutter]
+dynamic-workspaces=false
+
+[org/gnome/mutter/keybindings]
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='icon-view'
+migrated-gtk-settings=true
+search-filter-time-type='last_modified'
+
+[org/gnome/nautilus/window-state]
+initial-size=(1304, 750)
+initial-size-file-chooser=(890, 550)
+
+[org/gnome/papers]
+night-mode=false
+
+[org/gnome/papers/default]
+annot-color='yellow'
+continuous=true
+dual-page=false
+dual-page-odd-left=false
+enable-spellchecking=true
+show-sidebar=true
+sizing-mode='free'
+window-height=666
+window-maximized=true
+window-width=1197
+zoom=0.83333333333333337
+
+[org/gnome/settings-daemon/plugins/color]
+night-light-schedule-automatic=false
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+screenreader=@as []
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>Return'
+command='ghostty'
+name='Terminal'
+
+[org/gnome/settings-daemon/plugins/power]
+power-button-action='interactive'
+sleep-inactive-ac-type='nothing'
+
+[org/gnome/shell]
+app-picker-layout=[{'Utilities': <{'position': <0>}>, 'System': <{'position': <1>}>, 'codeblocks.desktop': <{'position': <2>}>, 'easytag.desktop': <{'position': <3>}>, 'org.nicotine_plus.Nicotine.desktop': <{'position': <4>}>, 'org.gnome.Papers.desktop': <{'position': <5>}>, 'rog-control-center.desktop': <{'position': <6>}>, 'Zoom.desktop': <{'position': <7>}>, 'com.obsproject.Studio.desktop': <{'position': <8>}>}]
+command-history=['gnome-session-properties', 'r']
+disabled-extensions=['mediacontrols@cliffniff.github.com']
+enabled-extensions=['appmenu-is-back@fthx', 'blur-my-shell@aunetx', 'clipboard-indicator@tudmotu.com', 'dash-to-dock@micxgx.gmail.com', 'emoji-copy@felipeftn', 'kimpanel@kde.org', 'just-perfection-desktop@just-perfection', 'Vitals@CoreCoding.com', 'appindicatorsupport@rgcjonas.gmail.com', 'mprisLabel@moon-0xff.github.com']
+favorite-apps=['org.gnome.Settings.desktop', 'org.gnome.Nautilus.desktop', 'zen-twilight.desktop', 'vesktop.desktop', 'com.mitchellh.ghostty.desktop', 'code.desktop', 'steam.desktop', 'onlyoffice-desktopeditors.desktop', 'protonvpn-app.desktop', 'com.obsproject.Studio.desktop']
+welcome-dialog-last-shown-version='48.4'
+
+[org/gnome/shell/extensions/blur-my-shell]
+settings-version=2
+
+[org/gnome/shell/extensions/blur-my-shell/appfolder]
+brightness=0.59999999999999998
+sigma=30
+
+[org/gnome/shell/extensions/blur-my-shell/dash-to-dock]
+blur=true
+brightness=0.59999999999999998
+sigma=30
+static-blur=true
+style-dash-to-dock=0
+
+[org/gnome/shell/extensions/blur-my-shell/panel]
+brightness=0.59999999999999998
+sigma=30
+
+[org/gnome/shell/extensions/blur-my-shell/window-list]
+brightness=0.59999999999999998
+sigma=30
+
+[org/gnome/shell/extensions/clipboard-indicator]
+cache-size=1000
+display-mode=3
+history-size=10000
+move-item-first=true
+notify-on-copy=true
+paste-on-select=false
+preview-size=10
+toggle-menu=['<Super>v']
+
+[org/gnome/shell/extensions/dash-to-dock]
+apply-custom-theme=true
+background-color='rgb(153,193,241)'
+background-opacity=0.0
+custom-background-color=false
+custom-theme-shrink=false
+dash-max-icon-size=60
+dock-position='BOTTOM'
+height-fraction=0.90000000000000002
+hot-keys=false
+preferred-monitor=-2
+preferred-monitor-by-connector='eDP-1'
+running-indicator-style='DASHES'
+scroll-action='switch-workspace'
+transparency-mode='FIXED'
+
+[org/gnome/shell/extensions/emoji-copy]
+always-show=false
+recently-used=['✌️', '😂', '💔', '🤤', '🐧', '❤️', '😍', '😭', '😊', '😒', '😘']
+
+[org/gnome/shell/extensions/just-perfection]
+activities-button=false
+clock-menu-position=1
+clock-menu-position-offset=20
+dash-app-running=true
+show-apps-button=true
+support-notifier-showed-version=34
+workspace=true
+workspace-wrap-around=true
+
+[org/gnome/shell/extensions/mediacontrols]
+extension-position='Right'
+
+[org/gnome/shell/extensions/mpris-label]
+button-placeholder='＿'
+enable-double-clicks=true
+extension-place='left'
+left-click-action='play-pause'
+left-double-click-action='open-menu'
+middle-click-action='next-track'
+middle-double-click-action='open-menu'
+remove-text-when-paused=false
+right-click-action='prev-track'
+right-double-click-action='open-menu'
+symbolic-source-icon=false
+volume-control-scheme='application'
+
+[org/gnome/shell/extensions/vitals]
+hot-sensors=['_memory_allocated_', '_processor_usage_', '__temperature_avg__', '__network-rx_max__']
+
+[org/gnome/shell/keybindings]
+focus-active-notification=@as []
+screenshot=['<Alt><Super>s']
+show-screenshot-ui=['<Shift><Super>s']
+switch-to-application-1=@as []
+switch-to-application-2=@as []
+switch-to-application-3=@as []
+switch-to-application-4=@as []
+switch-to-application-5=@as []
+switch-to-application-6=@as []
+switch-to-application-7=@as []
+switch-to-application-8=@as []
+switch-to-application-9=@as []
+toggle-application-view=['<Super>space']
+toggle-message-tray=['<Super>n']
+toggle-overview=['<Super>a']
+
+[org/gnome/tweaks]
+show-extensions-notice=false
+
+[org/gtk/gtk4/settings/color-chooser]
+selected-color=(true, 0.60000002384185791, 0.75686275959014893, 0.94509804248809814, 1.0)
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=204
+sort-column='modified'
+sort-directories-first=false
+sort-order='descending'
+type-format='category'
+window-position=(341, 95)
+window-size=(1238, 878)
+
+[org/virt-manager/virt-manager]
+manager-window-height=550
+manager-window-width=550
+
+[org/virt-manager/virt-manager/connections]
+autoconnect=['qemu:///system']
+uris=['qemu:///system']
+
+[org/virt-manager/virt-manager/details]
+show-toolbar=true
+
+[org/virt-manager/virt-manager/paths]
+media-default='/home/nixuris/Downloads'
+
+[org/virt-manager/virt-manager/urls]
+isos=['/home/nixuris/Downloads/Win10_22H2_English_x64v1.iso']
+
+[org/virt-manager/virt-manager/vmlist-fields]
+disk-usage=false
+network-traffic=false
+
+[org/virt-manager/virt-manager/vms/2434f5e6d51a4dd7a88e1de6a05b32d0]
+autoconnect=1
+vm-window-size=(1920, 1009)

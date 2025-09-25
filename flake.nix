@@ -14,41 +14,40 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    niri = {
-      url = "github:sodiboo/niri-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    serein-cli,
-    zen-browser,
-    niri,
-    ...
-  } @ inputs: let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {inherit system;};
-  in {
-    # NixOS configuration
-    nixosConfigurations.serein = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs system;};
-      modules = [./syswide/host.nix];
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      serein-cli,
+      zen-browser,
+      ...
+    }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = import nixpkgs { inherit system; };
+    in
+    {
+      # Formatter
+      formatter.${system} = pkgs.nixfmt-rfc-style;
+      # NixOS configuration
+      nixosConfigurations.serein = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs system; };
+        modules = [ ./syswide/host.nix ];
+      };
+      # Home Manager
+      homeConfigurations."nixuris@serein" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        extraSpecialArgs = { inherit inputs; };
+        modules = [ ./home/home.nix ];
+      };
+      # Dev Shell
+      devShells.${system} = {
+        rs = import ./devshells/rs.nix { inherit pkgs; };
+        go = import ./devshells/go.nix { inherit pkgs; };
+        js = import ./devshells/js.nix { inherit pkgs; };
+        py = import ./devshells/py.nix { inherit pkgs; };
+      };
     };
-    # Home Manager
-    homeConfigurations."nixuris@serein" = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
-      extraSpecialArgs = {inherit inputs;};
-      modules = [./home/home.nix];
-    };
-    # Dev Shell
-    devShells.${system} = {
-      cpp = import ./devshells/cpp.nix {inherit pkgs;};
-      go = import ./devshells/go.nix {inherit pkgs;};
-      js = import ./devshells/js.nix {inherit pkgs;};
-      python = import ./devshells/python.nix {inherit pkgs;};
-      all = import ./devshells/all.nix {inherit pkgs;};
-    };
-  };
 }

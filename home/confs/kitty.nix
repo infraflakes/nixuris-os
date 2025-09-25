@@ -3,8 +3,9 @@
   pkgs,
   lib,
   ...
-}: {
-  home.packages = with pkgs; [];
+}:
+{
+  home.packages = with pkgs; [ ];
   programs.kitty = {
     enable = true;
     font = {

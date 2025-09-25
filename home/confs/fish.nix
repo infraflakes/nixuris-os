@@ -2,8 +2,9 @@
   config,
   pkgs,
   ...
-}: {
-  home.packages = with pkgs; [zoxide];
+}:
+{
+  home.packages = with pkgs; [ zoxide ];
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;
@@ -32,10 +33,9 @@
       '';
     };
     shellAliases = {
-      gcs = "git clone --depth=1";
-      e = "nvim";
+      cd = "z";
       se = "sudo -E -s nvim";
-      ls = "ls -la";
+      ls = "ls -l";
       nvidia-gpu = "__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia";
     };
     interactiveShellInit = ''

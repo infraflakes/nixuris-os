@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   services.displayManager.gdm.enable = true;
 
   services.displayManager.sddm = {
@@ -12,5 +13,5 @@
   };
 
   #programs.hyprland.enable = true;
-  programs.niri.enable = true;
+  #programs.niri.enable = true;
 }

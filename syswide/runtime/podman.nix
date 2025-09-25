@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   virtualisation.containers.enable = true;
   virtualisation = {
     podman = {
@@ -14,4 +15,5 @@
       defaultNetwork.settings.dns_enabled = true;
     };
   };
+  users.users.nixuris.extraGroups = [ "podman" ];
 }

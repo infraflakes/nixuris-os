@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   programs.alacritty = {
     enable = true;
     settings = {
@@ -15,7 +16,10 @@
       };
       terminal.shell = {
         program = "bash";
-        args = ["-c" "fish"];
+        args = [
+          "-c"
+          "fish"
+        ];
       };
       window = {
         opacity = 0.8;

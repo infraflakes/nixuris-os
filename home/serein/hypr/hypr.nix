@@ -4,10 +4,12 @@
   pkgs,
   inputs,
   ...
-}: let
+}:
+let
   scriptsDir = builtins.toString ./scripts;
   rofiScriptsDir = builtins.toString ../shared/config/rofi/scripts;
-in {
+in
+{
   home.packages = with pkgs; [
     pavucontrol
     libnotify

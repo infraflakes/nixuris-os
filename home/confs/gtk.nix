@@ -2,10 +2,12 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
-    nordzy-icon-theme
+    papirus-icon-theme
   ];
+  home.sessionVariables.GTK_THEME = "Tokyonight-Dark";
   gtk = {
     enable = true;
     cursorTheme = {
@@ -13,12 +15,12 @@
       name = "Bibata-Modern-Ice";
     };
     theme = {
-      package = pkgs.nordic;
-      name = "Nordic";
+      package = pkgs.tokyonight-gtk-theme;
+      name = "Tokyonight-Dark";
     };
     iconTheme = {
-      package = pkgs.nordzy-icon-theme;
-      name = "Nordzy";
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
     };
   };
 
@@ -26,8 +28,8 @@
     enable = true;
     settings = {
       "org/gnome/desktop/interface" = {
-        gtk-theme = "Nordic";
-        icon-theme = "Nordzy";
+        gtk-theme = "Tokyonight-Dark";
+        icon-theme = "Papirus-Dark";
         color-scheme = "prefer-dark";
         font-name = "JetBrainsMono Nerd Font 12";
         document-font-name = "JetBrainsMono Nerd Font 12";

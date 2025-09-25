@@ -2,8 +2,13 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
+    mpd-mpris
+    cava
+    playerctl
+    papers
     ffmpeg-full
     rmpc
     mpc
@@ -14,6 +19,7 @@
     easytag
     nicotine-plus
     imv
+    libnotify
   ];
   home.file.".config/rmpc".source = ../confs/config/rmpc;
   home.file.".config/mpd/mpd.conf".text = ''

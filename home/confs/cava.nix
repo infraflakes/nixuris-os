@@ -2,8 +2,9 @@
   config,
   pkgs,
   ...
-}: {
-  home.packages = with pkgs; [cava];
+}:
+{
+  home.packages = with pkgs; [ cava ];
   home.file.".config/cava/config".text = ''
     [general]
     framerate = 120

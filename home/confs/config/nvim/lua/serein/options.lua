@@ -7,7 +7,7 @@ vim.o.mouse = "a"
 vim.o.showmode = true
 
 vim.schedule(function()
-  vim.o.clipboard = "unnamedplus"
+	vim.o.clipboard = "unnamedplus"
 end)
 
 vim.o.breakindent = true

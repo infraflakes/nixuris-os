@@ -1,10 +1,15 @@
-{pkgs ? import <nixpkgs> {}}:
+{
+  pkgs ? import <nixpkgs> { },
+}:
 pkgs.mkShell {
   buildInputs = with pkgs; [
     go
+    golangci-lint
+    cmake
   ];
   shellHook = ''
-    echo "Go environment is ready!"
-    exec fish
+    go env -w GOPATH=$HOME/.local/share/go
+      echo "Go environment is ready!"
+      exec fish
   '';
 }

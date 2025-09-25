@@ -2,24 +2,21 @@
   config,
   pkgs,
   ...
-}: {
-  home.packages = with pkgs; [direnv];
+}:
+{
+  home.packages = with pkgs; [ direnv ];
   programs.git = {
     enable = true;
     userName = "nixuris";
     userEmail = "nixuriss@proton.me";
   };
-  programs.vscode = {
-    enable = true;
-    #package = pkgs.vscodium;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
-      #ms-python.python
-      ms-vscode.cpptools
-      #llvm-vs-code-extensions.vscode-clangd
-      github.github-vscode-theme
-      bbenoist.nix
-      mkhl.direnv
-    ];
-  };
-  home.file.".config/Code/User/settings.json".source = ./config/Code/minimal-ui.json;
+  #programs.jujutsu = {
+  #enable = true;
+  #settings = {
+  #user = {
+  #email = "nixuriss@proton.me";
+  #name = "nixuris";
+  #};
+  #};
+  #};
 }
