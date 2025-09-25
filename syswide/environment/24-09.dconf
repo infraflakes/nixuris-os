@@ -11,8 +11,8 @@ window-height=681
 window-width=925
 
 [org/gnome/control-center]
-last-panel='sound'
-window-state=(980, 640, false)
+last-panel='wifi'
+window-state=(1203, 702, false)
 
 [org/gnome/desktop/app-folders]
 folder-children=['System', 'Utilities', 'YaST', 'Pardus']
@@ -96,7 +96,7 @@ application-id='vesktop.desktop'
 application-id='zen-twilight.desktop'
 
 [org/gnome/desktop/peripherals/keyboard]
-numlock-state=true
+numlock-state=false
 
 [org/gnome/desktop/peripherals/touchpad]
 two-finger-scrolling-enabled=true
@@ -142,7 +142,7 @@ num-workspaces=9
 
 [org/gnome/easytag]
 default-path=b'/home/nixuris/Music'
-sort-mode='ascending-track-number'
+sort-mode='ascending-title'
 
 [org/gnome/evolution-data-server]
 migrated=true
@@ -272,6 +272,7 @@ workspace-wrap-around=true
 extension-position='Right'
 
 [org/gnome/shell/extensions/mpris-label]
+button-placeholder='＿'
 enable-double-clicks=true
 extension-place='left'
 left-click-action='play-pause'
@@ -282,6 +283,7 @@ remove-text-when-paused=false
 right-click-action='prev-track'
 right-double-click-action='open-menu'
 symbolic-source-icon=false
+volume-control-scheme='application'
 
 [org/gnome/shell/extensions/vitals]
 hot-sensors=['_memory_allocated_', '_processor_usage_', '__temperature_avg__', '__network-rx_max__']
@@ -320,5 +322,30 @@ sort-column='modified'
 sort-directories-first=false
 sort-order='descending'
 type-format='category'
-window-position=(102, 102)
+window-position=(341, 95)
 window-size=(1238, 878)
+
+[org/virt-manager/virt-manager]
+manager-window-height=550
+manager-window-width=550
+
+[org/virt-manager/virt-manager/connections]
+autoconnect=['qemu:///system']
+uris=['qemu:///system']
+
+[org/virt-manager/virt-manager/details]
+show-toolbar=true
+
+[org/virt-manager/virt-manager/paths]
+media-default='/home/nixuris/Downloads'
+
+[org/virt-manager/virt-manager/urls]
+isos=['/home/nixuris/Downloads/Win10_22H2_English_x64v1.iso']
+
+[org/virt-manager/virt-manager/vmlist-fields]
+disk-usage=false
+network-traffic=false
+
+[org/virt-manager/virt-manager/vms/2434f5e6d51a4dd7a88e1de6a05b32d0]
+autoconnect=1
+vm-window-size=(1920, 1009)

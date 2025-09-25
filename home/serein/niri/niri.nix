@@ -2,9 +2,10 @@
   pkgs,
   inputs,
   ...
-}: {
-  imports = [inputs.niri.homeModules.niri];
-  nixpkgs.overlays = [inputs.niri.overlays.niri];
+}:
+{
+  imports = [ inputs.niri.homeModules.niri ];
+  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
   home.packages = with pkgs; [
     pavucontrol
     libnotify

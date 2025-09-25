@@ -2,13 +2,17 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   users = {
     users = {
       nixuris = {
         isNormalUser = true;
         shell = pkgs.fish;
-        extraGroups = ["networkmanager" "wheel"];
+        extraGroups = [
+          "networkmanager"
+          "wheel"
+        ];
       };
     };
   };
@@ -33,6 +37,6 @@
   networking = {
     hostName = "serein";
     networkmanager.enable = true;
-    nameservers = ["1.1.1.1"];
+    nameservers = [ "1.1.1.1" ];
   };
 }

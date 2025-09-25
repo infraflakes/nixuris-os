@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     # System core
     /etc/nixos/hardware-configuration.nix
@@ -20,5 +21,6 @@
     ./runtime/mount.nix
     ./runtime/podman.nix
     ./runtime/gaming.nix
+    ./runtime/virt.nix
   ];
 }

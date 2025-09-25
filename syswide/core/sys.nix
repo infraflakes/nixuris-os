@@ -3,10 +3,15 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   grubTheme = builtins.toString ../../home/assets/hollow-grub;
-in {
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+in
+{
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
   system.stateVersion = "25.11";
   nixpkgs.config.allowUnfree = true;
   #Bootloader

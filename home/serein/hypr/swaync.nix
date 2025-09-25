@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   services.swaync = {
     enable = true;
     # Inline the entire CSS here:
@@ -321,12 +322,16 @@
           device = "asus::kbd_backlight";
           subsystem = "leds";
         };
-        volume = {label = "  ";};
+        volume = {
+          label = "  ";
+        };
         mpris = {
           image-size = 96;
           image-radius = 6;
         };
-        dnd = {text = "Do Not Disturb";};
+        dnd = {
+          text = "Do Not Disturb";
+        };
         label = {
           max-lines = 1;
           text = "Notification Center";

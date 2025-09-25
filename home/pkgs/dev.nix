@@ -2,8 +2,9 @@
   config,
   pkgs,
   ...
-}: {
-  home.packages = with pkgs; [direnv codeblocks];
+}:
+{
+  home.packages = with pkgs; [ direnv ];
   programs.git = {
     enable = true;
     userName = "nixuris";

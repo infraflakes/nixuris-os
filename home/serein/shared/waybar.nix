@@ -2,8 +2,9 @@
   config,
   pkgs,
   ...
-}: {
-  home.packages = with pkgs; [];
+}:
+{
+  home.packages = with pkgs; [ ];
   programs.waybar = {
     enable = true;
   };

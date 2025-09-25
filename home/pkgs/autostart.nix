@@ -2,8 +2,13 @@
   config,
   pkgs,
   ...
-}: {
-  home.packages = with pkgs; [mpd mpd-mpris music-discord-rpc];
+}:
+{
+  home.packages = with pkgs; [
+    mpd
+    mpd-mpris
+    music-discord-rpc
+  ];
 
   xdg.configFile = {
     "autostart/mpd.desktop".text = ''

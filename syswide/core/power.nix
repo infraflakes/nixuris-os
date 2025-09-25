@@ -3,8 +3,9 @@
   lib,
   pkgs,
   ...
-}: {
-  environment.systemPackages = with pkgs; [powertop];
+}:
+{
+  environment.systemPackages = with pkgs; [ powertop ];
   powerManagement.powertop.enable = true;
   services.tlp = {
     enable = true;
