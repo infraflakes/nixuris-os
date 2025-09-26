@@ -31,30 +31,46 @@ return { -- telescope with hidden files + fzf-native
 		function _G.ToggleTmuxSessions(opts)
 			opts = opts or {}
 			local Job = require "plenary.job"
-			local results = {}
-			Job:new({
+			local job = Job:new {
 				command = "tmux",
 				args = { "ls" },
-				on_stdout = function(_, d)
-					results[#results + 1] =
-					    d
+			}
+			local results, stderr = job:sync()
+
+			-- We will now check for success by looking for non-empty stdout,
+			-- because job.exit_code is unreliable in this environment.
+			if not results or #results == 0 or (#results == 1 and results[1] == "") then
+				local msg = "No active tmux sessions found or command failed."
+				if stderr and type(stderr) == "table" and #stderr > 0 and stderr[1] and stderr[1] ~= "" then
+					msg = msg .. " Stderr: " .. table.concat(stderr, " ")
+				elseif type(stderr) ~= "table" then
+					-- Don't show the confusing stderr number if it's 0
+					if type(stderr) ~= "number" or stderr ~= 0 then
+						msg = msg .. " Stderr was a " .. type(stderr) .. " with value: " .. tostring(stderr)
+					end
 				end
-			}):sync()
+				vim.notify(msg, vim.log.levels.WARN)
+				return
+			end
 
 			local actions = require "telescope.actions"
-			local state   = require "telescope.actions.state"
-
+			local action_state = require "telescope.actions.state"
 			local pickers = require "telescope.pickers"
+
 			pickers.new(opts, {
 				prompt_title = "  Tmux Sessions",
 				finder = require("telescope.finders").new_table { results = results },
 				sorter = require("telescope.config").values.generic_sorter(opts),
 				attach_mappings = function(_, map)
 					map({ "i", "n" }, "<CR>", function(prompt_bufnr)
-						local selection = require("telescope.actions.state").get_selected_entry()
+						local selection = action_state.get_selected_entry()
 						if selection then
-							require("telescope.actions").close(prompt_bufnr)
+							actions.close(prompt_bufnr)
 							local session_name = selection[1]:match("^([^:]+)")
+							if not session_name then
+								vim.notify("Could not parse session name from: " .. selection[1], vim.log.levels.ERROR)
+								return
+							end
 							local Terminal = require("toggleterm.terminal").Terminal
 							local term = Terminal:new({
 								cmd = "tmux attach -t " .. session_name,
@@ -74,7 +90,7 @@ return { -- telescope with hidden files + fzf-native
 					end)
 					return true
 				end,
-			})
+			}):find()
 		end
 
 		-- key-map that calls the plain function
