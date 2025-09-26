@@ -18,7 +18,9 @@ require("lazy").setup({
 	{ import = "plugins.theme" },
 	{ import = "plugins.status-line" },
 	{ import = "plugins.dashboard" },
+	{ import = "plugins.terminal" },
 }, {
+	lockfile = vim.fn.stdpath("cache") .. "/lazy-lock.json",
 	ui = {
 		icons = vim.g.have_nerd_font and {} or {
 			cmd = "⌘",

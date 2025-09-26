@@ -44,17 +44,6 @@ _G.OpenGitRepoPickerWithTelescope = function()
 				    actions.close(prompt_bufnr)
 
 				    vim.cmd("cd " .. vim.fn.fnameescape(selection[1]))
-				    vim.cmd "terminal gitui"
-				    vim.schedule(function()
-					    vim.cmd "startinsert"
-				    end)
-
-				    vim.api.nvim_create_autocmd("TermClose", {
-					    once = true,
-					    callback = function()
-						    vim.cmd "Alpha"
-					    end,
-				    })
 			    end)
 			    return true
 		    end,
