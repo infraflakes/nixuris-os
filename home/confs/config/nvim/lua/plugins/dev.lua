@@ -28,14 +28,10 @@ return {
 		config = function()
 			require("neodev").setup() -- Setup Neovim's Lua LSP
 
-			local lspconfig = require "lspconfig"
 			local mason = require "mason"
 			local mason_lspconfig = require "mason-lspconfig"
 
 			mason.setup()
-			mason_lspconfig.setup {
-				ensure_installed = { "pyright", "clangd", "lua_ls" },
-			}
 
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -44,16 +40,18 @@ return {
 				local opts = { buffer = bufnr, silent = true }
 			end
 
-			-- Python
-			lspconfig.pyright.setup {
-				capabilities = capabilities,
-				on_attach = on_attach,
-			}
-
-			-- C++
-			lspconfig.clangd.setup {
-				capabilities = capabilities,
-				on_attach = on_attach,
+			mason_lspconfig.setup {
+				ensure_installed = { "pyright", "clangd", "lua_ls" },
+				handlers = {
+					-- This is the default handler for all servers, but we define it
+					-- explicitly to pass our own on_attach and capabilities.
+					function(server_name)
+						require("lspconfig")[server_name].setup {
+							capabilities = capabilities,
+							on_attach = on_attach,
+						}
+					end,
+				},
 			}
 		end,
 	},
@@ -98,6 +96,7 @@ return {
 		dependencies = {
 			"hrsh7th/cmp-buffer", -- words from current buffer
 			"hrsh7th/cmp-nvim-lsp", -- LSP suggestions
+			"hrsh7th/cmp-path", -- file path suggestions
 			"L3MON4D3/LuaSnip", -- optional: snippet engine
 			"saadparwaiz1/cmp_luasnip", -- optional: LuaSnip integration
 		},
@@ -118,6 +117,7 @@ return {
 				sources = cmp.config.sources {
 					{ name = "nvim_lsp" },
 					{ name = "buffer" },
+					{ name = "path" },
 				},
 			}
 		end,

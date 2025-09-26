@@ -1,26 +1,20 @@
-_G.OpenGitRepoPickerWithTelescope = function()
+-- Find git repositories and cd into them
+_G.OpenGitRepoPicker = function()
 	local actions = require "telescope.actions"
 	local action_state = require "telescope.actions.state"
+	local pickers = require "telescope.pickers"
+	local finders = require "telescope.finders"
+	local sorters = require "telescope.config".values
 
-	-- Ensure this is a table
 	local repos = {}
-
-	-- Use io.popen to find git directories
-	local handle = io.popen [[
-  find $HOME -type d -name ".git" -prune \
-  ! -path "$HOME/.*" \
-  ! -path "$HOME/.*/**" \
-  2>/dev/null
-]]
-
+	-- Reverted to the original, working find command with io.popen
+	local cmd = [[find $HOME -type d -name ".git" -prune -not -path "$HOME/.*" -not -path "$HOME/.*/**" 2>/dev/null]]
+	local handle = io.popen(cmd)
 	if handle then
-		local result = handle:read "*a"
+		local result = handle:read("*a")
 		handle:close()
-
-		-- Split lines properly
 		for line in string.gmatch(result, "[^\r\n]+") do
-			local repo_path = line:gsub("/%.git$", "")
-			table.insert(repos, repo_path)
+			table.insert(repos, (line:gsub("/%.git$", "")))
 		end
 	end
 
@@ -29,27 +23,21 @@ _G.OpenGitRepoPickerWithTelescope = function()
 		return
 	end
 
-	-- Telescope picker with FZF sorter for speed
-	require("telescope.pickers")
-	    .new({}, {
-		    prompt_title = "Git Repositories",
-		    finder = require("telescope.finders").new_table {
-			    results = repos,
-		    },
-		    -- Use FZF sorter instead of generic sorter for much better performance
-		    sorter = require("telescope.config").values.file_sorter({}),
-		    attach_mappings = function(prompt_bufnr)
-			    actions.select_default:replace(function()
-				    local selection = action_state.get_selected_entry()
-				    actions.close(prompt_bufnr)
-
-				    vim.cmd("cd " .. vim.fn.fnameescape(selection[1]))
-			    end)
-			    return true
-		    end,
-	    })
-	    :find()
+	pickers.new({}, {
+		prompt_title = "Git Repositories",
+		finder = finders.new_table { results = repos },
+		sorter = sorters.file_sorter {},
+		attach_mappings = function(prompt_bufnr)
+			actions.select_default:replace(function()
+				local selection = action_state.get_selected_entry()
+				actions.close(prompt_bufnr)
+				vim.cmd("cd " .. vim.fn.fnameescape(selection[1]))
+				vim.notify("cd " .. selection[1])
+			end)
+			return true
+		end,
+	}):find()
 end
 
 -- Register Vim command
-vim.cmd [[ command! OpenGitRepos lua OpenGitRepoPickerWithTelescope() ]]
+vim.cmd [[ command! OpenGitRepos lua _G.OpenGitRepoPicker() ]]

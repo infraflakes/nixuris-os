@@ -14,11 +14,12 @@ require("lazy").setup({
 	{ import = "plugins.which-key" },
 	{ import = "plugins.dev" },
 	{ import = "plugins.markdown" },
-	{ import = "plugins.file-manager" },
 	{ import = "plugins.theme" },
 	{ import = "plugins.status-line" },
 	{ import = "plugins.dashboard" },
 	{ import = "plugins.terminal" },
+	{ import = "plugins.neotree" },
+	{ import = "plugins.telescope" },
 }, {
 	lockfile = vim.fn.stdpath("cache") .. "/lazy-lock.json",
 	ui = {
