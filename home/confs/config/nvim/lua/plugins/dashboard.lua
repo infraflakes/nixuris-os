@@ -22,9 +22,9 @@ return {
 
 				dashboard.section.buttons.val = {
 					dashboard.button("g", "  Git Repositories", ":OpenGitRepos <CR>"),
-					dashboard.button("t", "  Open File Manager (Ranger)", ":terminal ranger<CR>"),
-					dashboard.button("ff", "󰈞  Find Files", ":Telescope find_files<CR>"),
+					dashboard.button("s", "  Tmux Sessions", ":ToggleTmux<CR>"),
 					dashboard.button("n", "  New File", ":ene <BAR> startinsert <CR>"),
+					dashboard.button("ff", "󰈞  Find Files", ":Telescope find_files<CR>"),
 					dashboard.button("fg", "󰱼  Grep Text", ":Telescope live_grep<CR>"),
 					dashboard.button("fr", "  Recent Files", ":Telescope oldfiles<CR>"),
 					dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
@@ -48,13 +48,6 @@ return {
 				end,
 			})
 
-			vim.api.nvim_create_autocmd("TermOpen", {
-				pattern = { "*ranger*" },
-				callback = function()
-					vim.cmd "startinsert"
-				end,
-			})
-
 			vim.api.nvim_create_autocmd("BufUnload", {
 				callback = function()
 					if vim.bo.filetype == "alpha" then
@@ -62,15 +55,6 @@ return {
 							vim.opt.laststatus = 3
 						end)
 					end
-				end,
-			})
-
-			vim.api.nvim_create_autocmd("TermClose", {
-				pattern = { "*ranger*" },
-				callback = function()
-					vim.defer_fn(function()
-						vim.cmd "Alpha"
-					end, 50)
 				end,
 			})
 

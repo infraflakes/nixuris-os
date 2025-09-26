@@ -30,7 +30,7 @@ return {
 			telescope.load_extension "fzf" -- ONLY fzf, no tmux_sessions here
 
 			-- standalone picker (NOT an extension)
-			local function tmux_sessions(opts)
+			function _G.ToggleTmuxSessions(opts)
 				opts = opts or {}
 				local Job = require "plenary.job"
 				local results = {}
@@ -53,12 +53,25 @@ return {
 					sorter = require("telescope.config").values.generic_sorter(opts),
 					attach_mappings = function(_, map)
 						map({ "i", "n" }, "<CR>", function(prompt_bufnr)
-							local selection = require("telescope.actions.state")
-							.get_selected_entry()
+							local selection = require("telescope.actions.state").get_selected_entry()
 							if selection then
 								require("telescope.actions").close(prompt_bufnr)
-								vim.fn.system("tmux switch-client -t " ..
-								selection[1]:match "^([^:]+)")
+								local session_name = selection[1]:match("^([^:]+)")
+								local Terminal = require("toggleterm.terminal").Terminal
+								local term = Terminal:new({
+									cmd = "tmux attach -t " .. session_name,
+									direction = "float",
+									float_opts = {
+										border = "rounded",
+										width = math.floor(vim.o.columns * 0.85),
+										height = math.floor(vim.o.lines * 0.80),
+									},
+									autoclose = true,
+								})
+								term:open()
+								vim.schedule(function()
+									vim.cmd "startinsert"
+								end)
 							end
 						end)
 						return true
@@ -67,7 +80,8 @@ return {
 			end
 
 			-- key-map that calls the plain function
-			vim.keymap.set("n", "<leader>fs", tmux_sessions, { desc = "find tmux session" })
+			vim.keymap.set("n", "<leader>fs", _G.ToggleTmuxSessions, { desc = "find tmux session" })
+			vim.cmd [[ command! ToggleTmux lua _G.ToggleTmuxSessions() ]]
 		end,
 	},
 
