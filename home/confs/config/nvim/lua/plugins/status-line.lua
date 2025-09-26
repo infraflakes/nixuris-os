@@ -12,6 +12,7 @@ return {
 					section_separators = "",
 					component_separators = "|",
 					globalstatus = true, -- whole width
+					disabled_filetypes = { "alpha", "neo-tree", "TelescopePrompt" },
 				},
 				sections = {
 					lualine_a = { "mode" },

@@ -7,7 +7,19 @@ return {
 		config = function()
 			local alpha = require "alpha"
 			local dashboard = require "alpha.themes.dashboard"
+			local palette = require("tokyonight.colors").setup()
+			local cool_blue = palette.blue
+			local soft_grey = palette.comment
 
+			vim.api.nvim_create_autocmd("ColorScheme", {
+				pattern = "*",
+				callback = function()
+					vim.api.nvim_set_hl(0, "Type", { fg = cool_blue, bold = true }) -- ascii header
+					vim.api.nvim_set_hl(0, "Keyword", { fg = cool_blue }) -- button keys
+					vim.api.nvim_set_hl(0, "Function", { fg = soft_grey }) -- button desc
+				end,
+			})
+			vim.api.nvim_exec_autocmds("ColorScheme", { pattern = "*" })
 			-- Define Main Dashboard
 			function OpenMainDashboard()
 				dashboard.section.header.val = {
@@ -31,7 +43,6 @@ return {
 				}
 
 				alpha.setup(dashboard.config)
-				vim.cmd "AlphaRedraw"
 				vim.schedule(function()
 					vim.cmd "stopinsert | redraw!"
 				end)
@@ -39,25 +50,6 @@ return {
 
 			-- Initialize Main Dashboard
 			OpenMainDashboard()
-
-			-- Autocmds
-			vim.api.nvim_create_autocmd("User", {
-				pattern = "AlphaReady",
-				callback = function()
-					vim.opt.laststatus = 0
-				end,
-			})
-
-			vim.api.nvim_create_autocmd("BufUnload", {
-				callback = function()
-					if vim.bo.filetype == "alpha" then
-						vim.schedule(function()
-							vim.opt.laststatus = 3
-						end)
-					end
-				end,
-			})
-
 			vim.keymap.set("n", "<leader>dd", "<cmd>Alpha<CR>", { desc = "Reopen [D]ash[D]oard" })
 		end,
 	},
