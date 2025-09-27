@@ -37,9 +37,13 @@
 
       bind -n C-Left  switch-client -p
       bind -n C-Right switch-client -n
+      bind -n C-n new-session
 
-      bind -n M-\\ split-window -h
-      bind -n M-- split-window -v
+      bind -n M-v split-window -h
+      bind -n M-s split-window -v
+      bind -n M-Down    select-pane -t :.+
+      bind -n M-Up  select-pane -t :.-
+
       bind -n M-y copy-mode
       bind -n M-x kill-pane
       bind -n M-a choose-tree -s
