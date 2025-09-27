@@ -16,22 +16,24 @@
     ];
   };
   imports = [
-    ./pkgs/hide-desktop-entry.nix
     ./pkgs/autostart.nix
-    ./pkgs/ime.nix
     ./pkgs/dev.nix
     ./pkgs/fonts.nix
+    ./pkgs/hide-desktop-entry.nix
     ./pkgs/media.nix
+    ./pkgs/misc.nix
     ./pkgs/social.nix
     ./pkgs/vpn.nix
-    #./pkgs/llm.nix
-    ./pkgs/misc.nix
     #Other apps configs
-    ./confs/gtk.nix
-    ./confs/ghostty.nix
-    ./confs/fish.nix
-    ./confs/fastfetch.nix
-    ./confs/nvim.nix
-    ./confs/yazi.nix
+    ./apps/ime.nix
+    ./apps/gtk.nix
+    ./apps/fish.nix
+    ./apps/ghostty.nix
+    ./apps/alacritty.nix
+    ./apps/fastfetch.nix
+    ./apps/nvim.nix
+    ./apps/yazi.nix
+    ./apps/tmux.nix
+    #./apps/ollama.nix
   ];
 }

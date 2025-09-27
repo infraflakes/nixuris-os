@@ -6,7 +6,6 @@
 {
   home.packages = with pkgs; [
     direnv
-    tmux
   ];
   programs.git = {
     enable = true;

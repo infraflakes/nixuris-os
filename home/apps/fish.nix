@@ -33,6 +33,10 @@
       '';
     };
     shellAliases = {
+      tc = "tmux new -s";
+      ta = "tmux a -t";
+      tls = "tmux ls";
+      tkill = "tmux kill-session -t";
       cd = "z";
       se = "sudo -E -s nvim";
       ls = "ls -l";

@@ -18,7 +18,7 @@
     imv
     libnotify
   ];
-  home.file.".config/rmpc".source = ../confs/config/rmpc;
+  home.file.".config/rmpc".source = ../apps/config/rmpc;
   home.file.".config/mpd/mpd.conf".text = ''
     music_directory "~/Music"
     playlist_directory "~/Music"
