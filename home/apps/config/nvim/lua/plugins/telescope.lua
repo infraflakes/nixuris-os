@@ -47,18 +47,22 @@ return { -- telescope with hidden files + fzf-native
 			-- We will now check for success by looking for non-empty stdout,
 			-- because job.exit_code is unreliable in this environment.
 			if not results or #results == 0 or (#results == 1 and results[1] == "") then
-				local msg = "No active tmux sessions found or command failed."
-				if stderr and type(stderr) == "table" and #stderr > 0 and stderr[1] and stderr[1] ~= "" then
-					msg = msg .. " Stderr: " .. table.concat(stderr, " ")
-				elseif type(stderr) ~= "table" then
-					-- Don't show the confusing stderr number if it's 0
-					if type(stderr) ~= "number" or stderr ~= 0 then
-						msg = msg ..
-						    " Stderr was a " ..
-						    type(stderr) .. " with value: " .. tostring(stderr)
-					end
-				end
-				vim.notify(msg, vim.log.levels.WARN)
+				-- If no sessions, create a new one
+				local Terminal = require("toggleterm.terminal").Terminal
+				local term = Terminal:new({
+					cmd = "tmux",
+					direction = "float",
+					float_opts = {
+						border = "rounded",
+						width = math.floor(vim.o.columns * 0.85),
+						height = math.floor(vim.o.lines * 0.80),
+					},
+					autoclose = true,
+				})
+				term:open()
+				vim.schedule(function()
+					vim.cmd "startinsert"
+				end)
 				return
 			end
 

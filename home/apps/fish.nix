@@ -49,6 +49,9 @@
       export EDITOR=nvim
       fish_add_path .local/bin
       fish_add_path .cargo/bin
+      if test -z "$TMUX"
+          exec ${pkgs.tmux}/bin/tmux new-session -A
+      end
     '';
     shellInit = ''
       set -g fish_color_normal ccd0d9 --bold
