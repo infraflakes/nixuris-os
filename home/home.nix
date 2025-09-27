@@ -29,7 +29,7 @@
     ./apps/gtk.nix
     ./apps/fish.nix
     ./apps/ghostty.nix
-    ./apps/alacritty.nix
+    #./apps/alacritty.nix
     ./apps/fastfetch.nix
     ./apps/nvim.nix
     ./apps/yazi.nix

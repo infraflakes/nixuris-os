@@ -10,9 +10,16 @@ return { -- telescope with hidden files + fzf-native
 		telescope.setup {
 			defaults = {
 				file_ignore_patterns = {
-					"__pycache__/",
-					"%.mkv", "%.png", "%.pdf", "%.xlxs",
-					"Games/", "Pictures/", "Downloads/", "Music/", "Videos/",
+					"__pycache__/", ".npm/", ".cargo/", ".zoom/", ".mozilla/", "node_modules/", ".android/", ".config/",
+					".zen/", ".cache/", ".git/", ".local/", ".venv/", ".gemini/", ".steam/", ".dotnet/", ".mpd/",
+					".pki/", ".ssh/", "%.mp3$", "%.flac$", "%.opus$", "%.m4a$",
+					"%.zip$", "%.tar$", "%.tar%.gz$", "%.tgz$", "%.rar$", "%.7z$",
+					"%.deb$", "%.rpm$", "%.dmg$", "%.pkg$", "%.msi$",
+					"%.png$", "%.jpg$", "%.jpeg$", "%.gif$", "%.bmp$", "%.svg$",
+					"%.ico$", "%.webp$", "%.tiff$", "%.psd$", "%.fig$",
+					"%.pdf$", "%.docx$", "%.doc$", "%.xlsx$", "%.pptx$", "%.odt$", "%.ods$", "%.iso$",
+					"%.mkv", "%.png", "%.pdf", "%.xlxs", ".bash_history",
+					"Games/", "Pictures/", "Videos/",
 				},
 			},
 			pickers = { find_files = { hidden = true } },
@@ -46,7 +53,9 @@ return { -- telescope with hidden files + fzf-native
 				elseif type(stderr) ~= "table" then
 					-- Don't show the confusing stderr number if it's 0
 					if type(stderr) ~= "number" or stderr ~= 0 then
-						msg = msg .. " Stderr was a " .. type(stderr) .. " with value: " .. tostring(stderr)
+						msg = msg ..
+						    " Stderr was a " ..
+						    type(stderr) .. " with value: " .. tostring(stderr)
 					end
 				end
 				vim.notify(msg, vim.log.levels.WARN)
@@ -68,7 +77,10 @@ return { -- telescope with hidden files + fzf-native
 							actions.close(prompt_bufnr)
 							local session_name = selection[1]:match("^([^:]+)")
 							if not session_name then
-								vim.notify("Could not parse session name from: " .. selection[1], vim.log.levels.ERROR)
+								vim.notify(
+									"Could not parse session name from: " ..
+									selection[1],
+									vim.log.levels.ERROR)
 								return
 							end
 							local Terminal = require("toggleterm.terminal").Terminal
@@ -96,7 +108,5 @@ return { -- telescope with hidden files + fzf-native
 		-- key-map that calls the plain function
 		vim.keymap.set("n", "<leader>fs", _G.ToggleTmuxSessions, { desc = "find tmux session" })
 		vim.cmd [[ command! ToggleTmux lua _G.ToggleTmuxSessions() ]]
-
-
 	end,
 }
