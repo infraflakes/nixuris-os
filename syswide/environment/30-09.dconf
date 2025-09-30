@@ -11,7 +11,7 @@ window-height=681
 window-width=925
 
 [org/gnome/control-center]
-last-panel='keyboard'
+last-panel='sound'
 window-state=(1203, 702, false)
 
 [org/gnome/desktop/app-folders]
@@ -72,10 +72,13 @@ monospace-font-name='JetBrainsMono Nerd Font 12'
 show-battery-percentage=true
 
 [org/gnome/desktop/notifications]
-application-children=['onlyoffice-desktopeditors', 'vesktop', 'org-gnome-nautilus', 'rog-control-center', 'ca-desrt-dconf-editor', 'zen-twilight', 'gnome-power-panel']
+application-children=['onlyoffice-desktopeditors', 'vesktop', 'org-gnome-nautilus', 'rog-control-center', 'ca-desrt-dconf-editor', 'zen-twilight', 'gnome-power-panel', 'com-mitchellh-ghostty', 'zoom']
 
 [org/gnome/desktop/notifications/application/ca-desrt-dconf-editor]
 application-id='ca.desrt.dconf-editor.desktop'
+
+[org/gnome/desktop/notifications/application/com-mitchellh-ghostty]
+application-id='com.mitchellh.ghostty.desktop'
 
 [org/gnome/desktop/notifications/application/gnome-power-panel]
 application-id='gnome-power-panel.desktop'
@@ -94,6 +97,9 @@ application-id='vesktop.desktop'
 
 [org/gnome/desktop/notifications/application/zen-twilight]
 application-id='zen-twilight.desktop'
+
+[org/gnome/desktop/notifications/application/zoom]
+application-id='Zoom.desktop'
 
 [org/gnome/desktop/peripherals/keyboard]
 numlock-state=false
@@ -157,6 +163,9 @@ dynamic-workspaces=false
 toggle-tiled-left=@as []
 toggle-tiled-right=@as []
 
+[org/gnome/nautilus/compression]
+default-compression-format='zip'
+
 [org/gnome/nautilus/preferences]
 default-folder-viewer='icon-view'
 migrated-gtk-settings=true
@@ -181,6 +190,9 @@ window-height=666
 window-maximized=true
 window-width=1197
 zoom=0.83333333333333337
+
+[org/gnome/portal/filechooser/com.google.Chrome]
+last-folder-path='/home/nixuris/procguard-updates/extension'
 
 [org/gnome/settings-daemon/plugins/color]
 night-light-schedule-automatic=false
@@ -316,6 +328,9 @@ show-extensions-notice=false
 [org/gtk/gtk4/settings/color-chooser]
 selected-color=(true, 0.60000002384185791, 0.75686275959014893, 0.94509804248809814, 1.0)
 
+[org/gtk/gtk4/settings/file-chooser]
+show-hidden=true
+
 [org/gtk/settings/file-chooser]
 date-format='regular'
 location-mode='path-bar'
@@ -331,8 +346,11 @@ window-position=(102, 102)
 window-size=(1238, 878)
 
 [org/virt-manager/virt-manager]
-manager-window-height=550
-manager-window-width=550
+manager-window-height=1009
+manager-window-width=1920
+
+[org/virt-manager/virt-manager/confirm]
+delete-storage=false
 
 [org/virt-manager/virt-manager/connections]
 autoconnect=['qemu:///system']
@@ -354,3 +372,7 @@ network-traffic=false
 [org/virt-manager/virt-manager/vms/2434f5e6d51a4dd7a88e1de6a05b32d0]
 autoconnect=1
 vm-window-size=(1920, 1009)
+
+[org/virt-manager/virt-manager/vms/ff01c70e0397411e8c801f455ea088fb]
+autoconnect=1
+vm-window-size=(1631, 842)

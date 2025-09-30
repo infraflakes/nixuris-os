@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   home.packages = with pkgs; [
     mpd-mpris
     papers

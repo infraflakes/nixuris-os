@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   #Htop
   xdg.desktopEntries.htop = {
     name = "htop";

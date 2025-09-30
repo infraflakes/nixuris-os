@@ -10,7 +10,7 @@ return { -- telescope with hidden files + fzf-native
 		telescope.setup {
 			defaults = {
 				file_ignore_patterns = {
-					"__pycache__/", ".npm/", ".cargo/", ".zoom/", ".mozilla/", "node_modules/", ".android/", ".config/",
+					"__pycache__/", ".npm/", ".cargo/", ".zoom/", ".mozilla/", "node_modules/", ".android/", "^%.config/",
 					".zen/", ".cache/", ".git/", ".local/", ".venv/", ".gemini/", ".steam/", ".dotnet/", ".mpd/",
 					".pki/", ".ssh/", "%.mp3$", "%.flac$", "%.opus$", "%.m4a$",
 					"%.zip$", "%.tar$", "%.tar%.gz$", "%.tgz$", "%.rar$", "%.7z$",

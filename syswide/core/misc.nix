@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   #Sys pkgs
   environment.systemPackages = with pkgs; [
     htop
@@ -19,7 +18,7 @@
       PasswordAuthentication = true;
     };
   };
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  networking.firewall.allowedTCPPorts = [22];
   #Disabled systemd services
   systemd = {
     services = {

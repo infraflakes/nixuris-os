@@ -3,8 +3,7 @@
   pkgs,
   lib,
   ...
-}:
-{
+}: {
   environment.systemPackages = with pkgs; [
     usbutils
     libimobiledevice
@@ -15,5 +14,5 @@
     package = pkgs.usbmuxd2;
   };
   programs.adb.enable = true;
-  users.users.nixuris.extraGroups = [ "adbusers" ];
+  users.users.nixuris.extraGroups = ["adbusers"];
 }
