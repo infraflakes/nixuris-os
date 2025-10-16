@@ -3,11 +3,9 @@
   lib,
   pkgs,
   ...
-}:
-let
+}: let
   grubTheme = builtins.toString ../../home/assets/hollow-grub;
-in
-{
+in {
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"

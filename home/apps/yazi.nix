@@ -4,6 +4,10 @@
   ...
 }: {
   home.packages = with pkgs; [
-    protonvpn-gui
+    yazi
+    zip
+    unzip
+    p7zip
+    unrar
   ];
 }

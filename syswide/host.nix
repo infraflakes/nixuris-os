@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   imports = [
     # System core
     /etc/nixos/hardware-configuration.nix

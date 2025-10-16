@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   home.packages = with pkgs; [
     onlyoffice-desktopeditors
     zoom-us

@@ -11,7 +11,7 @@
 Clone the repo:
 
 ```
-git clone https://github.com/nixuris/serein-nix.git
+git clone https://github.com/nixuris/nixuris-os.git
 ```
 
 Apply changes system wide:
