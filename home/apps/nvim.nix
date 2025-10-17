@@ -3,12 +3,14 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   home = {
     packages = with pkgs; [
       fzf
       ripgrep
       gcc
+      gnumake
       nixfmt
     ];
     sessionVariables = {

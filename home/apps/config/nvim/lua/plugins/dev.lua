@@ -41,7 +41,7 @@ return {
 			end
 
 			mason_lspconfig.setup {
-				ensure_installed = { "pyright", "clangd", "lua_ls", "gopls" },
+				ensure_installed = { "gopls" },
 				handlers = {
 					-- This is the default handler for all servers, but we define it
 					-- explicitly to pass our own on_attach and capabilities.
