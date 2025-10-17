@@ -13,13 +13,12 @@
     # User environment
     ./environment/user.nix
     ./environment/display-manager.nix
-    ./environment/gnome.nix
 
     # Programs that needs privileges
     ./runtime/asus.nix
     ./runtime/mount.nix
-    ./runtime/podman.nix
+    #./runtime/podman.nix
     ./runtime/gaming.nix
-    ./runtime/virt.nix
+    #./runtime/virt.nix
   ];
 }

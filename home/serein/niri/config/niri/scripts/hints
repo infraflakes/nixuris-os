@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+
+# GDK BACKEND. Change to either wayland or x11 if having issues
+BACKEND=wayland
+
+# Check if rofi or yad is running and kill them if they are
+if pidof rofi > /dev/null; then
+  pkill rofi
+fi
+
+if pidof yad > /dev/null; then
+  pkill yad
+fi
+
+# Launch yad with calculated width and height
+GDK_BACKEND=$BACKEND yad \
+    --center \
+    --title="Serein's System Keybindings" \
+    --no-buttons \
+    --list \
+    --column=Key: \
+    --column=Description: \
+    --column=Command: \
+    --timeout-indicator=bottom \
+"ESC" "close this app" "" " = " \
+"SUPER KEY (Windows Key Button)" "(SUPER KEY)" \
+" L" "Launches Session Manager" "Rofi" \
+"" "" "" \
+" H" "Launch this keybind list" "" \
+" Enter" "Terminal" "(alacritty by default)" \
+" Q" "close window" "(not kill)" \
+" Shift Q " "kills an active window" "(single window)" \
+" F" "Fullscreen" "Toggles to full screen" \
+" W" "Toggle float" "single window" \
+" A" "Overview Workspaces" "serein enable overview is required" \
+" ↑↓→←" "Switch to Workspaces" "9 Workspaces by default" \
+"ALT ↑↓→←" "Focus Windows" "single window" \
+" SHIFT ↑↓→←" "Resize Windows" "single window" \
+" CTRL ↑↓→←" "Move Windows To Directions" "single window" \
+" LMB" "Grab Windows" "single window" \
+" RMB" "Resize Windows" "single window" \
+"" "" "" \
+" SPACE" "Application Launcher" "(rofi-wayland)" \
+" N" "show notifications" "(swaync)" \
+" V" "Clipboard Manager" "CTRL + DEL to delete one entry || SUPER + DEL to wipe all history" \
+" Period" "Emoji to clipboard" "(cliphist + rofi)" \
+" Shift S" "screenshot region" "(swappy)" \
+" ALT S" "screenshot fullscreen" "No prompt" \
+" Shift W" "Choose wallpaper" "(imagemagick + swww)" \
+" R" "Refresh Waybar and Hyprland" "Refresh Waybar, Hyprland and its components" \
+"" "" "" \

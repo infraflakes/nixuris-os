@@ -34,5 +34,8 @@
     ./apps/yazi.nix
     ./apps/tmux.nix
     #./apps/ollama.nix
+    
+    # WM
+    ./serein/serein.nix
   ];
 }
