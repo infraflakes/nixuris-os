@@ -3,7 +3,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   nixpkgs.config.allowUnfree = true;
   home = {
     username = "nixuris";
@@ -33,8 +34,9 @@
     ./apps/nvim.nix
     ./apps/yazi.nix
     ./apps/tmux.nix
+    ./apps/container.nix
     #./apps/ollama.nix
-    
+
     # WM
     ./serein/serein.nix
   ];

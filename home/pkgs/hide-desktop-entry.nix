@@ -2,7 +2,28 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
+  #Rofi
+  home.file.".local/share/applications/rofi.desktop".text = ''
+    [Desktop Entry]
+    Name=DO NOT USE
+    Exec=echo "nah"
+    Terminal=false
+    Type=Application
+    NoDisplay=true
+    Hidden=true
+  '';
+
+  home.file.".local/share/applications/rofi-theme-selector.desktop".text = ''
+    [Desktop Entry]
+    Name=NOPE
+    Exec=echo "nope"
+    Terminal=false
+    Type=Application
+    NoDisplay=true
+    Hidden=true
+  '';
   #Htop
   xdg.desktopEntries.htop = {
     name = "htop";

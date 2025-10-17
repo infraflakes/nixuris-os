@@ -13,8 +13,6 @@ in
   home.packages = with pkgs; [
     pavucontrol
     libnotify
-    yad
-    #wlroots
     bc
     jq
     glib
@@ -50,12 +48,14 @@ in
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "swww-daemon"
         "waybar"
-        "swaync"
+        "mako"
         "wl-clipboard-history -t"
         "fcitx5"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
         #"hyprctl plugin load /nix/store/hjn4qyc431qv5j81bs7lmrrc4qllppry-hyprspace-0-unstable-2025-05-09/lib/libhyprspace.so"
+        "mpd ~/.config/mpd/mpd.conf"
+        "mpd-mpris"
       ];
 
       env = [
@@ -180,7 +180,7 @@ in
         ",XF86MonBrightnessUp,exec, ${scriptsDir}/bright up"
         #
         "SUPER, Space, exec, pkill rofi || rofi -show drun"
-        "SUPER, N, exec, swaync-client -t -sw"
+        "SUPER, N, exec, makoctl restore"
         #
         "SUPER, Q, killactive,"
         "SUPER SHIFT, Q, exec, ${scriptsDir}/killin"
@@ -193,7 +193,6 @@ in
         "SUPER, M, exec, ${rofiScriptsDir}/mpd"
         "SUPER SHIFT, S, exec, ${scriptsDir}/scrshot --swappy"
         "SUPER ALT, S, exec, ${scriptsDir}/scrshot --now"
-        "SUPER, H, exec, ${scriptsDir}/hints"
         "SUPER, V, exec, ${rofiScriptsDir}/clip"
         "SUPER, Period, exec, ${rofiScriptsDir}/emoji"
         "SUPER, P, exec, $terminal -e htop"
@@ -201,11 +200,11 @@ in
         "SUPER ALT, S, movetoworkspacesilent, special"
         "SUPER, S, togglespecialworkspace,"
         #Focus
-        "SUPER, left, movefocus, l"
-        "SUPER, right, movefocus, r"
-        "SUPER, up, movefocus, u"
-        "SUPER, down, movefocus, d"
+        "SUPER, up, movefocus, l"
+        "SUPER, down, movefocus, r"
         # Switch workspaces
+        "SUPER, right, workspace, r+1"
+        "SUPER, left, workspace, r-1"
         "SUPER, 1, workspace, 1"
         "SUPER, 2, workspace, 2"
         "SUPER, 3, workspace, 3"
@@ -244,8 +243,6 @@ in
         "float,class:^(Blueman-manager|blueman-manager)$"
         "size 800 500,class:^(Blueman-manager|blueman-manager)$"
         "float,class:^(imv)$"
-        "float,class:^(Yad|yad)$"
-        "size 800 915,class:^(Yad|yad)$"
         "float,class:^(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol)$"
         #"opacity 0.85 0.7, class:^(Alacritty)$ # Alacritty"
         "opacity 0.0 override, class:^(xwaylandvideobridge)$"

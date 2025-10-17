@@ -10,6 +10,7 @@
     #./niri/xwayland.nix
     #./niri/mako.nix
     # Shared between WMs
+    ./shared/mako.nix
     ./shared/rofi.nix
     ./shared/waybar.nix
     ./shared/swaylock.nix

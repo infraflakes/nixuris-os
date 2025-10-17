@@ -3,9 +3,11 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   grubTheme = builtins.toString ../../home/assets/hollow-grub;
-in {
+in
+{
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -32,7 +34,7 @@ in {
   swapDevices = [
     {
       device = "/swapfile";
-      size = 8 * 1024;
+      size = 24 * 1024;
       priority = 1;
     }
   ];

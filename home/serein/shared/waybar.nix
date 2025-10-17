@@ -4,7 +4,10 @@
   ...
 }:
 {
-  home.packages = with pkgs; [ ];
+  home.packages = with pkgs; [
+    playerctl
+    cava
+  ];
   programs.waybar = {
     enable = true;
   };
