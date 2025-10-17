@@ -82,22 +82,22 @@ in
       ];
 
       decoration = {
-        inactive_opacity = 0.85;
-        active_opacity = 1.0;
+        # inactive_opacity = 0.85;
+        # active_opacity = 1.0;
         rounding = 20;
-        blur = {
-          size = 5;
-          passes = 3;
-          new_optimizations = "yes";
-          contrast = 1;
-          brightness = 1;
-        };
-        shadow = {
-          enabled = true;
-          range = 10;
-          render_power = 2;
-          color = "rgba(0, 0, 0, 0.25)";
-        };
+        # blur = {
+        #   size = 5;
+        #   passes = 3;
+        #   new_optimizations = "yes";
+        #   contrast = 1;
+        #   brightness = 1;
+        # };
+        # shadow = {
+        #   enabled = true;
+        #   range = 10;
+        #   render_power = 2;
+        #   color = "rgba(0, 0, 0, 0.25)";
+        # };
       };
 
       input = {
@@ -122,20 +122,17 @@ in
       };
 
       bezier = [
-        #"in-out, .65, -0.01, 0, .95"
-        #"woa, 0, 0, 0, 1"
         "myBezier, 0.4, 0.0, 0.2, 1.0"
       ];
+      animations = {
+        enabled = false;
+      };
 
       animation = [
         "windows, 1, 2.5, myBezier, popin 80%"
         "border, 1, 2.5, myBezier"
         "fade, 1, 2.5, myBezier"
         "workspaces, 1, 2.5, myBezier, slidefade 20%"
-        #"windows, 1, 2, woa, popin"
-        #"border, 1, 10, default"
-        #"fade, 1, 10, default"
-        #"workspaces, 1, 5, in-out, slide"
       ];
 
       dwindle = {
