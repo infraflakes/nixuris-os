@@ -157,7 +157,7 @@ in
       ];
 
       bind = [
-        "SUPER, Return, exec, uwsm app -- foot"
+        "SUPER, Return, exec, uwsm app -- kitty"
         ",XF86AudioLowerVolume, exec, ${scriptsDir}/volume down"
         ",XF86AudioRaiseVolume, exec, ${scriptsDir}/volume up"
         ",XF86AudioMute, exec, ${scriptsDir}/volume mute"

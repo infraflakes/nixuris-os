@@ -33,7 +33,7 @@
       '';
     };
     shellAliases = {
-      tmux = "tmux new-session -A";
+      tm = "tmux new-session -A";
       tc = "tmux new -s";
       ta = "tmux a -t";
       tls = "tmux ls";
