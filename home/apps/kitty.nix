@@ -24,7 +24,7 @@
       color1 = "#fa6c5f";
       color2 = "#a8fe60";
       color3 = "#729ebb";
-      color4 = "#6b82ba";
+      color4 = "#7aa2f7";
       color5 = "#6383cf";
       color6 = "#6383cf";
       color7 = "#eeedee";
