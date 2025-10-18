@@ -13,6 +13,7 @@
     packages = [
       #inputs.serein-cli.packages.${pkgs.system}.stable
       inputs.serein-cli.packages.${pkgs.system}.test
+      pkgs.lsd
     ];
   };
   imports = [
@@ -26,7 +27,8 @@
     ./apps/ime.nix
     ./apps/gtk.nix
     ./apps/fish.nix
-    ./apps/ghostty.nix
+    # ./apps/ghostty.nix
+    ./apps/alacritty.nix
     #./apps/alacritty.nix
     ./apps/fastfetch.nix
     ./apps/nvim.nix

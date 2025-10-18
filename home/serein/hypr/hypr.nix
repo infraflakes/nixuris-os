@@ -75,7 +75,7 @@ in
       decoration = {
         # inactive_opacity = 0.85;
         # active_opacity = 1.0;
-        rounding = 20;
+        # rounding = 20;
         # blur = {
         #   size = 5;
         #   passes = 3;
@@ -104,9 +104,11 @@ in
       };
 
       general = {
-        gaps_in = 5;
-        gaps_out = 20;
-        border_size = 4;
+        # gaps_in = 5;
+        # gaps_out = 20;
+        gaps_in = 0;
+        gaps_out = 0;
+        border_size = 3;
         "col.active_border" = "0xFF86AFEF";
         "col.inactive_border" = "0xFF1B1E25";
         layout = "dwindle";
@@ -155,7 +157,7 @@ in
       ];
 
       bind = [
-        "SUPER, Return, exec, uwsm app -- ghostty"
+        "SUPER, Return, exec, uwsm app -- alacritty"
         ",XF86AudioLowerVolume, exec, ${scriptsDir}/volume down"
         ",XF86AudioRaiseVolume, exec, ${scriptsDir}/volume up"
         ",XF86AudioMute, exec, ${scriptsDir}/volume mute"

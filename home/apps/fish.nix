@@ -33,13 +33,14 @@
       '';
     };
     shellAliases = {
+      tmux = "tmux new-session -A";
       tc = "tmux new -s";
       ta = "tmux a -t";
       tls = "tmux ls";
       tkill = "tmux kill-session -t";
       cd = "z";
       se = "sudo -E -s nvim";
-      ls = "ls -l";
+      ls = "lsd -l";
       nvidia-gpu = "__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia";
     };
     interactiveShellInit = ''
