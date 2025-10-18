@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   users = {
     users = {
       nixuris = {
@@ -36,7 +37,12 @@
   networking = {
     hostName = "serein";
     networkmanager.enable = true;
-    nameservers = ["1.1.1.1"];
+    nameservers = [ "1.1.1.1" ];
   };
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
+  systemd.sleep.extraConfig = ''
+    SuspendState=mem
+    HibernateState=disk
+    HibernateDelaySec=45min
+  '';
 }

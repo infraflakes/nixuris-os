@@ -13,7 +13,8 @@ shutdown=' Shutdown'
 reboot=' Reboot'
 lock=' Lock'
 logout='󰍃 Logout'
-
+hibernate=' Hibernate'
+sleep=' Sleep'
 # Rofi CMD
 rofi_cmd() {
 	rofi -dmenu \
@@ -24,7 +25,7 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$lock\n$logout\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$lock\n$logout\n$sleep\n$hibernate\n$reboot\n$shutdown" | rofi_cmd
 }
 
 # Actions
@@ -37,10 +38,16 @@ case ${chosen} in
 		reboot
         ;;
     $lock)
-		swaylock	
+		swaylock -f
         ;;
     $logout)
 		#niri msg action quit
 		uwsm stop
+        ;;
+    $hibernate)
+		swaylock -f && systemctl hibernate
+        ;;
+    $sleep)
+		swaylock -f && systemctl suspend-then-hibernate
         ;;
 esac
