@@ -72,24 +72,24 @@ in
         #" __GLX_VENDOR_LIBRARY_NAME,nvidia"
       ];
 
-      decoration = {
-        # inactive_opacity = 0.85;
-        # active_opacity = 1.0;
-        # rounding = 20;
-        # blur = {
-        #   size = 5;
-        #   passes = 3;
-        #   new_optimizations = "yes";
-        #   contrast = 1;
-        #   brightness = 1;
-        # };
-        # shadow = {
-        #   enabled = true;
-        #   range = 10;
-        #   render_power = 2;
-        #   color = "rgba(0, 0, 0, 0.25)";
-        # };
-      };
+      # decoration = {
+      #   inactive_opacity = 0.85;
+      #   active_opacity = 1.0;
+      #   rounding = 20;
+      #   blur = {
+      #     size = 5;
+      #     passes = 3;
+      #     new_optimizations = "yes";
+      #     contrast = 1;
+      #     brightness = 1;
+      #   };
+      #   shadow = {
+      #     enabled = true;
+      #     range = 10;
+      #     render_power = 2;
+      #     color = "rgba(0, 0, 0, 0.25)";
+      #   };
+      # };
 
       input = {
         kb_layout = "us";
@@ -157,7 +157,7 @@ in
       ];
 
       bind = [
-        "SUPER, Return, exec, uwsm app -- alacritty"
+        "SUPER, Return, exec, uwsm app -- foot"
         ",XF86AudioLowerVolume, exec, ${scriptsDir}/volume down"
         ",XF86AudioRaiseVolume, exec, ${scriptsDir}/volume up"
         ",XF86AudioMute, exec, ${scriptsDir}/volume mute"

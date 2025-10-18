@@ -27,8 +27,7 @@
     ./apps/ime.nix
     ./apps/gtk.nix
     ./apps/fish.nix
-    # ./apps/ghostty.nix
-    ./apps/alacritty.nix
+    ./apps/foot.nix
     #./apps/alacritty.nix
     ./apps/fastfetch.nix
     ./apps/nvim.nix
