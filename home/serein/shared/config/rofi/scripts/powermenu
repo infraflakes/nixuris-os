@@ -41,6 +41,6 @@ case ${chosen} in
         ;;
     $logout)
 		#niri msg action quit
-		hyprctl dispatch exit
+		uwsm stop
         ;;
 esac

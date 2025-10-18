@@ -16,10 +16,8 @@
     ];
   };
   imports = [
-    ./pkgs/autostart.nix
     ./pkgs/dev.nix
     ./pkgs/fonts.nix
-    ./pkgs/hide-desktop-entry.nix
     ./pkgs/media.nix
     ./pkgs/misc.nix
     ./pkgs/social.nix

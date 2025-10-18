@@ -2,14 +2,11 @@
   config,
   pkgs,
   ...
-}: {
-  home.packages = with pkgs; [
-    mpd
-    mpd-mpris
-    music-discord-rpc
-  ];
-
+}:
+{
   xdg.configFile = {
+
+    # Apps
     "autostart/mpd.desktop".text = ''
       [Desktop Entry]
       Type=Application
@@ -27,6 +24,26 @@
       Type=Application
       Name=Mpris Discord
       Exec=music-discord-rpc
+    '';
+
+    # Environment
+    "autostart/waybar.desktop".text = ''
+      [Desktop Entry]
+      Type=Application
+      Name=Waybar
+      Exec=waybar
+    '';
+    "autostart/swww.desktop".text = ''
+      [Desktop Entry]
+      Type=Application
+      Name=SWWW
+      Exec=swww-daemon
+    '';
+    "autostart/mako.desktop".text = ''
+      [Desktop Entry]
+      Type=Application
+      Name=Mako
+      Exec=mako
     '';
   };
 }

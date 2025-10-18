@@ -46,16 +46,7 @@ in
       ];
       exec-once = [
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "swww-daemon"
-        "waybar"
-        "mako"
-        "wl-clipboard-history -t"
-        "fcitx5"
-        "wl-paste --type text --watch cliphist store"
-        "wl-paste --type image --watch cliphist store"
         #"hyprctl plugin load /nix/store/hjn4qyc431qv5j81bs7lmrrc4qllppry-hyprspace-0-unstable-2025-05-09/lib/libhyprspace.so"
-        "mpd ~/.config/mpd/mpd.conf"
-        "mpd-mpris"
       ];
 
       env = [
@@ -163,11 +154,8 @@ in
         "SUPER, mouse:273, resizewindow"
       ];
 
-      "$terminal" = "ghostty";
-      "$shell" = "fish";
-
       bind = [
-        "SUPER, Return, exec, $terminal"
+        "SUPER, Return, exec, uwsm app -- ghostty"
         ",XF86AudioLowerVolume, exec, ${scriptsDir}/volume down"
         ",XF86AudioRaiseVolume, exec, ${scriptsDir}/volume up"
         ",XF86AudioMute, exec, ${scriptsDir}/volume mute"
@@ -181,18 +169,16 @@ in
         #
         "SUPER, Q, killactive,"
         "SUPER SHIFT, Q, exec, ${scriptsDir}/killin"
-        "SUPER, T, exec, $terminal -e $shell -c yazi"
-        "bind = SUPER, F, fullscreen"
+        "SUPER, F, fullscreen"
         "SUPER, L, exec, ${rofiScriptsDir}/powermenu"
-        "bind = SUPER, R, exec, pkill waybar || waybar & disown"
+        "SUPER, R, exec, sh -c 'pkill waybar || uwsm app -- waybar'"
         "SUPER, W, togglefloating"
-        "bind = SUPER SHIFT, W, exec, ${rofiScriptsDir}/wallselect-hypr"
+        "SUPER SHIFT, W, exec, ${rofiScriptsDir}/wallselect-hypr"
         "SUPER, M, exec, ${rofiScriptsDir}/mpd"
         "SUPER SHIFT, S, exec, ${scriptsDir}/scrshot --swappy"
         "SUPER ALT, S, exec, ${scriptsDir}/scrshot --now"
         "SUPER, V, exec, ${rofiScriptsDir}/clip"
         "SUPER, Period, exec, ${rofiScriptsDir}/emoji"
-        "SUPER, P, exec, $terminal -e htop"
         #Hidden workspace
         "SUPER ALT, S, movetoworkspacesilent, special"
         "SUPER, S, togglespecialworkspace,"

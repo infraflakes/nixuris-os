@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
     mpd-mpris
     papers
@@ -10,6 +11,8 @@
     rmpc
     mpc
     mpd
+    mpd-mpris
+    music-discord-rpc
     mpv
     ani-cli
     easytag

@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   services.displayManager.gdm.enable = true;
 
   services.displayManager.sddm = {
@@ -11,4 +12,5 @@
     wayland.enable = true;
   };
   programs.hyprland.enable = true;
+  programs.hyprland.withUWSM = true;
 }
