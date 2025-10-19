@@ -1,28 +1,4 @@
 {
-    "hyprland/workspaces": {
-	//"format": " {name} {icon} ",
-	"format": " {icon} ",
-	"show-special": false,
-	"on-click": "activate",
-	"persistent-workspaces": {
-      		"*": 6
-	},
-	"all-outputs": true,
-	"sort-by-number": true,
-	"format-icons": {
-		//"1": "",
-		"1": "󱄅",
-		"2": "",
-		"3": "",
-		"4": "",
-		"5": "",
-		"6": "",
-		"7": "",
-		"8": "",
-		"9": "",
-		"10": "",
-	},
-},
     "backlight": {
       "device": "intel_backlight",
       "format": "{icon} {percent}%",
@@ -70,26 +46,26 @@
       "tooltip-format": "<tt>{calendar}</tt>"
     },
     "cpu": {
-      "format": " {usage}%",
+      "format": " {usage}%",
       "interval": 1,
-      "rotate": 0,
-      "max-length": 5,
-      "min-length": 5,
+      "rotate": 0
+    },
+    "custom/cpuicon": {
+      "format": "CPU"
     },
     "mpris": {
-      "format": "{title}  {position}/{length}",
-      "ignore-player": ["firefox", "chromium", "Brave"],
       "interval": 1,
-      "max-length": 70,
+      "max-length": 32,
     },
-    "image": {
-    	"exec": "$HOME/.local/bin/album-art.sh",
-    	"path": "/tmp/cover.jpg",
-    	"size": 32,
-    	"interval": 2
-    },
+"custom/cavavis": {
+	"exec": "$HOME/.config/waybar/nord/scripts/cava.sh",
+	"format": "{}",
+},
+"custom/memicon": {
+	"format": "RAM"
+},
     "memory": {
-      "format": " {used}GB",
+      "format": " {used}GB",
       "interval": 1,
       "max-length": 8,
       "min-length": 8,
@@ -99,11 +75,14 @@
     },
     
     "pulseaudio": {
-      "format": "Volume: {volume}%",
+      "format": " {volume}%",
       "on-click": "pavucontrol -t 3",
       "rotate": 0,
       "scroll-step": 5,
       "tooltip-format": "{icon} {desc} // {volume}%"
+    },
+    "custom/volumeicon": {
+      "format": "Volume",
     },
     "pulseaudio#microphone": {
       "format": "{format_source}",
@@ -116,7 +95,7 @@
     },
     "temperature": {
       "critical-threshold": 89,
-      "format": "󰈸 {temperatureC}°C",
+      "format": " {temperatureC}°C",
       "format-critical": "!!{temperatureC}°C!!",
       "hwmon-path": [
         "/sys/class/thermal/thermal_zone3/temp",
@@ -125,11 +104,19 @@
       "interval": 1,
       "tooltip": true
     },
+    "custom/tempicon": {
+    	"format": "󰈸"
+    },
+
+"custom/batext": {
+  "exec": "cat /sys/class/power_supply/BAT0/capacity",
+  "return-type": "text",
+  "format": " {}%",
+  "interval": 30
+},
 
     "battery": {
-      "format": "{icon} {capacity}%",
-      "format-alt": "{time} {icon}",
-      "format-charging": " {capacity}%",
+      "format": "{icon}",
       "format-icons": [
         "󰂎",
         "󰁺",
@@ -141,12 +128,6 @@
         "󰂀",
         "󰂁"
       ],
-      "format-plugged": " {capacity}%",
-      "states": {
-        "critical": 20,
-        "good": 95,
-        "warning": 30
-      }
     },
     
     "bluetooth": {
@@ -189,15 +170,18 @@
       "tooltip": false
     },
     "network": {
-      "format-alt": "  {bandwidthDownBytes:<1}  {bandwidthUpBytes:<1}",
+      "format-alt": " {essid}  {bandwidthDownBytes:<1}  {bandwidthUpBytes:<1}",
       "format-disconnected": " 󰖪 ",
       "format-ethernet": "󰈀 ",
       "format-linked": "󰈀 {ifname} (No IP)",
-      "format-wifi": "  {essid}",
+      "format-wifi": " {essid}",
       "interval": 1,
       "rotate": 0,
       "tooltip": true,
       "tooltip-format": "<span foreground='#86afef'>  {essid}:\n {bandwidthDownBytes}</span>\n<span foreground='#86afef'> {bandwidthUpBytes}</span>"
+    },
+    "custom/networkicon": {
+    	"format": " "
     },
     "tray": {
       "icon-size": 18,

@@ -5,7 +5,7 @@
     min-height: 21px;
 }
 window#waybar {
-    background: transparent;
+    background: #1e1b25;
 }
 
 tooltip {
@@ -17,46 +17,55 @@ tooltip label {
     font-size: 13px;
     color: #86afef;
 }
-#workspaces button {
-    color: #2d333f;
-    background: #f76f53;
-    border-radius: 0px;
-}
-#workspaces button.active {
-    background-color: #e6e4d7;
-    color: #2d333f;
+#taskbar button {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0px;
+    border-radius: 8px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    margin-left: 0px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-right: 0px;
+    animation: tb_normal 20s ease-in-out 1;
 }
 
-#workspaces button:hover {
-    background-color: #e6e4d7;
-    color: #2d333f;
+#taskbar button.active {
+    background: #86afef;
+    color: #86afef;
+    margin-left: 2px;
+    padding-left: 11px;
+    padding-right: 11px;
+    margin-right: 2px;
+    animation: tb_active 20s ease-in-out 1;
+    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
-#workspaces button.focused {
-    background-color: #e6e4d7;
-    color: #2d333f;
-}
-#workspaces{
-	font-size: 14;
-	color: #2d333f;
-	background: #f76f53;
-	margin-top: 10px;
-        margin-bottom: 10px;
+#taskbar button:hover {
+    background: #86afef;
+    color: #86afef;
+    animation: tb_hover 20s ease-in-out 1;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 #mpris {
 	font-size: 14;
 	color: #2d333f;
 	background: #a3be8c;
-	margin-top: 10px;
-        margin-bottom: 10px;
+	margin-top: 12px;
+        margin-bottom: 12px;
 	padding-left: 13px;
 	padding-right: 13px;
 }
-#image {
-    min-width: 32px;
-    min-height: 32px;
+#custom-cavavis{
+	font-size: 14;
+	color: #a3be8c;
 }
 #temperature {
+	font-size: 14;
+	color:  #86afef;
+}
+#custom-tempicon {
 	font-size: 14;
 	color: #2d333f;
 	background: #86afef;
@@ -66,6 +75,10 @@ tooltip label {
 	padding-right: 13px;
 }
 #memory{
+	font-size: 14;
+	color: #d35e86;
+}
+#custom-memicon{
     	font-size: 14;
 	color: #2d333f;
 	background: #d35e86;
@@ -93,7 +106,15 @@ tooltip label {
 	padding-left: 12px;
 	padding-right: 12px;
 }
+#custom-batext{
+	font-size: 14;
+	color: #c1af79;
+}
 #cpu{
+	font-size: 14;
+	color: #85c3a9;
+}
+#custom-cpuicon{
     	font-size: 14;
 	color: #2d333f;
 	background: #85c3a9;
@@ -102,8 +123,16 @@ tooltip label {
 	padding-left: 8px;
 	padding-right: 8px;
 }
-
 #network{
+	font-size: 14;
+	color: #bf616a;
+}
+
+#pulseaudio{
+	font-size: 14;
+	color: #80c0d0;
+}
+#custom-networkicon{
     	font-size: 14;
 	color: #2d333f;
 	background: #bf616a;
@@ -112,7 +141,7 @@ tooltip label {
 	padding-left: 9px;
 	padding-right: 9px;
 }
-#pulseaudio{
+#custom-volumeicon{
     	font-size: 14;
 	color: #2d333f;
 	background: #80c0d0;

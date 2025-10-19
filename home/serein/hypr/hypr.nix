@@ -211,15 +211,15 @@ in
         "SUPER SHIFT, 8, movetoworkspacesilent, 8"
         "SUPER SHIFT, 9, movetoworkspacesilent, 9"
         "SUPER SHIFT, 0, movetoworkspacesilent, 10"
+        "SUPER CTRL, right, movetoworkspace, +1"
+        "SUPER CTRL, left, movetoworkspace, -1"
         # Move/resize windows
         "SUPER SHIFT, right, resizeactive, 50 0"
         "SUPER SHIFT, left, resizeactive, -50 0"
         "SUPER SHIFT, up, resizeactive, 0 -50"
         "SUPER SHIFT, down, resizeactive, 0 50"
-        "SUPER CTRL, up, movewindow, u"
-        "SUPER CTRL, down, movewindow, d"
-        "SUPER CTRL, left, movewindow, l"
-        "SUPER CTRL, right, movewindow, r"
+        "SUPER CTRL, left, movewindow, u"
+        "SUPER CTRL, right, movewindow, d"
       ];
 
       windowrulev2 = [
