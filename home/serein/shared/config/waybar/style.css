@@ -5,7 +5,7 @@
     min-height: 21px;
 }
 window#waybar {
-    background: transparent;
+    background: #2d333f;
 }
 
 tooltip {
