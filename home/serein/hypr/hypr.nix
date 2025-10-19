@@ -6,8 +6,8 @@
   ...
 }:
 let
-  scriptsDir = builtins.toString ./scripts;
-  rofiScriptsDir = builtins.toString ../shared/config/rofi/scripts;
+  scriptsDir = builtins.toString ../../execs/hypr;
+  rofiScriptsDir = builtins.toString ../../execs/rofi;
 in
 {
   home.packages = with pkgs; [
@@ -176,7 +176,7 @@ in
         "SUPER, R, exec, sh -c 'pkill waybar || uwsm app -- waybar'"
         "SUPER, W, togglefloating"
         "SUPER SHIFT, W, exec, ${rofiScriptsDir}/wallselect-hypr"
-        "SUPER, M, exec, ${rofiScriptsDir}/mpd"
+        "SUPER, M, exec, ${rofiScriptsDir}/mpd-rofi"
         "SUPER SHIFT, S, exec, ${scriptsDir}/scrshot --swappy"
         "SUPER ALT, S, exec, ${scriptsDir}/scrshot --now"
         "SUPER, V, exec, ${rofiScriptsDir}/clip"

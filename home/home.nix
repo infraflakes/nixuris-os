@@ -38,5 +38,8 @@
 
     # WM
     ./serein/serein.nix
+
+    # Executables
+    ./execs/execs.nix
   ];
 }
