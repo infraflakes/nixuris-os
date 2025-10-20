@@ -19,6 +19,6 @@
     ./runtime/asus.nix
     ./runtime/mount.nix
     ./runtime/gaming.nix
-    #./runtime/virtualbox.nix
+    ./runtime/virt-qemu.nix
   ];
 }
