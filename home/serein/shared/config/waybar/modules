@@ -118,16 +118,10 @@
       "format": "󰈸 {temperatureC}°C",
       "format-critical": "!!{temperatureC}°C!!",
       "hwmon-path": [
-        "/sys/class/thermal/thermal_zone3/temp",
-        "/sys/class/thermal/thermal_zone5/temp"
+        "/sys/class/hwmon/hwmon4/temp1_input"
       ],
       "interval": 1,
       "tooltip": true
-    },
-    "custom/cputemp": {
-    	"exec": "$HOME/.local/bin/waybar/cputemp.sh",
-  	"interval": 1,
-  	"format": "󰈸 {}"
     },
 
     "battery": {

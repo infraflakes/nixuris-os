@@ -65,15 +65,6 @@ tooltip label {
 	padding-left: 13px;
 	padding-right: 13px;
 }
-#custom-cputemp {
-	font-size: 14;
-	color: #2d333f;
-	background: #86afef;
-	margin-top: 10px;
-        margin-bottom: 10px;
-	padding-left: 13px;
-	padding-right: 13px;
-}
 #memory{
     	font-size: 14;
 	color: #2d333f;
