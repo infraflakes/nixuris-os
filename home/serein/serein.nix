@@ -13,6 +13,7 @@
     # Shared between environments
     ./shared/hide-desktop-entry.nix
     ./shared/autostart.nix
+    ./shared/env.nix
     ./shared/mako.nix
     ./shared/rofi.nix
     ./shared/waybar.nix
@@ -22,5 +23,6 @@
     # Hyprland specifics
     ./hypr/hypr.nix
     ./hypr/swappy.nix
+    ./hypr/uwsm.nix
   ];
 }

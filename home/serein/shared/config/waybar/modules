@@ -124,6 +124,11 @@
       "interval": 1,
       "tooltip": true
     },
+    "custom/cputemp": {
+    	"exec": "$HOME/.local/bin/waybar/cputemp.sh",
+  	"interval": 1,
+  	"format": "󰈸 {}"
+    },
 
     "battery": {
       "format": "{icon} {capacity}%",

@@ -25,10 +25,6 @@ in
       xdg-desktop-portal-hyprland
     ];
   };
-  home.sessionVariables = {
-    XDG_CONFIG_HOME = "$HOME/.config";
-    NIXOS_OZONE_WL = "1";
-  };
   services.cliphist.enable = true;
   services.blueman-applet.enable = true;
   wayland.windowManager.hyprland = {
@@ -49,47 +45,25 @@ in
         #"hyprctl plugin load /nix/store/hjn4qyc431qv5j81bs7lmrrc4qllppry-hyprspace-0-unstable-2025-05-09/lib/libhyprspace.so"
       ];
 
-      env = [
-        "XCURSOR_THEME,Bibata-Modern-Ice"
-        "XCURSOR_SIZE,24"
-        "CLUTTER_BACKEND,wayland"
-        "GDK_BACKEND,wayland,x11"
-        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
-        "QT_QPA_PLATFORM,wayland;xcb"
-        "QT_QPA_PLATFORMTHEME,qt6ct"
-        "QT_SCALE_FACTOR,1"
-        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-        "XDG_CURRENT_DESKTOP,Hyprland"
-        "XDG_SESSION_DESKTOP,Hyprland"
-        "XDG_SESSION_TYPE,wayland"
-        "MOZ_ENABLE_WAYLAND,1"
-        "MOZ_DISABLE_RDD_SANDBOX,1"
-        "EGL_PLATFORM,wayland"
-
-        #"LIBVA_DRIVER_NAME,nvidia"
-        #"XDG_SESSION_TYPE,wayland"
-        #"GBM_BACKEND,nvidia-drm"
-        #" __GLX_VENDOR_LIBRARY_NAME,nvidia"
-      ];
-
-      # decoration = {
-      #   inactive_opacity = 0.85;
-      #   active_opacity = 1.0;
-      #   rounding = 20;
-      #   blur = {
-      #     size = 5;
-      #     passes = 3;
-      #     new_optimizations = "yes";
-      #     contrast = 1;
-      #     brightness = 1;
-      #   };
-      #   shadow = {
-      #     enabled = true;
-      #     range = 10;
-      #     render_power = 2;
-      #     color = "rgba(0, 0, 0, 0.25)";
-      #   };
-      # };
+      decoration = {
+        #   inactive_opacity = 0.85;
+        #   active_opacity = 1.0;
+        #   rounding = 20;
+        blur = {
+          enabled = false;
+          size = 5;
+          passes = 3;
+          new_optimizations = "yes";
+          contrast = 1;
+          brightness = 1;
+        };
+        shadow = {
+          enabled = false;
+          range = 10;
+          render_power = 2;
+          color = "rgba(0, 0, 0, 0.25)";
+        };
+      };
 
       input = {
         kb_layout = "us";

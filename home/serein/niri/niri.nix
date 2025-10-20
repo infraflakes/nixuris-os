@@ -141,19 +141,6 @@
          }
          //prefer-no-csd
 
-         spawn-at-startup "waybar"
-         spawn-at-startup "swww-daemon"
-         spawn-at-startup "mako"
-
-         spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
-         spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
-
-         spawn-at-startup "fcitx5"
-         spawn-at-startup "udiskie"
-         spawn-at-startup "mpd-mpris"
-         spawn-at-startup "mpd" "/home/nixuris/.config/mpd/mpd.conf"
-         spawn-at-startup "mpris-discord-rpc"
-
          window-rule {
              match app-id=r#"firefox$"# title="^Picture-in-Picture$"
              open-floating true

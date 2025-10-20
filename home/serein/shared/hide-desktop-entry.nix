@@ -67,14 +67,6 @@
     type = "Application";
     noDisplay = true;
   };
-  #NVIDIA
-  xdg.desktopEntries."nvidia-settings" = {
-    name = "NVIDIA X Server Settings";
-    exec = "nvidia-settings";
-    terminal = false;
-    type = "Application";
-    noDisplay = true;
-  };
   #Fcitx and keyboard
   xdg.desktopEntries."org.fcitx.Fcitx5" = {
     name = "Fcitx5 Input Method";

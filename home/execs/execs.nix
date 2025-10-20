@@ -16,4 +16,8 @@
     source = ./rofi;
     executable = true;
   };
+  home.file.".local/bin/waybar" = {
+    source = ./waybar;
+    executable = true;
+  };
 }

@@ -16,6 +16,6 @@
     "mod": "dock",
 "modules-left": [  "custom/padd", "hyprland/workspaces","custom/padd", "image" ,"mpris", "custom/padd"  ],
 "modules-center": [],
-"modules-right": [ "tray", "custom/padd-med", "cpu", "memory","temperature","custom/padd","network","pulseaudio","custom/padd", "clock", "battery", "custom/padd"],
+"modules-right": [ "tray", "custom/padd-med", "cpu", "memory","custom/cputemp","custom/padd","network","pulseaudio","custom/padd", "clock", "battery", "custom/padd"],
 
 },]
