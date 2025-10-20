@@ -118,7 +118,7 @@
       "format": "󰈸 {temperatureC}°C",
       "format-critical": "!!{temperatureC}°C!!",
       "hwmon-path": [
-        "/sys/class/hwmon/hwmon4/temp1_input"
+        "/sys/class/hwmon/hwmon4/temp2_input"
       ],
       "interval": 1,
       "tooltip": true
