@@ -10,7 +10,8 @@
       export XCURSOR_SIZE=24
 
       # Aquamarine multi-GPU configuration
-      export AQ_DRM_DEVICES=/dev/dri/card2:/dev/dri/card1
+      #export AQ_DRM_DEVICES=/dev/dri/card2:/dev/dri/card1
+      export AQ_DRM_DEVICES=/dev/dri/card2
 
       # Nvidia
       # export LIBVA_DRIVER_NAME=nvidia

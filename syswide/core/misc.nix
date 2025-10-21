@@ -2,13 +2,15 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   #Sys pkgs
   environment.systemPackages = with pkgs; [
     htop
     home-manager
     ncdu
     bottom
+    lm_sensors
   ];
   # SSH
   services.openssh = {
@@ -18,7 +20,7 @@
       PasswordAuthentication = true;
     };
   };
-  networking.firewall.allowedTCPPorts = [22];
+  networking.firewall.allowedTCPPorts = [ 22 ];
   #Disabled systemd services
   systemd = {
     services = {
