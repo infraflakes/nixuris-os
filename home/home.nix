@@ -33,7 +33,7 @@
     #Other apps configs
     ./apps/ime.nix
     ./apps/gtk.nix
-    ./apps/fish.nix
+    #./apps/fish.nix
     ./apps/zsh.nix
     ./apps/starship.nix
     ./apps/kitty.nix

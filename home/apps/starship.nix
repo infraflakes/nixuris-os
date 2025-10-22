@@ -10,16 +10,19 @@
     enableZshIntegration = true;
     settings = {
       format = ''
-        [](red)$os$username[](bg:peach fg:red)$directory[](bg:yellow fg:peach)$git_branch$git_status[](fg:yellow bg:green)$c$rust$golang$nodejs$php$java$kotlin$haskell$python[](fg:green bg:sapphire)$conda[](fg:sapphire bg:lavender)$time[ ](fg:lavender)$cmd_duration$line_break$character
+        [](crust)$os$username[](bg:peach fg:crust)$directory[](bg:yellow fg:peach)$git_branch$git_status[](fg:yellow bg:green)$c$rust$golang$nodejs$php$java$kotlin$haskell$python[](fg:green bg:sapphire)$conda[](fg:sapphire bg:lavender)$time[ ](fg:lavender)$cmd_duration$line_break
+        $character
+
       '';
 
-      palette = "catppuccin_mocha";
+      palette = "catppuccin_frappe";
 
       os = {
         disabled = false;
-        style = "bg:red fg:crust";
+        style = "bg:crust fg:blue";
         symbols = {
           Windows = "";
+          NixOS = "❆";
           Ubuntu = "󰕈";
           SUSE = "";
           Raspbian = "󰐿";
@@ -43,9 +46,9 @@
 
       username = {
         show_always = true;
-        style_user = "bg:red fg:crust";
-        style_root = "bg:red fg:crust";
-        format = "[ $user]($style)";
+        style_user = "bg:crust fg:blue";
+        style_root = "bg:crust fg:blue";
+        format = "[ $user ]($style)";
       };
 
       directory = {
@@ -153,12 +156,12 @@
 
       character = {
         disabled = false;
-        success_symbol = "[❯](bold fg:green)";
-        error_symbol = "[❯](bold fg:red)";
-        vimcmd_symbol = "[❮](bold fg:green)";
-        vimcmd_replace_one_symbol = "[❮](bold fg:lavender)";
-        vimcmd_replace_symbol = "[❮](bold fg:lavender)";
-        vimcmd_visual_symbol = "[❮](bold fg:yellow)";
+        success_symbol = "[ ](bold fg:green)";
+        error_symbol = "[ ](bold fg:red)";
+        vimcmd_symbol = "[ ](bold fg:green)";
+        vimcmd_replace_one_symbol = "[ ](bold fg:lavender)";
+        vimcmd_replace_symbol = "[ ](bold fg:lavender)";
+        vimcmd_visual_symbol = "[ ](bold fg:yellow)";
       };
 
       cmd_duration = {
