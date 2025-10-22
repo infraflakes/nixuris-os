@@ -5,13 +5,10 @@
   ...
 }:
 {
-  home.packages = with pkgs; [
-    zoxide
-  ];
-
   programs.zoxide = {
     enable = true;
-    enableZshIntegration = true; # official HM option
+    package = pkgs.zoxide;
+    enableZshIntegration = true;
   };
 
   programs.zsh = {
@@ -52,6 +49,7 @@
       tkill = "tmux kill-session -t";
       se = "sudo -E -s nvim";
       ls = "lsd -l";
+      cd = "z";
       nvidia-gpu = "__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia";
     };
 
