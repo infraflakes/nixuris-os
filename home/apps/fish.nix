@@ -47,9 +47,6 @@
       fastfetch
       set username (whoami)
       echo "				Welcome back, $username!"
-      export EDITOR=nvim
-      fish_add_path .local/bin
-      fish_add_path .cargo/bin
     '';
     shellInit = ''
       set -g fish_color_normal ccd0d9 --bold

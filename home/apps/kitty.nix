@@ -24,9 +24,9 @@
       color1 = "#fa6c5f";
       color2 = "#a8fe60";
       color3 = "#729ebb";
-      color4 = "#7aa2f7";
-      color5 = "#6383cf";
-      color6 = "#6383cf";
+      color4 = "#8ab4f8";
+      color5 = "#7aa2f7";
+      color6 = "#7aa2f7";
       color7 = "#eeedee";
 
       color8 = "#7b7b7b";
@@ -37,7 +37,7 @@
       color13 = "#fb9bfe";
       color14 = "#dfdffd";
       color15 = "#fefffe";
-      shell = "fish";
+      shell = "${config.home.homeDirectory}/.nix-profile/bin/fish";
       hide_window_decorations = "yes";
       confirm_os_window_close = 0;
       window_padding_width = 15;
@@ -47,5 +47,6 @@
       sync_to_monitor = "no";
     };
     shellIntegration.enableFishIntegration = true;
+    shellIntegration.enableZshIntegration = true;
   };
 }

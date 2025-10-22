@@ -10,6 +10,13 @@
     username = "nixuris";
     homeDirectory = "/home/nixuris";
     stateVersion = "25.11";
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
+    sessionPath = [
+      "$HOME/.local/bin"
+      "$HOME/.cargo/bin"
+    ];
     packages = [
       #inputs.serein-cli.packages.${pkgs.system}.stable
       inputs.serein-cli.packages.${pkgs.system}.test
@@ -27,6 +34,7 @@
     ./apps/ime.nix
     ./apps/gtk.nix
     ./apps/fish.nix
+    ./apps/zsh.nix
     ./apps/kitty.nix
     #./apps/alacritty.nix
     ./apps/fastfetch.nix

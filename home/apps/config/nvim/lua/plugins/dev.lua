@@ -155,6 +155,7 @@ return {
 				nix = { "nixfmt" },
 				rs = { "rustfmt" },
 				go = { "gofmt" },
+				cpp = { "clang-format" },
 			},
 		},
 	},

@@ -4,19 +4,15 @@
   ...
 }:
 {
-  users = {
-    users = {
-      nixuris = {
-        isNormalUser = true;
-        shell = pkgs.fish;
-        extraGroups = [
-          "networkmanager"
-          "wheel"
-        ];
-      };
+  users.users = {
+    nixuris = {
+      isNormalUser = true;
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+      ];
     };
   };
-  programs.fish.enable = true;
   # Locale
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
