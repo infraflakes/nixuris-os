@@ -37,7 +37,8 @@
       color13 = "#fb9bfe";
       color14 = "#dfdffd";
       color15 = "#fefffe";
-      shell = "${config.home.homeDirectory}/.nix-profile/bin/fish";
+      #shell = "${config.home.homeDirectory}/.nix-profile/bin/fish";
+      shell = "${config.home.homeDirectory}/.nix-profile/bin/zsh";
       hide_window_decorations = "yes";
       confirm_os_window_close = 0;
       window_padding_width = 15;
