@@ -13,7 +13,7 @@
 
     # User environment
     ./environment/user.nix
-    ./environment/display-manager.nix
+    ./environment/profiles.nix
 
     # Programs that needs privileges
     ./runtime/asus.nix

@@ -14,6 +14,9 @@
   programs.zsh = {
     enable = true;
     initContent = ''
+      if uwsm check may-start; then 
+      	exec uwsm start -S hyprland-uwsm.desktop
+      fi
       setopt MENU_COMPLETE
       zmodload zsh/complist
       zstyle ':completion:*' menu yes select
@@ -39,6 +42,16 @@
       ignoreDups = true;
       expireDuplicatesFirst = true;
       extended = true;
+    };
+
+    historySubstringSearch = {
+      enable = true;
+      searchUpKey = [
+        "^[[A"
+      ];
+      searchDownKey = [
+        "^[[B"
+      ];
     };
 
     shellAliases = {

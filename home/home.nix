@@ -33,11 +33,10 @@
     #Other apps configs
     ./apps/ime.nix
     ./apps/gtk.nix
-    #./apps/fish.nix
+    ./apps/bash.nix
     ./apps/zsh.nix
     ./apps/starship.nix
     ./apps/kitty.nix
-    #./apps/alacritty.nix
     ./apps/fastfetch.nix
     ./apps/nvim.nix
     ./apps/yazi.nix

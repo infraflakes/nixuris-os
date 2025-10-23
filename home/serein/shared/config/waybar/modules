@@ -90,8 +90,8 @@
     "memory": {
       "format": " {used}GB",
       "interval": 1,
-      "max-length": 8,
-      "min-length": 8,
+      "max-length": 9,
+      "min-length": 9,
       "rotate": 0,
       "tooltip": true,
       "tooltip-format": "󰾆 {percentage}%\n {used:0.1f}GB/{total:0.1f}GB"
