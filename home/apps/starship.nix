@@ -8,11 +8,11 @@
     enable = true;
     package = pkgs.starship;
     enableZshIntegration = true;
+    enableFishIntegration = true;
     settings = {
       format = ''
         [](crust)$os$username[](bg:peach fg:crust)$directory[](bg:yellow fg:peach)$git_branch$git_status[](fg:yellow bg:green)$c$rust$golang$nodejs$php$java$kotlin$haskell$python[](fg:green bg:sapphire)$conda[](fg:sapphire bg:lavender)$time[ ](fg:lavender)$cmd_duration$line_break
         $character
-
       '';
 
       palette = "catppuccin_frappe";

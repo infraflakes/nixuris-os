@@ -9,6 +9,7 @@
     "nvidia"
     "modesetting"
   ];
+  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=0" ];
   hardware = {
     graphics = {
       enable = true;
@@ -21,8 +22,8 @@
       ];
     };
     nvidia = {
-      powerManagement.enable = true;
-      powerManagement.finegrained = true;
+      powerManagement.enable = false;
+      powerManagement.finegrained = false;
       open = true;
       prime = {
         offload = {

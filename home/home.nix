@@ -35,6 +35,7 @@
     ./apps/gtk.nix
     ./apps/bash.nix
     ./apps/zsh.nix
+    ./apps/fish.nix
     ./apps/starship.nix
     ./apps/kitty.nix
     ./apps/fastfetch.nix
