@@ -14,9 +14,12 @@
   programs.zsh = {
     enable = true;
     initContent = ''
-      if uwsm check may-start; then 
-      	exec uwsm start -S hyprland-uwsm.desktop
-      fi
+      bindkey '^[[1;5D' backward-word
+      bindkey '^[[1;5C' forward-word
+      bindkey '^[OD' backward-word
+      bindkey '^[OC' forward-word
+      bindkey '^[[D' backward-word
+      bindkey '^[[C' forward-word
       setopt MENU_COMPLETE
       zmodload zsh/complist
       zstyle ':completion:*' menu yes select
