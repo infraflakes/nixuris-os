@@ -11,7 +11,7 @@
 Clone the repo:
 
 ```
-git clone https://github.com/nixuris/nixuris-os.git
+git clone https://github.com/infraflakes/sereinos.git
 ```
 
 Apply changes system wide:

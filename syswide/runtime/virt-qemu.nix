@@ -11,7 +11,7 @@
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
-  users.users.nixuris.extraGroups = [
+  users.users.infraflakes.extraGroups = [
     "libvirtd"
     "kvm"
   ];

@@ -9,15 +9,15 @@
   };
   programs.git = {
     enable = true;
-    userName = "nixuris";
-    userEmail = "nixuriss@proton.me";
+    userName = "infraflakes";
+    userEmail = "infraflakes@proton.me";
   };
   programs.jujutsu = {
     enable = true;
     settings = {
       user = {
-        email = "nixuriss@proton.me";
-        name = "nixuris";
+        email = "infraflakes@proton.me";
+        name = "infraflakes";
       };
     };
   };

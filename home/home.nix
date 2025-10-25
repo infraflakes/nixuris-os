@@ -7,8 +7,8 @@
 {
   nixpkgs.config.allowUnfree = true;
   home = {
-    username = "nixuris";
-    homeDirectory = "/home/nixuris";
+    username = "infraflakes";
+    homeDirectory = "/home/infraflakes";
     stateVersion = "25.11";
     sessionVariables = {
       EDITOR = "nvim";

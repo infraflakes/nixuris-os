@@ -18,5 +18,5 @@
     package = pkgs.usbmuxd2;
   };
   programs.adb.enable = true;
-  users.users.nixuris.extraGroups = [ "adbusers" ];
+  users.users.infraflakes.extraGroups = [ "adbusers" ];
 }

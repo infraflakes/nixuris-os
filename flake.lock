@@ -162,13 +162,13 @@
       "locked": {
         "lastModified": 1758807029,
         "narHash": "sha256-Qn5ks4bje9YYNqVIbQNYFnkS601dn13SFYGPUtiNIZg=",
-        "owner": "nixuris",
+        "owner": "infraflakes",
         "repo": "serein-cli",
         "rev": "6ddbc7dd4d5c6f1c6699d6fbd234ebd4e26c626f",
         "type": "github"
       },
       "original": {
-        "owner": "nixuris",
+        "owner": "infraflakes",
         "repo": "serein-cli",
         "type": "github"
       }

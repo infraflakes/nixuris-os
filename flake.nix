@@ -7,7 +7,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     serein-cli = {
-      url = "github:nixuris/serein-cli";
+      url = "github:infraflakes/serein-cli";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {
@@ -37,7 +37,7 @@
         modules = [ ./syswide/host.nix ];
       };
       # Home Manager
-      homeConfigurations."nixuris@serein" = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations."infraflakes@serein" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = { inherit inputs; };
         modules = [ ./home/home.nix ];

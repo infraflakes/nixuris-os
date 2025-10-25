@@ -5,7 +5,7 @@
 }:
 {
   users.users = {
-    nixuris = {
+    infraflakes = {
       isNormalUser = true;
       extraGroups = [
         "networkmanager"

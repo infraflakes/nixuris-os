@@ -6,7 +6,7 @@
 }:
 {
   nixpkgs.config.allowUnfree = true;
-  users.extraGroups.vboxusers.members = [ "nixuris" ];
+  users.extraGroups.vboxusers.members = [ "infraflakes" ];
   environment.systemPackages = with pkgs; [ virtualbox ];
   virtualisation.virtualbox = {
     host = {

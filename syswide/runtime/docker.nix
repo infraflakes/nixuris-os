@@ -5,7 +5,7 @@
   ...
 }:
 {
-  users.users.nixuris.extraGroups = [ "docker" ];
+  users.users.infraflakes.extraGroups = [ "docker" ];
   virtualisation.docker = {
     enable = true;
     rootless = {

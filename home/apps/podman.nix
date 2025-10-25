@@ -10,7 +10,7 @@
       "docker.io"
       "quay.io"
       "registry.fedoraproject.org"
-      "https://mirror.gcr.io"
+      "mirror.gcr.io"
     ];
   };
 }
