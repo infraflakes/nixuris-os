@@ -6,26 +6,18 @@
 {
   programs.tmux = {
     enable = true;
-
-    # History that survives a long build
+    shell = "${pkgs.fish}/bin/fish";
+    # shell = "${pkgs.zsh}/bin/zsh";
     historyLimit = 50000;
-
-    # Start windows/panes at 1 instead of 0
     baseIndex = 1;
-
-    # Mouse on (scroll, resize, select)
     mouse = true;
-
-    # Fast escape for vim/nvim
     escapeTime = 10;
-
-    # Vi-style navigation in copy mode
     keyMode = "vi";
-
-    # tmuxPlugins
-    plugins = with pkgs; [
-      tmuxPlugins.sensible
-      tmuxPlugins.yank
+    plugins = with pkgs.tmuxPlugins; [
+      sensible
+      yank
+      resurrect
+      continuum
     ];
     # Extra lines that don’t have first-class options
     extraConfig = ''
@@ -70,6 +62,11 @@
 
       # 3.  any other key (or Escape) just cancels the mode
       bind -T move Escape switch-client -T root
+
+      # ---------- resurrect / continuum ----------
+      set -g @resurrect-capture-pane-contents 'on'   # optional: keep scrollback
+      set -g @continuum-save-interval '1'            # minutes between snapshots
+      set -g @continuum-restore 'on'                 # restore on tmux start
 
       # ------ theming -------
       set -g status-right-style 'fg=blue bg=default'

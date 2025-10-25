@@ -20,5 +20,6 @@
     ./runtime/mount.nix
     ./runtime/gaming.nix
     ./runtime/virt-qemu.nix
+    ./runtime/docker.nix
   ];
 }

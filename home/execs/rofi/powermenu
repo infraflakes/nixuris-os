@@ -25,7 +25,7 @@ rofi_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$lock\n$logout\n$sleep\n$hibernate\n$reboot\n$shutdown" | rofi_cmd
+	echo -e "$lock\n$logout\n$sleep\n$reboot\n$shutdown" | rofi_cmd
 }
 
 # Actions

@@ -33,6 +33,11 @@
       '';
     };
     shellAliases = {
+      snix = "serein nix";
+      sgit = "serein git";
+      box = "serein box";
+      archive = "serein archive";
+      music = "serein music";
       tm = "tmux new-session -A";
       tc = "tmux new -s";
       ta = "tmux a -t";
