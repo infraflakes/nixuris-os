@@ -4,6 +4,38 @@
   ...
 }:
 {
+  #NVIDIA
+  xdg.desktopEntries."nvidia-settings" = {
+    name = "NVIDIA X Server Settings";
+    exec = "nvidia-settings";
+    terminal = false;
+    type = "Application";
+    noDisplay = true;
+  };
+  #ROG
+  xdg.desktopEntries."rog-control-center" = {
+    name = "ROG Control Center";
+    exec = "rog-control-center";
+    terminal = false;
+    type = "Application";
+    noDisplay = true;
+  };
+  #UUCTL
+  xdg.desktopEntries."uuctl" = {
+    name = "User unit manager";
+    exec = "uuctl";
+    terminal = false;
+    type = "Application";
+    noDisplay = true;
+  };
+  #NixOS Manual
+  xdg.desktopEntries."nixos-manual" = {
+    name = "System manual";
+    exec = "nixos-help";
+    terminal = false;
+    type = "Application";
+    noDisplay = true;
+  };
   #Rofi
   home.file.".local/share/applications/rofi.desktop".text = ''
     [Desktop Entry]
@@ -63,6 +95,14 @@
   xdg.desktopEntries."nvim" = {
     name = "Neovim wrapper";
     exec = "nvim %F";
+    terminal = false;
+    type = "Application";
+    noDisplay = true;
+  };
+  #Fcitx5 Config Tool
+  xdg.desktopEntries."fcitx5-configtool" = {
+    name = "Fcitx 5 Configuration";
+    exec = "fcitx5-configtool";
     terminal = false;
     type = "Application";
     noDisplay = true;

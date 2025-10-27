@@ -9,8 +9,9 @@
     usbutils
     libimobiledevice
     ifuse
-    nautilus
-    sushi
+    nemo
+    # nautilus
+    # sushi
   ];
   services.gvfs.enable = true;
   services.usbmuxd = {
