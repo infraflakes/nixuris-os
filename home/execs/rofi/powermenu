@@ -2,7 +2,7 @@
 
 # Current Theme
 dir="$HOME/.config/rofi/"
-theme='power'
+theme='powermenu'
 
 # CMDs
 uptime="`uptime -p | sed -e 's/up //g'`"
@@ -48,6 +48,6 @@ case ${chosen} in
 		swaylock -f && systemctl hibernate
         ;;
     $sleep)
-		swaylock -f && systemctl suspend-then-hibernate
+		swaylock -f && systemctl suspend
         ;;
 esac

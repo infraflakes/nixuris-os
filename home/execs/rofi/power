@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+# Current Theme
+dir="$HOME/.config/rofi/"
+theme='power'
+
+# CMDs
+host=`hostnamectl hostname`
+asus=$(asusctl profile -p | sed -n 's/.*Active profile is //p')
+# Options
+quiet='󰒲 Quiet'
+balanced=' Balanced'
+performance=' Performance'
+# Rofi CMD
+rofi_cmd() {
+	rofi -dmenu \
+		-p "$host" \
+		-mesg "Profile: $asus" \
+		-theme ${dir}/${theme}.rasi
+}
+
+# Pass variables to rofi dmenu
+run_rofi() {
+	echo -e "$quiet\n$balanced\n$performance" | rofi_cmd
+}
+
+# Actions
+chosen="$(run_rofi)"
+case ${chosen} in
+    $quiet)
+		asusctl profile -P quiet
+        ;;
+    $balanced)
+		asusctl profile -P balanced
+        ;;
+    $performance)
+		asusctl profile -P performance
+        ;;
+esac

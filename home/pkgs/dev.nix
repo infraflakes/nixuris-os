@@ -9,8 +9,10 @@
   };
   programs.git = {
     enable = true;
-    userName = "infraflakes";
-    userEmail = "infraflakes@proton.me";
+    settings.user = {
+      email = "infraflakes@proton.me";
+      name = "infraflakes";
+    };
   };
   programs.jujutsu = {
     enable = true;

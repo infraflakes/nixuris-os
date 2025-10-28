@@ -147,6 +147,7 @@ in
         "SUPER SHIFT, Q, exec, ${scriptsDir}/killin"
         "SUPER, F, fullscreen"
         "SUPER, L, exec, ${rofiScriptsDir}/powermenu"
+        "SUPER, P, exec, ${rofiScriptsDir}/power"
         "SUPER, R, exec, sh -c 'pkill waybar || uwsm app -- waybar'"
         "SUPER, W, togglefloating"
         "SUPER SHIFT, W, exec, ${rofiScriptsDir}/wallselect-hypr"
