@@ -144,6 +144,7 @@ in
         "SUPER, N, exec, makoctl restore"
         #
         "SUPER, Q, killactive,"
+        "SUPER SHIFT, P, pin,"
         "SUPER SHIFT, Q, exec, ${scriptsDir}/killin"
         "SUPER, F, fullscreen"
         "SUPER, L, exec, ${rofiScriptsDir}/powermenu"
