@@ -14,7 +14,7 @@
     };
     settings = {
       foreground = "#ffffff";
-      background = "#000000";
+      background = "#1b1e25";
       cursor = "#7f7f7f";
       cursor_text_color = "#000000";
       selection_foreground = "#000000";

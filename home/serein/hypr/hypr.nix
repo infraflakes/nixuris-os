@@ -48,7 +48,7 @@ in
       decoration = {
         #   inactive_opacity = 0.85;
         #   active_opacity = 1.0;
-        #   rounding = 20;
+        rounding = 10;
         blur = {
           enabled = false;
           size = 5;
@@ -83,7 +83,7 @@ in
         # gaps_in = 0;
         # gaps_out = 0;
         border_size = 3;
-        "col.active_border" = "0xFF86AFEF";
+        "col.active_border" = "0xFF2E3337";
         "col.inactive_border" = "0xFF1B1E25";
         layout = "dwindle";
       };

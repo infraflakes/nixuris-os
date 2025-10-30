@@ -23,6 +23,11 @@
     # Hyprland specifics
     ./hypr/hypr.nix
     ./hypr/swappy.nix
-    ./hypr/uwsm.nix
+    ./hypr/uwsm-hypr.nix
+
+    # Niri specifics
+    ./niri/niri.nix
+    ./niri/xwayland.nix
+    ./niri/uwsm-niri.nix
   ];
 }
