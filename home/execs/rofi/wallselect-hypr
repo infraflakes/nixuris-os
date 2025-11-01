@@ -30,7 +30,7 @@ ROFI_OVERRIDE="element-icon{size:${icon_size}px;border-radius:0px;}
 window{width:80%;height:80%;}
 listview{spacing:10px;}"
 
-ROFI_EXECUTE="rofi -dmenu -theme ${HOME}/.config/rofi/wall.rasi -theme-str '${ROFI_OVERRIDE}'"
+ROFI_EXECUTE="uwsm app -- rofi -dmenu -theme ${HOME}/.config/rofi/wall.rasi -theme-str '${ROFI_OVERRIDE}'"
 
 # Create cache dir if not exists
 mkdir -p "${CACHE_DIR}"

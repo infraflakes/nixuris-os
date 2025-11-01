@@ -13,7 +13,7 @@ balanced=' Balanced'
 performance=' Performance'
 # Rofi CMD
 rofi_cmd() {
-	rofi -dmenu \
+	uwsm app -- rofi -dmenu \
 		-p "$host" \
 		-mesg "Profile: $asus" \
 		-theme ${dir}/${theme}.rasi

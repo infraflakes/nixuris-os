@@ -11,6 +11,7 @@
     ncdu
     bottom
     lm_sensors
+    bluetuith
   ];
   # SSH
   services.openssh = {

@@ -163,7 +163,7 @@
               Mod+Q { close-window; }
 
               Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "uwsm" "app" "--" "kitty"; }
-              Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "rofi" "-show" "drun"; }
+              Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "uwsm" "app" "--" "rofi" "-show" "drun"; }
               Mod+N hotkey-overlay-title="Notification Restore: Mako" { spawn "makoctl" "restore"; }
               Mod+L hotkey-overlay-title="Session Handler" { spawn "~/.local/bin/rofi/powermenu"; }
               Mod+V hotkey-overlay-title="Clipboard Manager" { spawn "~/.local/bin/rofi/clip"; }

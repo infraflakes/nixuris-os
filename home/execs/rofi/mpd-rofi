@@ -67,7 +67,7 @@ fi
 
 # Rofi CMD
 rofi_cmd() {
-	rofi -theme-str "listview {columns: 6; lines: 1;}" \
+	uwsm app -- rofi -theme-str "listview {columns: 6; lines: 1;}" \
 		-theme-str 'textbox-prompt-colon {str: " ";}' \
 		-dmenu \
 		-p "$prompt" \

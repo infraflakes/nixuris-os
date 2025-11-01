@@ -17,7 +17,7 @@ hibernate=' Hibernate'
 sleep=' Sleep'
 # Rofi CMD
 rofi_cmd() {
-	rofi -dmenu \
+	uwsm app -- rofi -dmenu \
 		-p "$host" \
 		-mesg "Uptime: $uptime" \
 		-theme ${dir}/${theme}.rasi
@@ -41,7 +41,6 @@ case ${chosen} in
 		swaylock -f
         ;;
     $logout)
-		#niri msg action quit
 		uwsm stop
         ;;
     $hibernate)
