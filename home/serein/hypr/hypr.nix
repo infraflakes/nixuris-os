@@ -31,8 +31,9 @@ in
     enable = true;
     xwayland.enable = true;
     plugins = with pkgs; [
-      #hyprlandPlugins.hyprspace
-      #hyprlandPlugins.hyprbars
+      # hyprlandPlugins.hyprspace
+      # hyprlandPlugins.hyprbars
+      # hyprlandPlugins.hyprscrolling
     ];
     settings = {
       monitor = [
@@ -42,7 +43,7 @@ in
       ];
       exec-once = [
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        #"hyprctl plugin load /nix/store/hjn4qyc431qv5j81bs7lmrrc4qllppry-hyprspace-0-unstable-2025-05-09/lib/libhyprspace.so"
+        # "hyprctl plugin load ${pkgs.hyprlandPlugins.hyprscrolling}/lib/libhyprscrolling.so"
       ];
 
       decoration = {
