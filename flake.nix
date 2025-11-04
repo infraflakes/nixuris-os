@@ -18,6 +18,10 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    mangowc = {
+      url = "github:DreamMaoMao/mangowc";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs =
     {
@@ -27,6 +31,7 @@
       serein-cli,
       zen-browser,
       niri,
+      mangowc,
       ...
     }@inputs:
     let
@@ -45,7 +50,10 @@
       homeConfigurations."infraflakes@serein" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         extraSpecialArgs = { inherit inputs; };
-        modules = [ ./home/home.nix ];
+        modules = [
+          ./home/home.nix
+          mangowc.hmModules.mango
+        ];
       };
       # Dev Shell
       devShells.${system} = {

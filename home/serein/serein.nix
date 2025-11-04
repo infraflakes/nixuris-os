@@ -20,6 +20,10 @@
     ./shared/swaylock.nix
     ./shared/wallpapers.nix
 
+    # Mangowc specifics
+    ./mangowc/mangowc.nix
+    ./mangowc/uwsm-mangowc.nix
+
     # Hyprland specifics
     ./hypr/hypr.nix
     ./hypr/swappy.nix
