@@ -3,10 +3,6 @@
 {
   home.file.".config/uwsm/env" = {
     text = ''
-      # Theming
-      export XCURSOR_THEME=Bibata-Modern-Ice
-      export XCURSOR_SIZE=24
-
       #export WLR_DRM_DEVICES=/dev/dri/card1:/dev/dri/card0 mango
       export WLR_DRM_DEVICES=/dev/dri/card1 mango
 

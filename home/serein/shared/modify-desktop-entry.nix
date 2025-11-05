@@ -4,6 +4,13 @@
   ...
 }:
 {
+  xdg.desktopEntries."com.obsproject.Studio" = {
+    name = "OBS Studio";
+    exec = "env QT_QPA_PLATFORM=xcb obs";
+    icon = "com.obsproject.Studio";
+    terminal = false;
+    type = "Application";
+  };
   #NVIDIA
   xdg.desktopEntries."nvidia-settings" = {
     name = "NVIDIA X Server Settings";

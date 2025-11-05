@@ -11,7 +11,7 @@
     #./niri/xwayland.nix
 
     # Shared between environments
-    ./shared/hide-desktop-entry.nix
+    ./shared/modify-desktop-entry.nix
     ./shared/autostart.nix
     ./shared/env.nix
     ./shared/mako.nix

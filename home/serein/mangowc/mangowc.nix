@@ -46,6 +46,8 @@ in
   wayland.windowManager.mango = {
     enable = true;
     settings = ''
+      cursor_size=24
+      cursor_theme=Bibata-Modern-Ice
       adaptive_sync=1
       disable_while_typing=1
       trackpad_natural_scrolling=1
@@ -77,6 +79,10 @@ in
       animation_curve_tag=0.46,1.0,0.29,1
       animation_curve_close=0.08,0.92,0,1
       animation_curve_focus=0.46,1.0,0.29,1
+
+      # layer rule
+      layerrule=animation_type_open:zoom,layer_name:rofi
+      layerrule=animation_type_close:zoom,layer_name:rofi
 
 
       ██╗  ██╗███████╗██╗   ██╗██████╗ ██╗███╗   ██╗██████╗ ███████╗
