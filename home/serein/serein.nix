@@ -22,16 +22,17 @@
 
     # Mangowc specifics
     ./mangowc/mangowc.nix
+    ./mangowc/swappy.nix
     ./mangowc/uwsm-mangowc.nix
 
     # Hyprland specifics
-    ./hypr/hypr.nix
-    ./hypr/swappy.nix
-    ./hypr/uwsm-hypr.nix
+    # ./hypr/hypr.nix
+    # ./hypr/swappy.nix
+    # ./hypr/uwsm-hypr.nix
 
     # Niri specifics
-    ./niri/niri.nix
-    ./niri/xwayland.nix
-    ./niri/uwsm-niri.nix
+    # ./niri/niri.nix
+    # ./niri/xwayland.nix
+    # ./niri/uwsm-niri.nix
   ];
 }

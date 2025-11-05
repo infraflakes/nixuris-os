@@ -6,7 +6,7 @@ function get_volume {
 function send_notification {
     volume=$(get_volume)
     volume=${volume:-0}  # Default to 0 if empty
-    $HOME/.local/bin/hypr/notify_send "Volume $volume%" -t 2000 -h int:value:"$volume" -h string:x-canonical-private-synchronous:volume_notif --replace=555
+    $(dirname "$0")/notify_send "Volume $volume%" -t 2000 -h int:value:"$volume" -h string:x-canonical-private-synchronous:volume_notif --replace=555
 }
 
 case $1 in

@@ -6,7 +6,8 @@
   ...
 }:
 let
-  scriptsDir = builtins.toString ../../execs/hypr;
+  hyprScriptsDir = builtins.toString ../../execs/hypr;
+  scriptsDir = builtins.toString ../../execs/sys;
   rofiScriptsDir = builtins.toString ../../execs/rofi;
 in
 {
@@ -26,7 +27,6 @@ in
     ];
   };
   services.cliphist.enable = true;
-  services.blueman-applet.enable = true;
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -146,7 +146,7 @@ in
         #
         "SUPER, Q, killactive,"
         "SUPER SHIFT, P, pin,"
-        "SUPER SHIFT, Q, exec, ${scriptsDir}/killin"
+        "SUPER SHIFT, Q, exec, ${hyprScriptsDir}/killin"
         "SUPER, F, fullscreen"
         "SUPER, L, exec, ${rofiScriptsDir}/powermenu"
         "SUPER, P, exec, ${rofiScriptsDir}/power"

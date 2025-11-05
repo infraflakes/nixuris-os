@@ -19,7 +19,7 @@
     ];
     packages = [
       #inputs.serein-cli.packages.${pkgs.system}.stable
-      inputs.serein-cli.packages.${pkgs.system}.test
+      inputs.serein-cli.packages.${pkgs.stdenv.hostPlatform.system}.test
       pkgs.lsd
     ];
   };
