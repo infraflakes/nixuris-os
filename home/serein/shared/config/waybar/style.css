@@ -5,7 +5,7 @@
     min-height: 21px;
 }
 window#waybar {
-    background: #2d333f;
+    background: #1b1e25;
 }
 
 tooltip {
@@ -45,79 +45,81 @@ tooltip label {
 }
 #mpris {
 	font-size: 14;
-	color: #2d333f;
-	background: #a3be8c;
+	color: #a3be8c;
+	background: transparent;
 	margin-top: 10px;
-        margin-bottom: 10px;
 	padding-left: 13px;
 	padding-right: 13px;
+        border-bottom: 3px solid #a3be8c;
 }
 #image {
-    min-width: 32px;
-    min-height: 32px;
+    min-width: 40px;
+    min-height: 40px;
+    margin-top: 10px;
+    padding-right: 13px;
 }
 #temperature {
 	font-size: 14;
-	color: #2d333f;
-	background: #86afef;
+	color: #86afef;
+	background: transparent;
 	margin-top: 10px;
-        margin-bottom: 10px;
 	padding-left: 13px;
 	padding-right: 13px;
+        border-bottom: 3px solid #86afef;
 }
 #memory{
     	font-size: 14;
-	color: #2d333f;
-	background: #d35e86;
+	color: #d35e86;
+	background: transparent;
 	margin-top: 10px;
-        margin-bottom: 10px;
 	padding-left: 10px;
 	padding-right: 10px;
+        border-bottom: 3px solid #d35e86;
 }
 #clock{
 	font-size: 14;
-	color: #2d333f;
-	background: #b48ead;
+	color: #b48ead;
+	background: transparent;
 	margin-top: 10px;
-        margin-bottom: 10px;
 	padding-left: 13px;
 	padding-right: 13px;
+        border-bottom: 3px solid #b48ead;
 }
 
 #battery{
 	font-size: 14;
-	background: #c1af79;
-	color: #2d333f;
+	background: transparent;
+	color: #c1af79;
 	margin-top: 10px;
-        margin-bottom: 10px;
 	padding-left: 12px;
 	padding-right: 12px;
+        border-bottom: 3px solid #c1af79;
 }
 #cpu{
     	font-size: 14;
-	color: #2d333f;
-	background: #85c3a9;
+	color: #85c3a9;
+	background: transparent;
 	margin-top: 10px;
-        margin-bottom: 10px;
 	padding-left: 8px;
 	padding-right: 8px;
+        border-bottom: 3px solid #85c3a9;
 }
 
 #network{
     	font-size: 14;
-	color: #2d333f;
-	background: #bf616a;
+	color: #bf616a;
+	background: transparent;
 	margin-top: 10px;
-        margin-bottom: 10px;
 	padding-left: 9px;
 	padding-right: 9px;
+        border-bottom: 3px solid #bf616a;
 }
 #pulseaudio{
     	font-size: 14;
-	color: #2d333f;
-	background: #80c0d0;
+	color: #80c0d0;
+	background: transparent;
 	margin-top: 10px;
-        margin-bottom: 10px;
 	padding-left: 8px;
 	padding-right: 8px;
+        border-bottom: 3px solid #80c0d0;
 }

@@ -8,13 +8,14 @@
     "position": "top",
     "reload_style_on_change": true,
     "gtk-layer-shell": true,
-    "width": 1920,
+    "width": 1890,
     "height": 54,
     "layer": "top",
-    /*"margin-top": 10,*/
+    "margin-top": 10,
+    "margin-bottom": 10,
     "mod": "dock",
-"modules-left": [ "tray", "custom/padd-med", "custom/cpuicon", "cpu", "custom/padd-med", "custom/tempicon", "temperature", "custom/padd-med", "custom/memicon", "memory" ],
-"modules-center": [ "custom/padd-med", "mpris", "custom/padd", "custom/cavavis", "custom/padd-med" ],
-"modules-right": [ "custom/volumeicon", "pulseaudio", "custom/padd-med", "custom/networkicon", "network",  "custom/padd-med", "battery", "custom/batext", "custom/padd-med", "clock" ],
+"modules-left": [  "custom/padd", "hyprland/workspaces","custom/padd", "image" ,"mpris", "custom/padd"  ],
+"modules-center": [],
+"modules-right": [ "tray", "custom/padd-med", "cpu", "memory","temperature","custom/padd","network","pulseaudio","custom/padd", "clock", "battery", "custom/padd"],
 
 },]

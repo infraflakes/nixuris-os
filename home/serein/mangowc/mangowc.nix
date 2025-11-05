@@ -46,11 +46,16 @@ in
   wayland.windowManager.mango = {
     enable = true;
     settings = ''
-      cursor_size=24
-      cursor_theme=Bibata-Modern-Ice
       adaptive_sync=1
       disable_while_typing=1
       trackpad_natural_scrolling=1
+
+      cursor_size=24
+      cursor_theme=Bibata-Modern-Ice
+      gappih=30
+      gappiv=30
+      gappoh=30
+      gappov=30
 
        █████╗ ███╗   ██╗██╗███╗   ███╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗███████╗
       ██╔══██╗████╗  ██║██║████╗ ████║██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
@@ -69,10 +74,10 @@ in
       zoom_end_ratio=0.8
       fadein_begin_opacity=0.5
       fadeout_begin_opacity=0.8
-      animation_duration_move=500
-      animation_duration_open=400
-      animation_duration_tag=350
-      animation_duration_close=800
+      animation_duration_move=400
+      animation_duration_open=200
+      animation_duration_tag=300
+      animation_duration_close=150
       animation_duration_focus=0
       animation_curve_open=0.46,1.0,0.29,1
       animation_curve_move=0.46,1.0,0.29,1

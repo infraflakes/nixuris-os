@@ -7,6 +7,7 @@
   home.packages = with pkgs; [
     onlyoffice-desktopeditors
     zoom-us
+    planify
   ];
   programs.obs-studio = {
     enable = true;
