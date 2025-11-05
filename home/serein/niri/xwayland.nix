@@ -11,7 +11,7 @@
       openbox
     ];
     sessionVariables = {
-      DISPLAY = ":0";
+      #DISPLAY = ":0";
     };
   };
 }

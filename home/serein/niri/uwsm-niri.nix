@@ -7,6 +7,9 @@
       export XCURSOR_THEME=Bibata-Modern-Ice
       export XCURSOR_SIZE=24
 
+      # Xwayland
+      export DISPLAY=:0
+
       # Nvidia
       # export LIBVA_DRIVER_NAME=nvidia
       # export GBM_BACKEND=nvidia-drm
