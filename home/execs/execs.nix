@@ -20,8 +20,4 @@
     source = ./sys;
     executable = true;
   };
-  home.file.".local/bin/niri" = {
-    source = ./niri;
-    executable = true;
-  };
 }

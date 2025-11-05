@@ -3,6 +3,10 @@
   inputs,
   ...
 }:
+let
+  sysScriptsDir = builtins.toString ../../execs/sys;
+  rofiScriptsDir = builtins.toString ../../execs/rofi;
+in
 {
   imports = [ inputs.niri.homeModules.niri ];
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
@@ -19,16 +23,6 @@
       xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk
     ];
-  };
-  xdg.dataFile."wayland-sessions/niri.desktop" = {
-    text = ''
-      [Desktop Entry]
-      Name=niri
-      Comment=Scrollable-tiling Wayland compositor
-      Exec=${pkgs.niri}/bin/niri --session
-      Type=Application
-      DesktopNames=niri
-    '';
   };
   programs.niri = {
     enable = true;
@@ -153,25 +147,25 @@
 
           binds {
               Mod+Shift+Slash { show-hotkey-overlay; }
-              XF86AudioRaiseVolume allow-when-locked=true { spawn "~/.local/bin/niri/volume" "up"; }
-              XF86AudioLowerVolume allow-when-locked=true { spawn "~/.local/bin/niri/volume" "down"; }
-              XF86AudioMute        allow-when-locked=true { spawn "~/.local/bin/niri/volume" "mute"; }
+              XF86AudioRaiseVolume allow-when-locked=true { spawn "${sysScriptsDir}/volume" "up"; }
+              XF86AudioLowerVolume allow-when-locked=true { spawn "${sysScriptsDir}/volume" "down"; }
+              XF86AudioMute        allow-when-locked=true { spawn "${sysScriptsDir}/volume" "mute"; }
               XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-              XF86MonBrightnessDown allow-when-locked=true {spawn "~/.local/bin/niri/bright" "down" ;}
-              XF86MonBrightnessUp allow-when-locked=true {spawn "~/.local/bin/niri/bright" "up" ;}
+              XF86MonBrightnessDown allow-when-locked=true {spawn "${sysScriptsDir}/bright" "down" ;}
+              XF86MonBrightnessUp allow-when-locked=true {spawn "${sysScriptsDir}/bright" "up" ;}
 
               Mod+Q { close-window; }
 
               Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "uwsm" "app" "--" "kitty"; }
               Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "uwsm" "app" "--" "rofi" "-show" "drun"; }
               Mod+N hotkey-overlay-title="Notification Restore: Mako" { spawn "makoctl" "restore"; }
-              Mod+L hotkey-overlay-title="Session Handler" { spawn "~/.local/bin/rofi/powermenu"; }
-              Mod+V hotkey-overlay-title="Clipboard Manager" { spawn "~/.local/bin/rofi/clip"; }
-              Mod+Period hotkey-overlay-title="Emoji Selector" { spawn "~/.local/bin/rofi/emoji"; }
-              Mod+Shift+W hotkey-overlay-title="Wallpaper Manager" { spawn "~/.local/bin/rofi/wallselect-niri"; }
-              Mod+P hotkey-overlay-title="Wallpaper Manager" { spawn "~/.local/bin/rofi/power"; }
+              Mod+L hotkey-overlay-title="Session Handler" { spawn "${rofiScriptsDir}/powermenu"; }
+              Mod+V hotkey-overlay-title="Clipboard Manager" { spawn "${rofiScriptsDir}/clip"; }
+              Mod+Period hotkey-overlay-title="Emoji Selector" { spawn "${rofiScriptsDir}/emoji"; }
+              Mod+Shift+W hotkey-overlay-title="Wallpaper Manager" { spawn "${rofiScriptsDir}/wallselect-niri"; }
+              Mod+P hotkey-overlay-title="Wallpaper Manager" { spawn "${rofiScriptsDir}/power"; }
 
-              Mod+M hotkey-overlay-title="MPD Control" { spawn "~/.local/bin/rofi/mpd-rofi"; }
+              Mod+M hotkey-overlay-title="MPD Control" { spawn "${rofiScriptsDir}/mpd-rofi"; }
 
               Mod+A repeat=false { toggle-overview; }
 

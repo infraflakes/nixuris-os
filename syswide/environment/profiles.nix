@@ -16,12 +16,8 @@
       # niri = {
       #   prettyName = "Niri";
       #   comment = "Niri compositor managed by UWSM";
-      #   binPath = "${pkgs.niri}/bin/niri --session";
+      #   binPath = "${pkgs.niri}/bin/niri-session";
       # };
     };
   };
-  # programs.hyprland = {
-  #   enable = true;
-  #   withUWSM = true;
-  # };
 }
