@@ -16,6 +16,5 @@
     MOZ_ENABLE_WAYLAND = 1;
     MOZ_DISABLE_RDD_SANDBOX = 1;
     EGL_PLATFORM = "wayland";
-    DISPLAY = ":0";
   };
 }

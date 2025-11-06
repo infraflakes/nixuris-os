@@ -6,6 +6,11 @@
   ...
 }:
 {
+  environment.loginShellInit = ''
+    if uwsm check may-start && uwsm select; then
+      exec uwsm start default
+    fi
+  '';
   programs.uwsm = {
     enable = true;
     waylandCompositors = {

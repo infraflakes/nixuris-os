@@ -6,8 +6,8 @@
   ...
 }:
 let
-  scriptsDir = builtins.toString ../../execs/sys;
-  rofiScriptsDir = builtins.toString ../../execs/rofi;
+  scriptsDir = builtins.toString ../../shared/scripts/sys;
+  rofiScriptsDir = builtins.toString ../../shared/scripts/rofi;
 in
 {
   xdg.portal = {

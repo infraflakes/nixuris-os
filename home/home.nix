@@ -24,31 +24,7 @@
     ];
   };
   imports = [
-    ./pkgs/dev.nix
-    ./pkgs/fonts.nix
-    ./pkgs/media.nix
-    ./pkgs/misc.nix
-    ./pkgs/social.nix
-    ./pkgs/vpn.nix
-    #Other apps configs
-    ./apps/ime.nix
-    ./apps/gtk.nix
-    ./apps/bash.nix
-    ./apps/zsh.nix
-    ./apps/fish.nix
-    ./apps/starship.nix
-    ./apps/kitty.nix
-    ./apps/fastfetch.nix
-    ./apps/nvim.nix
-    ./apps/yazi.nix
-    ./apps/tmux.nix
-    ./apps/podman.nix
-    #./apps/ollama.nix
-
-    # WM
-    ./serein/serein.nix
-
-    # Executables
-    ./execs/execs.nix
+    ./pkg/pkgs.nix
+    ./environment/environment.nix
   ];
 }

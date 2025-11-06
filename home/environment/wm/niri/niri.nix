@@ -4,8 +4,8 @@
   ...
 }:
 let
-  sysScriptsDir = builtins.toString ../../execs/sys;
-  rofiScriptsDir = builtins.toString ../../execs/rofi;
+  scriptsDir = builtins.toString ../../shared/scripts/sys;
+  rofiScriptsDir = builtins.toString ../../shared/scripts/rofi;
 in
 {
   imports = [ inputs.niri.homeModules.niri ];

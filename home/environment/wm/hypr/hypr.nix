@@ -6,9 +6,9 @@
   ...
 }:
 let
-  hyprScriptsDir = builtins.toString ../../execs/hypr;
-  scriptsDir = builtins.toString ../../execs/sys;
-  rofiScriptsDir = builtins.toString ../../execs/rofi;
+  hyprScriptsDir = builtins.toString ../../shared/scripts/hypr;
+  scriptsDir = builtins.toString ../../shared/scripts/sys;
+  rofiScriptsDir = builtins.toString ../../shared/scripts/rofi;
 in
 {
   home.packages = with pkgs; [
