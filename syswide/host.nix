@@ -18,8 +18,8 @@
     # Programs that needs privileges
     ./runtime/asus.nix
     ./runtime/mount.nix
-    ./runtime/gaming.nix
+    #./runtime/gaming.nix
     ./runtime/virt-qemu.nix
-    ./runtime/docker.nix
+    #./runtime/docker.nix
   ];
 }

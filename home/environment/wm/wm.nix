@@ -10,8 +10,11 @@ let
 in
 {
   imports = [
-    (mangowc + "/mangowc.nix")
-    (mangowc + "/swappy.nix")
-    (mangowc + "/uwsm-mangowc.nix")
+    # (mangowc + "/mangowc.nix")
+    # (mangowc + "/swappy.nix")
+    # (mangowc + "/uwsm-mangowc.nix")
+
+    (niri + "/niri.nix")
+    (niri + "/uwsm-niri.nix")
   ];
 }

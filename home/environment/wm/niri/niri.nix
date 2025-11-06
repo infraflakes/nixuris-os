@@ -11,6 +11,7 @@ in
   imports = [ inputs.niri.homeModules.niri ];
   nixpkgs.overlays = [ inputs.niri.overlays.niri ];
   home.packages = with pkgs; [
+    xwayland-satellite
     pavucontrol
     libnotify
     glib
@@ -20,9 +21,22 @@ in
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
-      xdg-desktop-portal-gnome
       xdg-desktop-portal-gtk
+      xdg-desktop-portal-gnome
     ];
+    config = {
+      common = {
+        default = [ "gtk" ];
+      };
+      niri = {
+        default = [
+          "gtk"
+          "gnome"
+        ];
+        "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
+        "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
+      };
+    };
   };
   programs.niri = {
     enable = true;
@@ -119,7 +133,7 @@ in
           }
               struts {}
           }
-          prefer-no-csd
+          //prefer-no-csd
 
       window-rule {
           match app-id=r#"firefox$"# title="^Picture-in-Picture$"
@@ -147,12 +161,12 @@ in
 
           binds {
               Mod+Shift+Slash { show-hotkey-overlay; }
-              XF86AudioRaiseVolume allow-when-locked=true { spawn "${sysScriptsDir}/volume" "up"; }
-              XF86AudioLowerVolume allow-when-locked=true { spawn "${sysScriptsDir}/volume" "down"; }
-              XF86AudioMute        allow-when-locked=true { spawn "${sysScriptsDir}/volume" "mute"; }
+              XF86AudioRaiseVolume allow-when-locked=true { spawn "${scriptsDir}/volume" "up"; }
+              XF86AudioLowerVolume allow-when-locked=true { spawn "${scriptsDir}/volume" "down"; }
+              XF86AudioMute        allow-when-locked=true { spawn "${scriptsDir}/volume" "mute"; }
               XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-              XF86MonBrightnessDown allow-when-locked=true {spawn "${sysScriptsDir}/bright" "down" ;}
-              XF86MonBrightnessUp allow-when-locked=true {spawn "${sysScriptsDir}/bright" "up" ;}
+              XF86MonBrightnessDown allow-when-locked=true {spawn "${scriptsDir}/bright" "down" ;}
+              XF86MonBrightnessUp allow-when-locked=true {spawn "${scriptsDir}/bright" "up" ;}
 
               Mod+Q { close-window; }
 
