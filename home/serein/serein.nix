@@ -19,6 +19,7 @@
     ./shared/waybar.nix
     ./shared/swaylock.nix
     ./shared/wallpapers.nix
+    ./shared/uwsm.nix
 
     # Mangowc specifics
     ./mangowc/mangowc.nix

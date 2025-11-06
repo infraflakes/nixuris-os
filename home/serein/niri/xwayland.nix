@@ -10,8 +10,5 @@
       xwayland
       openbox
     ];
-    sessionVariables = {
-      #DISPLAY = ":0";
-    };
   };
 }
