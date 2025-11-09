@@ -2,14 +2,12 @@
   pkgs,
   inputs,
   ...
-}:
-let
+}: let
   scriptsDir = builtins.toString ../../shared/scripts/sys;
   rofiScriptsDir = builtins.toString ../../shared/scripts/rofi;
-in
-{
-  imports = [ inputs.niri.homeModules.niri ];
-  nixpkgs.overlays = [ inputs.niri.overlays.niri ];
+in {
+  imports = [inputs.niri.homeModules.niri];
+  nixpkgs.overlays = [inputs.niri.overlays.niri];
   home.packages = with pkgs; [
     xwayland-satellite
     pavucontrol
@@ -26,15 +24,15 @@ in
     ];
     config = {
       common = {
-        default = [ "gtk" ];
+        default = ["gtk"];
       };
       niri = {
         default = [
           "gtk"
           "gnome"
         ];
-        "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
-        "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
+        "org.freedesktop.impl.portal.ScreenCast" = ["gnome"];
+        "org.freedesktop.impl.portal.Screenshot" = ["gnome"];
       };
     };
   };

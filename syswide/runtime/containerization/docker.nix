@@ -3,9 +3,8 @@
   lib,
   pkgs,
   ...
-}:
-{
-  users.users.infraflakes.extraGroups = [ "docker" ];
+}: {
+  users.users.infraflakes.extraGroups = ["docker"];
   virtualisation.docker = {
     enable = true;
     rootless = {

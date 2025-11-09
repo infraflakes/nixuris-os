@@ -2,10 +2,8 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   imports = [
-
     # CLI
     ./cli/fish.nix
     ./cli/zsh.nix

@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home.file.".config/uwsm/env-hyprland" = {
     text = ''
       # Aquamarine multi-GPU configuration

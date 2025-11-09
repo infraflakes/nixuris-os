@@ -2,9 +2,7 @@
   config,
   pkgs,
   ...
-}:
-
-{
+}: {
   home.file.".config/uwsm/env" = {
     text = ''
       # Cursor theming

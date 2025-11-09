@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   home.file.".local/bin/hypr" = {
     source = ./hypr;
     executable = true;

@@ -2,9 +2,8 @@
   config,
   pkgs,
   ...
-}:
-{
-  home.packages = with pkgs; [ zoxide ];
+}: {
+  home.packages = with pkgs; [zoxide];
   programs.zoxide = {
     enable = true;
     enableFishIntegration = true;

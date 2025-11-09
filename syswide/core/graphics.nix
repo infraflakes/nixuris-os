@@ -3,13 +3,12 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   services.xserver.videoDrivers = [
     "nvidia"
     "modesetting"
   ];
-  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=0" ];
+  boot.kernelParams = ["nvidia.NVreg_PreserveVideoMemoryAllocations=0"];
   environment.variables = {
     LIBVA_DRIVER_NAME = "iHD";
   };

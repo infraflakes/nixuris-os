@@ -2,13 +2,11 @@
   config,
   pkgs,
   ...
-}:
-let
+}: let
   mangowc = ./mangowc;
   niri = ./niri;
   hypr = ./hypr;
-in
-{
+in {
   imports = [
     # (mangowc + "/mangowc.nix")
     # (mangowc + "/swappy.nix")

@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   # xdg.desktopEntries."com.obsproject.Studio" = {
   #   name = "OBS Studio";
   #   exec = "env QT_QPA_PLATFORM=xcb obs";

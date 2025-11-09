@@ -4,12 +4,10 @@
   lib,
   pkgs,
   ...
-}:
-let
+}: let
   scriptsDir = builtins.toString ../../shared/scripts/sys;
   rofiScriptsDir = builtins.toString ../../shared/scripts/rofi;
-in
-{
+in {
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [
@@ -32,7 +30,7 @@ in
           "gtk"
           "wlr"
         ];
-        "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
+        "org.freedesktop.impl.portal.FileChooser" = ["gtk"];
       };
     };
   };

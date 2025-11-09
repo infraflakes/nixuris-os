@@ -4,13 +4,11 @@
   pkgs,
   inputs,
   ...
-}:
-let
+}: let
   hyprScriptsDir = builtins.toString ../../shared/scripts/hypr;
   scriptsDir = builtins.toString ../../shared/scripts/sys;
   rofiScriptsDir = builtins.toString ../../shared/scripts/rofi;
-in
-{
+in {
   home.packages = with pkgs; [
     pavucontrol
     libnotify

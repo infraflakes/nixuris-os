@@ -11,6 +11,7 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 vim.keymap.set("n", "<leader>ws", ":saveas ", { desc = "Write As (Save unnamed buffer)", silent = false })
 vim.keymap.set("n", "<leader>wr", [[:%s///g<Left><Left><Left>]], { desc = "Substitute fast" })
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>", { desc = "[E]xplorer Neo-tree" })
+vim.keymap.set("n", "U", "<C-r>", { noremap = true, desc = "Redo" })
 
 vim.schedule(function()
 	local builtin = require "telescope.builtin"

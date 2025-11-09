@@ -3,8 +3,7 @@
   pkgs,
   lib,
   ...
-}:
-{
+}: {
   programs.zoxide = {
     enable = true;
     package = pkgs.zoxide;

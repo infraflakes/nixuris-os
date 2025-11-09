@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   imports = [
     # System core
     /etc/nixos/hardware-configuration.nix
@@ -18,8 +17,7 @@
     # Programs that needs privileges
     ./runtime/asus.nix
     ./runtime/mount.nix
-    #./runtime/gaming.nix
     ./runtime/virt-qemu.nix
-    #./runtime/docker.nix
+    ./runtime/containerization/k3s.nix
   ];
 }

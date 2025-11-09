@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   services.podman = {
     enable = true;
     settings.registries.search = [

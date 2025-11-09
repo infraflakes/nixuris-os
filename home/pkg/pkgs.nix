@@ -2,13 +2,11 @@
   config,
   pkgs,
   ...
-}:
-let
+}: let
   cli = ./cli;
   dev = ./cli/dev;
   media = ./media;
-in
-{
+in {
   imports = [
     # CLI
     (cli + "/file-manager.nix")

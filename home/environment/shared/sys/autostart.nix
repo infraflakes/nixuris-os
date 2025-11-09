@@ -2,10 +2,8 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   xdg.configFile = {
-
     # Apps
     "autostart/mpd.desktop".text = ''
       [Desktop Entry]
