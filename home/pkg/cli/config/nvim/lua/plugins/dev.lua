@@ -18,42 +18,12 @@ vim.diagnostic.config {
 return {
 
   {
-    "neovim/nvim-lspconfig",
+    "mason-org/mason-lspconfig.nvim",
+    opts = {},
     dependencies = {
-      "williamboman/mason.nvim", -- LSP installer
-      "williamboman/mason-lspconfig.nvim", -- bridge between Mason & lspconfig
-      "hrsh7th/cmp-nvim-lsp", -- LSP completion source for nvim-cmp
-      "folke/neodev.nvim", -- Lua dev for Neovim config itself
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
     },
-    config = function()
-      require("neodev").setup() -- Setup Neovim's Lua LSP
-
-      local mason = require "mason"
-      local mason_lspconfig = require "mason-lspconfig"
-
-      mason.setup()
-
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
-      -- Define a global on_attach function
-      local on_attach = function(_, bufnr)
-        local opts = { buffer = bufnr, silent = true }
-      end
-
-      mason_lspconfig.setup {
-        ensure_installed = { "gopls" },
-        handlers = {
-          -- This is the default handler for all servers, but we define it
-          -- explicitly to pass our own on_attach and capabilities.
-          function(server_name)
-            require("lspconfig")[server_name].setup {
-              capabilities = capabilities,
-              on_attach = on_attach,
-            }
-          end,
-        },
-      }
-    end,
   },
 
   {
@@ -94,15 +64,14 @@ return {
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
-      "hrsh7th/cmp-buffer", -- words from current buffer
-      "hrsh7th/cmp-nvim-lsp", -- LSP suggestions
-      "hrsh7th/cmp-path", -- file path suggestions
-      "L3MON4D3/LuaSnip", -- optional: snippet engine
-      "saadparwaiz1/cmp_luasnip", -- optional: LuaSnip integration
+      "hrsh7th/cmp-nvim-lsp", -- LSP source
+      "hrsh7th/cmp-buffer", -- buffer words
+      "hrsh7th/cmp-path", -- file paths
+      "L3MON4D3/LuaSnip", -- 3. snippet engine
+      "saadparwaiz1/cmp_luasnip",
     },
     config = function()
       local cmp = require "cmp"
-
       cmp.setup {
         snippet = {
           expand = function(args)
@@ -110,12 +79,12 @@ return {
           end,
         },
         mapping = cmp.mapping.preset.insert {
-          ["<Tab>"] = cmp.mapping.confirm { select = true }, -- press Tab to confirm
-          ["<CR>"] = cmp.mapping.confirm { select = true }, -- or Enter
-          ["<C-Space>"] = cmp.mapping.complete(), -- manual trigger if needed
+          ["<CR>"] = cmp.mapping.confirm { select = true },
+          ["<C-Space>"] = cmp.mapping.complete(),
         },
         sources = cmp.config.sources {
           { name = "nvim_lsp" },
+          { name = "luasnip" },
           { name = "buffer" },
           { name = "path" },
         },

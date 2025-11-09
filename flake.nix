@@ -47,7 +47,7 @@
       extraSpecialArgs = {inherit inputs;};
       modules = [
         ./home/home.nix
-        mangowc.hmModules.mango
+        # mangowc.hmModules.mango
       ];
     };
     # Dev Shell
