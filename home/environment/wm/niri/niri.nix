@@ -87,8 +87,12 @@ in {
               geometry-corner-radius 12
               place-within-backdrop true
           }
+          //layer-rule {
+          //    match namespace="swww-daemon"
+          //    place-within-backdrop true
+          //}
           layer-rule {
-              match namespace="swww-daemon"
+              match namespace="^quickshell$"
               place-within-backdrop true
           }
           layer-rule {
@@ -160,27 +164,38 @@ in {
           }
 
           binds {
-              Mod+Shift+Slash { show-hotkey-overlay; }
-              XF86AudioRaiseVolume allow-when-locked=true { spawn "${scriptsDir}/volume" "up"; }
-              XF86AudioLowerVolume allow-when-locked=true { spawn "${scriptsDir}/volume" "down"; }
-              XF86AudioMute        allow-when-locked=true { spawn "${scriptsDir}/volume" "mute"; }
-              XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
-              XF86MonBrightnessDown allow-when-locked=true {spawn "${scriptsDir}/bright" "down" ;}
-              XF86MonBrightnessUp allow-when-locked=true {spawn "${scriptsDir}/bright" "up" ;}
+              //Mod+Shift+Slash { show-hotkey-overlay; }
+              //XF86AudioRaiseVolume allow-when-locked=true { spawn "${scriptsDir}/volume" "up"; }
+              //XF86AudioLowerVolume allow-when-locked=true { spawn "${scriptsDir}/volume" "down"; }
+              //XF86AudioMute        allow-when-locked=true { spawn "${scriptsDir}/volume" "mute"; }
+              //XF86AudioMicMute     allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+              //XF86MonBrightnessDown allow-when-locked=true {spawn "${scriptsDir}/bright" "down" ;}
+              //XF86MonBrightnessUp allow-when-locked=true {spawn "${scriptsDir}/bright" "up" ;}
+              //Mod+L hotkey-overlay-title="Session Handler" { spawn "${rofiScriptsDir}/powermenu"; }
+              //Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "uwsm" "app" "--" "rofi" "-show" "drun"; }
+              //Mod+N hotkey-overlay-title="Notification Restore: Mako" { spawn "makoctl" "restore"; }
+              //Mod+V hotkey-overlay-title="Clipboard Manager" { spawn "${rofiScriptsDir}/clip"; }
+              //Mod+Period hotkey-overlay-title="Emoji Selector" { spawn "${rofiScriptsDir}/emoji"; }
+              //Mod+Shift+W hotkey-overlay-title="Wallpaper Manager" { spawn "${rofiScriptsDir}/wallselect-niri"; }
+              //Mod+P hotkey-overlay-title="Wallpaper Manager" { spawn "${rofiScriptsDir}/power"; }
+              //Mod+M hotkey-overlay-title="MPD Control" { spawn "${rofiScriptsDir}/mpd-rofi"; }
 
-              Mod+Q { close-window; }
+        XF86AudioRaiseVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "increment" "2"; }
+        XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "decrement" "2"; }
+        XF86AudioMute allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "mute"; }
+        XF86AudioMicMute allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "micmute"; }
+        XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5"; }
+        XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5"; }
+
+        Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "dms" "ipc" "spotlight" "toggle"; }
+        Mod+V hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "clipboard" "toggle"; }
+        Mod+L hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "lock" "lock"; }
+        Mod+N hotkey-overlay-title="Notification" { spawn "dms" "ipc" "notifications" "toggle"; }
+        Mod+I hotkey-overlay-title="Settings" { spawn "dms" "ipc" "settings" "toggle"; }
+        Mod+P hotkey-overlay-title="Processes" { spawn "dms" "ipc" "processlist" "toggle"; }
 
               Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "uwsm" "app" "--" "kitty"; }
-              Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "uwsm" "app" "--" "rofi" "-show" "drun"; }
-              Mod+N hotkey-overlay-title="Notification Restore: Mako" { spawn "makoctl" "restore"; }
-              Mod+L hotkey-overlay-title="Session Handler" { spawn "${rofiScriptsDir}/powermenu"; }
-              Mod+V hotkey-overlay-title="Clipboard Manager" { spawn "${rofiScriptsDir}/clip"; }
-              Mod+Period hotkey-overlay-title="Emoji Selector" { spawn "${rofiScriptsDir}/emoji"; }
-              Mod+Shift+W hotkey-overlay-title="Wallpaper Manager" { spawn "${rofiScriptsDir}/wallselect-niri"; }
-              Mod+P hotkey-overlay-title="Wallpaper Manager" { spawn "${rofiScriptsDir}/power"; }
-
-              Mod+M hotkey-overlay-title="MPD Control" { spawn "${rofiScriptsDir}/mpd-rofi"; }
-
+              Mod+Q { close-window; }
               Mod+A repeat=false { toggle-overview; }
 
               Mod+Left  { focus-column-left; }

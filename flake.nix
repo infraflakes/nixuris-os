@@ -14,6 +14,21 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dgop = {
+      url = "github:AvengeMedia/dgop";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    dms-cli = {
+      url = "github:AvengeMedia/danklinux";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dankMaterialShell = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.dgop.follows = "dgop";
+      inputs.dms-cli.follows = "dms-cli";
+    };
     niri = {
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,6 +44,8 @@
     home-manager,
     serein-cli,
     zen-browser,
+    dms-cli,
+    dankMaterialShell,
     niri,
     mangowc,
     ...
@@ -45,10 +62,7 @@
     homeConfigurations."infraflakes@serein" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       extraSpecialArgs = {inherit inputs;};
-      modules = [
-        ./home/home.nix
-        # mangowc.hmModules.mango
-      ];
+      modules = [./home/home.nix];
     };
     # Dev Shell
     devShells.${system} = {

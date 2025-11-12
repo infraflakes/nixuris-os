@@ -18,12 +18,9 @@
     ./sys/modify-desktop-entry.nix
     ./sys/uwsm.nix
 
+    ./shell/dms.nix
     ./shell/fonts.nix
     ./shell/gtk.nix
-    ./shell/mako.nix
-    ./shell/rofi.nix
-    ./shell/swaylock.nix
     ./shell/wallpapers.nix
-    ./shell/waybar.nix
   ];
 }

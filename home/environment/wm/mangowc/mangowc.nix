@@ -8,6 +8,7 @@
   scriptsDir = builtins.toString ../../shared/scripts/sys;
   rofiScriptsDir = builtins.toString ../../shared/scripts/rofi;
 in {
+  imports = [inputs.mango.nixosModules.mango];
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [

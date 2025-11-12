@@ -5,14 +5,14 @@
   ...
 }: {
   home.packages = with pkgs; [
-    wl-clipboard
     procps
+    imagemagick
   ];
   programs.rofi = {
     enable = true;
     package = pkgs.rofi;
     cycle = true;
-    terminal = "alacritty";
+    terminal = "kitty";
   };
   home.file.".config/rofi".source = ./config/rofi;
 }
