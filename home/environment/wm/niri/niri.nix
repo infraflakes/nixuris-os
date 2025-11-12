@@ -10,7 +10,6 @@ in {
   nixpkgs.overlays = [inputs.niri.overlays.niri];
   home.packages = with pkgs; [
     xwayland-satellite
-    pavucontrol
     libnotify
     glib
     brightnessctl
@@ -122,7 +121,7 @@ in {
 
               focus-ring {
                   width 4
-                  active-color "#86afef"
+                  active-color "#cbe3b3"
                   inactive-color "#505050"
               }
               border {

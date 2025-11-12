@@ -99,7 +99,6 @@
     
     "pulseaudio": {
       "format": "Volume: {volume}%",
-      "on-click": "pavucontrol -t 3",
       "rotate": 0,
       "scroll-step": 5,
       "tooltip-format": "{icon} {desc} // {volume}%"
@@ -108,7 +107,6 @@
       "format": "{format_source}",
       "format-source": " {volume}%",
       "format-source-muted": "",
-      "on-click": "pavucontrol -t 4",
       "rotate": 0,
       "scroll-step": 5,
       "tooltip-format": "{format_source} {source_volume}%"

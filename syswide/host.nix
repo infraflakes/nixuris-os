@@ -18,6 +18,5 @@
     ./runtime/asus.nix
     ./runtime/mount.nix
     ./runtime/virt-qemu.nix
-    ./runtime/containerization/k3s.nix
   ];
 }

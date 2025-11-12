@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  environment.systemPackages = with pkgs; [kubernetes-helm];
+  environment.systemPackages = with pkgs; [helmfile kubernetes-helm];
   networking.firewall = {
     allowedTCPPorts = [
       6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)

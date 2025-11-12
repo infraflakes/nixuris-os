@@ -10,7 +10,6 @@
   rofiScriptsDir = builtins.toString ../../shared/scripts/rofi;
 in {
   home.packages = with pkgs; [
-    pavucontrol
     libnotify
     bc
     jq
@@ -200,10 +199,7 @@ in {
       windowrulev2 = [
         "opacity 1 1,floating:1"
         "float,class:^(Rofi|rofi)$"
-        "float,class:^(Blueman-manager|blueman-manager)$"
-        "size 800 500,class:^(Blueman-manager|blueman-manager)$"
         "float,class:^(imv)$"
-        "float,class:^(pavucontrol|org.pulseaudio.pavucontrol|com.saivert.pwvucontrol)$"
         #"opacity 0.85 0.7, class:^(Alacritty)$ # Alacritty"
         "opacity 0.0 override, class:^(xwaylandvideobridge)$"
         "noanim, class:^(xwaylandvideobridge)$"

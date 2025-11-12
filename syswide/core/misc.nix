@@ -11,6 +11,8 @@
     bottom
     lm_sensors
     bluetuith
+    pulsemixer
+    nmap
   ];
   # SSH
   services.openssh = {
