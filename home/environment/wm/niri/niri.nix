@@ -188,11 +188,15 @@ in {
         XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5"; }
 
         Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "dms" "ipc" "spotlight" "toggle"; }
+        Mod+Tab hotkey-overlay-title="System Info" { spawn "dms" "ipc" "call" "dash" "open" "overview"; }
         Mod+V hotkey-overlay-title="Clipboard Manager" { spawn "dms" "ipc" "clipboard" "toggle"; }
         Mod+L hotkey-overlay-title="Lock Screen" { spawn "dms" "ipc" "lock" "lock"; }
         Mod+N hotkey-overlay-title="Notification" { spawn "dms" "ipc" "notifications" "toggle"; }
         Mod+I hotkey-overlay-title="Settings" { spawn "dms" "ipc" "settings" "toggle"; }
+        Mod+S hotkey-overlay-title="Control Center" { spawn "dms" "ipc" "call" "control-center" "toggle"; }
         Mod+P hotkey-overlay-title="Processes" { spawn "dms" "ipc" "processlist" "toggle"; }
+        Mod+Shift+W hotkey-overlay-title="Wallpaper" { spawn "dms" "ipc" "call" "dankdash" "wallpaper"; }
+        Mod+M hotkey-overlay-title="Media" { spawn "dms" "ipc" "call" "dash" "open" "media"; }
 
               Mod+Return hotkey-overlay-title="Open a Terminal: kitty" { spawn "uwsm" "app" "--" "kitty"; }
               Mod+Q { close-window; }

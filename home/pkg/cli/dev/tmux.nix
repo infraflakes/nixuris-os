@@ -1,8 +1,12 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
+  home.sessionVariables = {
+    TMUX_TMPDIR = lib.mkForce "/tmp";
+  };
   programs.tmux = {
     enable = true;
     shell = "${pkgs.fish}/bin/fish";

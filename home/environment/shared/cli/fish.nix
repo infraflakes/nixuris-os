@@ -53,6 +53,7 @@
       echo "				Welcome back, $username!"
     '';
     shellInit = ''
+      set UID (id -u)
       set -g fish_color_normal ccd0d9 --bold
       set -g fish_color_command 8ab4f8 --bold
       set -g fish_color_keyword ccd0d9 --bold

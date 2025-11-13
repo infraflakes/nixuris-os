@@ -4,6 +4,7 @@
   pkgs,
   ...
 }: {
+  services.upower.enable = true;
   environment.systemPackages = with pkgs; [pciutils];
   services.supergfxd.enable = true;
   systemd.services.supergfxd.path = [pkgs.pciutils];
