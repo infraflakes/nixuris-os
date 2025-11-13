@@ -3,6 +3,7 @@
   pkgs,
   ...
 }: {
+  services.accounts-daemon.enable = true; # Fix profile picture disappear after reboot
   users.users = {
     infraflakes = {
       isNormalUser = true;

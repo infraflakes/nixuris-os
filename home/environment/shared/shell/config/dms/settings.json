@@ -11,7 +11,7 @@
   "widgetBackgroundColor": "sch",
   "cornerRadius": 12,
   "use24HourClock": true,
-  "showSeconds": false,
+  "showSeconds": true,
   "useFahrenheit": false,
   "nightModeEnabled": false,
   "animationSpeed": 4,
@@ -100,26 +100,25 @@
   "lockDateFormat": "",
   "mediaSize": 2,
   "dankBarLeftWidgets": [
-    "launcherButton",
+    {
+      "id": "launcherButton",
+      "enabled": true
+    },
     {
       "id": "focusedWindow",
       "enabled": true
     },
     {
+      "id": "cpuTemp",
+      "enabled": true
+    },
+    {
       "id": "cpuUsage",
-      "enabled": true,
-      "minimumWidth": true
+      "enabled": true
     },
     {
       "id": "memUsage",
-      "enabled": true,
-      "showSwap": false,
-      "minimumWidth": true
-    },
-    {
-      "id": "cpuTemp",
-      "enabled": true,
-      "minimumWidth": true
+      "enabled": true
     }
   ],
   "dankBarCenterWidgets": [
@@ -158,12 +157,12 @@
   "appLauncherViewMode": "grid",
   "spotlightModalViewMode": "grid",
   "sortAppsAlphabetically": false,
-  "weatherLocation": "New York, NY",
-  "weatherCoordinates": "40.7128,-74.0060",
+  "weatherLocation": "Tỉnh Hà Tĩnh",
+  "weatherCoordinates": "18.3504832,105.7623047",
   "useAutoLocation": false,
   "weatherEnabled": true,
-  "networkPreference": "auto",
-  "vpnLastConnected": "093bab1c-0b3d-4f09-9f79-f1493d88cd5f",
+  "networkPreference": "wifi",
+  "vpnLastConnected": "38fa6ddd-43a8-42a7-a086-9d62068dd677",
   "iconTheme": "System Default",
   "launcherLogoMode": "os",
   "launcherLogoCustomPath": "",
