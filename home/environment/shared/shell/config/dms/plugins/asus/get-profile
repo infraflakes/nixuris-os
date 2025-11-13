@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-asusctl profile -p 2>/dev/null | grep "Active profile is" | awk '{print $NF}'

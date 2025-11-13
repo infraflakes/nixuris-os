@@ -19,11 +19,5 @@
     default.settings.theme = "dark";
     systemd.enable = true; # Systemd service for auto-start
     niri.enableSpawn = true; # Auto-start DMS with niri
-    plugins = {
-      asus-power = {
-        enable = true;
-        src = ./config/dms/plugins/asus;
-      };
-    };
   };
 }
