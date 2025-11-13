@@ -22,7 +22,7 @@
       sync_to_monitor = "no";
     };
     extraConfig = ''
-      include ${./config/kitty/evergarden-winter.conf}
+      include ${./config/kitty/deep-blue.conf}
     '';
     shellIntegration.enableFishIntegration = true;
     shellIntegration.enableZshIntegration = true;
