@@ -1,0 +1,13 @@
+{
+  "id": "asusPowerPlugin",
+  "name": "ASUS Power",
+  "component": "./PowerWidget.qml",
+  "settings": "./PowerSettings.qml",
+  "provides": {
+    "popouts": [{
+      "id": "asusPowerMenu",
+      "component": "./PowerMenu.qml"
+    }]
+  },
+  "permissions": ["settings_read", "settings_write"]
+}
