@@ -184,8 +184,8 @@ in {
         XF86AudioLowerVolume allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "decrement" "2"; }
         XF86AudioMute allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "mute"; }
         XF86AudioMicMute allow-when-locked=true { spawn "dms" "ipc" "call" "audio" "micmute"; }
-        XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5"; }
-        XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5"; }
+        XF86MonBrightnessUp allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "increment" "5" ""; }
+        XF86MonBrightnessDown allow-when-locked=true { spawn "dms" "ipc" "call" "brightness" "decrement" "5" ""; }
 
         Mod+Space hotkey-overlay-title="Run an Application: rofi" { spawn "dms" "ipc" "spotlight" "toggle"; }
         Mod+Tab hotkey-overlay-title="System Info" { spawn "dms" "ipc" "call" "dash" "open" "overview"; }
