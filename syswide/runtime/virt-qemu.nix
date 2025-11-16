@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  username,
   ...
 }: {
   virtualisation.libvirtd.enable = true;
@@ -10,7 +11,7 @@
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
-  users.users.infraflakes.extraGroups = [
+  users.users.${username}.extraGroups = [
     "libvirtd"
     "kvm"
   ];

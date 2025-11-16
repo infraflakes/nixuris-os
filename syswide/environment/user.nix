@@ -1,11 +1,12 @@
 {
   config,
   pkgs,
+  username,
   ...
 }: {
   services.accounts-daemon.enable = true; # Fix profile picture disappear after reboot
   users.users = {
-    infraflakes = {
+    ${username} = {
       isNormalUser = true;
       extraGroups = [
         "networkmanager"

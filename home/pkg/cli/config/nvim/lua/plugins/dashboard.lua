@@ -8,7 +8,7 @@ return {
       local alpha = require "alpha"
       local dashboard = require "alpha.themes.dashboard"
 
-      local palette = require("tokyonight.colors").setup()
+      local palette = require("catppuccin.palettes").get_palette()
       vim.api.nvim_create_autocmd("ColorScheme", {
         pattern = "*",
         callback = function()
@@ -33,7 +33,6 @@ return {
 
         dashboard.section.buttons.val = {
           dashboard.button("g", "  Git Repositories", ":OpenGitRepos <CR>"),
-          -- dashboard.button("s", "  Tmux Sessions", ":ToggleTmux<CR>"),
           dashboard.button("n", "  New File", ":ene <BAR> startinsert <CR>"),
           dashboard.button("ff", "󰈞  Find Files", ":Telescope find_files<CR>"),
           dashboard.button("fg", "󰱼  Grep Text", ":Telescope live_grep<CR>"),

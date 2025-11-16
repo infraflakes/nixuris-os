@@ -2,12 +2,13 @@
   config,
   pkgs,
   inputs,
+  username,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
   home = {
-    username = "infraflakes";
-    homeDirectory = "/home/infraflakes";
+    username = "${username}";
+    homeDirectory = "/home/${username}";
     stateVersion = "25.11";
     sessionVariables = {
       EDITOR = "nvim";

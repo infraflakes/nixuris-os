@@ -16,6 +16,7 @@ in {
     (dev + "/vcs.nix")
     (dev + "/tmux.nix")
     (dev + "/podman.nix")
+    (dev + "/ollama.nix")
 
     # Media
     (media + "/media.nix")

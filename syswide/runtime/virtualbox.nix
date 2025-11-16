@@ -2,10 +2,11 @@
   config,
   pkgs,
   lib,
+  username,
   ...
 }: {
   nixpkgs.config.allowUnfree = true;
-  users.extraGroups.vboxusers.members = ["infraflakes"];
+  users.extraGroups.vboxusers.members = ["${username}"];
   environment.systemPackages = with pkgs; [virtualbox];
   virtualisation.virtualbox = {
     host = {

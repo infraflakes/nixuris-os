@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  username,
   ...
 }: {
   #sudo supergfxctl -m Vfio and detach nvidia components with virsh nodedev-detach pci_0000_01_00_1 and virsh nodedev-detach pci_0000_01_00_0 before adding to pci
@@ -24,7 +25,7 @@
   services.qemuGuest.enable = true;
   services.spice-vdagentd.enable = true; # enable copy and paste between host and guest
   virtualisation.spiceUSBRedirection.enable = true;
-  users.users.infraflakes.extraGroups = [
+  users.users.${username}.extraGroups = [
     "libvirtd"
     "kvm"
   ];

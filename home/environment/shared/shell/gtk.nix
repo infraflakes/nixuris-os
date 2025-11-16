@@ -2,24 +2,46 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  # Themes
+  tokyonight = "Tokyonight-Dark";
+  tokyonight-pkg = pkgs.tokyonight-gtk-theme;
+
+  catppuccin = "catppuccin-frappe-blue-standard";
+  catppuccin-pkg = pkgs.catppuccin-gtk;
+
+  # Icon Theme
+  iconname = "Papirus-Dark";
+  pkgicon = pkgs.papirus-icon-theme;
+
+  # GTK Theme
+  themename = catppuccin;
+  pkgtheme = catppuccin-pkg;
+
+  # Cursor
+  cursorname = "Bibata-Modern-Ice";
+  pkgcursor = pkgs.bibata-cursors;
+
+  # Font
+  fontname = "JetBrainsMono Nerd Font 12";
+in {
   home.packages = with pkgs; [
-    papirus-icon-theme
+    pkgicon
   ];
-  home.sessionVariables.GTK_THEME = "Tokyonight-Dark";
+  home.sessionVariables.GTK_THEME = themename;
   gtk = {
     enable = true;
     cursorTheme = {
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
+      package = pkgcursor;
+      name = cursorname;
     };
     theme = {
-      package = pkgs.tokyonight-gtk-theme;
-      name = "Tokyonight-Dark";
+      package = pkgtheme;
+      name = themename;
     };
     iconTheme = {
-      package = pkgs.papirus-icon-theme;
-      name = "Papirus-Dark";
+      package = pkgicon;
+      name = iconname;
     };
   };
 
@@ -27,12 +49,12 @@
     enable = true;
     settings = {
       "org/gnome/desktop/interface" = {
-        gtk-theme = "Tokyonight-Dark";
-        icon-theme = "Papirus-Dark";
+        gtk-theme = themename;
+        icon-theme = iconname;
         color-scheme = "prefer-dark";
-        font-name = "JetBrainsMono Nerd Font 12";
-        document-font-name = "JetBrainsMono Nerd Font 12";
-        monospace-font-name = "JetBrainsMono Nerd Font 12";
+        font-name = fontname;
+        document-font-name = fontname;
+        monospace-font-name = fontname;
       };
     };
   };

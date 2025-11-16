@@ -52,16 +52,18 @@
   } @ inputs: let
     system = "x86_64-linux";
     pkgs = import nixpkgs {inherit system;};
+    username = "infraflakes";
+    hostname = "serein";
   in {
     # NixOS configuration
     nixosConfigurations.serein = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs system;};
+      specialArgs = {inherit inputs username system;};
       modules = [./syswide/host.nix];
     };
     # Home Manager
-    homeConfigurations."infraflakes@serein" = home-manager.lib.homeManagerConfiguration {
+    homeConfigurations."${username}@${hostname}" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      extraSpecialArgs = {inherit inputs;};
+      extraSpecialArgs = {inherit inputs username;};
       modules = [./home/home.nix];
     };
     # Dev Shell

@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  username,
   ...
 }: {
   environment.systemPackages = with pkgs; [
@@ -18,5 +19,5 @@
     package = pkgs.usbmuxd2;
   };
   programs.adb.enable = true;
-  users.users.infraflakes.extraGroups = ["adbusers"];
+  users.users.${username}.extraGroups = ["adbusers"];
 }

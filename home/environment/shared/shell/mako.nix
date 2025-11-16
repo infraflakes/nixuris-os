@@ -6,7 +6,6 @@
 }: {
   services.mako = {
     enable = true;
-
     extraConfig = ''
       layer=overlay
       background-color=#1b1e25
