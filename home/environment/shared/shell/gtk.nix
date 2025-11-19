@@ -3,24 +3,42 @@
   pkgs,
   ...
 }: let
-  # Themes
+  ####################################################################
+  # GTK Themes
   tokyonight = "Tokyonight-Dark";
   tokyonight-pkg = pkgs.tokyonight-gtk-theme;
 
   catppuccin = "catppuccin-frappe-blue-standard";
   catppuccin-pkg = pkgs.catppuccin-gtk;
 
-  # Icon Theme
-  iconname = "Papirus-Dark";
-  pkgicon = pkgs.papirus-icon-theme;
+  whitesur = "WhiteSur-Dark";
+  whitesur-pkg = pkgs.whitesur-gtk-theme;
+  ####################################################################
+  # Icon Themes
+  papirus = "Papirus-Dark";
+  papirus-pkg = pkgs.papirus-icon-theme;
 
-  # GTK Theme
-  themename = catppuccin;
-  pkgtheme = catppuccin-pkg;
+  whitesur-icon = "WhiteSur-dark";
+  whitesur-icon-pkg = pkgs.whitesur-icon-theme;
+  ####################################################################
+  # Cursor Themes
+  bibata = "Bibata-Modern-Ice";
+  bibata-pkg = pkgs.bibata-cursors;
+
+  whitesur-cursor = "WhiteSur Cursors";
+  whitesur-cursor-pkg = pkgs.whitesur-cursors;
+  ####################################################################
+  # Icon
+  iconname = whitesur-icon;
+  pkgicon = whitesur-icon-pkg;
+
+  # GTK
+  themename = whitesur;
+  pkgtheme = whitesur-pkg;
 
   # Cursor
-  cursorname = "Bibata-Modern-Ice";
-  pkgcursor = pkgs.bibata-cursors;
+  cursorname = whitesur-cursor;
+  pkgcursor = whitesur-cursor-pkg;
 
   # Font
   fontname = "JetBrainsMono Nerd Font 12";
@@ -28,7 +46,11 @@ in {
   home.packages = with pkgs; [
     pkgicon
   ];
-  home.sessionVariables.GTK_THEME = themename;
+  home.sessionVariables = {
+    GTK_THEME = themename;
+    XCURSOR_THEME = "WhiteSur Cursors";
+    XCURSOR_SIZE = 24;
+  };
   gtk = {
     enable = true;
     cursorTheme = {

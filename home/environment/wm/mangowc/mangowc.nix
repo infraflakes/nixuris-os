@@ -47,9 +47,6 @@ in {
       adaptive_sync=1
       disable_while_typing=1
       trackpad_natural_scrolling=1
-
-      cursor_size=24
-      cursor_theme=Bibata-Modern-Ice
       gappih=30
       gappiv=30
       gappoh=30

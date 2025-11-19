@@ -6,8 +6,8 @@
   home.file.".config/uwsm/env" = {
     text = ''
       # Cursor theming
-      export XCURSOR_THEME=Bibata-Modern-Ice
-      export XCURSOR_SIZE=24
+      export XCURSOR_THEME="WhiteSur Cursors"
+      export XCURSOR_SIZE=15
 
       export QT_SCALE_FACTOR=1
       export QT_AUTO_SCREEN_SCALE_FACTOR=1

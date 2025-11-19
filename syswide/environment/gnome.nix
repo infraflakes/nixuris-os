@@ -4,20 +4,15 @@
   pkgs,
   ...
 }: {
-  environment.etc."xdg/wayland-sessions/gnome.desktop".text = ''
-    [Desktop Entry]
-    Name=Gnome On Wayland
-    Exec=/run/current-system/sw/bin/gnome-session -- session=gnome-wayland
-    TryExec=/run/current-system/sw/bin/gnome-session
-    Type=Application
-    DesktopNames=GNOME
-  '';
   services.desktopManager.gnome.enable = true;
   services.power-profiles-daemon.enable = false;
   services.udev.packages = [pkgs.gnome-settings-daemon];
   services.gnome.rygel.enable = false;
 
   environment.gnome.excludePackages = with pkgs; [
+    loupe
+    file-roller
+    gnome-system-monitor
     rygel
     orca
     evince
@@ -57,6 +52,7 @@
     gnome-extension-manager
     dconf-editor
     gnomeExtensions.blur-my-shell
+    gnomeExtensions.user-themes
     gnomeExtensions.vitals
     gnomeExtensions.dash-to-dock
     gnomeExtensions.clipboard-indicator
