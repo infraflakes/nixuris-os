@@ -22,7 +22,8 @@
   whitesur-icon-pkg = pkgs.whitesur-icon-theme;
   ####################################################################
   # Cursor Themes
-  bibata = "Bibata-Modern-Ice";
+  bibata-ice = "Bibata-Modern-Ice";
+  bibata-classic = "Bibata-Modern-Classic";
   bibata-pkg = pkgs.bibata-cursors;
 
   whitesur-cursor = "WhiteSur Cursors";
@@ -37,8 +38,8 @@
   pkgtheme = whitesur-pkg;
 
   # Cursor
-  cursorname = whitesur-cursor;
-  pkgcursor = whitesur-cursor-pkg;
+  cursorname = bibata-classic;
+  pkgcursor = bibata-pkg;
 
   # Font
   fontname = "JetBrainsMono Nerd Font 12";
@@ -48,7 +49,7 @@ in {
   ];
   home.sessionVariables = {
     GTK_THEME = themename;
-    XCURSOR_THEME = "WhiteSur Cursors";
+    XCURSOR_THEME = cursorname;
     XCURSOR_SIZE = 24;
   };
   gtk = {

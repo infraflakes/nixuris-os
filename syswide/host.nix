@@ -17,6 +17,7 @@
     # Programs that needs privileges
     ./runtime/asus.nix
     ./runtime/mount.nix
-    ./runtime/virt-qemu.nix
+    ./runtime/virt/virt-qemu.nix
+    ./runtime/flatpak.nix
   ];
 }

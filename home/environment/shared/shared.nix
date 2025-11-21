@@ -20,7 +20,7 @@
 
     ./shell/dms.nix
     ./shell/fonts.nix
-    ./shell/gtk.nix
+    ./shell/theme.nix
     ./shell/wallpapers.nix
   ];
 }

@@ -15,30 +15,14 @@ in {
     brightnessctl
   ];
   services.cliphist.enable = true;
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-      xdg-desktop-portal-gnome
-    ];
-    config = {
-      common = {
-        default = ["gtk"];
-      };
-      niri = {
-        default = [
-          "gtk"
-          "gnome"
-        ];
-        "org.freedesktop.impl.portal.ScreenCast" = ["gnome"];
-        "org.freedesktop.impl.portal.Screenshot" = ["gnome"];
-      };
-    };
-  };
   programs.niri = {
     enable = true;
     package = pkgs.niri;
     config = ''
+          cursor {
+              xcursor-theme "Bibata-Modern-Classic"
+              xcursor-size 24
+          }
           debug {
               render-drm-device "/dev/dri/renderD128"
           }
